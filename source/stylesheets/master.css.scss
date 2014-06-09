@@ -10,6 +10,10 @@ a {
 	color: $black;
 }
 
+h2 {
+	font-family: serif;
+}
+
 .navbar-default {
 	background: transparent;
 	border: none;
@@ -98,10 +102,6 @@ footer {
 			color: $gray;
 		}
 	}
-}
-
-h2 {
-	font-family: serif;
 }
 
 .blue {
