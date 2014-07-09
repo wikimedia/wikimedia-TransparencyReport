@@ -41,3 +41,28 @@
 		margin: 20px;
 	}
 }
+
+#bar_graph_by_country {
+	width: 100%;
+	height: 300px;
+}
+
+#bar_graph_by_type {
+	width: 100%;
+	height: 200px;
+}
+
+#bar_graph_by_disclosed {
+	width: 100%;
+	height: 200px;
+}
+
+.bar_graph_horizontal, .bar_graph_vertical {
+	rect.blue_bars {
+		fill: #548EF9;
+	}
+
+	rect.gray_bars {
+		fill: #D2D8E1;
+	}
+}
