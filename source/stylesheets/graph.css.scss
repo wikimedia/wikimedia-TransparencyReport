@@ -1,6 +1,7 @@
 .analytics {
 	background: #f0f2f4;
 	border-top: 3px solid #dadada;
+	margin: 40px 0;
 
 	h2 {
 		margin: 20px;
@@ -40,6 +41,18 @@
 		font-size: 20px;
 		margin: 20px;
 	}
+
+	#complied_requests {
+		display: inline-block;
+		margin: 10px;
+		margin-bottom: 10px;
+		padding: 10px;
+		background: #E4E6E8;
+
+		label {
+			font-weight: normal;
+		}
+	}
 }
 
 #bar_graph_by_country {
@@ -57,6 +70,11 @@
 	height: 200px;
 }
 
+#compare_graph {
+	width: 100%;
+	height: 400px;
+}
+
 .bar_graph_horizontal, .bar_graph_vertical {
 	rect.blue_bars {
 		fill: #548EF9;
@@ -64,5 +82,42 @@
 
 	rect.gray_bars {
 		fill: #D2D8E1;
+	}
+}
+
+.bubble_graph {
+	line.topline, line.bottomline {
+		stroke: black;
+		stroke-width: 1;
+	}
+
+	line.center {
+		stroke: black;
+		stroke-width: 2;
+		stroke-dasharray: 2, 4;
+		opacity: 0.3;
+	}
+
+	text.company {
+		transition: all 1s ease;
+		font-size: 16px;
+		font-weight: 800;
+
+		&.in_circle {
+			transition: all 1s ease;
+			text-anchor: middle;
+			fill: #fff;
+		}
+	}
+
+	text.request {
+		font-size: 12px;
+		transition: all 1s ease;
+
+		&.in_circle {
+			transition: all 1s ease;
+			fill: #fff;
+			text-anchor: middle;
+		}
 	}
 }

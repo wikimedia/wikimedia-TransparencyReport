@@ -1,0 +1,46 @@
+{
+	"allRequests": [
+		{
+			"company": "Wikipedia",
+			"requests": 80
+		},
+		{
+			"company": "Twitter",
+			"requests": 1342
+		},
+		{
+			"company": "Dropbox",
+			"requests": 8732
+		},
+		{
+			"company": "Google",
+			"requests": 15032
+		},
+		{
+			"company": "Facebook",
+			"requests": 21029
+		}
+	],
+	"compliedRequests": [
+		{
+			"company": "Wikipedia",
+			"requests": 10
+		},
+		{
+			"company": "Twitter",
+			"requests": 4042
+		},
+		{
+			"company": "Dropbox",
+			"requests": 832
+		},
+		{
+			"company": "Google",
+			"requests": 5032
+		},
+		{
+			"company": "Facebook",
+			"requests": 2029
+		}
+	]
+}

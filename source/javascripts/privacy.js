@@ -190,6 +190,243 @@
 		} );
 	}
 
+
+	/*---Bubble Graph---------*/
+	bubbleGraph = function ( elementId, data, color, dispatch ) {
+		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+			width = $( '#' + elementId ).width() - margin.left - margin.right,
+			height = $( '#' + elementId ).height() - margin.top - margin.bottom;
+		var graph = d3.select( '#' + elementId )
+			.append( 'svg' )
+			.attr( 'width', width + margin.left + margin.right )
+			.attr( 'height', height + margin.top + margin.bottom )
+			.append( 'g' )
+			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+		function makeCircles ( data, color ) {
+			var max = d3.max( data, function ( d ) {
+				return d.requests;
+			} );
+
+			var gap = max / 10;
+			var yCentre = max / 2;
+			var distance = gap;
+
+			data.forEach( function ( d ) {
+				distance += d.requests / 2;
+				d.x = distance;
+				distance += d.requests / 2;
+				distance += gap;
+			} );
+
+			var xScale = d3.scale.linear()
+				.domain( [ 0, distance ] )
+				.range( [ 0, width ] );
+
+			var yScale = d3.scale.linear()
+				.domain( [ 0, max ] )
+				.range( [ 0, height ] );
+
+			data.forEach( function ( d ) {
+				if ( xScale( d.requests / 2 ) < 50 ) {
+					d.tiny = true;
+				}
+			} );
+
+			var circles = graph.selectAll( 'circle' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			circles
+				.enter()
+				.append( 'circle' )
+				.attr( 'cx', 0 )
+				.attr( 'cy', yScale( yCentre ) )
+				.attr( 'r', 0 );
+
+			circles
+				.transition()
+				.attr( 'fill', color )
+				.attr( 'cx', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'cy', function ( d ) {
+					return yScale( yCentre );
+				} )
+				.attr( 'r', function ( d ) {
+					return 10 + xScale( d.requests / 2 ); // Should we add this constant?
+				} );
+
+			var dots = graph.selectAll( 'circle.dots' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			dots
+				.enter()
+				.append( 'circle' )
+				.attr( 'class', 'dots' )
+				.attr( 'cx', 0 )
+				.attr( 'cy', yScale( yCentre ) )
+				.attr( 'r', 0 );
+
+			dots
+				.transition()
+				.attr( 'cx', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'cy', function ( d ) {
+					return yScale( yCentre );
+				} )
+				.attr( 'r', '3' );
+
+			var axis = graph.selectAll( 'line.center' ).data( [0] ); // FIXME
+			axis.enter().append( 'line' ).attr( 'class', 'center' );
+			axis
+				.attr( 'x1', 0 )
+				.attr( 'x2', width )
+				.attr( 'y1', yScale( yCentre ) )
+				.attr( 'y2', yScale( yCentre ) );
+
+
+			var companyLabel = graph.selectAll( 'text.company' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			companyLabel
+				.enter()
+				.append( 'text' )
+				.attr( 'class', function ( d ) {
+					return ( d.tiny ) ? "out_of_circle" : "in_circle";
+				} )
+				.classed( 'company', true );
+
+			companyLabel
+				.attr( 'class', function ( d ) {
+					return ( d.tiny ) ? "out_of_circle" : "in_circle";
+				} )
+				.classed( 'company', true )
+				.html( function ( d ) {
+					return d.company;
+				} )
+				.transition()
+				.attr( 'x', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'y', function ( d ) {
+					return yScale( yCentre );
+				} )
+				.attr( 'dy', function ( d, i ) {
+					if ( d.tiny ) {
+						return ( ( height / 2 ) - ( ( i + 1 ) * 20 ) ) * -1;
+					} else {
+						return -10;
+					}
+				} )
+				.attr( 'dx', function ( d ) {
+					return ( d.tiny ) ? 5 : 0;
+				} );
+
+			var requestLabel = graph.selectAll( 'text.request' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			requestLabel
+				.enter()
+				.append( 'text' )
+				.attr( 'class', function ( d ) {
+					return ( d.tiny ) ? "out_of_circle" : "in_circle";
+				} )
+				.classed( 'request', true );
+
+			requestLabel
+				.attr( 'class', function ( d ) {
+					return ( d.tiny ) ? "out_of_circle" : "in_circle";
+				} )
+				.classed( 'request', true )
+				.html( function ( d ) {
+					return Number( d.requests ).toLocaleString() + ' requests';
+				} )
+				.transition()
+				.attr( 'x', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'y', function ( d ) {
+					return yScale( yCentre );
+				} )
+				.attr( 'dy', function ( d, i ) {
+					if ( d.tiny ) {
+						return ( height / 2 ) - ( ( i + 1 ) * 15 );
+					} else {
+						return 20;
+					}
+				} )
+				.attr( 'dx', function ( d ) {
+					return ( d.tiny ) ? 5 : 0;
+				} );
+
+			var topLine = graph.selectAll( 'line.topline' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			topLine.enter().append( 'line' ).attr( 'class', 'topline' );
+
+			topLine
+				.transition()
+				.attr( 'x1', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'x2', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'y1', function ( d ) {
+					return yScale( yCentre ) - xScale( d.requests / 2 ) - 15;
+				} )
+				.attr( 'y2', function ( d, i ) {
+					return ( ( i + 1 ) * 20 ) - 10;
+				} )
+				.style( 'opacity', function ( d ) {
+					return ( d.tiny ) ? 1 : 0;
+				} );
+
+			topLine.exit().remove();
+
+
+			var bottomLine = graph.selectAll( 'line.bottomline' ).data( data, function ( d ) {
+				return d.company;
+			} );
+
+			bottomLine.enter().append( 'line' ).attr( 'class', 'bottomline' );
+
+			bottomLine
+				.transition()
+				.attr( 'x1', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'x2', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'y1', function ( d ) {
+					return yScale( yCentre ) + xScale( d.requests / 2 ) + 15;
+				} )
+				.attr( 'y2', function ( d, i ) {
+					return height - ( ( i + 1 ) * 15 );
+				} )
+				.style( 'opacity', function ( d ) {
+					return ( d.tiny ) ? 1 : 0;
+				} );
+
+			bottomLine.exit().remove();
+
+
+		}
+
+		makeCircles ( data, color );
+
+		dispatch.on( 'complied.' + elementId, function ( data, color ) {
+			makeCircles ( data, color );
+		} );
+	}
+
 	/*---DOM Ready---------*/
 	$( function () {
 		d3.json( '/data/privacy.json', function ( error, data ) {
@@ -201,6 +438,20 @@
 			countryGraph( '#bar_graph_by_country', ds, dispatch );
 			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch );
 			horizontalGraph( 'bar_graph_by_disclosed', 'disclosed', ds, dispatch );
+		} );
+
+		d3.json( '/data/comparison.json', function ( error, data ) {
+			if ( error ) throw error;
+			var dispatch = d3.dispatch( 'complied' );
+			bubbleGraph( 'compare_graph', data.allRequests, '#5A93FD', dispatch );
+
+			$( '#complied_requests_check' ).click( function ( e ) {
+				if ( $( this ).prop( 'checked' ) ) {
+					dispatch.complied( data.compliedRequests, '#C70000' );
+				} else {
+					dispatch.complied( data.allRequests, '#5A93FD' );
+				}
+			} );
 		} );
 	} );
 
