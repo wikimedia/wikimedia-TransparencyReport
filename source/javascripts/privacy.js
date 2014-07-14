@@ -1,5 +1,20 @@
 ;( function ( d3, $ ) {
 
+	var codes = {
+		"USA": "us",
+		"France": "fr",
+		"UK": "gb",
+		"Spain": "es",
+		"India": "in",
+		"Sri Lanka": "lk",
+		"Canada": "ca",
+		"Nepal": "np",
+		"Pakistan": "pk",
+		"Brazil": "br",
+		"China": "cn",
+		"Japan": "jp"
+	}
+
 	/*---Requests---------*/
 	function Requests() {
 	};
@@ -138,7 +153,7 @@
 	/*---Horizontal Graph---------*/
 	horizontalGraph = function ( element, groupBy, ds, dispatch ) {
 		var data = ds.groupBy( groupBy, true );
-		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+		var margin = { top: 10, right: 10, bottom: 10, left: 20 },
 			width = $( '#' + element ).width() - margin.left - margin.right,
 			height = $( '#' + element ).height() - margin.top - margin.bottom;
 		var graph = d3.select( '#' + element )
@@ -151,13 +166,61 @@
 			.domain( data.map( function ( d ) {
 				return d.key;
 			 } ) )
-			.rangeRoundBands( [ margin.top, height ], 0.1 );
+			.rangeRoundBands( [ margin.top, height ], 0.6 );
 		var xScale = d3.scale.linear()
 			.domain( [0, d3.max( data, function (d) {
 				return d.value;
 			} ) ] )
 			.range( [ 0, width ] );
 
+
+		function makeLabels( graph, data, xScale, yScale, ds, dispatch, className ) {
+			var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
+
+			var labels = graph.selectAll( 'text.' + className ).data( data )
+			labels.enter().append( 'text' ).attr( 'class', className );
+			labels
+				.attr( 'y', function ( d ) {
+					return yScale( d.key );
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', ( hasFlags ) ? 20 : 0 )
+				.on( 'click', function ( d ) {
+					if ( ds.filters[ groupBy ] === d.key ) {
+						delete ds.filters[ groupBy ];
+					} else {
+						ds.filters[ groupBy ] = d.key;
+					}
+					dispatch.filter();
+				} )
+				.html( function ( d ) {
+					return d.key;
+				} );
+
+			// If its a country graphy
+			if ( hasFlags ) {
+				var flags = graph.selectAll( 'image.' + className ).data( data )
+				flags.enter().append( 'image' ).attr( 'class', className );
+				flags
+					.attr( 'width', 16 )
+					.attr( 'height', 11 )
+					.attr( 'xlink:href', function ( d ) {
+						return '/images/flags/' + codes[ d.key ] + '.png';
+					} )
+					.attr( 'y', function ( d ) {
+						return yScale( d.key ) - 14;
+					} )
+					.attr( 'x', 0 )
+					.on( 'click', function ( d ) {
+						if ( ds.filters[ groupBy ] === d.key ) {
+							delete ds.filters[ groupBy ];
+						} else {
+							ds.filters[ groupBy ] = d.key;
+						}
+						dispatch.filter();
+					} );
+			}
+		}
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
 			var bar = graph.selectAll( 'rect.' + className ).data( data )
@@ -183,6 +246,7 @@
 		}
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
+		makeLabels( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
 
 		dispatch.on( 'filter.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
@@ -435,7 +499,8 @@
 			ds.init( data );
 			var dispatch = d3.dispatch( "filter" );
 
-			countryGraph( '#bar_graph_by_country', ds, dispatch );
+			//countryGraph( '#bar_graph_by_country', ds, dispatch );
+			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch );
 			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch );
 			horizontalGraph( 'bar_graph_by_disclosed', 'disclosed', ds, dispatch );
 		} );
