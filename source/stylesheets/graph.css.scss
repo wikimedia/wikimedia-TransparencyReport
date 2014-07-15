@@ -122,3 +122,26 @@
 		}
 	}
 }
+
+.graph_tooltip {
+	position: absolute;
+	color: #fff;
+	padding: 4px;
+	background: #182954;
+	height: 50px;
+	width: 150px;
+	opacity: 0.8;
+	border-radius: 2px;
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent #182954 transparent transparent;
+		top: 20px;
+		left: -10px;
+	}
+}

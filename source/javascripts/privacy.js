@@ -155,7 +155,7 @@
 	}
 
 	/*---Horizontal Graph---------*/
-	horizontalGraph = function ( element, groupBy, ds, dispatch ) {
+	horizontalGraph = function ( element, groupBy, ds, dispatch, tooltip ) {
 		var data = ds.groupBy( groupBy, true );
 		var margin = { top: 10, right: 10, bottom: 10, left: 20 },
 			width = $( '#' + element ).width() - margin.left - margin.right,
@@ -246,6 +246,18 @@
 						ds.filters[ groupBy ] = d.key;
 					}
 					dispatch.filter();
+				} )
+				.on( 'mouseover', function () {
+					return tooltip.style( 'display', 'block' );
+				} )
+				.on( 'mousemove', function ( d ) {
+					return tooltip
+						.html( '<b>' + d.key + '</b><br>' + d.value )
+						.style( 'top', ( event.pageY - 25 ) + 'px' )
+						.style( 'left', ( event.pageX + 25 ) + 'px' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
 				} )
 				.attr( 'class', className );
 
@@ -513,12 +525,16 @@
 			if ( error ) throw error;
 			var ds = new Requests();
 			ds.init( data );
-			var dispatch = d3.dispatch( "filter" );
+			var dispatch = d3.dispatch( 'filter' );
+			var tooltip = d3
+				.select( 'body' )
+				.append( 'div' )
+				.attr( 'class', 'graph_tooltip' )
+				.style( 'display', 'none' );
 
-			//countryGraph( '#bar_graph_by_country', ds, dispatch );
-			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch );
-			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch );
-			horizontalGraph( 'bar_graph_by_disclosed', 'disclosed', ds, dispatch );
+			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch, tooltip );
+			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch, tooltip );
+			horizontalGraph( 'bar_graph_by_disclosed', 'disclosed', ds, dispatch, tooltip );
 		} );
 
 		d3.json( '/data/comparison.json', function ( error, data ) {
