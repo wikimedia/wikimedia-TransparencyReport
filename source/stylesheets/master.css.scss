@@ -1,4 +1,5 @@
 $blue: #313876;
+$lightblue: #5D95FF;
 $gray: #999;
 $black: #000;
 
@@ -106,4 +107,66 @@ footer {
 
 .blue {
 	color: $blue;
+}
+
+
+blockquote {
+	border: none;
+	color: $lightblue;
+	font: 200px serif;
+	line-height: 50px;
+	margin-top: 60px;
+	width: 550px;
+	margin-bottom: 60px;
+
+	p {
+		color: #000;
+		font: 30px serif;
+		font-weight: normal;
+		width: 400px;
+		margin-left: 100px;
+	}
+
+	footer {
+		padding: 0;
+		padding-top: 30px;
+		border: none;
+		font-size: 12px;
+
+		p {
+			font: 18px sans-serif;
+			margin-top: 25px;
+			margin-left: 190px;
+			color: $gray;
+			text-transform: uppercase;
+		}
+
+		&:before {
+			padding: 0;
+			margin: 0;
+			content: "";
+		}
+
+		img {
+			width: 72px;
+			margin-left: 100px;
+			height: 72px;
+			border-radius: 50%;
+			float: left;
+			border: 3px solid $lightblue;
+		}
+	}
+
+	&:before {
+		display: inline-block;
+		float: left;
+		content: '“';
+	}
+
+	&:after {
+		margin-top: -70px;
+		float: right;
+		content: '”';
+	}
+
 }
