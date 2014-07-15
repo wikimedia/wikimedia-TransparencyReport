@@ -170,3 +170,35 @@ blockquote {
 	}
 
 }
+
+
+.scorecard {
+	margin: 10px 0;
+	border-top: 7px solid #d8d8d8;
+	background: #F0F2F4;
+	padding: 20px;
+
+	h2 {
+		margin: 0;
+		margin-bottom: 10px;
+		font: 12px sans-serif;
+		text-transform: uppercase;
+		color: #666;
+	}
+
+	dl {
+		margin: 0;
+
+		dt {
+			font: 25px serif;
+		}
+
+		dd {
+			font-size: 150px;
+			line-height: 160px;
+			color: $blue;
+			text-align: center;
+		}
+	}
+
+}
