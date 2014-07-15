@@ -118,8 +118,9 @@
 					return d.key;
 				}  );
 
-			bar.enter().append( 'rect' ).attr( 'class', className );
 			bar
+				.enter()
+				.append( 'rect' )
 				.on( 'click', function ( d ) {
 					if ( ds.filters[ 'country' ] === d.key ) {
 						delete ds.filters[ 'country' ];
@@ -128,6 +129,9 @@
 					}
 					dispatch.filter();
 				} )
+				.attr( 'class', className );
+
+			bar
 				.attr( 'x', function ( d ) {
 					return xScale(d.key)
 				} )
@@ -178,13 +182,9 @@
 			var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
 
 			var labels = graph.selectAll( 'text.' + className ).data( data )
-			labels.enter().append( 'text' ).attr( 'class', className );
 			labels
-				.attr( 'y', function ( d ) {
-					return yScale( d.key );
-				} )
-				.attr( 'dy', -3 )
-				.attr( 'x', ( hasFlags ) ? 20 : 0 )
+				.enter()
+				.append( 'text' )
 				.on( 'click', function ( d ) {
 					if ( ds.filters[ groupBy ] === d.key ) {
 						delete ds.filters[ groupBy ];
@@ -193,6 +193,14 @@
 					}
 					dispatch.filter();
 				} )
+				.attr( 'class', className );
+
+			labels
+				.attr( 'y', function ( d ) {
+					return yScale( d.key );
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', ( hasFlags ) ? 20 : 0 )
 				.html( function ( d ) {
 					return d.key;
 				} );
@@ -200,7 +208,19 @@
 			// If its a country graphy
 			if ( hasFlags ) {
 				var flags = graph.selectAll( 'image.' + className ).data( data )
-				flags.enter().append( 'image' ).attr( 'class', className );
+				flags
+					.enter()
+					.append( 'image' )
+					.on( 'click', function ( d ) {
+						if ( ds.filters[ groupBy ] === d.key ) {
+							delete ds.filters[ groupBy ];
+						} else {
+							ds.filters[ groupBy ] = d.key;
+						}
+						dispatch.filter();
+					} )
+					.attr( 'class', className );
+
 				flags
 					.attr( 'width', 16 )
 					.attr( 'height', 11 )
@@ -210,27 +230,15 @@
 					.attr( 'y', function ( d ) {
 						return yScale( d.key ) - 14;
 					} )
-					.attr( 'x', 0 )
-					.on( 'click', function ( d ) {
-						if ( ds.filters[ groupBy ] === d.key ) {
-							delete ds.filters[ groupBy ];
-						} else {
-							ds.filters[ groupBy ] = d.key;
-						}
-						dispatch.filter();
-					} );
+					.attr( 'x', 0 );
 			}
 		}
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
 			var bar = graph.selectAll( 'rect.' + className ).data( data )
-			bar.enter().append( 'rect' ).attr( 'class', className );
 			bar
-				.attr( 'height', yScale.rangeBand() )
-				.attr( 'y', function ( d ) {
-					return yScale( d.key );
-				} )
-				.attr( 'x', 0 )
+				.enter()
+				.append( 'rect' )
 				.on( 'click', function ( d ) {
 					if ( ds.filters[ groupBy ] === d.key ) {
 						delete ds.filters[ groupBy ];
@@ -239,6 +247,14 @@
 					}
 					dispatch.filter();
 				} )
+				.attr( 'class', className );
+
+			bar
+				.attr( 'height', yScale.rangeBand() )
+				.attr( 'y', function ( d ) {
+					return yScale( d.key );
+				} )
+				.attr( 'x', 0 )
 				.transition()
 				.attr( 'width', function ( d ) {
 					return xScale( d.value )
