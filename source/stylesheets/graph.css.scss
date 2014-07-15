@@ -123,6 +123,21 @@
 	}
 }
 
+.legend {
+	border-left: 20px solid #000;
+	margin-top: 10px;
+	padding-left: 10px;
+	margin-left: 20px;
+
+	&.legend_yes {
+		border-color: #5A93FD;
+	}
+
+	&.legend_no {
+		border-color: #C70000;
+	}
+}
+
 .graph_tooltip {
 	position: absolute;
 	color: #fff;

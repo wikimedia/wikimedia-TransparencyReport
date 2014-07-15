@@ -534,7 +534,6 @@
 
 			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch, tooltip );
 			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch, tooltip );
-			horizontalGraph( 'bar_graph_by_disclosed', 'disclosed', ds, dispatch, tooltip );
 		} );
 
 		d3.json( '/data/comparison.json', function ( error, data ) {
