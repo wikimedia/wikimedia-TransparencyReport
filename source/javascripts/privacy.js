@@ -37,13 +37,14 @@
 
 		function init( row, column ) {
 			if ( !data[row[ column ] ] ) {
-				data[ row[ column ] ] = 0;
+				data[ row[ column ] ] = [ 0, 0 ];
 			}
 		}
 
 		function increment( row, column ) {
 			init( row, column );
-			data[ row[ column ] ] += 1;
+			var index = ( row.disclosed === 'Yes' ) ? 0 : 1;
+			data[ row[ column ] ][ index ]  += 1;
 		}
 
 		for ( var i in original_data ) {
@@ -173,7 +174,10 @@
 			.rangeRoundBands( [ margin.top, height ], 0.6 );
 		var xScale = d3.scale.linear()
 			.domain( [0, d3.max( data, function (d) {
-				return d.value;
+				var total = d.value.reduce( function ( p, c, i, a ) {
+					return p + c;
+				} );
+				return total;
 			} ) ] )
 			.range( [ 0, width ] );
 
@@ -235,7 +239,23 @@
 		}
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
-			var bar = graph.selectAll( 'rect.' + className ).data( data )
+			var stacked_data = [];
+			data.forEach( function ( d ) {
+				stacked_data.push( {
+					key: d.key,
+					disclosed: true,
+					value: d.value[0],
+					x: d.value[1]
+				} );
+				stacked_data.push( {
+					key: d.key,
+					disclosed: false,
+					value: d.value[1],
+					x: 0
+				} );
+			} );
+
+			var bar = graph.selectAll( 'rect.' + className ).data( stacked_data )
 			bar
 				.enter()
 				.append( 'rect' )
@@ -266,10 +286,15 @@
 				.attr( 'y', function ( d ) {
 					return yScale( d.key );
 				} )
-				.attr( 'x', 0 )
+				.classed( 'disclosed', function ( d ) {
+					return d.disclosed;
+				} )
 				.transition()
+				.attr( 'x', function ( d ) {
+					return xScale( d.x );
+				} )
 				.attr( 'width', function ( d ) {
-					return xScale( d.value )
+					return xScale( d.value );
 				} );
 		}
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
