@@ -204,7 +204,7 @@
 					return yScale( d.key );
 				} )
 				.attr( 'dy', -3 )
-				.attr( 'x', ( hasFlags ) ? 20 : 0 )
+				.attr( 'x', ( hasFlags ) ? 23 : 0 )
 				.html( function ( d ) {
 					return d.key;
 				} );
@@ -223,13 +223,14 @@
 						}
 						dispatch.filter();
 					} )
-					.attr( 'class', className );
+					.attr( 'class', className )
+					.classed( 'flag', true);
 
 				flags
-					.attr( 'width', 16 )
+					.attr( 'width', 18 )
 					.attr( 'height', 11 )
 					.attr( 'xlink:href', function ( d ) {
-						return '/images/flags/' + codes[ d.key ] + '.png';
+						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
 					} )
 					.attr( 'y', function ( d ) {
 						return yScale( d.key ) - 14;
