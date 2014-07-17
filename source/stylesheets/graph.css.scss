@@ -1,6 +1,8 @@
+@import 'variables.css.scss';
+
 .analytics {
 	background: #f0f2f4;
-	border-top: 3px solid #dadada;
+	border-top: 6px solid $blue;
 	margin: 40px 0;
 
 	h2 {
@@ -149,7 +151,7 @@
 	background: #182954;
 	height: 50px;
 	width: 150px;
-	opacity: 0.8;
+	opacity: 0.99;
 	border-radius: 2px;
 
 	&:after {

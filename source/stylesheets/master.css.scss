@@ -1,8 +1,9 @@
-$blue: #313876;
-$lightblue: #5D95FF;
-$gray: #999;
-$black: #000;
+@import 'variables.css.scss';
 
+body {
+	font-size: 15px;
+	line-height: 1.8;
+}
 .clear {
 	clear: both;
 }
@@ -50,8 +51,8 @@ h2 {
 		font-size: 60px;
 
 		> small {
-			font: 20px sans-serif;
-			font-weight: 800;
+			font: 18px sans-serif;
+			font-weight: 400;
 			text-transform: uppercase;
 		}
 	}
@@ -59,6 +60,7 @@ h2 {
 
 .lead {
 	font: 30px serif;
+	margin-bottom: 38px;
 }
 
 footer {
@@ -82,7 +84,7 @@ footer {
 }
 
 .story {
-	border-top: 7px solid #d8d8d8;
+	border-top: 6px solid $blue;
 	background: #F0F2F4;
 	padding: 20px;
 
@@ -94,12 +96,12 @@ footer {
 	h3 {
 		margin: 0;
 		font-family: serif;
-		color: $blue;
+		font-size: 25px;
 
 		small {
-			font: 10px sans-serif;
+			font: 12px sans-serif;
 			text-transform: uppercase;
-			font-weight: 800;
+			font-weight: 400;
 			color: $gray;
 		}
 	}
@@ -112,11 +114,11 @@ footer {
 
 blockquote {
 	border: none;
-	color: $lightblue;
-	font: 200px serif;
+	color: $blue;
+	font: 140px serif;
 	line-height: 50px;
 	margin-top: 60px;
-	width: 550px;
+	width: 510px;
 	margin-bottom: 60px;
 
 	p {
@@ -124,7 +126,7 @@ blockquote {
 		font: 30px serif;
 		font-weight: normal;
 		width: 400px;
-		margin-left: 100px;
+		margin-left: 80px;
 	}
 
 	footer {
@@ -153,7 +155,7 @@ blockquote {
 			height: 72px;
 			border-radius: 50%;
 			float: left;
-			border: 3px solid $lightblue;
+			border: 3px solid $blue;
 		}
 	}
 
@@ -174,7 +176,7 @@ blockquote {
 
 .scorecard {
 	margin: 10px 0;
-	border-top: 7px solid #d8d8d8;
+	border-top: 7px solid $blue;
 	background: #F0F2F4;
 	padding: 20px;
 
