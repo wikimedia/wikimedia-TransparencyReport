@@ -310,7 +310,7 @@
 
 
 	/*---Bubble Graph---------*/
-	bubbleGraph = function ( elementId, data, color, dispatch ) {
+	bubbleGraph = function ( elementId, data, className, dispatch ) {
 		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 			width = $( '#' + elementId ).width() - margin.left - margin.right,
 			height = $( '#' + elementId ).height() - margin.top - margin.bottom;
@@ -321,7 +321,7 @@
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-		function makeCircles ( data, color ) {
+		function makeCircles ( data, className ) {
 			var max = d3.max( data, function ( d ) {
 				return d.requests;
 			} );
@@ -363,8 +363,8 @@
 				.attr( 'r', 0 );
 
 			circles
+				.attr( 'class', className )
 				.transition()
-				.attr( 'fill', color )
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
 				} )
@@ -538,10 +538,10 @@
 
 		}
 
-		makeCircles ( data, color );
+		makeCircles ( data, className );
 
-		dispatch.on( 'complied.' + elementId, function ( data, color ) {
-			makeCircles ( data, color );
+		dispatch.on( 'complied.' + elementId, function ( data, className ) {
+			makeCircles ( data, className );
 		} );
 	}
 
@@ -550,13 +550,13 @@
 		d3.json( '/data/comparison.json', function ( error, data ) {
 			if ( error ) throw error;
 			var dispatch = d3.dispatch( 'complied' );
-			bubbleGraph( 'compare_graph', data.allRequests, '#5A93FD', dispatch );
+			bubbleGraph( 'compare_graph', data.allRequests, 'all_requests', dispatch );
 
 			$( '#complied_requests_check' ).click( function ( e ) {
 				if ( $( this ).prop( 'checked' ) ) {
-					dispatch.complied( data.compliedRequests, '#C70000' );
+					dispatch.complied( data.compliedRequests, 'complied_requests' );
 				} else {
-					dispatch.complied( data.allRequests, '#5A93FD' );
+					dispatch.complied( data.allRequests, 'all_requests' );
 				}
 			} );
 		} );
