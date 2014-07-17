@@ -547,21 +547,6 @@
 
 	/*---DOM Ready---------*/
 	$( function () {
-		d3.json( '/data/privacy.json', function ( error, data ) {
-			if ( error ) throw error;
-			var ds = new Requests();
-			ds.init( data );
-			var dispatch = d3.dispatch( 'filter' );
-			var tooltip = d3
-				.select( 'body' )
-				.append( 'div' )
-				.attr( 'class', 'graph_tooltip' )
-				.style( 'display', 'none' );
-
-			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch, tooltip );
-			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch, tooltip );
-		} );
-
 		d3.json( '/data/comparison.json', function ( error, data ) {
 			if ( error ) throw error;
 			var dispatch = d3.dispatch( 'complied' );
@@ -574,6 +559,62 @@
 					dispatch.complied( data.allRequests, '#5A93FD' );
 				}
 			} );
+		} );
+
+		function convertNumbers(row) {
+			var r = {};
+			for (var k in row) {
+				r[k] = +row[k];
+				if (isNaN(r[k])) {
+					r[k] = row[k];
+				}
+			}
+			return r;
+		}
+
+		d3.csv( '/data/sum.csv', convertNumbers, function ( data ) {
+			var facts = { requests: [] };
+			data.forEach( function ( d ) {
+				if ( d[ 'Total' ] !== ( d[ 'Criminal Subpoena' ] +
+					d[ 'Informal Request' ] +
+					d[ 'Government' ] +
+					d[ 'Civil Subpoena' ] ) )
+				{
+					throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
+				}
+
+				function addFact( country, type, disclosed, q ) {
+					for( var i = 0; i < q; i++ ) {
+						facts.requests.push( {
+							"country": country,
+							"type": type,
+							"disclosed": disclosed
+						} );
+					}
+				}
+
+				addFact( d[ 'Country' ], 'Criminal Subpoena', 'Yes', d[ 'Criminal Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Criminal Subpoena', 'No', d[ 'Criminal Subpoena' ] - d[ 'Criminal Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Request', 'Yes', d[ 'Informal Request Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Request', 'No', d[ 'Informal Request' ] - d[ 'Informal Request Complied' ] );
+				addFact( d[ 'Country' ], 'Government', 'Yes', d[ 'Government Complied' ] );
+				addFact( d[ 'Country' ], 'Government', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
+				addFact( d[ 'Country' ], 'Civil Supoena', 'Yes', d[ 'Civil Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Civil Subpoena', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
+			} );
+			data = facts;
+
+			var ds = new Requests();
+			ds.init( data );
+			var dispatch = d3.dispatch( 'filter' );
+			var tooltip = d3
+				.select( 'body' )
+				.append( 'div' )
+				.attr( 'class', 'graph_tooltip' )
+				.style( 'display', 'none' );
+
+			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch, tooltip );
+			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch, tooltip );
 		} );
 	} );
 
