@@ -4,12 +4,17 @@ body {
 	font-size: 15px;
 	line-height: 1.8;
 }
+
 .clear {
 	clear: both;
 }
 
 a {
-	color: $black;
+	color: $blue;
+	&:hover {
+		color: $blue;
+		text-decoration: underline;
+	}
 }
 
 h2 {
@@ -26,11 +31,12 @@ h2 {
 		color: $black;
 		border-bottom: 2px solid $blue;
 		margin-left: 10px;
-		font-size: 1.1em;
+		font-size: 16px;
 	}
 
 	.navbar-brand {
 		color: $black;
+		font-size: 16px;
 
 		> img {
 			width: 30px;
