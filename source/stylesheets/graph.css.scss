@@ -80,11 +80,11 @@
 
 .bar_graph_horizontal, .bar_graph_vertical {
 	rect.blue_bars {
-		fill: #548EF9;
+		fill: $blue;
 	}
 
 	rect.disclosed {
-		fill: #C70000;
+		fill: $red;
 	}
 
 	rect.gray_bars {
@@ -108,13 +108,21 @@
 	text.company {
 		transition: all 1s ease;
 		font-size: 16px;
-		font-weight: 800;
+		font-weight: 400;
 
 		&.in_circle {
 			transition: all 1s ease;
 			text-anchor: middle;
 			fill: #fff;
 		}
+	}
+
+	circle.all_requests {
+		fill: #1059e1;
+	}
+
+	circle.complied_requests {
+		fill: #b51700;
 	}
 
 	text.request {
@@ -136,11 +144,11 @@
 	margin-left: 20px;
 
 	&.legend_yes {
-		border-color: #5A93FD;
+		border-color: $red;
 	}
 
 	&.legend_no {
-		border-color: #C70000;
+		border-color: $blue;
 	}
 }
 
