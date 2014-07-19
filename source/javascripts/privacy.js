@@ -7,6 +7,7 @@
 		"Spain": "es",
 		"India": "in",
 		"Sri Lanka": "lk",
+		"Germany": "de",
 		"Canada": "ca",
 		"Nepal": "np",
 		"Pakistan": "pk",
@@ -274,8 +275,8 @@
 				.on( 'mousemove', function ( d ) {
 					return tooltip
 						.html( '<b>' + d.key + '</b><br>' + d.value )
-						.style( 'top', ( event.pageY - 25 ) + 'px' )
-						.style( 'left', ( event.pageX + 25 ) + 'px' );
+						.style( 'top', ( d3.event.pageY - 25 ) + 'px' )
+						.style( 'left', ( d3.event.pageX + 25 ) + 'px' );
 				} )
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
