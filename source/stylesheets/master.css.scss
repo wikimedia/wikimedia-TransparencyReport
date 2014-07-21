@@ -92,9 +92,14 @@ footer {
 }
 
 .story {
+	display: block;
 	border-top: 6px solid $blue;
 	background: #F0F2F4;
 	padding: 20px;
+
+	&:hover {
+		text-decoration: none;
+	}
 
 	hr {
 		border-color: #ddd;
@@ -105,6 +110,7 @@ footer {
 		margin: 0;
 		font-family: serif;
 		font-size: 25px;
+		color: #000;
 
 		small {
 			font: 12px sans-serif;
