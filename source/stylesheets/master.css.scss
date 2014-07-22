@@ -127,6 +127,15 @@ footer {
 	}
 }
 
+.blackout {
+	color: #000;
+	background: #000;
+
+	&:hover {
+		background: transparent;
+	}
+}
+
 .blue {
 	color: $blue;
 }
