@@ -241,15 +241,16 @@
 		}
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
-			var stacked_data = [];
+
+			var stackedData = [];
 			data.forEach( function ( d ) {
-				stacked_data.push( {
+				stackedData.push( {
 					key: d.key,
 					disclosed: true,
 					value: d.value[0],
 					x: d.value[1]
 				} );
-				stacked_data.push( {
+				stackedData.push( {
 					key: d.key,
 					disclosed: false,
 					value: d.value[1],
@@ -257,7 +258,7 @@
 				} );
 			} );
 
-			var bar = graph.selectAll( 'rect.' + className ).data( stacked_data )
+			var bar = graph.selectAll( 'rect.' + className ).data( stackedData )
 			bar
 				.enter()
 				.append( 'rect' )
@@ -273,8 +274,20 @@
 					return tooltip.style( 'display', 'block' );
 				} )
 				.on( 'mousemove', function ( d ) {
+						var numDisclosed, numTotal;
+						stackedData.forEach( function( sd ) {
+							if ( sd.key === d.key ) {
+								if ( sd.disclosed === true ) {
+									numDisclosed = sd.value;
+								} else {
+									numTotal = sd.value;
+								}
+
+							}
+						} );
+
 					return tooltip
-						.html( '<b>' + d.key + '</b><br>' + d.value )
+						.html( '<b>' + d.key + '</b><br>' + numTotal + '</b><br>' + numDisclosed )
 						.style( 'top', ( d3.event.pageY - 25 ) + 'px' )
 						.style( 'left', ( d3.event.pageX + 25 ) + 'px' );
 				} )
@@ -302,6 +315,7 @@
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
 		makeLabels( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
+
 
 		dispatch.on( 'filter.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
