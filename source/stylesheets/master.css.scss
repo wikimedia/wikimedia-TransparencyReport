@@ -3,6 +3,7 @@
 body {
 	font-size: 15px;
 	line-height: 1.8;
+	background-color: #F3F5F6;
 }
 
 .clear {
@@ -48,8 +49,8 @@ h2 {
 
 .container .jumbotron {
 	padding-left: 10px;
-	padding-top: 26px;
-	padding-bottom: 34px;
+	padding-top: 38px;
+	padding-bottom: 22px;
 	margin-bottom: 42px;
 	background: transparent;
 	font-family: serif;
@@ -110,7 +111,7 @@ footer {
 .story {
 	display: block;
 	border-top: 6px solid $blue;
-	background: #F0F2F4;
+	background: #ffffff;
 	padding: 20px;
 
 	&:hover {
@@ -222,7 +223,7 @@ blockquote {
 .scorecard {
 	margin: 5px 0 10px 0;
 	border-top: 7px solid $blue;
-	background: #F0F2F4;
+	background: #fffff;
 	padding: 20px;
 
 	h2 {
