@@ -191,6 +191,16 @@ blockquote {
 			margin-left: 190px;
 			color: $gray;
 			text-transform: uppercase;
+
+			small {
+				display: inline;
+				text-transform: none;
+				margin-left: 10px;
+
+				&:before {
+					content: '';
+				}
+			}
 		}
 
 		&:before {
@@ -216,7 +226,7 @@ blockquote {
 	}
 
 	&:after {
-		margin-top: -70px;
+		margin-top: -80px;
 		float: right;
 		content: '”';
 	}
