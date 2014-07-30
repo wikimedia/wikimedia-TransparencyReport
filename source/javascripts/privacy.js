@@ -3,7 +3,7 @@
 	var codes = {
 		"USA": "us",
 		"France": "fr",
-		"UK": "gb",
+		"United Kingdom": "gb",
 		"Spain": "es",
 		"India": "in",
 		"Sri Lanka": "lk",
@@ -13,6 +13,9 @@
 		"Pakistan": "pk",
 		"Brazil": "br",
 		"China": "cn",
+		"Switzerland": "ch",
+		"Singapore": "sg",
+		"New Zealand": "nz",
 		"Japan": "jp"
 	}
 
