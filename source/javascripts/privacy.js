@@ -93,7 +93,13 @@
 	/*---Horizontal Graph---------*/
 	horizontalGraph = function ( element, groupBy, ds, dispatch, tooltip ) {
 		var data = ds.groupBy( groupBy, true );
-		var margin = { top: 10, right: 10, bottom: 10, left: 20 },
+		var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
+		var margin = {
+				top: 10,
+				right: 10,
+				bottom: 10,
+				left: ( hasFlags) ? 40 : 20
+			},
 			width = $( '#' + element ).width() - margin.left - margin.right,
 			height = $( '#' + element ).height() - margin.top - margin.bottom;
 		var graph = d3.select( '#' + element )
@@ -102,6 +108,12 @@
 			.attr( 'height', height + margin.top + margin.bottom )
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
+		var leftLine = graph.append( 'line' )
+			.attr( 'class', 'left-line' )
+			.attr( 'x1', 0 )
+			.attr( 'x2', 0 )
+			.attr( 'y1', 20 )
+			.attr( 'y2', height - 10 );
 		var yScale = d3.scale.ordinal()
 			.domain( data.map( function ( d ) {
 				return d.key;
@@ -118,8 +130,6 @@
 
 
 		function makeLabels( graph, data, xScale, yScale, ds, dispatch, className ) {
-			var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
-
 			var labels = graph.selectAll( 'text.' + className ).data( data )
 			labels
 				.enter()
@@ -139,7 +149,7 @@
 					return yScale( d.key );
 				} )
 				.attr( 'dy', -3 )
-				.attr( 'x', ( hasFlags ) ? 23 : 0 )
+				.attr( 'x', 5 )
 				.html( function ( d ) {
 					return d.key;
 				} );
@@ -162,15 +172,15 @@
 					.classed( 'flag', true);
 
 				flags
-					.attr( 'width', 18 )
-					.attr( 'height', 11 )
+					.attr( 'width', 28 )
+					.attr( 'height', 16 )
 					.attr( 'xlink:href', function ( d ) {
 						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
 					} )
 					.attr( 'y', function ( d ) {
-						return yScale( d.key ) - 14;
+						return yScale( d.key ) - 8;
 					} )
-					.attr( 'x', 0 );
+					.attr( 'x', -33 );
 			}
 		}
 

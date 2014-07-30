@@ -79,6 +79,11 @@
 }
 
 .bar_graph_horizontal, .bar_graph_vertical {
+	line.left-line {
+		stroke: #ccc;
+		stroke-width: 1px;
+	}
+
 	rect.blue_bars {
 		fill: $blue;
 	}
