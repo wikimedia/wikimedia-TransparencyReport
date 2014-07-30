@@ -116,15 +116,19 @@ footer {
 	display: block;
 	border-top: 6px solid $blue;
 	background: #ffffff;
-	padding: 20px;
 
 	&:hover {
 		text-decoration: none;
 	}
 
+	img {
+		width: 100%;
+
+	}
+
 	hr {
 		border-color: #ddd;
-		margin: 10px -20px;
+		margin: 10px 0;
 	}
 
 	h3 {
@@ -132,6 +136,7 @@ footer {
 		font-family: serif;
 		font-size: 22px/28px;
 		color: #333;
+		margin: 20px;
 
 		small {
 			font: 12px sans-serif;
@@ -139,6 +144,10 @@ footer {
 			font-weight: 400;
 			color: $gray;
 		}
+	}
+
+	p {
+		margin: 20px;
 	}
 
 	.icon {
