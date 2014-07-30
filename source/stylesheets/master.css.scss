@@ -246,10 +246,14 @@ blockquote {
 		}
 
 		dd {
-			font-size: 150px;
+			font-size: 100px;
 			line-height: 160px;
 			color: $blue;
 			text-align: center;
+
+			small {
+				font-size: 40px;
+			}
 		}
 	}
 
