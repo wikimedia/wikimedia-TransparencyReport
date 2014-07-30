@@ -574,6 +574,17 @@
 
 			horizontalGraph( 'bar_graph_by_country', 'country', ds, dispatch, tooltip );
 			horizontalGraph( 'bar_graph_by_type', 'type', ds, dispatch, tooltip );
+
+			$( '#by_country_show_all' ).click( function () {
+				delete ds.filters[ 'country' ];
+				dispatch.filter();
+			} );
+
+			$( '#request_type_show_all' ).click( function () {
+				delete ds.filters[ 'type' ];
+				dispatch.filter();
+			} );
+
 		} );
 	} );
 
