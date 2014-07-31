@@ -585,6 +585,15 @@
 				dispatch.filter();
 			} );
 
+			dispatch.on( 'filter.show_all', function () {
+				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
+				if ( ds.filters.country ) {
+					$( '#by_country_show_all' ).removeClass( 'disabled' );
+				}
+				if ( ds.filters.type ) {
+					$( '#request_type_show_all' ).removeClass( 'disabled' );
+				}
+			} );
 		} );
 	} );
 
