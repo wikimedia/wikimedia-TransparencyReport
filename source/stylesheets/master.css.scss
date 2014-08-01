@@ -35,13 +35,14 @@ h2 {
 	.navbar-nav > li > a {
 		color: $black;
 		border-bottom: 2px solid $lightgray;
+		border-color: $lightgray;
 		margin-left: 10px;
 		font-size: 16px;
 		padding: 16px 0 18px 0;
 		width: 115px;
 
 		&:hover, &.current {
-			border-bottom-color: $blue;
+			border-color: $blue;
 		}
 	}
 
@@ -305,4 +306,13 @@ blockquote {
 		}
 	}
 
+}
+
+@media (max-width: 990px){
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
+		border-bottom: none;
+		border-left-width: 2px;
+		border-left-style: solid;
+		padding-left: 10px;
+	}
 }
