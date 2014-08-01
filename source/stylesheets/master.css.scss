@@ -24,6 +24,10 @@ a {
 
 h2 {
 	font-family: serif;
+	&.faq {
+		margin-top: 50px;
+		cursor: pointer;
+	}
 }
 
 .navbar-default {
