@@ -174,12 +174,14 @@
 
 .graph_tooltip {
 	position: absolute;
-	color: #fff;
-	padding: 4px;
-	background: #182954;
+	color: $black;
+	padding: 10px;
+	background: $lightgray;
 	width: 150px;
 	opacity: 0.99;
-	border-radius: 2px;
+	font-family: serif;
+	font-weight: normal;
+	font-size: 12px;
 
 	&:after {
 		content: "";
@@ -188,8 +190,17 @@
 		height: 0;
 		border-width: 5px;
 		border-style: solid;
-		border-color: transparent #182954 transparent transparent;
+		border-color: transparent $lightgray transparent transparent;
 		top: 20px;
 		left: -10px;
+	}
+
+	span {
+		display: block;
+		margin: 0;
+		margin-top: -10px;
+		color: $gray;
+		font-family: sans-serif;
+		font-size: 18px;
 	}
 }

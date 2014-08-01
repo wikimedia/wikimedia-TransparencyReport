@@ -231,7 +231,10 @@
 						} );
 
 					return tooltip
-						.html( '<b>' + d.key + '</b><br>' + numTotal + '</b><br>' + numDisclosed )
+						.html( '<b>' + d.key + '</b>'
+							+ '<span>' + numTotal + '</span>'
+							+ '<b>Something</b>'
+							+ '<span>' + numDisclosed + '</span>' )
 						.style( 'top', ( d3.event.pageY - 25 ) + 'px' )
 						.style( 'left', ( d3.event.pageX + 25 ) + 'px' );
 				} )
