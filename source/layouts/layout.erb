@@ -24,7 +24,9 @@
 						</button>
 						<a class="navbar-brand" href="/">
 							<img src="/images/logo.png" />
-							Wikimedia Foundation Transparency Report
+							<% if request.path != 'index.html'  %>
+								Wikimedia Foundation Transparency Report
+							<% end %>
 						</a>
 					</div>
 					<div id="navbar-collapse" class="collapse navbar-collapse">
