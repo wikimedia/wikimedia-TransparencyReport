@@ -70,3 +70,15 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+helpers do
+  def navigation_link(label, url)
+    current = false
+    if url == '/'
+      current = url == '/' && request.path == 'index.html'
+    else
+      current = "/#{request.path}".include?(url)
+    end
+    "<a href='#{url}' #{'class="current"' if current}>#{label}</a>"
+  end
+end
