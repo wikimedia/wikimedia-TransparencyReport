@@ -372,3 +372,39 @@ blockquote {
 		}
 	}
 }
+
+.legends {
+	overflow: hidden;
+
+	div {
+		padding: 20px;
+		width: 150px;
+		display: block;
+		float: left;
+		font-size: 12px;
+		line-height: 16px;
+
+		p {
+			margin-left: 15px;
+			margin-top: -3px;
+		}
+
+		.total_requests_circle, .complied_requests_circle {
+			display: block;
+			float: left;
+			height: 10px;
+			width: 10px;
+			border-radius: 20px;
+			padding: 0;
+			margin: 0;
+		}
+
+		.total_requests_circle {
+			background: #387DF6;
+		}
+
+		.complied_requests_circle {
+			background: #33415A;
+		}
+	}
+}
