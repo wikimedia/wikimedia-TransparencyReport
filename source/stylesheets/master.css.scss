@@ -10,6 +10,10 @@ body {
     padding: 0;
 }
 
+#summary_table {
+	width: 70%;
+}
+
 .clear {
 	clear: both;
 }
@@ -178,14 +182,29 @@ footer {
 	}
 
 	table {
-		margin: 20px;
-		width: 95%;
+		margin: 0px 20px 0px 20px;
+		width: 92%;
 
 		tr {
-			height: 40px;
+			height: 45px;
+			border-bottom: 1px #EDEDED solid;
+
+			&.last {
+				border-bottom: 2px #ABABAB solid;
+			}
+			td.indent {
+				padding-left:20px;
+			}
 
 			& > td:last-child {
 				text-align: right;
+			}
+
+			&:first-child, &:last-child, &:nth-last-child(2){
+				font-weight: bold;
+			}
+			&:last-child {
+				border-bottom: 0px;
 			}
 		}
 	}
