@@ -1,25 +1,24 @@
 <div class="jumbotron">
 	<h1>
 		<span class="blue mainheading">
-			Requests for <br />
-			User Data
+			<%= t('privacy.title') %>
 		</span>
 	</h1>
 </div>
 
 <div class="col-md-3">
 	<section class="scorecard">
-		<h2>January – June 2014</h2>
+		<h2><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</h2>
 		<dl>
-			<dt>Total Number of Requests</dt>
+			<dt><%= t('privacy.total_number_of_requests') %></dt>
 			<dd>56</dd>
 		</dl>
 	</section>
 	<br><br>
 	<section class="scorecard">
-		<h2>January – June 2014</h2>
+		<h2><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</h2>
 		<dl>
-			<dt>Percentage of Times Information Produced</dt>
+			<dt><%= t('privacy.percentage_of_times_information_produced') %></dt>
 			<dd>14<small>%</small></dd>
 		</dl>
 	</section>
@@ -28,27 +27,23 @@
 
 <div class="col-md-8">
 	<p class="lead">
-	<a href="https://meta.wikimedia.org/wiki/Wikimedia_Foundation_Guiding_Principles#Free_speech">Freedom of speech is essential</a> to the Wikimedia movement—our projects cannot flourish in an ecosystem where individuals cannot speak freely. Our users trust us to protect their identities against unlawful disclosure and we take this responsibility seriously.
+		<%= t('privacy.lead') %>
 	</p>
 
-	<p>However, every year, governments, individuals, and corporations ask us to disclose user data. Often, we have no nonpublic information to disclose because we <a href="https://wikimediafoundation.org/wiki/Privacy_policy#Types_of_Information_We_Receive_From_You.2C_How_We_Get_It.2C_.26_How_We_Use_It">collect little nonpublic information</a> about users and retain that information for a <a href="https://meta.wikimedia.org/wiki/Data_retention_guidelines">short period of time</a>. But when we do have data, we carefully evaluate every request before considering disclosure. If the requests do not meet our <a href="https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines">standards</a>—if they are overly broad, unclear, or irrelevant—we will push back on behalf of our users.</p>
-
-	<p>If we must produce information due to a legally valid request, we will notify the affected user before we disclose, if we are legally permitted and have the means to do so. In certain cases, we may help find assistance for users to fight an invalid request.</p>
-
-	<p>Below, you will find more information about the requests for user data we receive.</p>
+	<%= t('privacy.intro') %>
 
 	<blockquote>
-		<p>Man is least himself when he talks in his own person. Give him a mask, and he will tell you the truth.</p>
+		<p><%= t('privacy.quote') %></p>
 		<footer>
 			<img src="/images/quote_wilde.png">
-			<p>Oscar Wilde <small>Writer &amp; Poet (1891)</small></p>
+			<p><%= t('privacy.cite') %></p>
 		</footer>
 	</blockquote>
 
 	<div id="summary_table" class="story">
 		<h3>
-			<small>July 2012 – June 2014</small><br />
-			Summary
+			<small><%= t('dates.jul') %> 2012 – <%= t('dates.jun') %> 2014</small><br />
+			<%= t('privacy.summary') %>
 		</h3>
 		<hr />
 		<table>
@@ -102,9 +97,9 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2>Compared to other companies, we received relatively few requests.</h2>
+		<h2><%= t('privacy.compared_to_others') %></h2>
 		<ul class="tabs">
-			<li><a href="javascript: void(0);" class="bubble_time" id="bubble_all">All</a></li>
+			<li><a href="javascript: void(0);" class="bubble_time" id="bubble_all"><%= t('dates.all') %></a></li>
 			<li><a href="javascript: void(0);" class="bubble_time" id="bubble_12" >2012</a></li>
 			<li><a href="javascript: void(0);" class="bubble_time active" id="bubble_13" >2013</a></li>
 		</ul>
@@ -125,9 +120,9 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2>Requests for User Data, and How We Responded.</h2>
+		<h2><%= t('privacy.request_response') %></h2>
 		<ul class="tabs">
-			<li><a href="#">All</a></li>
+			<li><a href="#"><%= t('dates.all') %></a></li>
 			<li><a href="#">July 2012 - June 2013</a></li>
 			<li><a href="#">July - December 2013</a></li>
 			<li><a href="#">January - June 2014</a></li>
