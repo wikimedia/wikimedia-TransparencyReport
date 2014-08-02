@@ -426,7 +426,7 @@
 					if ( d.tiny ) {
 						return ( height / 2 ) - ( ( i + 1 ) * 15 );
 					} else {
-						return 0;
+						return 4;
 					}
 				} )
 				.attr( 'dx', function ( d ) {
