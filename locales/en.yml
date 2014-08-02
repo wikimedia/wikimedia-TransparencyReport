@@ -1,5 +1,16 @@
 ---
 en:
+  menu:
+    title: "Wikimedia Foundation Transparency Report"
+    privacy: "User Data"
+    content: "Content"
+    faq: "FAQ"
+    privacy_policy: "Privacy Policy"
+    data_retention_guidelines: "Data Retention Guidelines"
+    tou: "Terms of Use"
+    about_us: "About Us"
+    blog: "Blog"
+
   home:
     title: "Wikimedia Foundation"
     title_two: "Transparency<br> Report"
