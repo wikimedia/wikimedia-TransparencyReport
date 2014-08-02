@@ -272,7 +272,8 @@
 
 
 	/*---Bubble Graph---------*/
-	bubbleGraph = function ( elementId, data, className, dispatch ) {
+	bubbleGraph = function ( elementId, data, dispatch, year ) {
+
 		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 			width = $( '#' + elementId ).width() - margin.left - margin.right,
 			height = $( '#' + elementId ).height() - margin.top - margin.bottom;
@@ -283,12 +284,33 @@
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-		function makeCircles ( data, className ) {
+		function makeCircles ( csv_data, year ) {
+			var data = [];
+
+			csv_data.forEach( function ( d ) {
+				var row = {};
+				row.company = d['Name'];
+				if ( year === '2013' ) {
+					row.requests = +d['Total 2013'];
+					row.complied = +d['Complied 2013'];
+				} else if ( year === '2012' ) {
+					row.requests = +d['Total 2012'];
+					row.complied = +d['Complied 2012'];
+				} else {
+					row.requests = (+d['Total 2013']) + (+d['Total 2012']);
+					row.complied = (+d['Complied 2013']) + (+d['Complied 2012']);
+				}
+
+				if ( row.requests !== 0 ) {
+					data.push( row );
+				}
+			} );
+
 			var max = d3.max( data, function ( d ) {
 				return d.requests;
 			} );
 
-			var gap = max / 10;
+			var gap = max / 5;
 			var yCentre = max / 2;
 			var distance = gap;
 
@@ -313,19 +335,19 @@
 				}
 			} );
 
-			var circles = graph.selectAll( 'circle' ).data( data, function ( d ) {
+			var circles = graph.selectAll( 'circle.all_requests' ).data( data, function ( d ) {
 				return d.company;
 			} );
 
 			circles
 				.enter()
 				.append( 'circle' )
+				.attr( 'class', 'all_requests' )
 				.attr( 'cx', 0 )
 				.attr( 'cy', yScale( yCentre ) )
 				.attr( 'r', 0 );
 
 			circles
-				.attr( 'class', className )
 				.transition()
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
@@ -334,22 +356,24 @@
 					return yScale( yCentre );
 				} )
 				.attr( 'r', function ( d ) {
-					return 10 + xScale( d.requests / 2 ); // Should we add this constant?
+					return 1 + xScale( d.requests / 2 ); // Should we add this constant?
 				} );
 
-			var dots = graph.selectAll( 'circle.dots' ).data( data, function ( d ) {
+			circles.exit().remove()
+
+			var complied_requests = graph.selectAll( 'circle.complied_requests' ).data( data, function ( d ) {
 				return d.company;
 			} );
 
-			dots
+			complied_requests
 				.enter()
 				.append( 'circle' )
-				.attr( 'class', 'dots' )
+				.attr( 'class', 'complied_requests' )
 				.attr( 'cx', 0 )
 				.attr( 'cy', yScale( yCentre ) )
-				.attr( 'r', 0 );
+				.attr( 'r', '0' );
 
-			dots
+			complied_requests
 				.transition()
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
@@ -357,16 +381,11 @@
 				.attr( 'cy', function ( d ) {
 					return yScale( yCentre );
 				} )
-				.attr( 'r', '3' );
+				.attr( 'r', function ( d ) {
+					return 1 + xScale( d.complied / 2 ); // Should we add this constant?
+				} );
 
-			var axis = graph.selectAll( 'line.center' ).data( [0] ); // FIXME
-			axis.enter().append( 'line' ).attr( 'class', 'center' );
-			axis
-				.attr( 'x1', 0 )
-				.attr( 'x2', width )
-				.attr( 'y1', yScale( yCentre ) )
-				.attr( 'y2', yScale( yCentre ) );
-
+			complied_requests.exit().remove();
 
 			var companyLabel = graph.selectAll( 'text.company' ).data( data, function ( d ) {
 				return d.company;
@@ -397,79 +416,16 @@
 				} )
 				.attr( 'dy', function ( d, i ) {
 					if ( d.tiny ) {
-						return ( ( height / 2 ) - ( ( i + 1 ) * 20 ) ) * -1;
-					} else {
-						return -10;
-					}
-				} )
-				.attr( 'dx', function ( d ) {
-					return ( d.tiny ) ? 5 : 0;
-				} );
-
-			var requestLabel = graph.selectAll( 'text.request' ).data( data, function ( d ) {
-				return d.company;
-			} );
-
-			requestLabel
-				.enter()
-				.append( 'text' )
-				.attr( 'class', function ( d ) {
-					return ( d.tiny ) ? "out_of_circle" : "in_circle";
-				} )
-				.classed( 'request', true );
-
-			requestLabel
-				.attr( 'class', function ( d ) {
-					return ( d.tiny ) ? "out_of_circle" : "in_circle";
-				} )
-				.classed( 'request', true )
-				.html( function ( d ) {
-					return Number( d.requests ).toLocaleString() + ' requests';
-				} )
-				.transition()
-				.attr( 'x', function ( d ) {
-					return xScale( d.x );
-				} )
-				.attr( 'y', function ( d ) {
-					return yScale( yCentre );
-				} )
-				.attr( 'dy', function ( d, i ) {
-					if ( d.tiny ) {
 						return ( height / 2 ) - ( ( i + 1 ) * 15 );
 					} else {
-						return 20;
+						return 0;
 					}
 				} )
 				.attr( 'dx', function ( d ) {
 					return ( d.tiny ) ? 5 : 0;
 				} );
 
-			var topLine = graph.selectAll( 'line.topline' ).data( data, function ( d ) {
-				return d.company;
-			} );
-
-			topLine.enter().append( 'line' ).attr( 'class', 'topline' );
-
-			topLine
-				.transition()
-				.attr( 'x1', function ( d ) {
-					return xScale( d.x );
-				} )
-				.attr( 'x2', function ( d ) {
-					return xScale( d.x );
-				} )
-				.attr( 'y1', function ( d ) {
-					return yScale( yCentre ) - xScale( d.requests / 2 ) - 15;
-				} )
-				.attr( 'y2', function ( d, i ) {
-					return ( ( i + 1 ) * 20 ) - 10;
-				} )
-				.style( 'opacity', function ( d ) {
-					return ( d.tiny ) ? 1 : 0;
-				} );
-
-			topLine.exit().remove();
-
+			companyLabel.exit().remove();
 
 			var bottomLine = graph.selectAll( 'line.bottomline' ).data( data, function ( d ) {
 				return d.company;
@@ -489,7 +445,7 @@
 					return yScale( yCentre ) + xScale( d.requests / 2 ) + 15;
 				} )
 				.attr( 'y2', function ( d, i ) {
-					return height - ( ( i + 1 ) * 15 );
+					return height - ( ( i + 2 ) * 15 );
 				} )
 				.style( 'opacity', function ( d ) {
 					return ( d.tiny ) ? 1 : 0;
@@ -500,26 +456,36 @@
 
 		}
 
-		makeCircles ( data, className );
+		makeCircles ( data, year );
 
-		dispatch.on( 'complied.' + elementId, function ( data, className ) {
-			makeCircles ( data, className );
+		dispatch.on( 'timerange.' + elementId, function ( year ) {
+			makeCircles ( data, year );
 		} );
 	}
 
 	/*---DOM Ready---------*/
 	$( function () {
-		d3.json( '/data/comparison.json', function ( error, data ) {
+		d3.csv( '/data/other_companies.csv', function ( error, data ) {
 			if ( error ) throw error;
-			var dispatch = d3.dispatch( 'complied' );
-			bubbleGraph( 'compare_graph', data.allRequests, 'all_requests', dispatch );
+			var dispatch = d3.dispatch( 'timerange' );
+			bubbleGraph( 'compare_graph', data, dispatch, '2013' );
 
-			$( '#complied_requests_check' ).click( function ( e ) {
-				if ( $( this ).prop( 'checked' ) ) {
-					dispatch.complied( data.compliedRequests, 'complied_requests' );
-				} else {
-					dispatch.complied( data.allRequests, 'all_requests' );
-				}
+			$( '#bubble_all' ).click( function ( e ) {
+				$( '.bubble_time' ).removeClass( 'active' );
+				$( this ).addClass( 'active' );
+				dispatch.timerange( 'all' );
+			} );
+
+			$( '#bubble_12' ).click( function ( e ) {
+				$( '.bubble_time' ).removeClass( 'active' );
+				$( this ).addClass( 'active' );
+				dispatch.timerange( '2012' );
+			} );
+
+			$( '#bubble_13' ).click( function ( e ) {
+				$( '.bubble_time' ).removeClass( 'active' );
+				$( this ).addClass( 'active' );
+				dispatch.timerange( '2013' );
 			} );
 		} );
 

@@ -113,22 +113,16 @@
 }
 
 .bubble_graph {
-	line.topline, line.bottomline {
+	line.bottomline {
 		stroke: black;
 		stroke-width: 1;
-	}
-
-	line.center {
-		stroke: black;
-		stroke-width: 2;
-		stroke-dasharray: 2, 4;
-		opacity: 0.3;
 	}
 
 	text.company {
 		transition: all 1s ease;
 		font-size: 16px;
 		font-weight: 400;
+		text-anchor: middle;
 
 		&.in_circle {
 			transition: all 1s ease;
@@ -138,11 +132,11 @@
 	}
 
 	circle.all_requests {
-		fill: #1059e1;
+		fill: #387DF6;
 	}
 
 	circle.complied_requests {
-		fill: #b51700;
+		fill: #33415A;
 	}
 
 	text.request {
