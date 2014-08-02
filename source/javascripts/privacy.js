@@ -343,8 +343,12 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'all_requests' )
-				.attr( 'cx', 0 )
-				.attr( 'cy', yScale( yCentre ) )
+				.attr( 'cx', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'cy', function ( d ) {
+					return yScale( yCentre );
+				} )
 				.attr( 'r', 0 );
 
 			circles
@@ -369,8 +373,12 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'complied_requests' )
-				.attr( 'cx', 0 )
-				.attr( 'cy', yScale( yCentre ) )
+				.attr( 'cx', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'cy', function ( d ) {
+					return yScale( yCentre );
+				} )
 				.attr( 'r', '0' );
 
 			complied_requests
