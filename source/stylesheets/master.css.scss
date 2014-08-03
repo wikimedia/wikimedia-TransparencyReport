@@ -478,3 +478,50 @@ blockquote {
 		}
 	}
 }
+
+.faq {
+	.question {
+		cursor: pointer;
+		width: 610px;
+
+		img {
+			transition: all 1s ease;
+			width: 20px;
+			display: block;
+			float: left;
+			margin-top: 10px;
+		}
+
+		span {
+			display: block;
+			margin-left: 30px;
+		}
+
+		&.open > img {
+			transform: rotate(-180deg);
+			/* Safari */
+			-webkit-transform: rotate(-180deg);
+
+			/* Firefox */
+			-moz-transform: rotate(-180deg);
+
+			/* IE */
+			-ms-transform: rotate(-180deg);
+
+			/* Opera */
+			-o-transform: rotate(-180deg);
+
+			/* Internet Explorer */
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+		}
+	}
+
+	.answer {
+		width: 610px;
+		margin-left: 30px;
+	}
+
+	hr {
+		border-bottom: 1px solid #d1d1d1;
+	}
+}
