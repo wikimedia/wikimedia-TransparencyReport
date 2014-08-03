@@ -48,47 +48,47 @@
 		<hr />
 		<table>
 			<tr>
-				<td>Total Number of Requests</td>
+				<td><%= t('privacy.total_number_of_requests') %></td>
 				<td>56</td>
 			</tr>
 			<tr>
-				<td class="indent">Information Produced</td>
+				<td class="indent"><%= t('privacy.information_produced') %></td>
 				<td>8</td>
 			</tr>
 			<tr>
-				<td class="indent">Informal Non-Government Requests</td>
+				<td class="indent"><%= t('privacy.informal_non_govt') %></td>
 				<td>28</td>
 			</tr>
 			<tr>
-				<td class="indent">Informal Government Requests</td>
+				<td class="indent"><%= t('privacy.informal_govt') %></td>
 				<td>15</td>
 			</tr>
 			<tr>
-				<td class="indent"><a href="/faq#civil_subpoena">Civil Subpoenas</a></td>
+				<td class="indent"><a href="/faq#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a></td>
 				<td>8</td>
 			</tr>
 			<tr>
-				<td class="indent"><a href="/faq#criminal_subpoena">Criminal Subpoenas</a></td>
+				<td class="indent"><a href="/faq#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a></td>
 				<td>5</td>
 			</tr>
 			<tr>
-				<td class="indent">Administrative Subpoenas</td>
+				<td class="indent"><%= t('privacy.administrative_subpoenas') %></td>
 				<td>0</td>
 			</tr>
 			<tr>
-				<td class="indent">Search Warrants</td>
+				<td class="indent"><%= t('privacy.search_warrants') %></td>
 				<td>0</td>
 			</tr>
 			<tr class="last">
-				<td class="indent">Court Orders</td>
+				<td class="indent"><%= t('privacy.court_orders') %></td>
 				<td>0</td>
 			</tr>
 			<tr>
-				<td>User Accounts Potentially Affected</td>
+				<td><%= t('privacy.user_potentially_affected') %></td>
 				<td>69</td>
 			</tr>
 			<tr>
-				<td>User Accounts Actually Affected</td>
+				<td><%= t('privacy.user_actually_affected') %></td>
 				<td>11</td>
 			</tr>
 		</table>
@@ -106,10 +106,10 @@
 		<div id="compare_graph" class="bubble_graph"></div>
 		<div class="legends">
 			<div>
-				<span class="total_requests_circle"></span><p>Total Requests</p>
+				<span class="total_requests_circle"></span><p><%= t('privacy.total_requests') %></p>
 			</div>
 			<div>
-				<span class="complied_requests_circle"></span><p>Requests where information was produced</p>
+				<span class="complied_requests_circle"></span><p><%= t('privacy.information_was_produced') %></p>
 			</div>
 		</div>
 	</div>
@@ -123,23 +123,23 @@
 		<h2><%= t('privacy.request_response') %></h2>
 		<ul class="tabs">
 			<li><a href="#"><%= t('dates.all') %></a></li>
-			<li><a href="#">July 2012 - June 2013</a></li>
-			<li><a href="#">July - December 2013</a></li>
-			<li><a href="#">January - June 2014</a></li>
+			<li><a href="#"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
+			<li><a href="#"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
+			<li><a href="#"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
 		</ul>
 		<div class="graph">
 			<div class="row">
 				<div class="col-md-4">
-					<h3>Request Type<a id="request_type_show_all" href="javascript: void(0)" class="disabled">Show All</a></h3>
+					<h3><%= t('privacy.request_type') %><a id="request_type_show_all" href="javascript: void(0)" class="disabled"><%= t('privacy.show_all') %></a></h3>
 					<div id="bar_graph_by_type" class="bar_graph_horizontal"></div>
-					<h3>Information Produced?</h3>
+					<h3><%= t('privacy.information_produced_title') %></h3>
 					<div>
-						<p class="legend legend_yes">Yes</p>
-						<p class="legend legend_no">No</p>
+						<p class="legend legend_yes"><%= t('yn.yess') %></p>
+						<p class="legend legend_no"><%= t('yn.noo') %></p>
 					</div>
 				</div>
 				<div class="col-md-7">
-					<h3>By Country<a id="by_country_show_all" href="javascript: void(0)" class="disabled">Show All</a></h3>
+					<h3><%= t('privacy.by_country') %><a id="by_country_show_all" href="javascript: void(0)" class="disabled"><%= t('privacy.show_all') %></a></h3>
 					<div id="bar_graph_by_country" class="bar_graph_horizontal"></div>
 				</div>
 			</div>

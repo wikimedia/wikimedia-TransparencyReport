@@ -1,5 +1,10 @@
 ---
 en:
+
+  yn:
+    yess: "Yes"
+    noo: "No"
+
   menu:
     title: "Wikimedia Foundation Transparency Report"
     privacy: "User Data"
@@ -32,6 +37,22 @@ en:
     summary: "Summary"
     compared_to_others: "Compared to other companies, we received relatively few requests."
     request_response: "Requests for User Data, and How We Responded."
+    information_produced: "Information Produced"
+    informal_non_govt: "Informal Non-Government Requests"
+    informal_govt: "Informal Government Requests"
+    civil_subpoenas: "Civil Subpoenas"
+    criminal_subpoenas: "Criminal Subopenas"
+    administrative_subpoenas: "Administrative Subpoenas"
+    search_warrants: "Search Warrants"
+    court_orders: "Court Orders"
+    user_potentially_affected: "User Accounts Pottentially Affected"
+    user_actually_affected: "User Accounts Actually Affected"
+    total_requests: "Total Requests"
+    information_was_produced: "Requests where information was produced"
+    show_all: "Show All"
+    request_type: "Request Type"
+    information_produced_title: "Information Produced?"
+    by_country: "By Country"
 
   dates:
     all: "All"
