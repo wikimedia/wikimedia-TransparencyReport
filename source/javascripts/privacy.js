@@ -186,8 +186,9 @@
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
 
-			var stackedData = [];
+			var stackedData = [], xData = [], leftOffset = $( graph[0] ).offset().left;
 			data.forEach( function ( d ) {
+				xData[d.key] = d.value[0] + d.value[1];
 				stackedData.push( {
 					key: d.key,
 					disclosed: true,
@@ -202,6 +203,20 @@
 				} );
 			} );
 
+			function findData( key, disclosed ) {
+				return stackedData.filter( function ( d ) {
+					return ( d.key === key && d.disclosed === disclosed )
+				} )[ 0 ];
+			}
+
+			function getDsValues( country ) {
+				if ( !hasFlags ) return false;
+				console.log( ds.groupBy( 'country' )[ country ] );
+				return ds.groupBy( 'country' ).filter( function ( d ) {
+					return d.country === country;
+				} )[ 0 ];
+			}
+
 			var bar = graph.selectAll( 'rect.' + className ).data( stackedData )
 			bar
 				.enter()
@@ -214,29 +229,31 @@
 					}
 					dispatch.filter();
 				} )
-				.on( 'mouseover', function () {
-					return tooltip.style( 'display', 'block' );
-				} )
-				.on( 'mousemove', function ( d ) {
-						var numDisclosed, numTotal;
-						stackedData.forEach( function( sd ) {
-							if ( sd.key === d.key ) {
-								if ( sd.disclosed === true ) {
-									numDisclosed = sd.value;
-								} else {
-									numTotal = sd.value;
-								}
+				.on( 'mouseover', function ( d ) {
+					var
+						extraContent = "",
+						numDisclosed = Number( findData( d.key, true ).value ),
+						numUndisclosed = Number( findData( d.key, false ).value ),
+						top = $( d3.event.target ).offset().top,
+						left = leftOffset + xScale( xData[ d.key ] ) + 10;
 
-							}
-						} );
+					if ( hasFlags && Object.keys( ds.filters ).length !== 0 ) {
+						var filteredData = ds.groupBy( 'country' )[ d.key ];
+						var filter = ds.filters.type;
+						extraContent = "<b>" + filter + " Requests</b>"
+							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
+							+ "<b>Information Produced For</b>"
+							+ "<span>" + filteredData[ 1 ] + "</span>";
+					}
 
 					return tooltip
-						.html( '<b>' + d.key + '</b>'
-							+ '<span>' + numTotal + '</span>'
-							+ '<b>Something</b>'
-							+ '<span>' + numDisclosed + '</span>' )
-						.style( 'top', ( d3.event.pageY - 25 ) + 'px' )
-						.style( 'left', ( d3.event.pageX + 25 ) + 'px' );
+						.html( '<b>Total Requests</b>'
+							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+							+ '<b>Information Produced For</b>'
+							+ '<span>' + numDisclosed + '</span>' + extraContent  )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
 				} )
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
@@ -259,6 +276,7 @@
 					return xScale( d.value );
 				} );
 		}
+
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
 		makeLabels( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
