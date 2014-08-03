@@ -220,7 +220,7 @@ footer {
 				text-align: right;
 			}
 
-			&:first-child, &:last-child, &:nth-last-child(2){
+			&:first-child, &:last-child, &:nth-last-child(2), &:nth-last-child(3){
 				font-weight: bold;
 			}
 			&:last-child {
