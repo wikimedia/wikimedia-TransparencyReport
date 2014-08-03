@@ -74,16 +74,20 @@
 			if ( count ) {
 				increment( row, column );
 			} else {
-				init( row, column );
+				if ( row.duration === this.filters.duration ) {
+					init( row, column );
+				}
 			}
 		}
 
 		if ( asArray ) {
 			var array = [];
-			for ( var i in data ) array.push( {
-				key: i,
-				value: data[i]
-			} );
+			for ( var i in data ) {
+				array.push( {
+					key: i,
+					value: data[i]
+				} );
+			}
 			return array;
 		} else {
 			return data;
@@ -93,6 +97,7 @@
 	/*---Horizontal Graph---------*/
 	horizontalGraph = function ( element, groupBy, ds, dispatch, tooltip ) {
 		var data = ds.groupBy( groupBy, true );
+		var $el = $( '#' + element );
 		var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
 		var margin = {
 				top: 10,
@@ -100,12 +105,13 @@
 				bottom: 10,
 				left: ( hasFlags) ? 40 : 20
 			},
-			width = $( '#' + element ).width() - margin.left - margin.right,
-			height = $( '#' + element ).height() - margin.top - margin.bottom;
-		var graph = d3.select( '#' + element )
+			width = $el.width() - margin.left - margin.right,
+			height = $el.height() - margin.top - margin.bottom;
+		var svg = d3.select( '#' + element )
 			.append( 'svg' )
 			.attr( 'width', width + margin.left + margin.right )
 			.attr( 'height', height + margin.top + margin.bottom )
+		var graph = svg
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 		var leftLine = graph.append( 'line' )
@@ -145,14 +151,15 @@
 				.attr( 'class', className );
 
 			labels
-				.attr( 'y', function ( d ) {
-					return yScale( d.key );
+				.attr( 'y', function ( d, i ) {
+					return ( i + 1 ) * 40;
 				} )
 				.attr( 'dy', -3 )
 				.attr( 'x', 5 )
 				.html( function ( d ) {
 					return d.key;
 				} );
+			labels.exit().remove()
 
 			// If its a country graphy
 			if ( hasFlags ) {
@@ -177,16 +184,36 @@
 					.attr( 'xlink:href', function ( d ) {
 						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
 					} )
-					.attr( 'y', function ( d ) {
-						return yScale( d.key ) - 8;
+					.attr( 'y', function ( d, i ) {
+						return ( ( i + 1 ) * 40 ) - 8;
 					} )
 					.attr( 'x', -33 );
+				flags.exit().remove()
 			}
 		}
 
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
 
+			var height = ( data.length * 40 ) + 40;
+
+			$el.height( height );
+			svg.attr( 'height', height );
+
+			var yScale = d3.scale.ordinal()
+				.domain( data.map( function ( d ) {
+					return d.key;
+				 } ) )
+				.rangeRoundBands( [ margin.top, height ], 0.7 );
+
+			var leftLine = graph.append( 'line' )
+				.attr( 'class', 'left-line' )
+				.attr( 'x1', 0 )
+				.attr( 'x2', 0 )
+				.attr( 'y1', 20 )
+				.attr( 'y2', height - 10 );
+
 			var stackedData = [], xData = [], leftOffset = $( graph[0] ).offset().left;
+
 			data.forEach( function ( d ) {
 				xData[d.key] = d.value[0] + d.value[1];
 				stackedData.push( {
@@ -216,7 +243,9 @@
 				} )[ 0 ];
 			}
 
-			var bar = graph.selectAll( 'rect.' + className ).data( stackedData )
+			var bar = graph.selectAll( 'rect.' + className ).data( stackedData, function ( d, i ) {
+				return d.key + d.disclosed;
+			} )
 			bar
 				.enter()
 				.append( 'rect' )
@@ -228,6 +257,9 @@
 					}
 					dispatch.filter();
 				} )
+				.attr( 'class', className );
+
+			bar
 				.on( 'mouseover', function ( d ) {
 					var
 						content = "",
@@ -265,10 +297,7 @@
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
 				} )
-				.attr( 'class', className );
-
-			bar
-				.attr( 'height', yScale.rangeBand() )
+				.attr( 'height', '12' )
 				.attr( 'y', function ( d ) {
 					return yScale( d.key );
 				} )
@@ -282,6 +311,7 @@
 				.attr( 'width', function ( d ) {
 					return xScale( d.value );
 				} );
+			bar.exit().remove();
 		}
 
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
@@ -293,6 +323,14 @@
 			var new_data = ds.groupBy( groupBy, true );
 			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
 		} );
+
+		dispatch.on( 'timerange.' + element, function () {
+			var new_data = ds.groupBy( groupBy, true );
+			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'gray_bars' );
+			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
+			makeLabels( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
+		} );
+
 	}
 
 
@@ -379,7 +417,6 @@
 
 			circles
 				.on( 'mouseover', function ( d ) {
-					console.log( xScale(d.x ) );
 					return tooltip
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
 							+ '<b>Complied</b><span>' + d.complied + '</span>'
@@ -582,7 +619,8 @@
 						facts.requests.push( {
 							"country": country,
 							"type": type,
-							"disclosed": disclosed
+							"disclosed": disclosed,
+							"duration": d.duration
 						} );
 					}
 				}
@@ -600,7 +638,8 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			var dispatch = d3.dispatch( 'filter' );
+			ds.filters.duration = "jul12jun13";
+			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
 				.append( 'div' )
@@ -618,6 +657,21 @@
 			$( '#request_type_show_all' ).click( function () {
 				delete ds.filters[ 'type' ];
 				dispatch.filter();
+			} );
+
+			$( '.user_data_tabs' ).click( function () {
+				$( '.user_data_tabs' ).removeClass( 'active' );
+				$( this ).addClass( 'active' );
+				var duration = $( this ).attr( 'id' ).split( '_' )[ 2 ];
+				if ( duration === 'all' ) {
+					delete ds.filters.duration;
+				} else {
+					ds.filters.duration = duration;
+				}
+				delete ds.filters.type;
+				delete ds.filters.country;
+				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
+				dispatch.timerange();
 			} );
 
 			dispatch.on( 'filter.show_all', function () {

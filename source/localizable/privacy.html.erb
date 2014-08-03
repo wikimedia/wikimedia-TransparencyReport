@@ -122,10 +122,10 @@
 	<div class="analytics">
 		<h2><%= t('privacy.request_response') %></h2>
 		<ul class="tabs">
-			<li><a href="#"><%= t('dates.all') %></a></li>
-			<li><a href="#"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
-			<li><a href="#"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
-			<li><a href="#"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
+			<li><a id="user_data_all" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.all') %></a></li>
+			<li><a id="user_data_jul12jun13" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
+			<li><a id="user_data_juldec13" class="user_data_tabs"  href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
+			<li><a id="user_data_janjun14" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
 		</ul>
 		<div class="graph">
 			<div class="row">
