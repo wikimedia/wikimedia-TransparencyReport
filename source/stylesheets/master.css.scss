@@ -156,10 +156,18 @@ footer {
 	border-top: 6px solid $blue;
 	background: #ffffff;
 	padding-bottom: 12px;
+	border-bottom-style: inset;
+	border-bottom: 4px solid #fff;
 
 	&:hover {
 		text-decoration: none;
+
+		&.bignav {
+			border-bottom: 4px solid $lightgray;
+		}
 	}
+
+
 
 	img {
 		width: 100%;
