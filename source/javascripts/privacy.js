@@ -114,6 +114,7 @@
 		var graph = svg
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
+		var leftOffset = $( graph[0] ).offset().left;
 		var leftLine = graph.append( 'line' )
 			.attr( 'class', 'left-line' )
 			.attr( 'x1', 0 )
@@ -199,11 +200,21 @@
 			$el.height( height );
 			svg.attr( 'height', height );
 
+			var xScale = d3.scale.linear()
+				.domain( [0, d3.max( data, function (d) {
+					var total = d.value.reduce( function ( p, c, i, a ) {
+						return p + c;
+					} );
+					return total;
+				} ) ] )
+				.range( [ 0, width ] );
+
+
 			var yScale = d3.scale.ordinal()
 				.domain( data.map( function ( d ) {
 					return d.key;
 				 } ) )
-				.rangeRoundBands( [ margin.top, height ], 0.8 );
+				.rangeRoundBands( [ margin.top, height ], 1 );
 
 			var leftLine = graph.append( 'line' )
 				.attr( 'class', 'left-line' )
@@ -212,7 +223,7 @@
 				.attr( 'y1', 20 )
 				.attr( 'y2', height - 10 );
 
-			var stackedData = [], xData = [], leftOffset = $( graph[0] ).offset().left;
+			var stackedData = [], xData = [];
 
 			data.forEach( function ( d ) {
 				xData[d.key] = d.value[0] + d.value[1];
