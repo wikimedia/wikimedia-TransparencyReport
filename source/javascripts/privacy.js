@@ -203,7 +203,7 @@
 				.domain( data.map( function ( d ) {
 					return d.key;
 				 } ) )
-				.rangeRoundBands( [ margin.top, height ], 0.7 );
+				.rangeRoundBands( [ margin.top, height ], 0.8 );
 
 			var leftLine = graph.append( 'line' )
 				.attr( 'class', 'left-line' )

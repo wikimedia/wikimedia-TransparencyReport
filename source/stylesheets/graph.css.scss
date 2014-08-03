@@ -45,7 +45,7 @@
 		margin-bottom: 0;
 
 		a {
-			font-size: 15px;
+			font-size: 14px;
 			margin-left: 5px;
 			font-family: sans-serif;
 
@@ -84,6 +84,7 @@
 #bar_graph_by_country {
 	width: 100%;
 	height: 600px;
+	padding-bottom: 30px;
 }
 
 #bar_graph_by_type {
@@ -160,7 +161,8 @@
 }
 
 .legend {
-	border-left: 27px solid #000;
+	border-left: 12px solid #000;
+	line-height: 12px;
 	margin-top: 10px;
 	padding-left: 10px;
 	margin-left: 20px;
