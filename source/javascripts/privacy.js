@@ -211,7 +211,6 @@
 
 			function getDsValues( country ) {
 				if ( !hasFlags ) return false;
-				console.log( ds.groupBy( 'country' )[ country ] );
 				return ds.groupBy( 'country' ).filter( function ( d ) {
 					return d.country === country;
 				} )[ 0 ];
@@ -329,7 +328,7 @@
 				return d.requests;
 			} );
 
-			var gap = max / 5;
+			var gap = max / 4;
 			var yCentre = max / 2;
 			var distance = gap;
 
@@ -362,19 +361,6 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'all_requests' )
-				.on( 'mouseover', function ( d ) {
-					console.log( d );
-					return tooltip
-						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
-							+ '<b>Complied</b><span>' + d.complied + '</span>'
-						 )
-						.style( 'top', topOffset - xScale( d.requests/2) + 70  + 'px' )
-						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
-						.style( 'display', 'block' );
-				} )
-				.on( 'mouseout', function () {
-					return tooltip.style( 'display', 'none' );
-				} )
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
 				} )
@@ -384,6 +370,20 @@
 				.attr( 'r', 0 );
 
 			circles
+				.on( 'mouseover', function ( d ) {
+					console.log( xScale(d.x ) );
+					return tooltip
+						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
+							+ '<b>Complied</b><span>' + d.complied + '</span>'
+						 )
+						.style( 'top', topOffset - xScale( d.requests / 2) + 70  + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+
 				.transition()
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
@@ -405,8 +405,16 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'complied_requests' )
+				.attr( 'cx', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'cy', function ( d ) {
+					return yScale( yCentre );
+				} )
+				.attr( 'r', '0' );
+
+			complied_requests
 				.on( 'mouseover', function ( d ) {
-					console.log( d );
 					return tooltip
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
 							+ '<b>Complied</b><span>' + d.complied + '</span>'
@@ -418,16 +426,6 @@
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
 				} )
-
-				.attr( 'cx', function ( d ) {
-					return xScale( d.x );
-				} )
-				.attr( 'cy', function ( d ) {
-					return yScale( yCentre );
-				} )
-				.attr( 'r', '0' );
-
-			complied_requests
 				.transition()
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
