@@ -262,6 +262,10 @@ blockquote {
 	width: 100%;
 	margin-bottom: 60px;
 
+	&.middle{
+		width: 85%;
+	}
+
 	p {
 		color: #000;
 		font: 26px/36px serif;
@@ -287,6 +291,7 @@ blockquote {
 				text-transform: none;
 				font-style: italic;
 				color: $black;
+				margin-top: 7px;
 
 				&:before {
 					content: '';
