@@ -67,7 +67,24 @@
 </div>
 
 <div class="clear"></div>
-<br /> <br /> <br /> <br /> <br />
+
+
+<div class="col-md-12">
+	<div class="analytics">
+		<h2>Where did these requests come from?</h2>
+		<ul class="tabs">
+			<li><a class="where_from_tabs" id="where_from_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
+			<li><a class="active where_from_tabs" id="where_from_jul12jun13" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
+			<li><a class="where_from_tabs" id="where_from_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
+			<li><a class="where_from_tabs" id="where_from_janjun14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
+		</ul>
+		<div class="graph">
+			<div id="where_from_graph" class="bar_graph_horizontal"></div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<br /> <br /> <br /> <br />
 
 <div class="col-md-3">
   <section class="scorecard">
@@ -131,20 +148,5 @@
 
 <div class="clear"></div>
 
-<div class="col-md-12">
-	<div class="analytics">
-		<h2>Where did these requests come from?</h2>
-		<ul class="tabs">
-			<li><a class="where_from_tabs" id="where_from_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
-			<li><a class="active where_from_tabs" id="where_from_jul12jun13" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
-			<li><a class="where_from_tabs" id="where_from_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
-			<li><a class="where_from_tabs" id="where_from_janjun14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
-		</ul>
-		<div class="graph">
-			<div id="where_from_graph" class="bar_graph_horizontal"></div>
-		</div>
-	</div>
-</div>
-<div class="clear"></div>
 <br><br><br><br><br><br>
 <script src="/javascripts/content.js"></script>

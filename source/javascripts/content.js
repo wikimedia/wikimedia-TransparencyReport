@@ -45,7 +45,25 @@
 
 		function getData( data, current ) {
 			if ( current === 'all' ) {
-				return [];
+				var all_data = {}, all_data_array = [];
+
+				data.forEach( function ( d ) {
+					if ( all_data[ d.key ] ) {
+						all_data[ d.key ] += Number( d.value );
+					} else {
+						all_data[ d.key ] = Number( d.value );
+					}
+				} );
+
+				Object.keys( all_data ).forEach( function ( d ) {
+					var row = {
+						key: d,
+						value: all_data[ d ]
+					}
+					all_data_array.push( row );
+				} );
+
+				return all_data_array;
 			}
 
 			return data.filter( function ( d ) {
@@ -55,6 +73,11 @@
 
 		function makeGraph( data, current ) {
 			var data = getData( data, current );
+
+			data.sort( function ( a, b ) {
+				return b.value - a.value;
+			} )
+
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
@@ -76,7 +99,7 @@
 
 			// Labels
 			var labels = graph.selectAll( 'text.blue_bars' ).data( data, function ( d ) {
-				return d.key;
+				return d.key.split( '*' )[0];
 			} )
 			labels
 				.enter()
@@ -109,7 +132,7 @@
 
 			// Flags
 			var flags = graph.selectAll( 'image.flags' ).data( data, function ( d ) {
-				return d.key;
+				return d.key.split( '*' )[0];
 			} )
 			flags
 				.enter()
@@ -139,7 +162,7 @@
 
 			// Bars
 			var bar = graph.selectAll( 'rect.blue_bars' ).data( data, function ( d ) {
-				return d.key;
+				return d.key.split( '*' )[0];
 			} )
 			bar
 				.enter()
@@ -151,6 +174,13 @@
 						ds.filters[ groupBy ] = d.key;
 					}
 					dispatch.filter();
+				} )
+				.attr( 'class', 'blue_bars' );
+
+			bar
+				.attr( 'height', '12' )
+				.classed( 'disclosed', function ( d ) {
+					return d.disclosed;
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -166,13 +196,6 @@
 				} )
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
-				} )
-				.attr( 'class', 'blue_bars' );
-
-			bar
-				.attr( 'height', '12' )
-				.classed( 'disclosed', function ( d ) {
-					return d.disclosed;
 				} )
 				.transition()
 				.attr( 'y', function ( d, i ) {
