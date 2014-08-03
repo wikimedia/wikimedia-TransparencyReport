@@ -290,7 +290,7 @@
 
 
 	/*---Bubble Graph---------*/
-	bubbleGraph = function ( elementId, data, dispatch, year ) {
+	bubbleGraph = function ( elementId, data, dispatch, year, tooltip ) {
 
 		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 			width = $( '#' + elementId ).width() - margin.left - margin.right,
@@ -301,7 +301,8 @@
 			.attr( 'height', height + margin.top + margin.bottom )
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
+		var leftOffset = $( graph[0] ).offset().left;
+		var topOffset = $( graph[0] ).offset().top;
 		function makeCircles ( csv_data, year ) {
 			var data = [];
 
@@ -361,6 +362,19 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'all_requests' )
+				.on( 'mouseover', function ( d ) {
+					console.log( d );
+					return tooltip
+						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
+							+ '<b>Complied</b><span>' + d.complied + '</span>'
+						 )
+						.style( 'top', topOffset - xScale( d.requests/2) + 70  + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
 				} )
@@ -391,6 +405,20 @@
 				.enter()
 				.append( 'circle' )
 				.attr( 'class', 'complied_requests' )
+				.on( 'mouseover', function ( d ) {
+					console.log( d );
+					return tooltip
+						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
+							+ '<b>Complied</b><span>' + d.complied + '</span>'
+						 )
+						.style( 'top', topOffset - xScale( d.requests/2) + 70  + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+
 				.attr( 'cx', function ( d ) {
 					return xScale( d.x );
 				} )
@@ -494,7 +522,13 @@
 		d3.csv( '/data/other_companies.csv', function ( error, data ) {
 			if ( error ) throw error;
 			var dispatch = d3.dispatch( 'timerange' );
-			bubbleGraph( 'compare_graph', data, dispatch, '2013' );
+			var tooltip = d3
+				.select( 'body' )
+				.append( 'div' )
+				.attr( 'class', 'bubble_tooltip' )
+				.style( 'display', 'none' );
+
+			bubbleGraph( 'compare_graph', data, dispatch, '2013', tooltip );
 
 			$( '#bubble_all' ).click( function ( e ) {
 				$( '.bubble_time' ).removeClass( 'active' );

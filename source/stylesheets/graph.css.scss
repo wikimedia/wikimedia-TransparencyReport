@@ -204,3 +204,37 @@
 		font-size: 18px;
 	}
 }
+
+.bubble_tooltip {
+	position: absolute;
+	color: $black;
+	padding: 10px;
+	background: $lightgray;
+	width: 150px;
+	height: 100px;
+	opacity: 0.99;
+	font-family: 'Georgia', serif;
+	font-weight: normal;
+	font-size: 12px;
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-width: 5px;
+		border-style: solid;
+		border-color: $lightgray transparent transparent transparent;
+		bottom: -10px;
+		left: 70px;
+	}
+
+	span {
+		display: block;
+		margin: 0;
+		margin-top: -10px;
+		color: $gray;
+		font-family: sans-serif;
+		font-size: 18px;
+	}
+}
