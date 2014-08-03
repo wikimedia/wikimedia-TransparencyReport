@@ -137,14 +137,6 @@
 			flags
 				.enter()
 				.append( 'image' )
-				.on( 'click', function ( d ) {
-					if ( ds.filters[ groupBy ] === d.key ) {
-						delete ds.filters[ groupBy ];
-					} else {
-						ds.filters[ groupBy ] = d.key;
-					}
-					dispatch.filter();
-				} )
 				.attr( 'class', 'flags' )
 				.classed( 'flag', true);
 			flags
@@ -167,14 +159,6 @@
 			bar
 				.enter()
 				.append( 'rect' )
-				.on( 'click', function ( d ) {
-					if ( ds.filters[ groupBy ] === d.key ) {
-						delete ds.filters[ groupBy ];
-					} else {
-						ds.filters[ groupBy ] = d.key;
-					}
-					dispatch.filter();
-				} )
 				.attr( 'class', 'blue_bars' );
 
 			bar
@@ -219,10 +203,172 @@
 		} );
 	}
 
+
+	function targetedGraphs( data, el ) {
+		var current = 'juldec13';
+		var $el = $( '#' + el + '_graph' );
+		var margin = {
+				top: 10,
+				right: 10,
+				bottom: 10,
+				left: 40
+			},
+			width = $el.width() - margin.left - margin.right,
+			height = $el.height() - margin.top - margin.bottom;
+
+		var svg = d3.select( '#' + $el.attr( 'id' ) )
+			.append( 'svg' )
+			.attr( 'width', width + margin.left + margin.right )
+			.attr( 'height', height + margin.top + margin.bottom )
+
+		var graph = svg
+			.append( 'g' )
+			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+		function getData( data, current ) {
+			if ( current === 'all' ) {
+				var all_data = {}, all_data_array = [];
+
+				data.forEach( function ( d ) {
+					if ( all_data[ d.key ] ) {
+						all_data[ d.key ] += Number( d.value );
+					} else {
+						all_data[ d.key ] = Number( d.value );
+					}
+				} );
+
+				Object.keys( all_data ).forEach( function ( d ) {
+					var row = {
+						key: d,
+						value: all_data[ d ]
+					}
+					all_data_array.push( row );
+				} );
+
+				return all_data_array;
+			}
+
+			return data.filter( function ( d ) {
+				return d.duration === current;
+			} );
+		}
+
+		function makeGraph( data, current ) {
+			var data = getData( data, current );
+
+			data.sort( function ( a, b ) {
+				return b.value - a.value;
+			} )
+
+			var height = ( data.length * 40 ) + 40;
+
+			$el.height( height );
+			svg.attr( 'height', height );
+
+			var xScale = d3.scale.linear()
+				.domain( [0, d3.max( data, function (d) {
+					return Number( d.value );
+				} ) ] )
+				.range( [ 0, width ] );
+
+			var leftLine = graph.append( 'line' )
+				.attr( 'class', 'left-line' )
+				.attr( 'x1', 0 )
+				.attr( 'x2', 0 )
+				.attr( 'y1', 20 )
+				.attr( 'y2', height);
+
+
+			// Labels
+			var labels = graph.selectAll( 'text.targeted' ).data( data, function ( d ) {
+				return d.key.split( '*' )[0];
+			} )
+			labels
+				.enter()
+				.append( 'text' )
+				.on( 'click', function ( d ) {
+					if ( d.url !== "" ) {
+						window.open( 'http://' + d.url );
+					}
+				} )
+				.attr( 'x', '-100' )
+				.style( 'opacity', '0' )
+				.attr( 'class', 'targeted' );
+
+			labels
+				.html( function ( d ) {
+					return d.key;
+				} )
+				.transition()
+				.style( 'opacity', '1' )
+				.attr( 'y', function ( d, i ) {
+					return ( i + 1 ) * 40;
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', 5 );
+
+			labels.exit().remove();
+
+			// Bars
+			var bar = graph.selectAll( 'rect.blue_bars' ).data( data, function ( d ) {
+				return d.key.split( '*' )[0];
+			} )
+			bar
+				.enter()
+				.append( 'rect' )
+				.attr( 'class', 'blue_bars' );
+
+			bar
+				.attr( 'height', '12' )
+				.classed( 'disclosed', function ( d ) {
+					return d.disclosed;
+				} )
+				.on( 'mouseover', function ( d ) {
+					var
+						$target = $( d3.event.target ),
+						top = $target.offset().top,
+						left = $target.offset().left + xScale( d.value ) + 10;
+					return tooltip
+						.html( '<b>Total Requests</b>'
+							+ '<span>' + ( d.value ) + '</span>' )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+				.transition()
+				.attr( 'y', function ( d, i ) {
+					return ( ( i + 1 ) * 40 ) + 3;
+				} )
+				.attr( 'x', '0' )
+				.attr( 'width', function ( d ) {
+					return xScale( d.value );
+				} );
+
+			bar.exit().remove();
+		}
+
+		makeGraph( data, current );
+
+		$( '.' + el + '_tabs' ).click( function () {
+			$( '.' + el + '_tabs' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			var duration =  $( this ).attr( 'id' ).split( '_' )[ 2 ];
+			makeGraph( data, duration );
+		} );
+	}
+
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
 			whereFrom( data );
+		} );
+
+		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
+			if ( error ) throw error;
+			targetedGraphs( data, 'targeted_takedown' );
 		} );
 	} );
 } ) ( d3, jQuery );
