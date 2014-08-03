@@ -162,5 +162,21 @@
 
 <div class="clear"></div>
 
+<div class="col-md-12">
+	<div class="analytics">
+		<h2>Which Wikimedia projects were targeted?</h2>
+		<ul class="tabs">
+			<li><a class="targeted_dmca_tabs" id="targeted_dmca_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
+			<li><a class="active targeted_dmca_tabs" id="targeted_dmca_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
+			<li><a class="targeted_dmca_tabs" id="targeted_dmca_janjun14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
+		</ul>
+		<div class="graph">
+			<div id="targeted_dmca_graph" class="bar_graph_horizontal"></div>
+		</div>
+	</div>
+</div>
+
+<div class="clear"></div>
+
 <br><br><br><br><br><br>
 <script src="/javascripts/content.js"></script>
