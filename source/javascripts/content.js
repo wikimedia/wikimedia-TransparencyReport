@@ -112,7 +112,7 @@
 					}
 					dispatch.filter();
 				} )
-				.attr( 'y', '0' )
+				.attr( 'x', '-100' )
 				.style( 'opacity', '0' )
 				.attr( 'class', 'blue_bars' );
 
