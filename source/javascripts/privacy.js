@@ -525,7 +525,7 @@
 				} )
 				.attr( 'dy', function ( d, i ) {
 					if ( d.tiny ) {
-						return ( height / 2 ) - ( ( i + 1 ) * 15 );
+						return ( height / 2 ) - ( ( i + 1 ) * 30 );
 					} else {
 						return 4;
 					}
@@ -551,10 +551,10 @@
 					return xScale( d.x );
 				} )
 				.attr( 'y1', function ( d ) {
-					return yScale( yCentre ) + xScale( d.requests / 2 ) + 15;
+					return yScale( yCentre ) + xScale( d.requests / 2 ) + 5;
 				} )
 				.attr( 'y2', function ( d, i ) {
-					return height - ( ( i + 2 ) * 15 );
+					return height - ( ( i + 2 ) * 27 );
 				} )
 				.style( 'opacity', function ( d ) {
 					return ( d.tiny ) ? 1 : 0;
