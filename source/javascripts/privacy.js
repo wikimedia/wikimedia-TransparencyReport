@@ -230,26 +230,34 @@
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
-						extraContent = "",
+						content = "",
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top,
 						left = leftOffset + xScale( xData[ d.key ] ) + 10;
 
-					if ( hasFlags && Object.keys( ds.filters ).length !== 0 ) {
+					if (
+						hasFlags &&
+						( Object.keys( ds.filters ).length !== 0 &&
+						typeof ds.filters.type !== "undefined" )
+					) {
 						var filteredData = ds.groupBy( 'country' )[ d.key ];
 						var filter = ds.filters.type;
-						extraContent = "<b>" + filter + " Requests</b>"
+						content = "<b>" + filter + " Requests</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
 							+ "<b>Information Produced For</b>"
 							+ "<span>" + filteredData[ 1 ] + "</span>";
 					}
 
-					return tooltip
-						.html( '<b>Total Requests</b>'
+					if ( content === "" ) {
+						content = '<b>Total Requests</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
 							+ '<b>Information Produced For</b>'
-							+ '<span>' + numDisclosed + '</span>' + extraContent  )
+							+ '<span>' + numDisclosed + '</span>';
+					}
+
+					return tooltip
+						.html( content )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
 						.style( 'display', 'block' );
