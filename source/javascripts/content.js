@@ -370,5 +370,11 @@
 			if ( error ) throw error;
 			targetedGraphs( data, 'targeted_takedown' );
 		} );
+
+		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
+			if ( error ) throw error;
+			targetedGraphs( data, 'targeted_dmca' );
+		} );
+
 	} );
 } ) ( d3, jQuery );
