@@ -419,7 +419,7 @@
 				.on( 'mouseover', function ( d ) {
 					return tooltip
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
-							+ '<b>Complied</b><span>' + d.complied + '</span>'
+							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests / 2) + 70  + 'px' )
 						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
@@ -462,7 +462,7 @@
 				.on( 'mouseover', function ( d ) {
 					return tooltip
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
-							+ '<b>Complied</b><span>' + d.complied + '</span>'
+							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests/2) + 70  + 'px' )
 						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )

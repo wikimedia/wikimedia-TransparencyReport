@@ -12,7 +12,7 @@
 	ul.tabs {
 		list-style: none;
 		padding: 0;
-		border-bottom: 1px solid #c2c2c2;
+		border-bottom: 1px solid $lightgray;
 
 		li {
 			display: inline;
@@ -22,13 +22,13 @@
 				padding: 3px 10px;
 				text-transform: uppercase;
 				font-size: 12px;
-				font-weight: 800;
+				font-weight: 400;
 				color: #666;
 				border-bottom: 4px solid transparent;
 
 				&.active, &:hover {
 					text-decoration: none;
-					border-color: #5574D6;
+					border-color: $blue;
 				}
 			}
 
@@ -112,7 +112,7 @@
 	}
 
 	rect.disclosed {
-		fill: $red;
+		fill: $black;
 	}
 
 	rect.gray_bars {
@@ -166,7 +166,7 @@
 	margin-left: 20px;
 
 	&.legend_yes {
-		border-color: $red;
+		border-color: $black;
 	}
 
 	&.legend_no {
@@ -177,13 +177,13 @@
 .graph_tooltip {
 	position: absolute;
 	color: $black;
-	padding: 10px;
-	background: $lightgray;
-	width: 150px;
+	padding: 10px 10px 0px 10px;
+	background: #F3F5F6;
+	width: 135px;
 	opacity: 0.99;
-	font-family: 'Georgia', serif;
-	font-weight: normal;
-	font-size: 12px;
+	font-family: serif;
+	font-size: 15px;
+	line-height: 18px;
 
 	&:after {
 		content: "";
@@ -192,7 +192,7 @@
 		height: 0;
 		border-width: 5px;
 		border-style: solid;
-		border-color: transparent $lightgray transparent transparent;
+		border-color: transparent #F3F5F6 transparent transparent;
 		top: 3px;
 		left: -10px;
 	}
@@ -200,10 +200,11 @@
 	span {
 		display: block;
 		margin: 0;
-		margin-top: -10px;
-		color: $gray;
+		color: $black;
 		font-family: sans-serif;
-		font-size: 18px;
+		font-size: 22px;
+		margin-top: 6px;
+		padding-bottom: 20px;
 	}
 }
 
@@ -213,14 +214,14 @@
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	position: absolute;
 	color: $black;
-	padding: 10px;
-	background: $lightgray;
-	width: 150px;
-	height: 100px;
+	padding: 10px 10px 12px 10px;
+	background: #F3F5F6;
+	width: 135px;
+	height: 150px;
 	opacity: 0.99;
-	font-family: 'Georgia', serif;
-	font-weight: normal;
-	font-size: 12px;
+	font-family: serif;
+	font-size: 15px;
+	line-height: 18px;
 
 	&:after {
 		content: "";
@@ -229,17 +230,18 @@
 		height: 0;
 		border-width: 5px;
 		border-style: solid;
-		border-color: $lightgray transparent transparent transparent;
+		border-color: #F3F5F6 transparent transparent transparent;
 		bottom: -10px;
-		left: 70px;
+		left: 62px;
 	}
 
 	span {
 		display: block;
 		margin: 0;
-		margin-top: -10px;
-		color: $gray;
+		color: $black;
 		font-family: sans-serif;
-		font-size: 18px;
+		font-size: 22px;
+		margin-top: 6px;
+		padding-bottom: 20px;
 	}
 }

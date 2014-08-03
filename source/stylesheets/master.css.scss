@@ -4,6 +4,7 @@ body {
 	font-size: 15px;
 	line-height: 1.8;
 	background-color: #F3F5F6;
+	color: $black;
 }
 
 .container {
@@ -50,12 +51,12 @@ footer {
 	background: transparent;
 	border: none;
 	border-radius: 0;
-	border-bottom: 1px solid $gray;
+	border-bottom: 1px solid $black;
 
 	.navbar-nav > li > a {
 		color: $black;
 		border-bottom: 3px solid $lightgray;
-		border-color: $gray;
+		border-color: $black;
 		margin-left: 10px;
 		font-size: 16px;
 		padding: 16px 0 18px 0;
@@ -76,7 +77,7 @@ footer {
 		}
 
 		&:hover {
-			color: #333;
+			color: $black;
 		}
 	}
 }
@@ -88,8 +89,8 @@ footer {
 	margin-bottom: 42px;
 	background: transparent;
 	font-family: serif;
-	border-bottom: 1px solid $gray;
-	color: $gray;
+	border-bottom: 1px solid $black;
+	color: $black;
 	border-radius: 0;
 
 	.mainheading {
@@ -129,7 +130,7 @@ header {
 }
 
 footer {
-	border-top: 1px solid $gray;
+	border-top: 1px solid $black;
 	padding-top: 20px;
 	padding-bottom: 120px;
 
@@ -166,7 +167,7 @@ footer {
 	}
 
 	hr {
-		border-color: #ddd;
+		border-color: #d1d1d1;
 		margin: 10px 0;
 	}
 
@@ -174,7 +175,7 @@ footer {
 		margin: 0;
 		font-family: serif;
 		font-size: 22px/28px;
-		color: #333;
+		color: $black;
 		margin: 20px 16px 20px;
 
 		small {
@@ -231,8 +232,8 @@ footer {
 
 .blackout {
 	padding: 2px;
-	color: #000;
-	background: #000;
+	color: $black;
+	background: $black;
 
 	&:hover {
 		background: transparent;
@@ -271,12 +272,13 @@ blockquote {
 			font: 18px sans-serif;
 			margin-top: 25px;
 			margin-left: 170px;
-			color: $gray;
+			color: $black;
 
 			small {
 				display: block;
 				text-transform: none;
 				font-style: italic;
+				color: $black;
 
 				&:before {
 					content: '';
@@ -390,7 +392,7 @@ blockquote {
 	}
 
 	.navbar-default .navbar-toggle {
-		border-color: $gray;
+		border-color: $black;
 		border-radius: 1px;
 		padding: 7px 9px;
 		margin-top: 10px;
@@ -485,7 +487,7 @@ blockquote {
 		width: 610px;
 
 		img {
-			transition: all 1s ease;
+			transition: all 0.25s ease;
 			width: 20px;
 			display: block;
 			float: left;
