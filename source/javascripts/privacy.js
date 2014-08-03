@@ -74,7 +74,7 @@
 			if ( count ) {
 				increment( row, column );
 			} else {
-				if ( row.duration === this.filters.duration ) {
+				if ( ( typeof this.filters.duration === 'undefined' ) ||  row.duration === this.filters.duration ) {
 					init( row, column );
 				}
 			}
@@ -193,14 +193,15 @@
 			}
 		}
 
-		function makeBars( graph, data, xScale, yScale, ds, dispatch, className ) {
+		function makeBars( graph, data, xScale, yScale, ds, dispatch, className, timerange ) {
 
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
 			svg.attr( 'height', height );
 
-			var xScale = d3.scale.linear()
+			if ( timerange ) {
+				xScale = d3.scale.linear()
 				.domain( [0, d3.max( data, function (d) {
 					var total = d.value.reduce( function ( p, c, i, a ) {
 						return p + c;
@@ -208,7 +209,7 @@
 					return total;
 				} ) ] )
 				.range( [ 0, width ] );
-
+			}
 
 			var yScale = d3.scale.ordinal()
 				.domain( data.map( function ( d ) {
@@ -337,8 +338,8 @@
 
 		dispatch.on( 'timerange.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'gray_bars' );
-			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
+			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'gray_bars', true );
+			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars', true );
 			makeLabels( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
 		} );
 
