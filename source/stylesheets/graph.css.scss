@@ -80,11 +80,15 @@
 	padding-bottom: 30px;
 }
 
-#targeted_takedown_graph, #targeted_dmca_graph {
+#targeted_takedown_graph, #targeted_dmca_graph, #dmca_requests_graph {
 	margin-left: -20px;
 	width: 750px;
 	height: 100px;
 	padding-bottom: 30px;
+}
+
+#dmca_requests_graph {
+	width: 400px;
 }
 
 #bar_graph_by_country {

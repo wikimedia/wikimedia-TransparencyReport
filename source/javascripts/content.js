@@ -360,6 +360,228 @@
 		} );
 	}
 
+	function dmcaRequests( data ) {
+		var current = 'jul12jun13';
+		var $el = $( '#dmca_requests_graph' );
+		var margin = {
+				top: 10,
+				right: 10,
+				bottom: 10,
+				left: 40
+			},
+			width = $el.width() - margin.left - margin.right,
+			height = $el.height() - margin.top - margin.bottom;
+
+		var svg = d3.select( '#' + $el.attr( 'id' ) )
+			.append( 'svg' )
+			.attr( 'width', width + margin.left + margin.right )
+			.attr( 'height', height + margin.top + margin.bottom )
+
+		var graph = svg
+			.append( 'g' )
+			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
+		var leftOffset = $( graph[0] ).offset().left;
+
+		function getData( data, current ) {
+			if ( current === 'all' ) {
+				var all_data = {}, all_data_array = [];
+
+				data.forEach( function ( d ) {
+					if ( all_data[ d.key ] ) {
+						all_data[ d.key ].requests += Number( d.requests );
+						all_data[ d.key ].complied += Number( d.complied );
+					} else {
+						all_data[ d.key ] = {};
+						all_data[ d.key ].requests = Number( d.requests );
+						all_data[ d.key ].complied = Number( d.complied );
+					}
+				} );
+
+				Object.keys( all_data ).forEach( function ( d ) {
+					var row = {
+						key: d,
+						requests: all_data[ d ].requests,
+						complied: all_data[ d ].complied,
+					}
+					all_data_array.push( row );
+				} );
+
+				return all_data_array;
+			}
+
+			return data.filter( function ( d ) {
+				return d.duration === current;
+			} );
+		}
+
+		function makeGraph( data, current ) {
+			var data = getData( data, current );
+
+			data.sort( function ( a, b ) {
+				return b.value - a.value;
+			} )
+
+			var height = ( data.length * 40 ) + 40;
+
+			$el.height( height );
+			svg.attr( 'height', height );
+
+			var yScale = d3.scale.ordinal()
+				.domain( data.map( function ( d ) {
+					return d.key;
+				 } ) )
+				.rangeRoundBands( [ margin.top, height ], 0.7 );
+
+			var xScale = d3.scale.linear()
+				.domain( [0, d3.max( data, function (d) {
+					return Number( d.requests );
+				} ) ] )
+				.range( [ 0, width ] );
+
+			var leftLine = graph.append( 'line' )
+				.attr( 'class', 'left-line' )
+				.attr( 'x1', 0 )
+				.attr( 'x2', 0 )
+				.attr( 'y1', 20 )
+				.attr( 'y2', height);
+
+			// Labels
+			var labels = graph.selectAll( 'text.blue_bars' ).data( data, function ( d ) {
+				return d.key.split( '*' )[0];
+			} )
+			labels
+				.enter()
+				.append( 'text' )
+				.on( 'click', function ( d ) {
+					if ( ds.filters[ groupBy ] === d.key ) {
+						delete ds.filters[ groupBy ];
+					} else {
+						ds.filters[ groupBy ] = d.key;
+					}
+					dispatch.filter();
+				} )
+				.attr( 'x', '-100' )
+				.style( 'opacity', '0' )
+				.attr( 'class', 'blue_bars' );
+
+			labels
+				.html( function ( d ) {
+					return d.key;
+				} )
+				.transition()
+				.style( 'opacity', '1' )
+				.attr( 'y', function ( d, i ) {
+					return ( i + 1 ) * 40;
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', 5 );
+
+			labels.exit().remove();
+
+			// Flags
+			var flags = graph.selectAll( 'image.flags' ).data( data, function ( d ) {
+				return d.key.split( '*' )[0];
+			} )
+			flags
+				.enter()
+				.append( 'image' )
+				.attr( 'class', 'flags' )
+				.classed( 'flag', true);
+			flags
+				.attr( 'width', 28 )
+				.attr( 'height', 16 )
+				.attr( 'xlink:href', function ( d ) {
+					return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+				} )
+				.transition()
+				.attr( 'y', function ( d, i ) {
+					return ( ( i + 1 ) * 40 ) - 8;
+				} )
+				.attr( 'x', -33 );
+			flags.exit().remove();
+
+			var stackedData = [], xData = [];
+
+			data.forEach( function ( d ) {
+				xData[d.key] = Number( d.requests ) + Number( d.complied );
+				stackedData.push( {
+					key: d.key,
+					disclosed: true,
+					value: +d.complied,
+					x: Number( d.requests ) - Number(d.complied)
+				} );
+				stackedData.push( {
+					key: d.key,
+					disclosed: false,
+					value: Number( d.requests ) - Number(d.complied),
+					x: 0
+				} );
+			} );
+
+			function findData( key, disclosed ) {
+				return stackedData.filter( function ( d ) {
+					return ( d.key === key && d.disclosed === disclosed )
+				} )[ 0 ];
+			}
+
+			var bar = graph.selectAll( 'rect.blue_bars' ).data( stackedData, function ( d, i ) {
+				return d.key + d.disclosed;
+			} )
+			bar
+				.enter()
+				.append( 'rect' )
+				.attr( 'class', 'blue_bars' );
+
+			bar
+				.on( 'mouseover', function ( d ) {
+					var
+						numDisclosed = Number( findData( d.key, true ).value ),
+						numUndisclosed = Number( findData( d.key, false ).value ),
+						top = $( d3.event.target ).offset().top,
+						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						content = '<b>Total Requests</b>'
+							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+							+ '<b>Information Produced For</b>'
+							+ '<span>' + numDisclosed + '</span>';
+
+					return tooltip
+						.html( content )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+				.attr( 'height', '12' )
+				.attr( 'y', function ( d, i ) {
+					return yScale( d.key );
+				} )
+				.classed( 'disclosed', function ( d ) {
+					return d.disclosed;
+				} )
+				.transition()
+				.attr( 'x', function ( d ) {
+					return xScale( d.x );
+				} )
+				.attr( 'width', function ( d ) {
+					return xScale( d.value );
+				} );
+			bar.exit().remove();
+
+		}
+
+		makeGraph( data, current );
+
+		$( '.dmca_requests_tabs' ).click( function () {
+			$( '.dmca_requests_tabs' ).removeClass( 'active' );
+			$( this ).addClass( 'active' );
+			var duration =  $( this ).attr( 'id' ).split( '_' )[ 2 ];
+			makeGraph( data, duration );
+		} );
+
+	}
+
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
@@ -374,6 +596,11 @@
 		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
 			if ( error ) throw error;
 			targetedGraphs( data, 'targeted_dmca' );
+		} );
+
+		d3.csv( '/data/dmca_requests.csv', function( error, data ) {
+			if ( error ) throw error;
+			dmcaRequests( data );
 		} );
 
 	} );

@@ -163,6 +163,31 @@
 <div class="clear"></div>
 
 <div class="col-md-12">
+
+	<div class="analytics">
+		<h2>DMCA requests received, and how we responsed</h2>
+		<ul class="tabs">
+			<li><a class="dmca_requests_tabs" id="dmca_requests_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
+			<li><a class="active dmca_requests_tabs" id="dmca_requests_jul12jun13" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
+			<li><a class="dmca_requests_tabs" id="dmca_requests_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
+			<li><a class="dmca_requests_tabs" id="dmca_requests_janjun14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
+		</ul>
+
+		<div class="col-md-4">
+			<h3>Information Produced?</h3>
+			<div>
+				<p class="legend legend_yes"><%= t('yn.yess') %></p>
+				<p class="legend legend_no"><%= t('yn.noo') %></p>
+			</div>
+		</div>
+
+		<div class="col-md-7">
+			<div id="dmca_requests_graph" class="bar_graph_horizontal"></div>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+
 	<div class="analytics">
 		<h2>Which Wikimedia projects were targeted?</h2>
 		<ul class="tabs">
