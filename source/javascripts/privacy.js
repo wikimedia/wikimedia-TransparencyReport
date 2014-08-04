@@ -637,14 +637,14 @@
 					}
 				}
 
-				addFact( d[ 'Country' ], 'Criminal Subpoena', 'Yes', d[ 'Criminal Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Criminal Subpoena', 'No', d[ 'Criminal Subpoena' ] - d[ 'Criminal Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Request', 'Yes', d[ 'Informal Request Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Request', 'No', d[ 'Informal Request' ] - d[ 'Informal Request Complied' ] );
-				addFact( d[ 'Country' ], 'Government', 'Yes', d[ 'Government Complied' ] );
-				addFact( d[ 'Country' ], 'Government', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
-				addFact( d[ 'Country' ], 'Civil Supoena', 'Yes', d[ 'Civil Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Civil Subpoena', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'Yes', d[ 'Criminal Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'No', d[ 'Criminal Subpoena' ] - d[ 'Criminal Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'Yes', d[ 'Informal Request Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'No', d[ 'Informal Request' ] - d[ 'Informal Request Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Government Requests', 'Yes', d[ 'Government Complied' ] );
+				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
+				addFact( d[ 'Country' ], 'Civil Subpoenas', 'Yes', d[ 'Civil Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
 			} );
 			data = facts;
 
