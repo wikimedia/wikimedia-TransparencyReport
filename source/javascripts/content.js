@@ -112,6 +112,21 @@
 				.html( function ( d ) {
 					return d.key;
 				} )
+				.on( 'mouseover', function ( d ) {
+					var
+						$target = $( d3.event.target ),
+						top = $target.offset().top + 20,
+						left = $target.offset().left + xScale( d.value ) + 5;
+					return tooltip
+						.html( '<b>Total Requests</b>'
+							+ '<span>' + ( d.value ) + '</span>' )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
 				.transition()
 				.style( 'opacity', '1' )
 				.attr( 'y', function ( d, i ) {
@@ -136,6 +151,21 @@
 				.attr( 'height', 16 )
 				.attr( 'xlink:href', function ( d ) {
 					return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+				} )
+				.on( 'mouseover', function ( d ) {
+					var
+						$target = $( d3.event.target ),
+						top = $target.offset().top + 11,
+						left = $target.offset().left + xScale( d.value ) + 43;
+					return tooltip
+						.html( '<b>Total Requests</b>'
+							+ '<span>' + ( d.value ) + '</span>' )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
 				} )
 				.transition()
 				.attr( 'y', function ( d, i ) {
