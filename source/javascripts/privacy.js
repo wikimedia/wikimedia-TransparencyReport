@@ -121,11 +121,16 @@
 			.attr( 'x2', 0 )
 			.attr( 'y1', 20 )
 			.attr( 'y2', height - 10 );
+
+
+		var y_range = [];
+		for( var i = 0; i < data.length; i++ ) y_range.push( i );
 		var yScale = d3.scale.ordinal()
 			.domain( data.map( function ( d ) {
 				return d.key;
 			 } ) )
-			.rangeRoundBands( [ margin.top, height ], 0.6 );
+			.range( y_range );
+
 		var xScale = d3.scale.linear()
 			.domain( [0, d3.max( data, function (d) {
 				var total = d.value.reduce( function ( p, c, i, a ) {
@@ -211,11 +216,13 @@
 				.range( [ 0, width ] );
 			}
 
+			var y_range = [];
+			for( var i = 0; i < data.length; i++ ) y_range.push( i );
 			var yScale = d3.scale.ordinal()
 				.domain( data.map( function ( d ) {
 					return d.key;
 				 } ) )
-				.rangeRoundBands( [ margin.top, height ], 1 );
+				.range( y_range );
 
 			var leftLine = graph.append( 'line' )
 				.attr( 'class', 'left-line' )
@@ -311,7 +318,7 @@
 				} )
 				.attr( 'height', '12' )
 				.attr( 'y', function ( d ) {
-					return yScale( d.key );
+					return ( ( yScale( d.key ) + 1 ) * 40 ) + 3;
 				} )
 				.classed( 'disclosed', function ( d ) {
 					return d.disclosed;
