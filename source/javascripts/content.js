@@ -540,7 +540,7 @@
 						left = leftOffset + xScale( xData[ d.key ] ) + 10,
 						content = '<b>Total Requests</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Information Produced For</b>'
+							+ '<b>Request Granted</b>'
 							+ '<span>' + numDisclosed + '</span>';
 
 					return tooltip
