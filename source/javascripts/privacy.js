@@ -140,64 +140,6 @@
 			} ) ] )
 			.range( [ 0, width ] );
 
-
-		function makeLabels( graph, data, xScale, yScale, ds, dispatch, className ) {
-			var labels = graph.selectAll( 'text.' + className ).data( data )
-			labels
-				.enter()
-				.append( 'text' )
-				.on( 'click', function ( d ) {
-					if ( ds.filters[ groupBy ] === d.key ) {
-						delete ds.filters[ groupBy ];
-					} else {
-						ds.filters[ groupBy ] = d.key;
-					}
-					dispatch.filter();
-				} )
-				.attr( 'class', className );
-
-			labels
-				.attr( 'y', function ( d, i ) {
-					return ( i + 1 ) * 40;
-				} )
-				.attr( 'dy', -3 )
-				.attr( 'x', 5 )
-				.html( function ( d ) {
-					return d.key;
-				} );
-			labels.exit().remove()
-
-			// If its a country graphy
-			if ( hasFlags ) {
-				var flags = graph.selectAll( 'image.' + className ).data( data )
-				flags
-					.enter()
-					.append( 'image' )
-					.on( 'click', function ( d ) {
-						if ( ds.filters[ groupBy ] === d.key ) {
-							delete ds.filters[ groupBy ];
-						} else {
-							ds.filters[ groupBy ] = d.key;
-						}
-						dispatch.filter();
-					} )
-					.attr( 'class', className )
-					.classed( 'flag', true);
-
-				flags
-					.attr( 'width', 28 )
-					.attr( 'height', 16 )
-					.attr( 'xlink:href', function ( d ) {
-						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
-					} )
-					.attr( 'y', function ( d, i ) {
-						return ( ( i + 1 ) * 40 ) - 8;
-					} )
-					.attr( 'x', -33 );
-				flags.exit().remove()
-			}
-		}
-
 		function makeBars( graph, data, xScale, yScale, ds, dispatch, className, timerange ) {
 
 			var height = ( data.length * 40 ) + 40;
@@ -331,11 +273,141 @@
 					return xScale( d.value );
 				} );
 			bar.exit().remove();
+
+
+			var labels = graph.selectAll( 'text.' + className ).data( data )
+			labels
+				.enter()
+				.append( 'text' )
+				.on( 'click', function ( d ) {
+					if ( ds.filters[ groupBy ] === d.key ) {
+						delete ds.filters[ groupBy ];
+					} else {
+						ds.filters[ groupBy ] = d.key;
+					}
+					dispatch.filter();
+				} )
+				.attr( 'class', className );
+
+			labels
+				.on( 'mouseover', function ( d ) {
+					var
+						content = "",
+						numDisclosed = Number( findData( d.key, true ).value ),
+						numUndisclosed = Number( findData( d.key, false ).value ),
+						top = $( d3.event.target ).offset().top + 20,
+						left = leftOffset + xScale( xData[ d.key ] ) + 10;
+
+					if (
+						hasFlags &&
+						( Object.keys( ds.filters ).length !== 0 &&
+						typeof ds.filters.type !== "undefined" )
+					) {
+						var filteredData = ds.groupBy( 'country' )[ d.key ];
+						var filter = ds.filters.type;
+						content = "<b>" + filter + " Requests</b>"
+							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
+							+ "<b>Information Produced For</b>"
+							+ "<span>" + filteredData[ 1 ] + "</span>";
+					}
+
+					if ( content === "" ) {
+						content = '<b>Total Requests</b>'
+							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+							+ '<b>Information Produced For</b>'
+							+ '<span>' + numDisclosed + '</span>';
+					}
+
+					return tooltip
+						.html( content )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+				.attr( 'y', function ( d, i ) {
+					return ( i + 1 ) * 40;
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', 5 )
+				.html( function ( d ) {
+					return d.key;
+				} );
+			labels.exit().remove()
+
+			// If its a country graphy
+			if ( hasFlags ) {
+				var flags = graph.selectAll( 'image.' + className ).data( data )
+				flags
+					.enter()
+					.append( 'image' )
+					.on( 'click', function ( d ) {
+						if ( ds.filters[ groupBy ] === d.key ) {
+							delete ds.filters[ groupBy ];
+						} else {
+							ds.filters[ groupBy ] = d.key;
+						}
+						dispatch.filter();
+					} )
+					.attr( 'class', className )
+					.classed( 'flag', true);
+
+				flags
+					.on( 'mouseover', function ( d ) {
+						var
+							content = "",
+							numDisclosed = Number( findData( d.key, true ).value ),
+							numUndisclosed = Number( findData( d.key, false ).value ),
+							top = $( d3.event.target ).offset().top + 10,
+							left = leftOffset + xScale( xData[ d.key ] ) + 10;
+
+						if (
+							hasFlags &&
+							( Object.keys( ds.filters ).length !== 0 &&
+							typeof ds.filters.type !== "undefined" )
+						) {
+							var filteredData = ds.groupBy( 'country' )[ d.key ];
+							var filter = ds.filters.type;
+							content = "<b>" + filter + " Requests</b>"
+								+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
+								+ "<b>Information Produced For</b>"
+								+ "<span>" + filteredData[ 1 ] + "</span>";
+						}
+
+						if ( content === "" ) {
+							content = '<b>Total Requests</b>'
+								+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+								+ '<b>Information Produced For</b>'
+								+ '<span>' + numDisclosed + '</span>';
+						}
+
+						return tooltip
+							.html( content )
+							.style( 'top', top + 'px' )
+							.style( 'left', left + 'px' )
+							.style( 'display', 'block' );
+					} )
+					.on( 'mouseout', function () {
+						return tooltip.style( 'display', 'none' );
+					} )
+					.attr( 'width', 28 )
+					.attr( 'height', 16 )
+					.attr( 'xlink:href', function ( d ) {
+						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
+					} )
+					.attr( 'y', function ( d, i ) {
+						return ( ( i + 1 ) * 40 ) - 8;
+					} )
+					.attr( 'x', -33 );
+				flags.exit().remove()
+			}
+
 		}
 
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
 		makeBars( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
-		makeLabels( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
 
 
 		dispatch.on( 'filter.' + element, function () {
@@ -347,7 +419,6 @@
 			var new_data = ds.groupBy( groupBy, true );
 			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'gray_bars', true );
 			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars', true );
-			makeLabels( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
 		} );
 
 	}
