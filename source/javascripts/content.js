@@ -104,14 +104,6 @@
 			labels
 				.enter()
 				.append( 'text' )
-				.on( 'click', function ( d ) {
-					if ( ds.filters[ groupBy ] === d.key ) {
-						delete ds.filters[ groupBy ];
-					} else {
-						ds.filters[ groupBy ] = d.key;
-					}
-					dispatch.filter();
-				} )
 				.attr( 'x', '-100' )
 				.style( 'opacity', '0' )
 				.attr( 'class', 'blue_bars' );
@@ -280,7 +272,7 @@
 
 
 			// Labels
-			var labels = graph.selectAll( 'text.targeted' ).data( data, function ( d ) {
+			var labels = graph.selectAll( 'text' ).data( data, function ( d ) {
 				return d.key.split( '*' )[0];
 			} )
 			labels
@@ -293,7 +285,9 @@
 				} )
 				.attr( 'x', '-100' )
 				.style( 'opacity', '0' )
-				.attr( 'class', 'targeted' );
+				.classed( 'targeted', function ( d ) {
+					return d.url !== "";
+				} );
 
 			labels
 				.html( function ( d ) {
@@ -452,14 +446,6 @@
 			labels
 				.enter()
 				.append( 'text' )
-				.on( 'click', function ( d ) {
-					if ( ds.filters[ groupBy ] === d.key ) {
-						delete ds.filters[ groupBy ];
-					} else {
-						ds.filters[ groupBy ] = d.key;
-					}
-					dispatch.filter();
-				} )
 				.attr( 'x', '-100' )
 				.style( 'opacity', '0' )
 				.attr( 'class', 'blue_bars' );
