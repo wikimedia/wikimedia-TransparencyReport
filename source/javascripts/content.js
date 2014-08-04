@@ -223,16 +223,19 @@
 
 				data.forEach( function ( d ) {
 					if ( all_data[ d.key ] ) {
-						all_data[ d.key ] += Number( d.value );
+						all_data[ d.key ].value += Number( d.value );
 					} else {
-						all_data[ d.key ] = Number( d.value );
+						all_data[ d.key ] = {}
+						all_data[ d.key ].value = Number( d.value );
+						all_data[ d.key ].url = d.url;
 					}
 				} );
 
 				Object.keys( all_data ).forEach( function ( d ) {
 					var row = {
 						key: d,
-						value: all_data[ d ]
+						value: all_data[ d ].value,
+						url: all_data[ d ].url
 					}
 					all_data_array.push( row );
 				} );
