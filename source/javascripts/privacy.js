@@ -433,8 +433,8 @@
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
 							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
-						.style( 'top', topOffset - xScale( d.requests / 2) + 70  + 'px' )
-						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
+						.style( 'top', topOffset - xScale( d.requests / 2) + 20  + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 70 + 'px' )
 						.style( 'display', 'block' );
 				} )
 				.on( 'mouseout', function () {
@@ -476,8 +476,8 @@
 						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
 							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
-						.style( 'top', topOffset - xScale( d.requests/2) + 70  + 'px' )
-						.style( 'left', leftOffset + xScale( d.x ) - 75 + 'px' )
+						.style( 'top', topOffset - xScale( d.requests/2) + 20  + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 70 + 'px' )
 						.style( 'display', 'block' );
 				} )
 				.on( 'mouseout', function () {
