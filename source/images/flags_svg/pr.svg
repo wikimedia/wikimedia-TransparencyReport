@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	width="900"
-	height="600"
-	viewBox="0 0 45 30">
+	width="45"
+	height="30"
+	viewBox="0 0 45 30"
+	>
 <rect id="red_stripes" width="45" height="30" fill="#ed0000"/>
 <path id="white_stripes" stroke="white" stroke-width="6" d="M0,9 h 45 m -45,12 h 45"/>
 <path id="blue_triangle" d="M0,0L25.98076,15L0,30z" fill="#0050f0"/>
