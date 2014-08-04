@@ -189,7 +189,9 @@
 				.attr( 'width', 28 )
 				.attr( 'height', 16 )
 				.attr( 'xlink:href', function ( d ) {
-					return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+					if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
+						return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+					}
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -593,7 +595,9 @@
 				.attr( 'width', 28 )
 				.attr( 'height', 16 )
 				.attr( 'xlink:href', function ( d ) {
-					return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+					if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
+						return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+					}
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
