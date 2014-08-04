@@ -511,6 +511,26 @@
 				.html( function ( d ) {
 					return d.key;
 				} )
+				.on( 'mouseover', function ( d ) {
+					var
+						numDisclosed = Number( findData( d.key, true ).value ),
+						numUndisclosed = Number( findData( d.key, false ).value ),
+						top = $( d3.event.target ).offset().top + 20,
+						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						content = '<b>Total Requests</b>'
+							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+							+ '<b>Request Granted</b>'
+							+ '<span>' + numDisclosed + '</span>';
+
+					return tooltip
+						.html( content )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
 				.transition()
 				.style( 'opacity', '1' )
 				.attr( 'y', function ( d, i ) {
@@ -535,6 +555,26 @@
 				.attr( 'height', 16 )
 				.attr( 'xlink:href', function ( d ) {
 					return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+				} )
+				.on( 'mouseover', function ( d ) {
+					var
+						numDisclosed = Number( findData( d.key, true ).value ),
+						numUndisclosed = Number( findData( d.key, false ).value ),
+						top = $( d3.event.target ).offset().top + 11,
+						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						content = '<b>Total Requests</b>'
+							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
+							+ '<b>Request Granted</b>'
+							+ '<span>' + numDisclosed + '</span>';
+
+					return tooltip
+						.html( content )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
 				} )
 				.transition()
 				.attr( 'y', function ( d, i ) {
