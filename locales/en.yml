@@ -48,7 +48,7 @@ en:
     court_orders: "Court Orders"
     user_potentially_affected: "User Accounts Pottentially Affected"
     user_actually_affected: "User Accounts Actually Affected"
-    total_requests: "Total Requests"
+    total_requests: "Total requests"
     information_was_produced: "Requests where information was produced"
     show_all: "Show All"
     request_type: "Request Type"
