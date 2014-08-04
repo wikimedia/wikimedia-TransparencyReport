@@ -255,6 +255,16 @@
 				return b.value - a.value;
 			} )
 
+			// Put unnamed project at the end
+			var names = data.map( function ( d ) {
+				return d.key;
+			} );
+			var unnamed = names.indexOf( 'No Project Named' );
+			if ( unnamed > -1 ) {
+				var unnamed_row = data.splice( unnamed, 1 );
+				data.push( unnamed_row[ 0 ] );
+			}
+
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
