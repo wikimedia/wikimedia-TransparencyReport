@@ -425,19 +425,33 @@
 			var data = getData( data, current );
 
 			data.sort( function ( a, b ) {
-				return b.value - a.value;
+				return b.requests - a.requests;
 			} )
+
+			// Put unnamed project at the end
+			var names = data.map( function ( d ) {
+				return d.key;
+			} );
+			var unnamed = names.indexOf( 'Unknown' );
+			if ( unnamed > -1 ) {
+				var unnamed_row = data.splice( unnamed, 1 );
+				data.push( unnamed_row[ 0 ] );
+			}
+
 
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
 			svg.attr( 'height', height );
 
+			var y_range = [];
+			for( var i = 0; i < data.length; i++ ) y_range.push( i );
+
 			var yScale = d3.scale.ordinal()
 				.domain( data.map( function ( d ) {
 					return d.key;
 				 } ) )
-				.rangeRoundBands( [ margin.top, height ], 0.7 );
+				.range( y_range );
 
 			var xScale = d3.scale.linear()
 				.domain( [0, d3.max( data, function (d) {
@@ -502,7 +516,7 @@
 			var stackedData = [], xData = [];
 
 			data.forEach( function ( d ) {
-				xData[d.key] = Number( d.requests ) + Number( d.complied );
+				xData[d.key] = Number( d.requests );
 				stackedData.push( {
 					key: d.key,
 					disclosed: true,
@@ -554,7 +568,7 @@
 				} )
 				.attr( 'height', '12' )
 				.attr( 'y', function ( d, i ) {
-					return yScale( d.key );
+					return ( ( yScale( d.key ) + 1 ) * 40 ) + 3;
 				} )
 				.classed( 'disclosed', function ( d ) {
 					return d.disclosed;
