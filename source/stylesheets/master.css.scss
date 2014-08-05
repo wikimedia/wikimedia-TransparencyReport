@@ -366,98 +366,6 @@ blockquote {
 
 }
 
-@media (max-width: 768px){
-
-	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
-	.container .jumbotron {
-    padding-left: 15px;
-    padding-right: 15px;
-
-    .mainheading {
-    	line-height: 60px;
-    	font-size: 54px;
-    }
-
-    h1 .name {
-    	font-size: 30px;
-		}
-  }
-
-  .lead {
-    font: 25px/34px serif;
-  }
-
-
-	.navbar-brand {
-		padding: 15px 10px;
-	}
-	.navbar-default .navbar-brand {
-		font-size: 10px;
-
-		> img {
-			width: 20px;
-			height: 20px
-		}
-	}
-
-	.navbar-default .navbar-toggle {
-		border-color: $black;
-		border-radius: 1px;
-		padding: 7px 9px;
-		margin-top: 10px;
-
-		.icon-bar {
-			background-color: $gray;
-		}
-	}
-
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
-		border-bottom: none;
-		border-left-width: 3px;
-		border-left-style: solid;
-		padding-left: 10px;
-		margin-bottom: 2px;
-	}
-
-	blockquote {
-		margin: 0;
-		padding: 0;
-		font-size: 60px;
-
-		p {
-			width: auto;
-			margin: 0;
-			margin-left: 40px;
-		}
-	}
-
-	.story, .scorecard {
-		margin: 0;
-		margin-top: 30px;
-	}
-
-	.story table {
-		width: 90%;
-	}
-
-	footer {
-		font-size: 14px;
-
-		img {
-				width: 20px;
-				height: 20px;
-			}
-
-		ul li {
-			margin-left: 30px;
-		}
-	}
-}
-
 .legends {
 	overflow: hidden;
 
@@ -539,4 +447,106 @@ blockquote {
 	hr {
 		border-bottom: 1px solid #d1d1d1;
 	}
+}
+
+// Scorecard Positioning
+.scorecard_bottom {
+	margin-top: 70px;
+}
+
+@media (max-width: 768px){
+
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.container .jumbotron {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .mainheading {
+    	line-height: 60px;
+    	font-size: 54px;
+    }
+
+    h1 .name {
+    	font-size: 30px;
+		}
+  }
+
+  .lead {
+    font: 25px/34px serif;
+  }
+
+
+	.navbar-brand {
+		padding: 15px 10px;
+	}
+	.navbar-default .navbar-brand {
+		font-size: 10px;
+
+		> img {
+			width: 20px;
+			height: 20px
+		}
+	}
+
+	.navbar-default .navbar-toggle {
+		border-color: $black;
+		border-radius: 1px;
+		padding: 7px 9px;
+		margin-top: 10px;
+
+		.icon-bar {
+			background-color: $gray;
+		}
+	}
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
+		border-bottom: none;
+		border-left-width: 3px;
+		border-left-style: solid;
+		padding-left: 10px;
+		margin-bottom: 2px;
+	}
+
+	blockquote {
+		margin: 0;
+		padding: 0;
+		font-size: 60px;
+
+		p {
+			width: auto;
+			margin: 0;
+			margin-left: 40px;
+		}
+	}
+
+	.story table {
+		width: 90%;
+	}
+
+	footer {
+		font-size: 14px;
+
+		img {
+				width: 20px;
+				height: 20px;
+			}
+
+		ul li {
+			margin-left: 30px;
+		}
+	}
+
+	.story, .scorecard {
+		margin: 0;
+		margin-top: 30px;
+	}
+
+	.scorecard_bottom {
+		margin-top: 30px;
+	}
+
 }
