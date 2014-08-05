@@ -142,7 +142,7 @@
 		var graph = svg
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
-		var leftOffset = $( graph[0] ).offset().left;
+		var leftOffset = $( svg[0] ).offset().left;
 		var leftLine = graph.append( 'line' )
 			.attr( 'class', 'left-line' )
 			.attr( 'x1', 0 )
@@ -255,7 +255,9 @@
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top,
-						left = leftOffset + xScale( xData[ d.key ] ) + 10;
+						left = leftOffset + xScale( xData[ d.key ] );
+
+					left += ( hasFlags ) ? 50 : 30;
 
 					if (
 						hasFlags &&
@@ -324,7 +326,9 @@
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top + 20,
-						left = leftOffset + xScale( xData[ d.key ] ) + 10;
+						left = leftOffset + xScale( xData[ d.key ] );
+
+					left += ( hasFlags ) ? 50 : 30;
 
 					if (
 						hasFlags &&
@@ -389,7 +393,9 @@
 							numDisclosed = Number( findData( d.key, true ).value ),
 							numUndisclosed = Number( findData( d.key, false ).value ),
 							top = $( d3.event.target ).offset().top + 10,
-							left = leftOffset + xScale( xData[ d.key ] ) + 10;
+							left = leftOffset + xScale( xData[ d.key ] );
+
+						left += ( hasFlags ) ? 50 : 30;
 
 						if (
 							hasFlags &&
@@ -458,13 +464,15 @@
 		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 			width = $( '#' + elementId ).width() - margin.left - margin.right,
 			height = $( '#' + elementId ).height() - margin.top - margin.bottom;
-		var graph = d3.select( '#' + elementId )
+		var svg = d3.select( '#' + elementId )
 			.append( 'svg' )
+		var graph = svg
 			.attr( 'width', width + margin.left + margin.right )
 			.attr( 'height', height + margin.top + margin.bottom )
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
-		var leftOffset = $( graph[0] ).offset().left;
+		var leftOffset = $( svg[0] ).offset().left;
+
 		var topOffset = $( graph[0] ).offset().top;
 		function makeCircles ( csv_data ) {
 			var data = csv_data;
@@ -521,7 +529,7 @@
 							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests / 2) + 20  + 'px' )
-						.style( 'left', leftOffset + xScale( d.x ) - 70 + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 60 + 'px' )
 						.style( 'display', 'block' );
 				} )
 				.on( 'mouseout', function () {
@@ -564,7 +572,7 @@
 							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests/2) + 20  + 'px' )
-						.style( 'left', leftOffset + xScale( d.x ) - 70 + 'px' )
+						.style( 'left', leftOffset + xScale( d.x ) - 60 + 'px' )
 						.style( 'display', 'block' );
 				} )
 				.on( 'mouseout', function () {
