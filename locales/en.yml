@@ -50,6 +50,7 @@ en:
     user_actually_affected: "User Accounts Actually Affected"
     total_requests: "Total requests"
     information_was_produced: "Requests where information was produced"
+    bubble_graph_fineprint: "Figures for Wikimedia include additional types of requests for user data that are not included in the other organizations' figures. See the FAQ for more details."
     show_all: "Show All"
     request_type: "Request Type"
     information_produced_title: "Information Produced?"

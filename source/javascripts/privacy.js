@@ -453,7 +453,7 @@
 
 
 	/*---Bubble Graph---------*/
-	bubbleGraph = function ( elementId, data, dispatch, year, tooltip ) {
+	bubbleGraph = function ( elementId, data, dispatch, tooltip ) {
 
 		var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 			width = $( '#' + elementId ).width() - margin.left - margin.right,
@@ -466,27 +466,8 @@
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
 		var leftOffset = $( graph[0] ).offset().left;
 		var topOffset = $( graph[0] ).offset().top;
-		function makeCircles ( csv_data, year ) {
-			var data = [];
-
-			csv_data.forEach( function ( d ) {
-				var row = {};
-				row.company = d['Name'];
-				if ( year === '2013' ) {
-					row.requests = +d['Total 2013'];
-					row.complied = +d['Complied 2013'];
-				} else if ( year === '2012' ) {
-					row.requests = +d['Total 2012'];
-					row.complied = +d['Complied 2012'];
-				} else {
-					row.requests = (+d['Total 2013']) + (+d['Total 2012']);
-					row.complied = (+d['Complied 2013']) + (+d['Complied 2012']);
-				}
-
-				if ( row.requests !== 0 ) {
-					data.push( row );
-				}
-			} );
+		function makeCircles ( csv_data ) {
+			var data = csv_data;
 
 			var max = d3.max( data, function ( d ) {
 				return d.requests;
@@ -671,16 +652,12 @@
 
 		}
 
-		makeCircles ( data, year );
-
-		dispatch.on( 'timerange.' + elementId, function ( year ) {
-			makeCircles ( data, year );
-		} );
+		makeCircles ( data );
 	}
 
 	/*---DOM Ready---------*/
 	$( function () {
-		d3.csv( '/data/other_companies.csv', function ( error, data ) {
+		d3.csv( '/data/other_companies.csv', convertNumbers, function ( error, data ) {
 			if ( error ) throw error;
 			var dispatch = d3.dispatch( 'timerange' );
 			var tooltip = d3
@@ -689,25 +666,7 @@
 				.attr( 'class', 'bubble_tooltip' )
 				.style( 'display', 'none' );
 
-			bubbleGraph( 'compare_graph', data, dispatch, '2013', tooltip );
-
-			$( '#bubble_all' ).click( function ( e ) {
-				$( '.bubble_time' ).removeClass( 'active' );
-				$( this ).addClass( 'active' );
-				dispatch.timerange( 'all' );
-			} );
-
-			$( '#bubble_12' ).click( function ( e ) {
-				$( '.bubble_time' ).removeClass( 'active' );
-				$( this ).addClass( 'active' );
-				dispatch.timerange( '2012' );
-			} );
-
-			$( '#bubble_13' ).click( function ( e ) {
-				$( '.bubble_time' ).removeClass( 'active' );
-				$( this ).addClass( 'active' );
-				dispatch.timerange( '2013' );
-			} );
+			bubbleGraph( 'compare_graph', data, dispatch, tooltip );
 		} );
 
 		function convertNumbers(row) {

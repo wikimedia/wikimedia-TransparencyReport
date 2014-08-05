@@ -97,11 +97,9 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2><%= t('privacy.compared_to_others') %></h2>
+		<h2><%= t('privacy.compared_to_others') %>*</h2>
 		<ul class="tabs">
-			<li><a href="javascript: void(0);" class="bubble_time" id="bubble_all"><%= t('dates.all') %></a></li>
-			<li><a href="javascript: void(0);" class="bubble_time" id="bubble_12" >2012</a></li>
-			<li><a href="javascript: void(0);" class="bubble_time active" id="bubble_13" >2013</a></li>
+			<li><a id="bubble_graph_jul12jun13" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
 		</ul>
 		<div id="compare_graph" class="bubble_graph"></div>
 		<div class="legends">
@@ -110,6 +108,9 @@
 			</div>
 			<div>
 				<span class="complied_requests_circle"></span><p><%= t('privacy.information_was_produced') %></p>
+			</div>
+			<div class="fineprint">
+				<h2>*</h2><p><%= t('privacy.bubble_graph_fineprint') %></p>
 			</div>
 		</div>
 	</div>

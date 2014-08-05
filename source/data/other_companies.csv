@@ -1,6 +1,6 @@
-Name,Total 2013,Complied 2013,Total 2012,Complied 2012
-Wikipedia,23,1,30,3.5
-Dropbox,367,198,87,71
-Twitter,1735,1179,1494,1071
-Facebook,12000,9720,0,0
-Google,21492,17838,16407,14597
+company,requests,complied
+Wikipedia,23,1
+LinkedIn,72,34
+Twitter,1410,705
+Google,27477,17561
+Facebook,28147,17851
