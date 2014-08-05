@@ -504,6 +504,8 @@ blockquote {
   }
 
 
+
+
   #summary_table {
     width: 100%;
 	}
@@ -587,7 +589,13 @@ blockquote {
 	}
 
 	.scorecard_bottom {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	blockquote {
 		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 
 	.legends div {
