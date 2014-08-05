@@ -277,3 +277,26 @@
 		padding-bottom: 20px;
 	}
 }
+
+@media (max-width: 768px){
+
+	#where_from_graph,
+	#targeted_takedown_graph,
+	#targeted_dmca_graph,
+	#dmca_requests_graph,
+	#dmca_requests_graph,
+	#dmca_requests_legend,
+	#bar_graph_by_country,
+	#bar_graph_by_type,
+	#bar_graph_by_disclosed {
+		width: 80%;
+	}
+
+	#bar_graph_by_country {
+		padding-left: 10px;
+	}
+
+	#compare_graph {
+		width: 100%;
+	}
+}
