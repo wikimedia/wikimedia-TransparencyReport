@@ -501,7 +501,7 @@
 				.range( [ 0, height ] );
 
 			data.forEach( function ( d ) {
-				if ( xScale( d.requests / 2 ) < 50 ) {
+				if ( xScale( d.requests / 2 ) < 40 ) {
 					d.tiny = true;
 				}
 			} );
