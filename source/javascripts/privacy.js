@@ -168,14 +168,14 @@
 			} ) ] )
 			.range( [ 0, width ] );
 
-		function makeBars( graph, data, xScale, yScale, ds, dispatch, className, timerange ) {
+		function makeBars( graph, data, yScale, ds, dispatch, className, timerange ) {
 
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
 			svg.attr( 'height', height );
 
-			if ( timerange ) {
+			if ( timerange === true ) {
 				xScale = d3.scale.linear()
 				.domain( [0, d3.max( data, function (d) {
 					var total = d.value.reduce( function ( p, c, i, a ) {
@@ -434,19 +434,19 @@
 
 		}
 
-		makeBars( graph, data, xScale, yScale, ds, dispatch, 'gray_bars' );
-		makeBars( graph, data, xScale, yScale, ds, dispatch, 'blue_bars' );
+		makeBars( graph, data, yScale, ds, dispatch, 'gray_bars', true );
+		makeBars( graph, data, yScale, ds, dispatch, 'blue_bars', true );
 
 
 		dispatch.on( 'filter.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars' );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars' );
 		} );
 
 		dispatch.on( 'timerange.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'gray_bars', true );
-			makeBars( graph, new_data, xScale, yScale, ds, dispatch, 'blue_bars', true );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'gray_bars', true );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars', true );
 		} );
 
 	}
