@@ -1,16 +1,16 @@
 key,value,duration,tooltip
-USA,54,jul12jun13,yes
+USA,54,jul12jun13,One case was American-Brazilian
 Germany,21,jul12jun13
-United Kingdom,17,jul12jun13,yes
-France,13,jul12jun13,yes
+United Kingdom,17,jul12jun13,One case was British-Swiss
+France,13,jul12jun13,One case was French-Saudi Arabian
 Italy,12,jul12jun13
-Spain,2,jul12jun13,yes
+Spain,2,jul12jun13,One case was Spanish-Italian
 Canada,4,jul12jun13
 Australia,2,jul12jun13
 India,1,jul12jun13
 Netherlands,2,jul12jun13
 New Zealand,1,jul12jun13
-Russia,2,jul12jun13,yes
+Russia,2,jul12jun13,One case was Russian-British
 Austria,1,jul12jun13
 Belgium,1,jul12jun13
 Chile,1,jul12jun13
@@ -21,7 +21,7 @@ Luxembourg,1,jul12jun13
 Malaysia,1,jul12jun13
 Poland,1,jul12jun13
 Senegal,1,jul12jun13
-Serbia,1,jul12jun13,yes
+Serbia,1,jul12jun13,One case was Serbo-Croat
 Singapore,1,jul12jun13
 Switzerland,1,jul12jun13
 Unknown,4,jul12jun13

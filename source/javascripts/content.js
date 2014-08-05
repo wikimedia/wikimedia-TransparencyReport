@@ -149,7 +149,11 @@
 
 			labels
 				.html( function ( d ) {
-					return d.key;
+					var tooltip = "";
+					if ( typeof d.tooltip !== 'undefined' ) {
+						tooltip = "<a class='where_from_tooltip' title='" + d.tooltip + "'>*</a>";
+					}
+					return d.key + tooltip;
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -175,6 +179,19 @@
 				.attr( 'x', 5 );
 
 			labels.exit().remove();
+
+
+			// Tooltips for labels
+			$( '.where_from_tooltip').mouseover( function( e ) {
+				var text = $( this ).attr( 'title' );
+
+				tooltip
+					.html( text )
+					.style( 'top', ( e.pageY - 7 )+ 'px' )
+					.style( 'left', ( e.pageX + 15 ) + 'px' )
+					.style( 'display', 'block' );
+				return false;
+			} );
 
 			// Flags
 			var flags = graph.selectAll( 'image.flags' ).data( data, function ( d ) {

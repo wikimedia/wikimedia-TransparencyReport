@@ -137,6 +137,15 @@
 		cursor: pointer;
 		fill: $blue;
 	}
+
+	text a {
+		fill: $blue;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .bubble_graph {
