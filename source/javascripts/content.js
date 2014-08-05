@@ -148,12 +148,8 @@
 				.attr( 'class', 'blue_bars' );
 
 			labels
-				.html( function ( d ) {
-					var tooltip = "";
-					if ( typeof d.tooltip !== 'undefined' ) {
-						tooltip = "<a class='where_from_tooltip' title='" + d.tooltip + "'>*</a>";
-					}
-					return d.key + tooltip;
+				.text( function ( d ) {
+					return d.key;
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -391,7 +387,7 @@
 				} );
 
 			labels
-				.html( function ( d ) {
+				.text( function ( d ) {
 					return d.key;
 				} )
 				.transition()
@@ -566,7 +562,7 @@
 				.attr( 'class', 'blue_bars' );
 
 			labels
-				.html( function ( d ) {
+				.text( function ( d ) {
 					return d.key;
 				} )
 				.on( 'mouseover', function ( d ) {

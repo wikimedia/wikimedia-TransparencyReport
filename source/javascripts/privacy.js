@@ -364,7 +364,7 @@
 				} )
 				.attr( 'dy', -3 )
 				.attr( 'x', 5 )
-				.html( function ( d ) {
+				.text( function ( d ) {
 					return d.key;
 				} );
 			labels.exit().remove()
@@ -608,7 +608,7 @@
 					return ( d.tiny ) ? "out_of_circle" : "in_circle";
 				} )
 				.classed( 'company', true )
-				.html( function ( d ) {
+				.text( function ( d ) {
 					return d.company;
 				} )
 				.transition()
