@@ -136,6 +136,48 @@
 				.attr( 'y2', height);
 
 
+			// The * for some labels
+			var a_labels = graph.selectAll( 'text.a_label' ).data( data, function ( d ) {
+				return d.key.split( '*' )[0];
+			} );
+
+			a_labels
+				.enter()
+				.append( 'text' )
+				.attr( 'class', 'a_label' )
+				.style( 'display', 'none' )
+
+			a_labels
+				.on( 'mouseover', function ( d ) {
+					var
+						top = d3.event.pageY - 10,
+						left = d3.event.pageX + 20;
+					return tooltip
+						.html( d.tooltip )
+						.style( 'top', top + 'px' )
+						.style( 'left', left + 'px' )
+						.style( 'display', 'block' );
+				} )
+				.on( 'mouseout', function () {
+					return tooltip.style( 'display', 'none' );
+				} )
+				.text( '*')
+				.style( 'display', function ( d) {
+					if ( d.tooltip ) return '';
+					return 'none';
+				} )
+				.attr( 'y', function ( d, i ) {
+					return ( i + 1 ) * 40;
+				} )
+				.attr( 'dy', -3 )
+				.attr( 'x', 5 );
+
+
+			a_labels.exit().remove();
+
+
+
+
 			// Labels
 			var labels = graph.selectAll( 'text.blue_bars' ).data( data, function ( d ) {
 				return d.key.split( '*' )[0];
@@ -172,7 +214,7 @@
 					return ( i + 1 ) * 40;
 				} )
 				.attr( 'dy', -3 )
-				.attr( 'x', 5 );
+				.attr( 'x', 10 );
 
 			labels.exit().remove();
 
