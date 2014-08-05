@@ -475,7 +475,7 @@
 		var graph = svg
 			.append( 'g' )
 			.attr( 'transform', 'translate(' + margin.left + ',' + margin.top + ')');
-		var leftOffset = $( graph[0] ).offset().left;
+		var leftOffset = $( svg[0] ).offset().left;
 
 		function getData( data, current ) {
 			if ( current === 'all' ) {
@@ -574,7 +574,7 @@
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top + 20,
-						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						left = leftOffset + xScale( xData[ d.key ] ) + 50,
 						content = '<b>Total Requests</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
 							+ '<b>Request Granted</b>'
@@ -621,7 +621,7 @@
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top + 11,
-						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						left = leftOffset + xScale( xData[ d.key ] ) + 50,
 						content = '<b>Total Requests</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
 							+ '<b>Request Granted</b>'
@@ -681,7 +681,7 @@
 						numDisclosed = Number( findData( d.key, true ).value ),
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top,
-						left = leftOffset + xScale( xData[ d.key ] ) + 10,
+						left = leftOffset + xScale( xData[ d.key ] ) + 50,
 						content = '<b>Total Requests</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
 							+ '<b>Request Granted</b>'
