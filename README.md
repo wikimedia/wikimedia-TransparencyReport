@@ -5,3 +5,6 @@ To run:
 * ```bundle install```
 * ```bundle exec middleman```
 
+To build:
+* ```cd TransparencyReport```
+* ```bundle exec middleman build```
