@@ -84,7 +84,7 @@ en:
     s_s_classic: "<p>A publishing company sent us a takedown request concerning four famous works on <a href='https://wikisource.org/'>Wikisource</a>: French translations of <a href='https://en.wikipedia.org/wiki/Jane_Austen'>Jane Austen's</a> <a href='http://fr.wikisource.org/wiki/Les_Cinq_Filles_de_Mrs_Bennet'><em>Pride and Prejudice</em></a> and <a href='http://fr.wikisource.org/wiki/Persuasion'><em>Persuasion</em></a>, a French translation <a href='https://en.wikipedia.org/wiki/Arthur_Conan_Doyle'>Arthur Conan Doyle's</a> <a href='https://fr.wikisource.org/wiki/Les_Aventures_de_Sherlock_Holmes'><em>The Adventures of Sherlock Holmes</em></a>, and <a href='https://en.wikipedia.org/wiki/Jean_de_la_Fontaine'>Jean de la Fontaine’s</a> <a href='http://fr.wikisource.org/wiki/Fables_de_La_Fontaine,_livres_I-III'><em>Fables</em></a>. We immediately noticed the peculiarity with the request: all four original works (and likely their French translations as well) were old enough to have fallen into the <a href='https://en.wikipedia.org/wiki/Public_domain'>public domain</a>. When we alerted the company to this point, it rescinded the takedown notice.</p>"
     graph_where_from: "Where did these requests come from?"
     graph_targeted_takedown: "Which Wikimedia projects were targeted?"
-    graph_dmca_requests: "DMCA requests received, and how we reponded"
+    graph_dmca_requests: "DMCA requests received, and how we responded"
     request_granted: "Request Granted?"
     graph_targeted_dmca: "Which Wikimedia projects were targeted?"
 
