@@ -602,4 +602,14 @@ blockquote {
 		width: 100% !important;
 	}
 
+	.faq {
+		.question {
+			width: 90%;
+			font-size: 18px;
+		}
+
+		.answer {
+			width: 90%;
+		}
+	}
 }
