@@ -455,8 +455,16 @@ blockquote {
 	}
 
 	.answer {
+		transition: all 0.25s;
+		max-height: 0;
+		overflow: hidden;
 		width: 610px;
 		margin-left: 30px;
+		display: block;
+
+		&.open {
+			max-height: 1200px;
+		}
 	}
 
 	hr {
