@@ -38,6 +38,13 @@
 		}
 	}
 
+	.bar_graph_horizontal {
+		&.rect.gray_bars, &.rect.blue_bars{
+			cursor: pointer;
+		}
+
+	}
+
 	h3 {
 		font-family: serif;
 		font-size: 20px;

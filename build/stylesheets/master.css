@@ -386,86 +386,93 @@ blockquote {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); }
 /* line 457, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
 .faq .answer {
+  transition: all 0.25s;
+  max-height: 0;
+  overflow: hidden;
   width: 610px;
-  margin-left: 30px; }
-/* line 462, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  margin-left: 30px;
+  display: block; }
+  /* line 465, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  .faq .answer.open {
+    max-height: 1200px; }
+/* line 470, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
 .faq hr {
   border-bottom: 1px solid #d1d1d1; }
 
-/* line 468, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+/* line 476, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
 .scorecard_bottom {
   margin-top: 70px; }
 
-/* line 473, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+/* line 481, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
 .navbar-toggle {
   margin-right: 12px; }
 
-/* line 477, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+/* line 485, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background-color: #fff; }
 
 @media (max-width: 768px) {
-  /* line 483, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 491, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
     padding-left: 15px;
     padding-right: 15px; }
 
-  /* line 488, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 496, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .container .jumbotron {
     padding-left: 15px;
     padding-right: 15px; }
-    /* line 492, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 500, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     .container .jumbotron .mainheading {
       line-height: 60px;
       font-size: 54px; }
-    /* line 497, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 505, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     .container .jumbotron h1 .name {
       font-size: 30px; }
 
-  /* line 502, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 510, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .lead {
     font: 25px/34px serif; }
 
-  /* line 509, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 517, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   #summary_table {
     width: 100%; }
 
-  /* line 513, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 521, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   blockquote.middle {
     width: 100%; }
 
-  /* line 517, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 525, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   blockquote footer img {
     margin-left: 40px; }
 
-  /* line 521, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 529, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   blockquote footer p {
     margin-left: 124px;
     padding-right: 40px; }
 
-  /* line 526, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 534, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .navbar-brand {
     padding: 15px 10px; }
 
-  /* line 529, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 537, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .navbar-default .navbar-brand {
     font-size: 10px; }
-    /* line 532, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 540, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     .navbar-default .navbar-brand > img {
       width: 25px;
       height: 25px; }
 
-  /* line 538, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 546, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .navbar-default .navbar-toggle {
     border-color: #33425b;
     border-radius: 1px;
     padding: 7px 9px;
     margin-top: 10px; }
-    /* line 544, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 552, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #666666; }
 
-  /* line 549, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 557, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a {
     border-bottom: none;
     border-left-width: 3px;
@@ -473,47 +480,55 @@ blockquote {
     padding-left: 10px;
     margin-bottom: 2px; }
 
-  /* line 557, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 565, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   blockquote {
     margin: 0;
     padding: 0;
     font-size: 60px; }
-    /* line 562, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 570, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     blockquote p {
       width: auto;
       margin: 0;
       margin-left: 40px; }
 
-  /* line 569, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 577, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .story table {
     width: 90%; }
 
-  /* line 573, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 581, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   footer {
     font-size: 13px; }
-    /* line 576, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 584, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     footer img {
       width: 20px;
       height: 20px; }
-    /* line 581, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+    /* line 589, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
     footer ul li {
       margin-left: 30px; }
 
-  /* line 586, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 594, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .story, .scorecard {
     margin: 0;
     margin-top: 30px; }
 
-  /* line 591, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 599, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .scorecard_bottom {
     margin-top: 40px;
     margin-bottom: 40px; }
 
-  /* line 596, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 604, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   blockquote {
     margin-top: 30px;
     margin-bottom: 30px; }
 
-  /* line 601, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  /* line 609, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
   .legends div {
-    width: 100% !important; } }
+    width: 100% !important; }
+
+  /* line 614, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  .faq .question {
+    width: 90%;
+    font-size: 18px; }
+  /* line 619, /Users/moizsyed/Documents/Projects/TransparencyReport/source/stylesheets/master.css.scss */
+  .faq .answer {
+    width: 90%; } }
