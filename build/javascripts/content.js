@@ -419,7 +419,7 @@
 				.append( 'text' )
 				.on( 'click', function ( d ) {
 					if ( d.url !== "" ) {
-						window.open( 'http://' + d.url );
+						window.open( '//' + d.url );
 					}
 				} )
 				.attr( 'x', '-100' )
