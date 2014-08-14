@@ -5,6 +5,7 @@
 # Change Compass configuration
 compass_config do |config|
   config.line_comments = false
+  config.output_style = :compact
 end
 
 ###
