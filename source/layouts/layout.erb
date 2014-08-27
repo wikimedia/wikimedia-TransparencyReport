@@ -24,7 +24,8 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/">
+
+						<a class="navbar-brand" href="<%= locale_url('/') %>">
 							<img src="/images/logo.png" />
 							<% if request.path != 'index.html'  %>
 								<span class="name"><%= t('menu.title') %></span>
@@ -33,9 +34,9 @@
 					</div>
 					<div id="navbar-collapse" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= navigation_link( t('menu.privacy'), '/privacy.html' ) %></li>
-							<li><%= navigation_link( t('menu.content'), '/content.html' ) %></li>
-							<li><%= navigation_link( t('menu.faq'), '/faq.html' ) %></li>
+							<li><%= navigation_link( t('menu.privacy'), locale_url('/privacy.html') ) %></li>
+							<li><%= navigation_link( t('menu.content'), locale_url('/content.html') ) %></li>
+							<li><%= navigation_link( t('menu.faq'), locale_url('/faq.html') ) %></li>
 						</ul>
 					</div>
 				</nav>
@@ -45,17 +46,17 @@
 
 			<footer>
 				<div class="col-md-5">
-					<a class="brand" href="/">
+					<a href="<%= locale_url('/') %>" class="home_link">
 						<img src="/images/logo.png">
-						<%= t('menu.title') %>
+						<span><%= t('menu.title') %></span>
 					</a>
 				</div>
 
 				<div class="col-md-2">
 					<ul>
-						<li><a href="/privacy.html"><%= t('menu.privacy') %></a></li>
-						<li><a href="/content.html"><%= t('menu.content') %></a></li>
-						<li><a href="/faq.html"><%= t('menu.faq') %></a></li>
+						<li><%= link_to t('menu.privacy'), locale_url('/privacy.html') %></li>
+						<li><%= link_to t('menu.content'), locale_url('/content.html') %></li>
+						<li><%= link_to t('menu.faq'), locale_url('/faq.html') %></li>
 					</ul>
 				</div>
 

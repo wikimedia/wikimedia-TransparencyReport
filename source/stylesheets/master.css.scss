@@ -45,6 +45,17 @@ footer {
 		margin-bottom: 24px;
 	}
 	line-height: 1.4;
+
+	.home_link {
+		span {
+			display: inline-block;
+			width: 300px;
+		}
+
+		img {
+			float: left;
+		}
+	}
 }
 
 .navbar-default {
@@ -57,10 +68,10 @@ footer {
 		color: $black;
 		border-bottom: 3px solid $lightgray;
 		border-color: $black;
-		margin-left: 10px;
+		margin-left: 21px;
 		font-size: 16px;
-		padding: 16px 0 18px 0;
-		width: 115px;
+		padding: 16px 20px 18px 2px;
+
 
 		&:hover, &.current {
 			border-color: $blue;

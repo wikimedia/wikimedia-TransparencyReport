@@ -49,11 +49,12 @@ end
 # end
 
 activate :directory_indexes
-activate :i18n
+activate :i18n, :langs => [:en, :fr]
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
+set :relative_links, true
 
 # Build-specific configuration
 configure :build do
@@ -74,6 +75,19 @@ configure :build do
 end
 
 helpers do
+  # Remove lang prefix for page classes
+  def page_classes(path=current_path.dup, options={})
+    super(path.sub(/^[a-z]{2}\//, ''), options)
+  end
+
+  def locale_url(url)
+    unless I18n.locale.to_s == "en"
+      return "/#{I18n.locale}#{url}"
+    else
+      return url
+    end
+  end
+
   def navigation_link(label, url)
     current = false
     if url == '/'
