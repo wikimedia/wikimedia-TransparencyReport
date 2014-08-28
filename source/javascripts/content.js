@@ -151,9 +151,12 @@
 				.on( 'mouseover', function ( d ) {
 					var
 						top = d3.event.pageY - 10,
-						left = d3.event.pageX + 20;
+						left = d3.event.pageX + 20,
+						id = '#t_';
+					id += d.tooltip.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+
 					return tooltip
-						.html( d.tooltip )
+						.html( $( id ).val() )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
 						.style( 'display', 'block' );
@@ -191,7 +194,9 @@
 
 			labels
 				.text( function ( d ) {
-					return d.key;
+					var id = '#t_';
+					id += d.key.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+					return $( id ).val();
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -199,7 +204,7 @@
 						top = $target.offset().top + 20,
 						left = $target.offset().left + xScale( d.value ) + 5;
 					return tooltip
-						.html( '<b>Total Requests</b>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( d.value ) + '</span>' )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
@@ -254,7 +259,7 @@
 						top = $target.offset().top + 11,
 						left = $target.offset().left + xScale( d.value ) + 43;
 					return tooltip
-						.html( '<b>Total Requests</b>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( d.value ) + '</span>' )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
@@ -290,7 +295,7 @@
 						top = $target.offset().top,
 						left = $target.offset().left + xScale( d.value ) + 10;
 					return tooltip
-						.html( '<b>Total Requests</b>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( d.value ) + '</span>' )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
@@ -430,7 +435,9 @@
 
 			labels
 				.text( function ( d ) {
-					return d.key;
+					var id = '#t_';
+					id += d.key.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+					return $( id ).val();
 				} )
 				.transition()
 				.style( 'opacity', '1' )
@@ -462,7 +469,7 @@
 						top = $target.offset().top,
 						left = $target.offset().left + xScale( d.value ) + 10;
 					return tooltip
-						.html( '<b>Total Requests</b>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( d.value ) + '</span>' )
 						.style( 'top', top + 'px' )
 						.style( 'left', left + 'px' )
@@ -605,7 +612,9 @@
 
 			labels
 				.text( function ( d ) {
-					return d.key;
+					var id = '#t_';
+					id += d.key.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+					return $( id ).val();
 				} )
 				.on( 'mouseover', function ( d ) {
 					var
@@ -613,9 +622,9 @@
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top + 20,
 						left = leftOffset + xScale( xData[ d.key ] ) + 50,
-						content = '<b>Total Requests</b>'
+						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Request Granted</b>'
+							+ '<b>' + $( '#t_request_granted' ).val() + '</b>'
 							+ '<span>' + numDisclosed + '</span>';
 
 					return tooltip
@@ -660,9 +669,9 @@
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top + 11,
 						left = leftOffset + xScale( xData[ d.key ] ) + 50,
-						content = '<b>Total Requests</b>'
+						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Request Granted</b>'
+							+ '<b>' + $( '#t_request_granted' ).val() + '</b>'
 							+ '<span>' + numDisclosed + '</span>';
 
 					return tooltip
@@ -720,9 +729,9 @@
 						numUndisclosed = Number( findData( d.key, false ).value ),
 						top = $( d3.event.target ).offset().top,
 						left = leftOffset + xScale( xData[ d.key ] ) + 50,
-						content = '<b>Total Requests</b>'
+						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Request Granted</b>'
+							+ '<b>' + $( '#t_request_granted' ).val() + '</b>'
 							+ '<span>' + numDisclosed + '</span>';
 
 					return tooltip
