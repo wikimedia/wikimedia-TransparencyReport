@@ -9,6 +9,7 @@ en:
     title: "Wikimedia Foundation Transparency Report"
     privacy: "User Data"
     content: "Content"
+    stories: "Stories"
     faq: "FAQ"
     download_data: "Download Data"
     privacy_policy: "Privacy Policy"
@@ -27,6 +28,9 @@ en:
     faq: "Frequently Asked<br/>Questions"
     quote: "I have realized that mystery is what keeps people away, and I’ve grown tired of smoke and mirrors. I yearn for the clean, well-lighted place."
     cite: "<a href='//en.wikipedia.org/wiki/Amy_Poehler'>Amy Poehler</a>"
+
+  stories:
+    title: "Stories"
 
   privacy:
     title: "Requests for<br/>User Data"
