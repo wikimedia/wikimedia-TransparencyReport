@@ -501,7 +501,7 @@
 	}
 
 	function dmcaRequests( data ) {
-		var current = 'jul12jun13';
+		var current = 'juldec14';
 		var $el = $( '#dmca_requests_graph' );
 		var margin = {
 				top: 10,
