@@ -500,9 +500,9 @@
 		} );
 	}
 
-	function dmcaRequests( data ) {
-		var current = 'juldec14';
-		var $el = $( '#dmca_requests_graph' );
+	function requestsAndGranted( data, el, duration ) {
+		var current = duration;
+		var $el = $( '#' + el );
 		var margin = {
 				top: 10,
 				right: 10,
@@ -775,7 +775,7 @@
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
-			whereFrom( data );
+			requestsAndGranted( data, 'where_from_graph', 'juldec13' );
 		} );
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
@@ -790,7 +790,7 @@
 
 		d3.csv( '/data/dmca_requests.csv', function( error, data ) {
 			if ( error ) throw error;
-			dmcaRequests( data );
+			requestsAndGranted( data, 'dmca_requests_graph', 'juldec14' );
 		} );
 
 	} );
