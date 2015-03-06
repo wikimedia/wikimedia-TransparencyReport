@@ -1,9 +1,9 @@
-key,url,value,duration
-Wikimedia Commons,commons.wikimedia.org,7,juldec13
-English Wikipedia,en.wikipedia.org,6,juldec13
-English Wikisource,en.wikisource.org,1,juldec13
-French Wikisource,fr.wikisource.org,1,juldec13
-Ukrainian Wikipedia,uk.wikipedia.org,1,juldec13
-Wikimedia Commons,commons.wikimedia.org,3,janjun14
-English Wikipedia,en.wikipedia.org,6,janjun14
-Portuguese Wikipedia,pt.wikipedia.org,1,janjun14
+key,url,requests,complied,duration
+Wikimedia Commons,commons.wikimedia.org,7,0,juldec13
+English Wikipedia,en.wikipedia.org,6,0,juldec13
+English Wikisource,en.wikisource.org,1,0,juldec13
+French Wikisource,fr.wikisource.org,1,0,juldec13
+Ukrainian Wikipedia,uk.wikipedia.org,1,0,juldec13
+Wikimedia Commons,commons.wikimedia.org,3,0,janjun14
+English Wikipedia,en.wikipedia.org,6,0,janjun14
+Portuguese Wikipedia,pt.wikipedia.org,1,0,janjun14

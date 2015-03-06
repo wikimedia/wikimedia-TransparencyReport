@@ -502,7 +502,7 @@
 
 	function requestsAndGranted( data, el, duration ) {
 		var current = duration;
-		var $el = $( '#' + el );
+		var $el = $( '#' + el + '_graph' );
 		var margin = {
 				top: 10,
 				right: 10,
@@ -512,7 +512,7 @@
 			width = $el.width() - margin.left - margin.right,
 			height = $el.height() - margin.top - margin.bottom;
 
-		var svg = d3.select( '#' + $el.attr( 'id' ) )
+		var svg = d3.select( '#' + el + '_graph'  )
 			.append( 'svg' )
 			.attr( 'width', width + margin.left + margin.right )
 			.attr( 'height', height + margin.top + margin.bottom )
@@ -636,6 +636,14 @@
 				.on( 'mouseout', function () {
 					return tooltip.style( 'display', 'none' );
 				} )
+				.on( 'click', function ( d ) {
+					if ( d.url !== "" && typeof d.url !== 'undefined' ) {
+						window.open( '//' + d.url );
+					}
+				} )
+				.classed( 'targeted', function ( d ) {
+					return d.url !== "" && typeof d.url !== 'undefined';
+				} )
 				.transition()
 				.style( 'opacity', '1' )
 				.attr( 'y', function ( d, i ) {
@@ -649,7 +657,7 @@
 			// Flags
 			var flags = graph.selectAll( 'image.flags' ).data( data, function ( d ) {
 				return d.key.split( '*' )[0];
-			} )
+			} );
 			flags
 				.enter()
 				.append( 'image' )
@@ -763,8 +771,8 @@
 
 		makeGraph( data, current );
 
-		$( '.dmca_requests_tabs' ).click( function () {
-			$( '.dmca_requests_tabs' ).removeClass( 'active' );
+		$( '.' + el + '_tabs' ).click( function () {
+			$( '.' + el + '_tabs' ).removeClass( 'active' );
 			$( this ).addClass( 'active' );
 			var duration =  $( this ).attr( 'id' ).split( '_' )[ 2 ];
 			makeGraph( data, duration );
@@ -775,7 +783,7 @@
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
-			requestsAndGranted( data, 'where_from_graph', 'juldec13' );
+			requestsAndGranted( data, 'where_from', 'juldec13' );
 		} );
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
@@ -785,12 +793,12 @@
 
 		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
 			if ( error ) throw error;
-			targetedGraphs( data, 'targeted_dmca' );
+			requestsAndGranted( data, 'targeted_dmca', 'janjun14' );
 		} );
 
 		d3.csv( '/data/dmca_requests.csv', function( error, data ) {
 			if ( error ) throw error;
-			requestsAndGranted( data, 'dmca_requests_graph', 'juldec14' );
+			requestsAndGranted( data, 'dmca_requests', 'juldec14' );
 		} );
 
 	} );

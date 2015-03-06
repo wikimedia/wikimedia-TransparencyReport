@@ -80,6 +80,7 @@
 	}
 }
 
+#targeted_dmca_graph,
 #where_from_graph {
 	margin-left: 13px;
 	width: 400px;
@@ -87,7 +88,7 @@
 	padding-bottom: 30px;
 }
 
-#targeted_takedown_graph, #targeted_dmca_graph, #dmca_requests_graph {
+#targeted_takedown_graph, #dmca_requests_graph {
 	margin-left: -20px;
 	width: 750px;
 	height: 100px;
