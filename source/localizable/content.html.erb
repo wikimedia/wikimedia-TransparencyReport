@@ -100,10 +100,19 @@
 			<li><a class="active targeted_takedown_tabs" id="targeted_takedown_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_janjun14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
 		</ul>
-		<div class="graph">
-			<div id="targeted_takedown_graph" class="bar_graph_horizontal"></div>
+
+		<div class="col-md-4" id="targeted_takedown_legend">
+			<h3><%= t('content.request_granted') %></h3>
+			<div>
+				<p class="legend legend_yes"><%= t('yn.yess') %></p>
+				<p class="legend legend_no"><%= t('yn.noo') %></p>
+			</div>
 		</div>
 
+		<div class="col-md-7">
+			<div id="targeted_takedown_graph" class="bar_graph_horizontal"></div>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 <div class="clear"></div>

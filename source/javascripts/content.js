@@ -788,7 +788,7 @@
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
 			if ( error ) throw error;
-			targetedGraphs( data, 'targeted_takedown' );
+			requestsAndGranted( data, 'targeted_takedown', 'juldec13' );
 		} );
 
 		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
