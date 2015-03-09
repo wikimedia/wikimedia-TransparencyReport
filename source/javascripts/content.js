@@ -49,7 +49,13 @@
 		"Switzerland": "ch",
 		"Singapore": "sg",
 		"New Zealand": "nz",
-		"Japan": "jp"
+		"Japan": "jp",
+		"Czech Republic": "cz",
+		"Sweden": "se",
+		"Turkey": "tr",
+		"Greece": "gr",
+		"Cyprus": "cy",
+		"Ukraine": "ua"
 	}
 
 	function requestsAndGranted( data, el, duration ) {
@@ -108,7 +114,6 @@
 
 		function makeGraph( data, current ) {
 			var data = getData( data, current );
-
 			data.sort( function ( a, b ) {
 				return b.requests - a.requests;
 			} )
@@ -166,6 +171,7 @@
 				.text( function ( d ) {
 					var id = '#t_';
 					id += d.key.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+					if ($(id).size() === 0)console.log( id );
 					return $( id ).val();
 				} )
 				.on( 'mouseover', function ( d ) {
@@ -335,7 +341,7 @@
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
-			requestsAndGranted( data, 'where_from', 'juldec13' );
+			requestsAndGranted( data, 'where_from', 'juldec14' );
 		} );
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
