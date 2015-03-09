@@ -346,7 +346,7 @@
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {
 			if ( error ) throw error;
-			requestsAndGranted( data, 'targeted_takedown', 'juldec13' );
+			requestsAndGranted( data, 'targeted_takedown', 'juldec14' );
 		} );
 
 		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
