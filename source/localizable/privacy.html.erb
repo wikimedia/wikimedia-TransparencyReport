@@ -193,6 +193,20 @@
   </div>
 </div>
 
+<div class="clear"></div>
+<br><br>
+
+<div class="analytics">
+	<h2><%= t('privacy.graph_voluntary_disclosure') %></h2>
+	<ul class="tabs">
+		<li><a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2014</a></li>
+	</ul>
+	<div class="col-md-7">
+		<div id="voluntary_disclosure_graph" class="bar_graph_horizontal"></div>
+	</div>
+	<div class="clear"></div>
+	<br>
+</div>
 
 
 <!-- Translations for JS -->
@@ -219,7 +233,12 @@
 <input type="hidden" id="t_criminal_subpoenas" value="<%= t('graph.criminal_subpoenas') %>">
 <input type="hidden" id="t_informal_non_government_requests" value="<%= t('graph.informal_non_government_requests') %>">
 <input type="hidden" id="t_civil_subpoenas" value="<%= t('graph.civil_subpoenas') %>">
-<input type="hidden" id="t_informal_government_requests" value="<%= t('graph..informal_government_requests') %>">
+<input type="hidden" id="t_informal_government_requests" value="<%= t('graph.informal_government_requests') %>">
+
+<input type="hidden" id="t_physical_threats" value="<%= t('graph.physical_threats') %>">
+<input type="hidden" id="t_suicide_threats" value="<%= t('graph.suicide_threats') %>">
+<input type="hidden" id="t_other" value="<%= t('graph.other') %>">
 
 <div class="clear">&nbsp;</div>
+<script src="/javascripts/rag.js"></script>
 <script src="/javascripts/privacy.js"></script>
