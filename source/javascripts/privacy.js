@@ -702,9 +702,11 @@
 				if ( d[ 'Total' ] !== ( d[ 'Criminal Subpoena' ] +
 					d[ 'Informal Request' ] +
 					d[ 'Government' ] +
-					d[ 'Civil Subpoena' ] ) )
+					d[ 'Civil Subpoena' ] +
+					d[ 'Warrant' ] ) )
 				{
-					throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
+
+				    throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
 				}
 
 				function addFact( country, type, disclosed, q ) {
@@ -726,12 +728,14 @@
 				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
 				addFact( d[ 'Country' ], 'Civil Subpoenas', 'Yes', d[ 'Civil Subpoena Complied' ] );
 				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'Yes', d[ 'Warrant Complied' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'No', d[ 'Warrant' ] - d[ 'Warrant Complied' ] );
 			} );
 			data = facts;
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "jul12jun13";
+			ds.filters.duration = "juldec14";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
