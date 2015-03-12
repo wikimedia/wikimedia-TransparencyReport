@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-#summary_table {
+.summary_table {
 	width: 70%;
 }
 
@@ -231,6 +231,11 @@ footer {
 			&.last {
 				border-bottom: 2px #ABABAB solid;
 			}
+
+			&.highlight {
+				font-weight: bold;
+			}
+
 			td.indent {
 				padding-left:20px;
 			}
@@ -239,9 +244,6 @@ footer {
 				text-align: right;
 			}
 
-			&:first-child, &:last-child, &:nth-last-child(2), &:nth-last-child(3){
-				font-weight: bold;
-			}
 			&:last-child {
 				border-bottom: 0px;
 			}
@@ -525,7 +527,7 @@ blockquote {
 
 
 
-  #summary_table {
+  .summary_table {
     width: 100%;
 	}
 

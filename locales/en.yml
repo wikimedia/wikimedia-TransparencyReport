@@ -290,6 +290,13 @@ While Wikimedia’s projects are not search engines, we occasionally receive req
     informal_non_government_requests: "Informal Non-Government Requests"
     civil_subpoenas: "Civil Subpoenas"
     informal_government_requests: "Informal Government Requests"
+    warrant: "Warrant"
+
+    local_police: "Local Police"
+    federal_police: "Federal Police"
+    executive_office: "Executive Office"
+    municipal_government: "Municipal Government"
+    doj: "DOJ"
 
     request_granted: "Request granted"
 
