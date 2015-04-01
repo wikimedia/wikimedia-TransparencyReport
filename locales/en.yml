@@ -66,7 +66,7 @@ en:
     voluntary_disclosures_intro: "<p>On rare occasions, we become aware of concerning statements on the Wikimedia projects, like a suicide threat or bomb threat. We take these statements seriously and assess each one individually. As appropriate, we contact the authorities to help resolve the issue.</p><p>The stories below are real. They are also meant to be illustrative of the kinds of situations that would warrant a possible voluntary disclosure of user information. Please note that these specific stories may not have occurred during the precise time frame that this transparency report covers. Some variables, such as the privacy of our users, may require our postponing the reporting of certain stories.</p>"
     total_number_of_voluntary_disclosures: "Total number of disclosures"
 
-    story_emergency_title: "A Deadly Thrust"
+    story_emergency_title: "A Deadly Threat"
     story_emergency_body: "Our community shares threats with the Foundation when they find them. When an anonymous poster made an alleged bomb threat, we found that the edit was made from an <a href='//en.wikipedia.org/wiki/IP_address'>IP address</a> that was near the apparent threat location. As permitted by our privacy policy, we alerted local police, passing on the IP address and details we had about the threat. The police informed us they had located and arrested the person in question, who allegedly had weapons available and reportedly confessed."
 
     story_whitehouse_title: "Revealing Presidential Threats"
