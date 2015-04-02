@@ -306,7 +306,7 @@ While Wikimedia’s projects are not search engines, we occasionally receive req
 
   dates:
     all: "All"
-    jan: "January"
-    jun: "June"
-    jul: "July"
-    dec: "December"
+    jan: "Jan"
+    jun: "Jun"
+    jul: "Jul"
+    dec: "Dec"
