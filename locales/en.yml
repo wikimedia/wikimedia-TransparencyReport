@@ -299,6 +299,9 @@ While Wikimedia’s projects are not search engines, we occasionally receive req
     executive_office: "Executive Office"
     municipal_government: "Municipal Government"
     doj: "DOJ"
+    uknmd: "U.K. Non-Ministerial Department"
+    politicians_candidates: "Politicians & Candidates"
+    ministry: "Ministry"
 
     request_granted: "Requests granted"
 
