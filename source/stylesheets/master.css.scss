@@ -226,7 +226,14 @@ footer {
 
 		tr {
 			height: 45px;
-			border-bottom: 1px #EDEDED solid;
+
+			td {
+				border-bottom: 1px #EDEDED solid;
+			}
+
+			td.noborder {
+				border-bottom: none;
+			}
 
 			&.last {
 				border-bottom: 2px #ABABAB solid;
