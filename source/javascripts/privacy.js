@@ -679,12 +679,6 @@
 			bubbleGraph( 'compare_graph', data, dispatch, tooltip );
 		} );
 
-		d3.csv( '/data/voluntary_disclosure.csv', function( error, data ) {
-			if ( error ) throw error;
-			window.requestsAndGranted( data, 'voluntary_disclosure', 'juldec14' );
-		} );
-
-
 		function convertNumbers(row) {
 			var r = {};
 			for (var k in row) {
