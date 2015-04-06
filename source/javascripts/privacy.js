@@ -269,7 +269,7 @@
 						content = "<b>" + filter + " Requests</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
 							+ "<b>Information Produced For</b>"
-							+ "<span>" + filteredData[ 1 ] + "</span>";
+							+ "<span>" + filteredData[ 0 ] + "</span>";
 					}
 
 					if ( content === "" ) {
