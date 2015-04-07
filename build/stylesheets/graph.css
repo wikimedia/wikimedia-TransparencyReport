@@ -13,9 +13,9 @@
 .analytics #complied_requests { display: inline-block; margin: 10px; margin-bottom: 10px; padding: 10px; background: #E4E6E8; }
 .analytics #complied_requests label { font-weight: normal; }
 
-#where_from_graph { margin-left: 13px; width: 750px; height: 100px; padding-bottom: 30px; }
+#targeted_takedown_graph, #targeted_dmca_graph, #where_from_graph { margin-left: 13px; width: 400px; height: 100px; padding-bottom: 30px; }
 
-#targeted_takedown_graph, #targeted_dmca_graph, #dmca_requests_graph { margin-left: -20px; width: 750px; height: 100px; padding-bottom: 30px; }
+#dmca_requests_graph { margin-left: -20px; width: 750px; height: 100px; padding-bottom: 30px; }
 
 #dmca_requests_graph { width: 400px; }
 

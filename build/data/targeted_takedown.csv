@@ -1,28 +1,51 @@
-key,url,value,duration
-Arabic Wikipedia,ar.wikipedia.org,1,juldec13
-Bulgarian Wikipedia,bg.wikipedia.org,1,juldec13
-Wikimedia Commons,commons.wikimedia.org,12,juldec13
-German Wikipedia,de.wikipedia.org,8,juldec13
-English Wikipedia,en.wikipedia.org,25,juldec13
-Spanish Wikipedia,es.wikipedia.org,2,juldec13
-French Wikipedia,fr.wikipedia.org,4,juldec13
-French Wikivoyage,fr.wikivoyage.org,1,juldec13
-French Wikitionary,fr.wiktionary.org,1,juldec13
-Italian Wikipedia,it.wikipedia.org,2,juldec13
-Japanese Wikipedia,jp.wikipedia.org,1,juldec13
-Dutch Wikipedia,nl.wikipedia.org,1,juldec13
-Norwegian Wikipedia,no.wikipedia.org,1,juldec13
-Polish Wikipedia,pl.wikipedia.org,1,juldec13
-Portuguese Wikipedia,pt.wikipedia.org,2,juldec13
-Chinese Wikipedia,zh.wikipedia.org,1,juldec13
-No Project Named,,2,juldec13
-Wikimedia Commons,commons.wikimedia.org,15,janjun14
-German Wikipedia,de.wikipedia.org,21,janjun14
-English Wikipedia,en.wikipedia.org,40,janjun14
-Spanish Wikipedia,es.wikipedia.org,1,janjun14
-French Wikipedia,fr.wikipedia.org,5,janjun14
-Dutch Wikipedia,nl.wikipedia.org,1,janjun14
-Portuguese Wikipedia,pt.wikipedia.org,1,janjun14
-Russian Wikipedia,ru.wikipedia.org,2,janjun14
-Slovenian Wikipedia,sl.wikipedia.org,1,janjun14
-No Project Named,,3,janjun14
+key,url,requests,complied,duration
+Arabic Wikipedia,ar.wikipedia.org,1,0,juldec13
+Bulgarian Wikipedia,bg.wikipedia.org,1,0,juldec13
+Wikimedia Commons,commons.wikimedia.org,12,0,juldec13
+German Wikipedia,de.wikipedia.org,8,0,juldec13
+English Wikipedia,en.wikipedia.org,25,0,juldec13
+Spanish Wikipedia,es.wikipedia.org,2,0,juldec13
+French Wikipedia,fr.wikipedia.org,4,0,juldec13
+French Wikivoyage,fr.wikivoyage.org,1,0,juldec13
+French Wikitionary,fr.wiktionary.org,1,0,juldec13
+Italian Wikipedia,it.wikipedia.org,2,0,juldec13
+Japanese Wikipedia,jp.wikipedia.org,1,0,juldec13
+Dutch Wikipedia,nl.wikipedia.org,1,0,juldec13
+Norwegian Wikipedia,no.wikipedia.org,1,0,juldec13
+Polish Wikipedia,pl.wikipedia.org,1,0,juldec13
+Portuguese Wikipedia,pt.wikipedia.org,2,0,juldec13
+Chinese Wikipedia,zh.wikipedia.org,1,0,juldec13
+No Project Named,,2,0,juldec13
+Wikimedia Commons,commons.wikimedia.org,15,0,janjun14
+German Wikipedia,de.wikipedia.org,21,0,janjun14
+English Wikipedia,en.wikipedia.org,40,0,janjun14
+Spanish Wikipedia,es.wikipedia.org,1,0,janjun14
+French Wikipedia,fr.wikipedia.org,5,0,janjun14
+Dutch Wikipedia,nl.wikipedia.org,1,0,janjun14
+Portuguese Wikipedia,pt.wikipedia.org,1,0,janjun14
+Russian Wikipedia,ru.wikipedia.org,2,0,janjun14
+Slovenian Wikipedia,sl.wikipedia.org,1,0,janjun14
+No Project Named,,3,0,janjun14
+English Wikipedia,en.wikipedia.org,89,1,juldec14
+German Wikipedia,de.wikipedia.org,23,0,juldec14
+Wikimedia Commons,commons.wikimedia.org,21,0,juldec14
+French Wikipedia,fr.wikipedia.org,11,0,juldec14
+Portuguese Wikipedia,pt.wikimedia.org,6,0,juldec14
+Italian Wikipedia,it.wikipedia.org,5,0,juldec14
+Spanish Wikipedia,es.wikipedia.org,3,0,juldec14
+Dutch Wikipedia,nl.wikipedia.org,2,0,juldec14
+Korean Wikipedia,ko.wikipedia.org,2,0,juldec14
+Chinese Wikipedia,zh.wikipedia.org,1,0,juldec14
+Bulgarian Wikipedia,bg.wikipedia.org,1,0,juldec14
+English Wikinews,en.wikinews.org,1,0,juldec14
+Turkish Wikipedia,tr.wikipedia.org,1,0,juldec14
+Serbian Wikipedia,sr.wikpedia.org,1,0,juldec14
+Polish Wikipedia,pl.wikipedia.org,1,0,juldec14
+Hebrew Wikipedia,he.wikipedia.org,1,0,juldec14
+Slovak Wikipedia,sk.wikipedia.org,1,0,juldec14
+Japanese Wikipedia,ja.wikipedia.org,1,0,juldec14
+Korean Wikinews,ko.wikinews.org,1,0,juldec14
+Slovenian Wikipedia,sl.wikipedia.org,1,0,juldec14
+Multiple,,5,0,juldec14
+Not a WMF site,,4,0,juldec14
+no project named,,8,0,juldec14

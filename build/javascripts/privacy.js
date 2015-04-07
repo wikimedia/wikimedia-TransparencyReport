@@ -269,13 +269,13 @@
 						content = "<b>" + filter + " Requests</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
 							+ "<b>Information Produced For</b>"
-							+ "<span>" + filteredData[ 1 ] + "</span>";
+							+ "<span>" + filteredData[ 0 ] + "</span>";
 					}
 
 					if ( content === "" ) {
-						content = '<b>Total Requests</b>'
+						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Information Produced For</b>'
+							+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
 							+ '<span>' + numDisclosed + '</span>';
 					}
 
@@ -339,14 +339,14 @@
 						var filter = ds.filters.type;
 						content = "<b>" + filter + " Requests</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-							+ "<b>Information Produced For</b>"
+							+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
 							+ "<span>" + filteredData[ 1 ] + "</span>";
 					}
 
 					if ( content === "" ) {
-						content = '<b>Total Requests</b>'
+						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>Information Produced For</b>'
+							+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
 							+ '<span>' + numDisclosed + '</span>';
 					}
 
@@ -365,7 +365,9 @@
 				.attr( 'dy', -3 )
 				.attr( 'x', 5 )
 				.text( function ( d ) {
-					return d.key;
+					var id = '#t_';
+					id += d.key.replace( /\W+/g, ' ' ).split( ' ' ).join( '_').toLowerCase();
+					return $( id ).val();
 				} );
 			labels.exit().remove()
 
@@ -406,14 +408,14 @@
 							var filter = ds.filters.type;
 							content = "<b>" + filter + " Requests</b>"
 								+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-								+ "<b>Information Produced For</b>"
+								+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
 								+ "<span>" + filteredData[ 1 ] + "</span>";
 						}
 
 						if ( content === "" ) {
-							content = '<b>Total Requests</b>'
+							content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
 								+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-								+ '<b>Information Produced For</b>'
+								+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
 								+ '<span>' + numDisclosed + '</span>';
 						}
 
@@ -525,8 +527,8 @@
 			circles
 				.on( 'mouseover', function ( d ) {
 					return tooltip
-						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
-							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b><span>' + d.requests + '</span>'
+							+ '<b>' + $( '#t_information_produced' ).val() + '</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests / 2) + 20  + 'px' )
 						.style( 'left', leftOffset + xScale( d.x ) - 60 + 'px' )
@@ -568,8 +570,8 @@
 			complied_requests
 				.on( 'mouseover', function ( d ) {
 					return tooltip
-						.html( '<b>Total Requests</b><span>' + d.requests + '</span>'
-							+ '<b>Information Produced</b><span>' + d.complied + '</span>'
+						.html( '<b>' + $( '#t_total_requests' ).val() + '</b><span>' + d.requests + '</span>'
+							+ '<b>' + $( '#t_information_produced' ).val() + '</b><span>' + d.complied + '</span>'
 						 )
 						.style( 'top', topOffset - xScale( d.requests/2) + 20  + 'px' )
 						.style( 'left', leftOffset + xScale( d.x ) - 60 + 'px' )
@@ -694,9 +696,11 @@
 				if ( d[ 'Total' ] !== ( d[ 'Criminal Subpoena' ] +
 					d[ 'Informal Request' ] +
 					d[ 'Government' ] +
-					d[ 'Civil Subpoena' ] ) )
+					d[ 'Civil Subpoena' ] +
+					d[ 'Warrant' ] ) )
 				{
-					throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
+
+				    throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
 				}
 
 				function addFact( country, type, disclosed, q ) {
@@ -718,12 +722,14 @@
 				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
 				addFact( d[ 'Country' ], 'Civil Subpoenas', 'Yes', d[ 'Civil Subpoena Complied' ] );
 				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'Yes', d[ 'Warrant Complied' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'No', d[ 'Warrant' ] - d[ 'Warrant Complied' ] );
 			} );
 			data = facts;
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "jul12jun13";
+			ds.filters.duration = "juldec14";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )

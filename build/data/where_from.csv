@@ -1,64 +1,98 @@
-key,value,duration,tooltip
-USA,54,jul12jun13,One case was American-Brazilian
-Germany,21,jul12jun13
-United Kingdom,17,jul12jun13,One case was British-Swiss
-France,13,jul12jun13,One case was French-Saudi Arabian
-Italy,12,jul12jun13
-Spain,2,jul12jun13,One case was Spanish-Italian
-Canada,4,jul12jun13
-Australia,2,jul12jun13
-India,1,jul12jun13
-Netherlands,2,jul12jun13
-New Zealand,1,jul12jun13
-Russia,2,jul12jun13,One case was Russian-British
-Austria,1,jul12jun13
-Belgium,1,jul12jun13
-Chile,1,jul12jun13
-Iran,1,jul12jun13
-Ireland,1,jul12jun13
-Israel,1,jul12jun13
-Luxembourg,1,jul12jun13
-Malaysia,1,jul12jun13
-Poland,1,jul12jun13
-Senegal,1,jul12jun13
-Serbia,1,jul12jun13,One case was Serbo-Croat
-Singapore,1,jul12jun13
-Switzerland,1,jul12jun13
-Unknown,4,jul12jun13
-Argentina,1,juldec13
-Brazil,2,juldec13
-Bulgaria,1,juldec13
-Denmark,1,juldec13
-France,7,juldec13
-Germany,12,juldec13
-Hong Kong,1,juldec13
-India,2,juldec13
-Italy,2,juldec13
-South Korea,1,juldec13
-Netherlands,3,juldec13
-New Zealand,1,juldec13
-Norway,1,juldec13
-Poland,1,juldec13
-Singapore,1,juldec13
-United Kingdom,4,juldec13
-USA,19,juldec13
-Unknown,6,juldec13
-Australia,1,janjun14
-Austria,2,janjun14
-Brazil,1,janjun14
-Canada,1,janjun14
-France,5,janjun14
-Germany,17,janjun14
-India,2,janjun14
-Ireland,1,janjun14
-Netherlands,1,janjun14
-Russia,2,janjun14
-Slovenia,1,janjun14
-Switzerland,6,janjun14
-United Kingdom,11,janjun14
-USA,33,janjun14
-Unknown,2,janjun14
-Peru,1,janjun14
-Pakistan,1,janjun14
-Israel,1,janjun14
-Latvia,1,janjun14
+key,requests,complied,duration,tooltip
+USA,54,0,jul12jun13,One case was American-Brazilian
+Germany,21,0,jul12jun13
+United Kingdom,17,0,jul12jun13,One case was British-Swiss
+France,13,0,jul12jun13,One case was French-Saudi Arabian
+Italy,12,0,jul12jun13
+Spain,2,0,jul12jun13,One case was Spanish-Italian
+Canada,4,0,jul12jun13
+Australia,2,0,jul12jun13
+India,1,0,jul12jun13
+Netherlands,2,0,jul12jun13
+New Zealand,1,0,jul12jun13
+Russia,2,0,jul12jun13,One case was Russian-British
+Austria,1,0,jul12jun13
+Belgium,1,0,jul12jun13
+Chile,1,0,jul12jun13
+Iran,1,0,jul12jun13
+Ireland,1,0,jul12jun13
+Israel,1,0,jul12jun13
+Luxembourg,1,0,jul12jun13
+Malaysia,1,0,jul12jun13
+Poland,1,0,jul12jun13
+Senegal,1,0,jul12jun13
+Serbia,1,0,jul12jun13,One case was Serbo-Croat
+Singapore,1,0,jul12jun13
+Switzerland,1,0,jul12jun13
+Unknown,4,0,jul12jun13
+Argentina,1,0,juldec13
+Brazil,2,0,juldec13
+Bulgaria,1,0,juldec13
+Denmark,1,0,juldec13
+France,7,0,juldec13
+Germany,12,0,juldec13
+Hong Kong,1,0,juldec13
+India,2,0,juldec13
+Italy,2,0,juldec13
+South Korea,1,0,juldec13
+Netherlands,3,0,juldec13
+New Zealand,1,0,juldec13
+Norway,1,0,juldec13
+Poland,1,0,juldec13
+Singapore,1,0,juldec13
+United Kingdom,4,0,juldec13
+USA,19,0,juldec13
+Unknown,6,0,juldec13
+Australia,1,0,janjun14
+Austria,2,0,janjun14
+Brazil,1,0,janjun14
+Canada,1,0,janjun14
+France,5,0,janjun14
+Germany,17,0,janjun14
+India,2,0,janjun14
+Ireland,1,0,janjun14
+Netherlands,1,0,janjun14
+Russia,2,0,janjun14
+Slovenia,1,0,janjun14
+Switzerland,6,0,janjun14
+United Kingdom,11,0,janjun14
+USA,33,0,janjun14
+Unknown,2,0,janjun14
+Peru,1,0,janjun14
+Pakistan,1,0,janjun14
+Israel,1,0,janjun14
+Latvia,1,0,janjun14
+USA,79,0,juldec14
+Germany,25,0,juldec14
+France,15,0,juldec14
+United Kingdom,9,0,juldec14
+Unknown,9,0,juldec14
+Brazil,6,0,juldec14
+Italy,6,0,juldec14
+Australia,5,0,juldec14
+India,4,0,juldec14
+South Korea,3,0,juldec14
+Canada,2,0,juldec14
+China,2,0,juldec14
+Czech Republic,2,0,juldec14
+Netherlands,2,0,juldec14
+Switzerland,2,0,juldec14
+Belgium,1,0,juldec14
+Bulgaria,1,0,juldec14
+Cyprus,1,0,juldec14
+Greece,1,0,juldec14
+Hong Kong,1,0,juldec14
+Israel,1,0,juldec14
+Japan,1,0,juldec14
+Malaysia,1,0,juldec14
+Mexico,1,0,juldec14
+New Zealand,1,0,juldec14
+Poland,1,0,juldec14
+Russia,1,0,juldec14
+Serbia,1,0,juldec14
+Slovenia,1,0,juldec14
+Spain,1,0,juldec14
+Sri Lanka,1,0,juldec14
+Sweden,1,0,juldec14
+Turkey,1,0,juldec14
+Ukraine,1,1,juldec14

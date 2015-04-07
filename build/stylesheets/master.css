@@ -3,7 +3,7 @@ body { font-size: 15px; line-height: 1.8; background-color: #F3F5F6; color: #334
 
 .container { padding: 0; }
 
-#summary_table { width: 70%; }
+.summary_table { width: 70%; }
 
 .clear { clear: both; }
 
@@ -16,9 +16,11 @@ h2.faq { margin-top: 50px; cursor: pointer; }
 footer { line-height: 1.4; }
 footer .brand { display: block; color: #33425b; margin-bottom: 20px; }
 footer ul { margin-bottom: 24px; }
+footer .home_link span { display: inline-block; width: 300px; }
+footer .home_link img { float: left; }
 
 .navbar-default { background: transparent; border: none; border-radius: 0; border-bottom: 1px solid #33425b; }
-.navbar-default .navbar-nav > li > a { color: #33425b; border-bottom: 3px solid #d1d1d1; border-color: #33425b; margin-left: 10px; font-size: 16px; padding: 16px 0 18px 0; width: 115px; }
+.navbar-default .navbar-nav > li > a { color: #33425b; border-bottom: 3px solid #d1d1d1; border-color: #33425b; margin-left: 21px; font-size: 16px; padding: 16px 20px 18px 2px; }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a.current { border-color: #347bff; }
 .navbar-default .navbar-brand { color: #33425b; font-size: 16px; }
 .navbar-default .navbar-brand > img { width: 30px; height: 30px; }
@@ -50,11 +52,13 @@ footer ul li { margin-bottom: 14px; margin-top: 3px; }
 .story p { margin: 20px 16px 14px; }
 .story .icon { display: block; width: 160px; margin: 0 auto; }
 .story table { margin: 0px 20px 0px 20px; width: 92%; }
-.story table tr { height: 45px; border-bottom: 1px #EDEDED solid; }
+.story table tr { height: 45px; }
+.story table tr td { border-bottom: 1px #EDEDED solid; }
+.story table tr td.noborder { border-bottom: none; }
 .story table tr.last { border-bottom: 2px #ABABAB solid; }
+.story table tr.highlight { font-weight: bold; }
 .story table tr td.indent { padding-left: 20px; }
 .story table tr > td:last-child { text-align: right; }
-.story table tr:first-child, .story table tr:last-child, .story table tr:nth-last-child(2), .story table tr:nth-last-child(3) { font-weight: bold; }
 .story table tr:last-child { border-bottom: 0px; }
 
 .blackout { padding: 2px; color: #33425b; background: #33425b; }
@@ -79,6 +83,7 @@ blockquote:after { margin-top: -60px; float: right; content: '”'; }
 .scorecard dl { margin: 0; }
 .scorecard dl dt { font: 22px/28px serif; }
 .scorecard dl dd { font-size: 100px; line-height: 160px; color: #347bff; text-align: center; letter-spacing: -3.5px; }
+.scorecard dl dd .three-decimal { font-size: 80px; }
 .scorecard dl dd small { font-size: 40px; }
 
 .legends { overflow: hidden; }
@@ -110,7 +115,7 @@ blockquote:after { margin-top: -60px; float: right; content: '”'; }
   .container .jumbotron .mainheading { line-height: 60px; font-size: 54px; }
   .container .jumbotron h1 .name { font-size: 30px; }
   .lead { font: 25px/34px serif; }
-  #summary_table { width: 100%; }
+  .summary_table { width: 100%; }
   blockquote.middle { width: 100%; }
   blockquote footer img { margin-left: 40px; }
   blockquote footer p { margin-left: 124px; padding-right: 40px; }

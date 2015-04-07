@@ -1,8 +1,8 @@
-key,requests,complied,duration,tooltip
-USA,13,9,jul12jun13,yes
-United Kingdom,3,0,jul12jun13,yes
-France,2,0,jul12jun13,yes
-Spain,4,1,jul12jun13,yes
+key,requests,complied,duration
+USA,13,9,jul12jun13
+United Kingdom,3,0,jul12jun13
+France,2,0,jul12jun13
+Spain,4,1,jul12jun13
 Canada,1,0,jul12jun13
 Australia,2,1,jul12jun13
 India,2,1,jul12jun13
@@ -19,3 +19,5 @@ USA,10,4,juldec13
 Brazil,1,0,janjun14
 USA,8,4,janjun14
 Unknown,1,0,janjun14
+USA,10,1,juldec14
+Netherlands,1,0,juldec14
