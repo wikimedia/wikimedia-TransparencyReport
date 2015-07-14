@@ -12,7 +12,7 @@
 
 		d3.csv( '/data/targeted_dmca.csv', function ( error, data ) {
 			if ( error ) throw error;
-			window.requestsAndGranted( data, 'targeted_dmca', 'juldec14' );
+			window.requestsAndGranted( data, 'targeted_dmca', 'janjun15' );
 		} );
 
 		d3.csv( '/data/dmca_requests.csv', function( error, data ) {
