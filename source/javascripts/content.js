@@ -2,7 +2,7 @@
 	$( function () {
 		d3.csv( '/data/where_from.csv', function ( error, data ) {
 			if ( error ) throw error;
-			window.requestsAndGranted( data, 'where_from', 'juldec14' );
+			window.requestsAndGranted( data, 'where_from', 'janjun15' );
 		} );
 
 		d3.csv( '/data/targeted_takedown.csv', function ( error, data ) {

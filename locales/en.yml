@@ -263,6 +263,10 @@ While Wikimedia Projects are not search engines, we occasionally receive request
     sweden: "Sweden"
     turkey: "Turkey"
     cyprus: "Cyprus"
+    korea: "Korea"
+    romania: "Romania"
+    suriname: "Suriname"
+    taiwan: "Taiwan"
 
     english_wikipedia: "English Wikipedia"
     wikimedia_commons: "Wikimedia Commons"
@@ -287,7 +291,6 @@ While Wikimedia Projects are not search engines, we occasionally receive request
     slovenian_wikipedia: "Slovenian Wikipedia"
     no_project_named: "No Project Named"
     multiple: "Multiple"
-    multiple_projects: "Multiple Projects"
     not_a_wmf_site: "Not a WMF site"
     korean_wikipedia: "Korean Wikipedia"
     turkish_wikipedia: "Turkish Wikipedia"
