@@ -17,7 +17,7 @@
 
 		d3.csv( '/data/dmca_requests.csv', function( error, data ) {
 			if ( error ) throw error;
-			window.requestsAndGranted( data, 'dmca_requests', 'juldec14' );
+			window.requestsAndGranted( data, 'dmca_requests', 'janjun15' );
 		} );
 
 	} );
