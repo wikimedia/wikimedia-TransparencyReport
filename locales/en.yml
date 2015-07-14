@@ -326,6 +326,7 @@ While Wikimedia Projects are not search engines, we occasionally receive request
     civil_subpoenas: "Civil Subpoenas"
     informal_government_requests: "Informal Government Requests"
     warrant: "Warrants"
+    court_order: "Court order"
 
     local_police: "Local Police"
     federal_agency: "Federal Agency"
@@ -339,6 +340,7 @@ While Wikimedia Projects are not search engines, we occasionally receive request
     military: "Military"
     university: "University (Asserting Governmental Rights)"
     cps: "Crown Prosecution Service"
+    upa: "Unspecified Police Agency"
 
 
 
