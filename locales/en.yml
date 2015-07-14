@@ -52,6 +52,7 @@ en:
     administrative_subpoenas: "Administrative Subpoenas"
     search_warrants: "Search Warrants"
     court_orders: "Court Orders"
+    national_security_requests: "National Security Requests"
     user_potentially_affected: "User Accounts Potentially Affected"
     user_actually_affected: "User Accounts Actually Affected"
     total_requests: "Total requests"
