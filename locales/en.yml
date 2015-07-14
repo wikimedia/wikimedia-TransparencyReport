@@ -333,8 +333,13 @@ While Wikimedia Projects are not search engines, we occasionally receive request
     municipal_government: "Municipal Government"
     doj: "DOJ"
     uknmd: "U.K. Non-Ministerial Department"
-    politicians_candidates: "Politicians & Candidates"
+    politicians_candidates: "Politicians, Candidates, & Political Parties"
     ministry: "Ministry"
+    military: "Military"
+    university: "University (Asserting Governmental Rights)"
+    cps: "Crown Prosecution Service"
+
+
 
     request_granted: "Requests granted"
 
