@@ -45,7 +45,7 @@
 		"Singapore": "sg",
 		"New Zealand": "nz",
 		"Japan": "jp",
-		"Unknown": ""
+		"Unknown": "u"
 	}
 
 	/*---Requests---------*/
