@@ -44,7 +44,8 @@
 		"Switzerland": "ch",
 		"Singapore": "sg",
 		"New Zealand": "nz",
-		"Japan": "jp"
+		"Japan": "jp",
+		"Unknown": ""
 	}
 
 	/*---Requests---------*/
@@ -729,7 +730,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "juldec14";
+			ds.filters.duration = "janjun15";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )

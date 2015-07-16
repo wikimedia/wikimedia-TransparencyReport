@@ -20,6 +20,7 @@
 		"Iran": "ir",
 		"Italy": "it",
 		"South Korea": "kr",
+		"Korea": "kr",
 		"Luxembourg": "lu",
 		"Latvia": "lv",
 		"Mexico": "mx",
@@ -55,7 +56,10 @@
 		"Turkey": "tr",
 		"Greece": "gr",
 		"Cyprus": "cy",
-		"Ukraine": "ua"
+		"Ukraine": "ua",
+		"Taiwan": "tw",
+		"Suriname": "sr",
+		"Romania": "ro"
 	}
 
 	window.requestsAndGranted = function( data, el, duration ) {
