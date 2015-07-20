@@ -326,6 +326,7 @@ While Wikimedia projects are not search engines, we occasionally receive request
     civil_subpoenas: "Civil Subpoenas"
     informal_government_requests: "Informal Government Requests"
     warrant: "Warrants"
+    court_orders: "Court orders"
     court_order: "Court order"
 
     local_police: "Local Police"
