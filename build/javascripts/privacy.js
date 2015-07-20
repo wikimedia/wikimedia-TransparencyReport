@@ -698,7 +698,8 @@
 					d[ 'Informal Request' ] +
 					d[ 'Government' ] +
 					d[ 'Civil Subpoena' ] +
-					d[ 'Warrant' ] ) )
+					d[ 'Warrant' ] +
+					d[ 'Court orders' ] ) )
 				{
 
 				    throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
@@ -725,6 +726,9 @@
 				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
 				addFact( d[ 'Country' ], 'Warrant', 'Yes', d[ 'Warrant Complied' ] );
 				addFact( d[ 'Country' ], 'Warrant', 'No', d[ 'Warrant' ] - d[ 'Warrant Complied' ] );
+				addFact( d[ 'Country' ], 'Court orders', 'Yes', d[ 'Court orders complied' ] );
+				addFact( d[ 'Country' ], 'Court orders', 'No', d[ 'Court orders' ] - d[ 'Court orders complied' ] );
+
 			} );
 			data = facts;
 
