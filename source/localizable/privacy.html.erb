@@ -41,7 +41,7 @@
 	</blockquote>
 
 	<div class="story summary_table">
-		<h3>
+		<h3 id="summary">
 			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2015</small><br />
 			<%= t('privacy.summary') %>
 		</h3>
@@ -101,7 +101,7 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2><%= t('privacy.compared_to_others') %>*</h2>
+		<h2 id="compared-companies"><%= t('privacy.compared_to_others') %>*</h2>
 		<ul class="tabs">
 			<li><a id="bubble_graph_jul13jun14" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2014</a></li>
 		</ul>
@@ -124,7 +124,7 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2><%= t('privacy.request_response') %></h2>
+		<h2 id="user-data"><%= t('privacy.request_response') %></h2>
 		<ul class="tabs">
 			<li><a id="user_data_all" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.all') %></a></li>
 			<li><a id="user_data_jul12jun13" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>

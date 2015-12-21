@@ -73,7 +73,7 @@
 
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
-		<h3>
+		<h3 id="government-request">
 			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2015</small><br />
 			<%= t('privacy.govt_requests') %>
 		</h3>
@@ -127,7 +127,7 @@
 
 <div class="col-md-12">
 	<div class="analytics">
-		<h2><%= t('content.graph_where_from') %></h2>
+		<h2 id="requests-from"><%= t('content.graph_where_from') %></h2>
 		<ul class="tabs">
 			<li><a class="where_from_tabs" id="where_from_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
 			<li><a class="where_from_tabs" id="where_from_jul12jun13" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
@@ -154,7 +154,7 @@
 
 
 	<div class="analytics">
-		<h2><%= t('content.graph_targeted_takedown') %></h2>
+		<h2 id="project-target"><%= t('content.graph_targeted_takedown') %></h2>
 		<ul class="tabs">
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
@@ -264,7 +264,7 @@
 <div class="col-md-12">
 
 	<div class="analytics">
-		<h2><%= t('content.graph_dmca_requests') %></h2>
+		<h2 id="dcma-takedown"><%= t('content.graph_dmca_requests') %></h2>
 		<ul class="tabs">
 			<li><a class="dmca_requests_tabs" id="dmca_requests_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
 			<li><a class="dmca_requests_tabs" id="dmca_requests_jul12jun13" href="javascript: void(0);"><%= t('dates.jul') %> 2012 - <%= t('dates.jun') %> 2013</a></li>
@@ -290,7 +290,7 @@
 	</div>
 
 	<div class="analytics">
-		<h2><%= t('content.graph_targeted_dmca') %></h2>
+		<h2 id="wikimedia"><%= t('content.graph_targeted_dmca') %></h2>
 		<ul class="tabs">
 			<li><a class="targeted_dmca_tabs" id="targeted_dmca_all" href="javascript: void(0);"><%= t('dates.all') %></a></li>
 			<li><a class="targeted_dmca_tabs" id="targeted_dmca_juldec13" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
