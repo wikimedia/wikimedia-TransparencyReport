@@ -82,7 +82,7 @@ blockquote:after { margin-top: -60px; float: right; content: '”'; }
 .scorecard h2 { margin: 0; margin-bottom: 10px; font: 12px sans-serif; text-transform: uppercase; color: #666; }
 .scorecard dl { margin: 0; }
 .scorecard dl dt { font: 22px/28px serif; }
-.scorecard dl dd { font-size: 100px; line-height: 160px; color: #347bff; text-align: center; letter-spacing: -3.5px; }
+.scorecard dl dd { font-size: 70px; line-height: 160px; color: #347bff; text-align: center; letter-spacing: -3.5px; }
 .scorecard dl dd .three-decimal { font-size: 80px; }
 .scorecard dl dd small { font-size: 40px; }
 

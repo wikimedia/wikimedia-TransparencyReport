@@ -31,6 +31,7 @@
 		"Poland": "pl",
 		"Puerto Rico": "pr",
 		"Russia": "ru",
+		"Saudi Arabia": "sa",
 		"Serbia": "rs",
 		"Slovenia": "si",
 		"Slovakia": "sk",
@@ -59,7 +60,12 @@
 		"Ukraine": "ua",
 		"Taiwan": "tw",
 		"Suriname": "sr",
-		"Romania": "ro"
+		"Romania": "ro",
+		"Indonesia": "id",
+		"Liechtenstein": "li",
+		"Philippines": "ph",
+		"South Africa": "za",
+		"Tanzania": "tz"
 	}
 
 	window.requestsAndGranted = function( data, el, duration ) {
@@ -119,7 +125,15 @@
 		function makeGraph( data, current ) {
 			var data = getData( data, current );
 			data.sort( function ( a, b ) {
-				return b.requests - a.requests;
+				var aKey = a.key.toLowerCase(),
+					bKey = b.key.toLowerCase();
+
+				if ( a.requests !== b.requests ) {
+					return b.requests - a.requests;
+				} else {
+					if ( aKey < bKey ) return -1;
+					if ( aKey > bKey ) return 1;
+				}
 			} )
 
 			// Put unnamed project at the end

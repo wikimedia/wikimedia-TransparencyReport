@@ -8,18 +8,18 @@
 
 <div class="col-md-3">
 	<section class="scorecard">
-		<h2><%= t('dates.jan') %> 2015 – <%= t('dates.jun') %> 2015</h2>
+		<h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
 		<dl>
 			<dt><%= t('privacy.total_number_of_requests') %></dt>
-			<dd>23</dd>
+			<dd>25</dd>
 		</dl>
 	</section>
 
 	<section class="scorecard scorecard_bottom">
-		<h2><%= t('dates.jan') %> 2015 – <%= t('dates.jun') %> 2015</h2>
+		<h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
 		<dl>
 			<dt><%= t('privacy.percentage_of_times_information_produced') %></dt>
-			<dd>0<small>%</small></dd>
+			<dd>4<small>%</small></dd>
 		</dl>
 	</section>
 
@@ -35,40 +35,40 @@
 	<blockquote>
 		<p><%= t('privacy.quote') %></p>
 		<footer>
-			<a href="//commons.wikimedia.org/wiki/File:Sonia_Sotomayor_in_SCOTUS_robe.jpg"><img src="/images/quote_sotomayor.png"></a>
+			<a href="//en.wikipedia.org/wiki/File:Mary-alice-monroe-author.jpg"><img src="/images/quote_monroe.png"></a>
 			<p><%= t('privacy.cite') %></p>
 		</footer>
 	</blockquote>
 
 	<div class="story summary_table">
 		<h3 id="summary">
-			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2015</small><br />
+			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2015</small><br />
 			<%= t('privacy.summary') %>
 		</h3>
 		<hr />
 		<table>
 			<tr class="highlight">
 				<td><%= t('privacy.total_number_of_requests') %></td>
-				<td>23</td>
+				<td>25</td>
 			</tr>
 			<tr>
 				<td class="indent"><a href="/faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %></td>
-				<td>15</td>
+				<td>14</td>
 			</tr>
 			<tr>
 				<td class="indent"><a href="/faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a></td>
-				<td>6</td>
+				<td>7</td>
 			</tr>
 			<tr>
 				<td class="indent"><a href="/faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a></td>
-				<td>0</td>
+				<td>1</td>
 			</tr>
 			<tr>
 				<td class="indent"><a href="/faq.html#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><a href="//en.wikipedia.org/wiki/Administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a></td>
+				<td class="indent"><a href="/faq.html#administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a></td>
 				<td>0</td>
 			</tr>
 			<tr>
@@ -77,7 +77,7 @@
 			</tr>
 			<tr>
 				<td class="indent"><a href="/faq.html#court_order"><%= t('privacy.court_orders') %></a></td>
-				<td>1</td>
+				<td>2</td>
 			</tr>
 			<tr class="last">
 				<td class="indent"><a href="/faq.html#national_security_request"><%= t('privacy.national_security_requests') %></a></td>
@@ -85,15 +85,15 @@
 			</tr>
 			<tr class="highlight">
 				<td><%= t('privacy.information_produced') %></td>
-				<td>0</td>
+				<td>1</td>
 			</tr>
 			<tr class="highlight">
 				<td><%= t('privacy.user_potentially_affected') %></td>
-				<td>28</td>
+				<td>54</td>
 			</tr>
 			<tr class="highlight">
 				<td><%= t('privacy.user_actually_affected') %></td>
-				<td>0</td>
+				<td>1</td>
 			</tr>
 		</table>
 	</div>
@@ -103,7 +103,7 @@
 	<div class="analytics">
 		<h2 id="compared-companies"><%= t('privacy.compared_to_others') %>*</h2>
 		<ul class="tabs">
-			<li><a id="bubble_graph_jul13jun14" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2014</a></li>
+			<li><a id="bubble_graph_jan14jun15" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
 		</ul>
 		<div id="compare_graph" class="bubble_graph"></div>
 		<div class="legends">
@@ -131,7 +131,8 @@
 			<li><a id="user_data_juldec13" class="user_data_tabs"  href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2013</a></li>
 			<li><a id="user_data_janjun14" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
 			<li><a id="user_data_juldec14" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2014</a></li>
-			<li><a id="user_data_janjun15" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
+			<li><a id="user_data_janjun15" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
+			<li><a id="user_data_juldec15" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 		</ul>
 		<div class="graph">
 			<div class="row">
@@ -157,7 +158,7 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
 		<h3>
-			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2015</small><br />
+			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2015</small><br />
 			<%= t('privacy.govt_requests') %>
 		</h3>
 		<hr />
@@ -165,7 +166,22 @@
 			<tr class="highlight">
 				<td><%= t('graph.informal_government_requests') %></td>
 				<td>Total</td>
-				<td>6</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td class="indent"><%= t('graph.france') %></td>
+				<td><%= t('graph.cjp') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td class="indent"><%= t('graph.italy') %></td>
+				<td><%= t('graph.state_police') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td class="indent"></td>
+				<td><%= t('graph.prosecutorial_agency') %></td>
+				<td>1</td>
 			</tr>
 			<tr>
 				<td class="indent"><%= t('graph.united_kingdom') %></td>
@@ -173,29 +189,14 @@
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.canada') %></td>
+				<td class="indent"><%= t('graph.usa') %></td>
+				<td><%= t('graph.doj') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td class="indent"></td>
 				<td><%= t('graph.local_police') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.germany') %></td>
-				<td><%= t('graph.local_police') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.italy') %></td>
-				<td><%= t('graph.ministry') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.netherlands') %></td>
-				<td><%= t('graph.local_police') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.russia') %></td>
-				<td><%= t('graph.upa') %></td>
-				<td>1</td>
+				<td>2</td>
 			</tr>
 			<tr class="highlight">
 				<td><%= t('graph.criminal_subpoenas') %></td>
@@ -203,11 +204,11 @@
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.usa') %></td>
-				<td><%= t('graph.doj') %></td>
+				<td class="indent"><%= t('graph.india') %></td>
+				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
 			</tr>
-			<tr class="highlight">
+			<!-- <tr class="highlight">
 				<td><%= t('graph.court_order') %></td>
 				<td>Total</td>
 				<td>1</td>
@@ -216,7 +217,7 @@
 				<td class="indent"><%= t('graph.italy') %></td>
 				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
-			</tr>
+			</tr> -->
 		</table>
 	</div>
 </div>
@@ -227,10 +228,10 @@
 
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jan') %> 2015 – <%= t('dates.jun') %> 2015</h2>
+    <h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
     <dl>
       <dt><%= t('privacy.total_number_of_voluntary_disclosures') %></dt>
-      <dd>14</dd>
+      <dd>12</dd>
     </dl>
   </section>
 </div>
@@ -273,11 +274,11 @@
 <div class="analytics">
 	<h2><%= t('privacy.graph_voluntary_disclosure') %></h2>
 	<ul class="tabs">
-		<li><a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
+		<li><a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 	</ul>
 	<div class="col-md-7">
 		<div id="voluntary_disclosure_graph" class="bar_graph_horizontal">
-			<img src="images/pie_june2015.png" alt="Voluntary Disclosure: Pie Graph">
+			<img src="images/pie_dec2015.png" alt="Voluntary Disclosure: Pie Graph">
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -312,6 +313,8 @@
 <input type="hidden" id="t_brazil" value="<%= t('graph.brazil') %>">
 <input type="hidden" id="t_spain" value="<%= t('graph.spain') %>">
 <input type="hidden" id="t_switzerland" value="<%= t('graph.switzerland') %>">
+<input type="hidden" id="t_philippines" value="<%= t('graph.philippines') %>">
+<input type="hidden" id="t_sweden" value="<%= t('graph.sweden') %>">
 
 <input type="hidden" id="t_criminal_subpoenas" value="<%= t('graph.criminal_subpoenas') %>">
 <input type="hidden" id="t_informal_non_government_requests" value="<%= t('graph.informal_non_government_requests') %>">

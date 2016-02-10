@@ -22,7 +22,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
-    eventmachine (1.0.3)
+    eventmachine (1.0.9.1)
     execjs (2.1.0)
     ffi (1.9.3)
     fssm (0.2.10)

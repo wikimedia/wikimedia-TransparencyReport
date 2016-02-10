@@ -29,6 +29,7 @@
 		"Slovenia": "si",
 		"Slovakia": "sk",
 		"Senegal": "sg",
+		"Sweden": "se",
 		"USA": "us",
 		"France": "fr",
 		"United Kingdom": "gb",
@@ -45,7 +46,8 @@
 		"Singapore": "sg",
 		"New Zealand": "nz",
 		"Japan": "jp",
-		"Unknown": "u"
+		"Unknown": "u",
+		"Philippines": "ph"
 	}
 
 	/*---Requests---------*/
@@ -170,7 +172,6 @@
 			.range( [ 0, width ] );
 
 		function makeBars( graph, data, yScale, ds, dispatch, className, timerange ) {
-
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
@@ -219,7 +220,6 @@
 					x: 0
 				} );
 			} );
-
 			function findData( key, disclosed ) {
 				return stackedData.filter( function ( d ) {
 					return ( d.key === key && d.disclosed === disclosed )
@@ -267,9 +267,9 @@
 					) {
 						var filteredData = ds.groupBy( 'country' )[ d.key ];
 						var filter = ds.filters.type;
-						content = "<b>" + filter + " Requests</b>"
+						content = "<b>" + filter + "</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-							+ "<b>Information Produced For</b>"
+							+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
 							+ "<span>" + filteredData[ 0 ] + "</span>";
 					}
 
@@ -338,10 +338,10 @@
 					) {
 						var filteredData = ds.groupBy( 'country' )[ d.key ];
 						var filter = ds.filters.type;
-						content = "<b>" + filter + " Requests</b>"
+						content = "<b>" + filter + "</b>"
 							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
 							+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
-							+ "<span>" + filteredData[ 1 ] + "</span>";
+							+ "<span>" + filteredData[ 0 ] + "</span>";
 					}
 
 					if ( content === "" ) {
@@ -407,10 +407,10 @@
 						) {
 							var filteredData = ds.groupBy( 'country' )[ d.key ];
 							var filter = ds.filters.type;
-							content = "<b>" + filter + " Requests</b>"
+							content = "<b>" + filter + "</b>"
 								+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
 								+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
-								+ "<span>" + filteredData[ 1 ] + "</span>";
+								+ "<span>" + filteredData[ 0 ] + "</span>";
 						}
 
 						if ( content === "" ) {
@@ -715,7 +715,6 @@
 						} );
 					}
 				}
-
 				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'Yes', d[ 'Criminal Subpoena Complied' ] );
 				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'No', d[ 'Criminal Subpoena' ] - d[ 'Criminal Subpoena Complied' ] );
 				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'Yes', d[ 'Informal Request Complied' ] );
@@ -734,7 +733,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "janjun15";
+			ds.filters.duration = "juldec15";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
