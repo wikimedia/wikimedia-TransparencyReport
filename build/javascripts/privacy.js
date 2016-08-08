@@ -2,10 +2,10 @@
 
 	var codes = {
 		"Argentina": "ar",
+		"Bangladesh": "bd",
 		"Austria": "at",
 		"Australia": "au",
 		"Belgium": "be",
-		"Bangladesh": "bd",
 		"Bulgaria": "bg",
 		"Chile": "cl",
 		"Denmark": "dk",
@@ -15,6 +15,7 @@
 		"Iran": "ir",
 		"Italy": "it",
 		"South Korea": "kr",
+		"Korea": "kr",
 		"Luxembourg": "lu",
 		"Latvia": "lv",
 		"Mexico": "mx",
@@ -25,11 +26,11 @@
 		"Poland": "pl",
 		"Puerto Rico": "pr",
 		"Russia": "ru",
+		"Saudi Arabia": "sa",
 		"Serbia": "rs",
 		"Slovenia": "si",
 		"Slovakia": "sk",
-		"Senegal": "sg",
-		"Sweden": "se",
+		"Senegal": "sn",
 		"USA": "us",
 		"France": "fr",
 		"United Kingdom": "gb",
@@ -46,8 +47,32 @@
 		"Singapore": "sg",
 		"New Zealand": "nz",
 		"Japan": "jp",
-		"Unknown": "u",
-		"Philippines": "ph"
+		"Czech Republic": "cz",
+		"Sweden": "se",
+		"Turkey": "tr",
+		"Greece": "gr",
+		"Cyprus": "cy",
+		"Ukraine": "ua",
+		"Taiwan": "tw",
+		"Suriname": "sr",
+		"Romania": "ro",
+		"Indonesia": "id",
+		"Liechtenstein": "li",
+		"Philippines": "ph",
+		"South Africa": "za",
+		"Tanzania": "tz",
+		"Portugal": "pt",
+		"Hungary": "hu",
+		"Venezuela": "ve",
+		"Croatia": "hr",
+		"Ecuador": "ec",
+		"Egypt": "eg",
+		"Estonia": "ee",
+		"Finland": "fi",
+		"Georgia": 'ge',
+		"Malta": "mt",
+		"Morocco": "ma",
+		"Dominican Republic": "do"
 	}
 
 	/*---Requests---------*/
@@ -72,13 +97,26 @@
 
 		function init( row, column ) {
 			if ( !data[row[ column ] ] ) {
-				data[ row[ column ] ] = [ 0, 0 ];
+				data[ row[ column ] ] = [ 0, 0, 0 ];
 			}
 		}
 
 		function increment( row, column ) {
 			init( row, column );
-			var index = ( row.disclosed === 'Yes' ) ? 0 : 1;
+			var index;
+			switch (row.disclosed) {
+				case 'All':
+					index = 0;
+					break;
+				case 'No':
+					index = 1;
+					break;
+				case 'Partial':
+					index = 2;
+					break;
+			}
+			// var index = ( row.disclosed === 'All' ) ? 0 : 1;
+			// console.log(row, column, index)
 			data[ row[ column ] ][ index ]  += 1;
 		}
 
@@ -185,7 +223,7 @@
 					} );
 					return total;
 				} ) ] )
-				.range( [ 0, width ] );
+				.range( [ 20, width ] );
 			}
 
 			var y_range = [];
@@ -209,13 +247,19 @@
 				xData[d.key] = d.value[0] + d.value[1];
 				stackedData.push( {
 					key: d.key,
-					disclosed: true,
+					disclosed: 'all',
 					value: d.value[0],
+					x: d.value[1] + d.value[2]
+				} );
+				stackedData.push( {
+					key: d.key,
+					disclosed: 'partial',
+					value: d.value[2],
 					x: d.value[1]
 				} );
 				stackedData.push( {
 					key: d.key,
-					disclosed: false,
+					disclosed: 'no',
 					value: d.value[1],
 					x: 0
 				} );
@@ -253,8 +297,9 @@
 				.on( 'mouseover', function ( d ) {
 					var
 						content = "",
-						numDisclosed = Number( findData( d.key, true ).value ),
-						numUndisclosed = Number( findData( d.key, false ).value ),
+						disclosedAll = Number( findData( d.key, 'all' ).value ),
+						disclosedPartial = Number( findData( d.key, 'partial' ).value ),
+						disclosedNone = Number( findData( d.key, 'no' ).value ),
 						top = $( d3.event.target ).offset().top,
 						left = leftOffset + xScale( xData[ d.key ] );
 
@@ -268,16 +313,20 @@
 						var filteredData = ds.groupBy( 'country' )[ d.key ];
 						var filter = ds.filters.type;
 						content = "<b>" + filter + "</b>"
-							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-							+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
-							+ "<span>" + filteredData[ 0 ] + "</span>";
+							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) + Number( filteredData[ 2 ] ) ) + "</span>"
+							+ "<b>" + $( '#t_information_produced_all' ).val() + "</b>"
+							+ "<span>" + filteredData[ 0 ] + "</span>"
+							+ "<b class='partial-data'>" + $( '#t_information_produced_partial' ).val() + "</b>"
+							+ "<span class='partial-data'>" + filteredData[ 2 ] + "</span>";
 					}
 
 					if ( content === "" ) {
 						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
-							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
-							+ '<span>' + numDisclosed + '</span>';
+							+ '<span>' + ( disclosedAll + disclosedPartial + disclosedNone ) + '</span>'
+							+ '<b>' + $( '#t_information_produced_all' ).val() + '</b>'
+							+ '<span>' + disclosedAll + '</span>'
+							+ '<b class="partial-data">' + $( '#t_information_produced_partial' ).val() + '</b>'
+							+ '<span class="partial-data">' + disclosedPartial + '</span>'
 					}
 
 					return tooltip
@@ -293,14 +342,24 @@
 				.attr( 'y', function ( d ) {
 					return ( ( yScale( d.key ) + 1 ) * 40 ) + 3;
 				} )
-				.classed( 'disclosed', function ( d ) {
-					return d.disclosed;
+				.classed( 'disclosed--all', function ( d ) {
+					// console.log(d)
+					return d.disclosed === 'all';
+				} )
+				.classed( 'disclosed--partial', function ( d ) {
+					// console.log(d)
+					return d.disclosed === 'partial';
+				} )
+				.classed( 'disclosed--none', function ( d ) {
+					// console.log(d)
+					return d.disclosed === 'no';
 				} )
 				.transition()
 				.attr( 'x', function ( d ) {
-					return xScale( d.x );
+					return xScale( d.x ) - 20;
 				} )
 				.attr( 'width', function ( d ) {
+					if ( d.value === 0) return 0;
 					return xScale( d.value );
 				} );
 			bar.exit().remove();
@@ -324,8 +383,9 @@
 				.on( 'mouseover', function ( d ) {
 					var
 						content = "",
-						numDisclosed = Number( findData( d.key, true ).value ),
-						numUndisclosed = Number( findData( d.key, false ).value ),
+						disclosedAll = Number( findData( d.key, 'all' ).value ),
+						disclosedPartial = Number( findData( d.key, 'partial' ).value ),
+						disclosedNone = Number( findData( d.key, 'no' ).value ),
 						top = $( d3.event.target ).offset().top + 20,
 						left = leftOffset + xScale( xData[ d.key ] );
 
@@ -339,16 +399,20 @@
 						var filteredData = ds.groupBy( 'country' )[ d.key ];
 						var filter = ds.filters.type;
 						content = "<b>" + filter + "</b>"
-							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-							+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
-							+ "<span>" + filteredData[ 0 ] + "</span>";
+							+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) + Number( filteredData[ 2 ] ) ) + "</span>"
+							+ "<b>" + $( '#t_information_produced_all' ).val() + "</b>"
+							+ "<span>" + filteredData[ 0 ] + "</span>"
+							+ "<b class='partial-data'>" + $( '#t_information_produced_partial' ).val() + "</b>"
+							+ "<span class='partial-data'>" + filteredData[ 2 ] + "</span>";
 					}
 
 					if ( content === "" ) {
 						content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
-							+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-							+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
-							+ '<span>' + numDisclosed + '</span>';
+							+ '<span>' + ( disclosedAll + disclosedPartial + disclosedNone ) + '</span>'
+							+ '<b>' + $( '#t_information_produced_all' ).val() + '</b>'
+							+ '<span>' + disclosedAll + '</span>'
+							+ '<b class="partial-data">' + $( '#t_information_produced_partial' ).val() + '</b>'
+							+ '<span class="partial-data">' + disclosedPartial + '</span>'
 					}
 
 					return tooltip
@@ -375,6 +439,7 @@
 			// If its a country graphy
 			if ( hasFlags ) {
 				var flags = graph.selectAll( 'image.' + className ).data( data )
+
 				flags
 					.enter()
 					.append( 'image' )
@@ -387,14 +452,33 @@
 						dispatch.filter();
 					} )
 					.attr( 'class', className )
-					.classed( 'flag', true);
+					.classed( 'flag', true)
+					.each(function(d, i) {
+						// add both rect and flag at same position to make it
+						// look like a border
+						if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
+							graph
+							.append('rect')
+							.attr({
+								'class': 'flagBorder',
+								'width': '24',
+								'height': '18',
+								'y': function() {
+									return ( ( i + 1 ) * 40 ) - 8
+								},
+								'x': '-33'
+							})
+						}
+
+					})
 
 				flags
 					.on( 'mouseover', function ( d ) {
 						var
 							content = "",
-							numDisclosed = Number( findData( d.key, true ).value ),
-							numUndisclosed = Number( findData( d.key, false ).value ),
+							disclosedAll = Number( findData( d.key, 'all' ).value ),
+							disclosedPartial = Number( findData( d.key, 'partial' ).value ),
+							disclosedNone = Number( findData( d.key, 'no' ).value ),
 							top = $( d3.event.target ).offset().top + 10,
 							left = leftOffset + xScale( xData[ d.key ] );
 
@@ -408,16 +492,20 @@
 							var filteredData = ds.groupBy( 'country' )[ d.key ];
 							var filter = ds.filters.type;
 							content = "<b>" + filter + "</b>"
-								+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) ) + "</span>"
-								+ "<b>" + $( '#t_information_produced' ).val() + "</b>"
-								+ "<span>" + filteredData[ 0 ] + "</span>";
+								+ "<span>" +  ( Number(filteredData[ 0 ] ) + Number( filteredData[ 1 ] ) + Number( filteredData[ 2 ] ) ) + "</span>"
+								+ "<b>" + $( '#t_information_produced_all' ).val() + "</b>"
+								+ "<span>" + filteredData[ 0 ] + "</span>"
+								+ "<b>" + $( '#t_information_produced_partial' ).val() + "</b>"
+								+ "<span>" + filteredData[ 2 ] + "</span>";
 						}
 
 						if ( content === "" ) {
 							content = '<b>' + $( '#t_total_requests' ).val() + '</b>'
-								+ '<span>' + ( numDisclosed + numUndisclosed ) + '</span>'
-								+ '<b>' + $( '#t_information_produced' ).val() + '</b>'
-								+ '<span>' + numDisclosed + '</span>';
+								+ '<span>' + ( disclosedAll + disclosedPartial + disclosedNone ) + '</span>'
+								+ '<b>' + $( '#t_information_produced_all' ).val() + '</b>'
+								+ '<span>' + disclosedAll + '</span>'
+								+ '<b>' + $( '#t_information_produced_partial' ).val() + '</b>'
+								+ '<span>' + disclosedPartial + '</span>'
 						}
 
 						return tooltip
@@ -429,10 +517,12 @@
 					.on( 'mouseout', function () {
 						return tooltip.style( 'display', 'none' );
 					} )
-					.attr( 'width', 28 )
-					.attr( 'height', 16 )
+					.attr( 'width', 24 )
+					.attr( 'height', 18 )
 					.attr( 'xlink:href', function ( d ) {
-						return '/images/flags_svg/' + codes[ d.key ] + '.svg';
+						if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
+							return './images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+						}
 					} )
 					.attr( 'y', function ( d, i ) {
 						return ( ( i + 1 ) * 40 ) - 8;
@@ -445,6 +535,7 @@
 
 		makeBars( graph, data, yScale, ds, dispatch, 'gray_bars', true );
 		makeBars( graph, data, yScale, ds, dispatch, 'blue_bars', true );
+
 
 
 		dispatch.on( 'filter.' + element, function () {
@@ -547,7 +638,7 @@
 					return yScale( yCentre );
 				} )
 				.attr( 'r', function ( d ) {
-					return 1 + xScale( d.requests / 2 ); // Should we add this constant?
+					return 2 + xScale( d.requests / 2 );
 				} );
 
 			circles.exit().remove()
@@ -589,7 +680,9 @@
 					return yScale( yCentre );
 				} )
 				.attr( 'r', function ( d ) {
-					return 1 + xScale( d.complied / 2 ); // Should we add this constant?
+					var ratio = d.complied / d.requests;
+						totalRad =  2 + xScale( d.requests / 2 ); // constant for legibility
+					return ratio * totalRad;
 				} );
 
 			complied_requests.exit().remove();
@@ -666,9 +759,176 @@
 		makeCircles ( data );
 	}
 
+	/*---Pie Chart---------*/
+	pieChart = function (data) {
+		var wrapper = $('.pieChart'),
+			width = wrapper.width(),
+			height = wrapper.height(),
+			radius = Math.min(width, height) / 2;
+
+		var labelFactor, polylineFactor, arc, outerArc;
+
+		// this is to appropriately scale chart slices
+	    if (width < 371) {
+
+	        labelFactor = radius * 0.42;
+	        polylineFactor = radius * 0.4;
+
+	        arc = d3.svg.arc()
+	            .outerRadius(radius * 0.35)
+	            .innerRadius(0);
+
+	        outerArc = d3.svg.arc()
+	            .innerRadius(radius * 0.4)
+	            .outerRadius(radius * 0.4);
+
+	    }
+	    else if (width < 431) {
+
+	        labelFactor = radius * 0.5;
+	        polylineFactor = radius * 0.48;
+
+	        arc = d3.svg.arc()
+	            .outerRadius(radius * 0.35)
+	            .innerRadius(0);
+
+	        outerArc = d3.svg.arc()
+	            .innerRadius(radius * 0.45)
+	            .outerRadius(radius * 0.45);
+
+	    }
+	    else if (width < 631) {
+
+	        labelFactor = radius * 0.6;
+	        polylineFactor = radius * 0.58;
+
+	        arc = d3.svg.arc()
+	            .outerRadius(radius * 0.5)
+	            .innerRadius(radius * 0.35);
+
+	        outerArc = d3.svg.arc()
+	            .innerRadius(radius * 0.6)
+	            .outerRadius(radius * 0.6);
+
+	    } else {
+
+	        labelFactor = radius;
+	        polylineFactor = radius * 0.95;
+
+	        arc = d3.svg.arc()
+	            .outerRadius(radius * 0.6)
+	            .innerRadius(radius * 0.4);
+
+	        outerArc = d3.svg.arc()
+	            .innerRadius(radius * 0.95)
+	            .outerRadius(radius * 0.95);
+
+	    }
+
+	    var svg = d3.select('.pieChart').append('svg')
+	    	.attr({
+	    		'width': width,
+	    		'height': height
+	    	})
+	    	.append('g');
+
+	    svg.attr('transform', 'translate(' + width/2 + ', ' + height/2 + ')');
+
+	    svg.append('g')
+	    	.attr('class', 'lines')
+	    svg.append('g')
+	    	.attr('class', 'slices')
+	    svg.append('g')
+	    	.attr('class', 'labels')
+
+	    var colors = ['#347bff', '#3464bc', '#344e7a', '#343838'];
+
+	    var pie = d3.layout.pie()
+	    	.value(function(d) {
+	    		return d[1];
+	    	})
+	    	.sort(null);
+
+	    var slice = svg.select('.slices')
+	    	.datum(data)
+	    	.selectAll('path')
+	    	.data(pie);
+
+	    slice
+	    	.enter().append('path')
+	    	.attr({
+	    		'fill': function(d, i) {
+	    			return colors[i];
+	    		},
+	    		'd': arc,
+	    		'class': 'pieChart__slice'
+	    	})
+
+	    // this will come handy in positioning our 
+	    // lables and lines outside the chart
+	    function midAngle(d) {
+	    	return d.startAngle + (d.endAngle - d.startAngle) / 2;
+	    }
+
+	    var text = svg.select('.labels').selectAll('text')
+	    	.data(pie(data))
+
+	    text.enter()
+	    	.append('text')
+	    	.attr({
+	    		'dy': '0.35em',
+	    		'class': 'pieChart__label',
+	    		'transform': function(d) {
+	    			var pos = outerArc.centroid(d);
+	    			pos[0] = labelFactor * (midAngle(d) < 3.14 ? 1 : -1);
+	    			return 'translate('+ pos +')';
+	    		}
+	    	})
+	    	.style('text-anchor', function(d) {
+	    		return midAngle(d) < 3.14 ? 'start' : 'end';
+	    	})
+	    	.text(function(d) {
+	    		return d.data[0];
+	    	})
+
+	    text.enter()
+	    	.append('text')
+	    	.attr({
+	    		'dy': '1.35em',
+	    		'class': 'pieChart__label',
+	    		'transform': function(d) {
+	    			var pos = outerArc.centroid(d);
+	    			pos[0] = labelFactor * (midAngle(d) < 3.14 ? 1 : -1);
+	    			return 'translate('+ pos +')';
+	    		}
+	    	})
+	    	.style('text-anchor', function(d) {
+	    		return midAngle(d) < 3.14 ? 'start' : 'end';
+	    	})
+	    	.text(function(d) {
+	    		return ' ( ' + d.data[1] + ' )';
+	    	})
+
+	    var polyline = svg.select('.lines').selectAll('polyline')
+	    	.data(pie(data));
+
+	    polyline.enter()
+	    	.append('polyline')
+	    	.attr({
+	    		'points': function(d) {
+		    		var pos = outerArc.centroid(d);
+		    		pos[0] = polylineFactor * (midAngle(d) < 3.14 ? 1 : -1);
+		    		return [arc.centroid(d), outerArc.centroid(d), pos];
+	    		},
+	    		'class': 'pieChart__line' 
+	    })
+
+	}
+
+
 	/*---DOM Ready---------*/
 	$( function () {
-		d3.csv( '/data/other_companies.csv', convertNumbers, function ( error, data ) {
+		d3.csv( './data/other_companies.csv', convertNumbers, function ( error, data ) {
 			if ( error ) throw error;
 			var dispatch = d3.dispatch( 'timerange' );
 			var tooltip = d3
@@ -691,7 +951,7 @@
 			return r;
 		}
 
-		d3.csv( '/data/sum.csv', convertNumbers, function ( data ) {
+		d3.csv( './data/sum.csv', convertNumbers, function ( data ) {
 			var facts = { requests: [] };
 			data.forEach( function ( d ) {
 				if ( d[ 'Total' ] !== ( d[ 'Criminal Subpoena' ] +
@@ -715,25 +975,39 @@
 						} );
 					}
 				}
-				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'Yes', d[ 'Criminal Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'No', d[ 'Criminal Subpoena' ] - d[ 'Criminal Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'Yes', d[ 'Informal Request Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'No', d[ 'Informal Request' ] - d[ 'Informal Request Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Government Requests', 'Yes', d[ 'Government Complied' ] );
-				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d[ 'Government Complied' ] );
-				addFact( d[ 'Country' ], 'Civil Subpoenas', 'Yes', d[ 'Civil Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d[ 'Civil Subpoena Complied' ] );
-				addFact( d[ 'Country' ], 'Warrant', 'Yes', d[ 'Warrant Complied' ] );
-				addFact( d[ 'Country' ], 'Warrant', 'No', d[ 'Warrant' ] - d[ 'Warrant Complied' ] );
-				addFact( d[ 'Country' ], 'Court orders', 'Yes', d[ 'Court orders complied' ] );
-				addFact( d[ 'Country' ], 'Court orders', 'No', d[ 'Court orders' ] - d[ 'Court orders complied' ] );
 
+				// console.log(d)
+
+				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'All', d[ 'Criminal Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'No', d[ 'Criminal Subpoena' ] - d['Criminal Subpoena Complied (Partial)'] - d[ 'Criminal Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'Partial', d[ 'Criminal Subpoena Complied (Partial)' ] );
+
+				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'All', d[ 'Informal Request Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'No', d[ 'Informal Request' ] - d['Informal Request Complied (Partial)'] - d[ 'Informal Request Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'Partial', d[ 'Informal Request Complied (Partial)' ] );
+				
+				addFact( d[ 'Country' ], 'Informal Government Requests', 'All', d[ 'Government Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d['Government Complied (Partial)'] - d[ 'Government Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Informal Government Requests', 'Partial', d[ 'Government Complied (Partial)' ] );
+
+				addFact( d[ 'Country' ], 'Civil Subpoenas', 'All', d[ 'Civil Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Civil Subpoenas', 'No', d[ 'Civil Subpoena' ] - d['Civil Subpoena Complied (Partial)'] - d[ 'Civil Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Civil Subpoenas', 'Partial', d[ 'Civil Subpoena Complied (Partial)' ] );
+
+				addFact( d[ 'Country' ], 'Warrant', 'All', d[ 'Warrant Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'No', d[ 'Warrant' ] - d['Warrant Complied (Partial)'] - d[ 'Warrant Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Warrant', 'Partial', d[ 'Warrant Complied (Partial)' ] );
+
+				addFact( d[ 'Country' ], 'Court orders', 'All', d[ 'Court orders complied (All)' ] );
+				addFact( d[ 'Country' ], 'Court orders', 'No', d[ 'Court orders' ] - d['Court orders complied (Partial)'] - d[ 'Court orders complied (All)' ] );
+				addFact( d[ 'Country' ], 'Court orders', 'Partial', d[ 'Court orders complied (Partial)' ] );
 			} );
+
 			data = facts;
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "juldec15";
+			ds.filters.duration = "janjun16";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
@@ -754,6 +1028,41 @@
 				dispatch.filter();
 			} );
 
+			var allDataTab = $('#user_data_all'),
+				janJun16DataTab = $('#user_data_janjun16'),
+				legendPartial = $('#partial'),
+				legendYes = $('#yes'),
+				legendNo = $('#no'),
+				legendAll = $('#all'),
+				legendNone = $('#none'),
+				graphTooltip = $('.graph_tooltip')
+
+			function updateFlagBorder() {
+			
+				$('.flagBorder').remove()
+
+				var flags = document.querySelectorAll('#bar_graph_by_country .flag')
+
+				flags.forEach(function(el, i) {
+
+					if (el.getAttribute('href')) {
+						d3.select('#bar_graph_by_country svg g')
+							.append('rect')
+							.attr({
+								'class': 'flagBorder',
+								'width': '24',
+								'height': '18',
+								'y': function() {
+									return el.getAttribute('y')
+								},
+								'x': function() {
+									return el.getAttribute('x')
+								}
+							})
+					}
+				})
+			}
+
 			$( '.user_data_tabs' ).click( function () {
 				$( '.user_data_tabs' ).removeClass( 'active' );
 				$( this ).addClass( 'active' );
@@ -766,6 +1075,28 @@
 				delete ds.filters.type;
 				delete ds.filters.country;
 				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
+
+
+				if (allDataTab.hasClass('active') || janJun16DataTab.hasClass('active') ) {
+					legendPartial.removeClass('inactive')
+					legendAll.removeClass('inactive')
+					legendNone.removeClass('inactive')
+					legendYes.addClass('inactive')
+					legendNo.addClass('inactive')
+
+					graphTooltip.removeClass('partialInactive')
+				} else {
+					legendPartial.addClass('inactive')
+					legendAll.addClass('inactive')
+					legendNone.addClass('inactive')
+					legendYes.removeClass('inactive')
+					legendNo.removeClass('inactive')
+
+					graphTooltip.addClass('partialInactive')
+				}
+
+				setTimeout(updateFlagBorder, 251);
+
 				dispatch.timerange();
 			} );
 
@@ -778,6 +1109,23 @@
 					$( '#request_type_show_all' ).removeClass( 'disabled' );
 				}
 			} );
+		} );
+
+		d3.csv('./data/number_of_disclosures.csv', function( data ) {			
+
+			var transformedData = data.map(function(o) {
+				return [o.key, o.value]
+			})
+
+			var sum = transformedData.reduce(function(s, i) {
+				return s + parseInt(i[1])
+			}, 0)
+
+			pieChart(transformedData)
+
+			var totalVal = document.querySelector('.totalValue');
+			totalVal.innerHTML = "<span>Total</span><span class='colon'>:</span><span>" + sum + "</span>";
+
 		} );
 	} );
 

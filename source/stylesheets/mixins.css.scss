@@ -1,0 +1,17 @@
+@import 'variables.css.scss';
+@mixin borderandshadow {
+	border: 1px solid $darkblue;
+    border-top: 6px solid $blue;
+    box-shadow: none;
+    @media all and (min-width: 992px) {
+    	border: none;
+        border-top: 6px solid $blue;
+        box-shadow: 0 17px 35px -17px $darkblue;
+    }
+}
+
+@mixin boxhover {
+    @media all and (min-width: 992px) {
+        box-shadow: 0 5px 35px -17px $darkblue;
+    }
+}

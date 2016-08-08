@@ -1,8 +1,9 @@
 @import 'variables.css.scss';
+@import 'mixins.css.scss';
 
 .analytics {
+	@include borderandshadow;
 	background: #ffffff;
-	border-top: 6px solid $blue;
 	margin: 40px 0;
 
 	h2 {
@@ -80,6 +81,35 @@
 	}
 }
 
+.analytics__scorecard {
+	max-width: 250px;
+	margin: 40px 0;
+	h2 {
+		margin: 0 0 10px 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.analytics__scorecard {
+		margin: 40px auto;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 991px){
+	.scorecard--1 {
+		float: left;
+	}
+	.scorecard--2 {
+		float: right;
+	}
+}
+
+.flagBorder {
+	fill: none;
+	stroke: $black;
+	stroke-width: 1px;
+}
+
 #targeted_takedown_graph,
 #targeted_dmca_graph,
 #where_from_graph {
@@ -90,7 +120,6 @@
 }
 
 #dmca_requests_graph {
-	margin-left: -20px;
 	width: 750px;
 	height: 100px;
 	padding-bottom: 30px;
@@ -98,10 +127,6 @@
 
 #dmca_requests_graph {
 	width: 400px;
-}
-
-#dmca_requests_legend{
-	padding-left: 0;
 }
 
 #bar_graph_by_country {
@@ -136,7 +161,19 @@
 	}
 
 	rect.disclosed {
+		fill: $darkgray;
+	}
+
+	rect.disclosed--all {
 		fill: $black;
+	}
+
+	rect.disclosed--partial {
+		fill: $orangeyellow;
+	}
+
+	rect.disclosed--none {
+		fill: $blue;
 	}
 
 	rect.gray_bars {
@@ -178,13 +215,11 @@
 	}
 
 	circle.all_requests {
-		fill: #387DF6;
-		stroke-width: 5px;
-		stroke: white;
+		fill: $blue;
 	}
 
 	circle.complied_requests {
-		fill: #33415A;
+		fill: $black;
 	}
 
 	text.request {
@@ -199,6 +234,63 @@
 	}
 }
 
+.pieChart {
+	height: 500px;
+	position: relative;
+	.pieChart__slice {
+		stroke: #fff;
+		stroke-width: 4px;
+	}
+	.pieChart__line {
+		fill: none;
+		stroke: $black;
+		stroke-width: 2px;
+		stroke-dasharray: 5px;
+	}
+	.pieChart__label {
+		font-size: 1em;
+	}
+	.totalValue {
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		span {
+			display: block;
+		}
+		.colon {
+			display: none;
+		}
+	}
+	@media (max-width: 768px) {
+		height: 350px;
+		.pieChart__slice {
+			stroke-width: 1px;
+		}
+		.pieChart__line {	
+			stroke-dasharray: 0px;
+		}
+		.pieChart__label {
+			font-size: .8em;
+		}
+	}
+	@media (max-width: 432px) {
+		.totalValue {
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			span {
+				display: initial;
+				padding: 0 2px;
+			}
+			.colon {
+				display: initial;
+			}
+		}
+	}
+}
+
 .legend {
 	border-left: 12px solid #000;
 	line-height: 12px;
@@ -207,12 +299,24 @@
 	margin-left: 20px;
 
 	&.legend_yes {
-		border-color: $black;
+		border-color: $darkgray;
 	}
 
 	&.legend_no {
 		border-color: $blue;
 	}
+	&.legend_partial {
+		border-color: $orangeyellow;
+		display: block;
+	}
+}
+
+#partial.inactive,
+#yes.inactive,
+#no.inactive,
+#all.inactive,
+#none.inactive {
+	display: none;
 }
 
 .graph_tooltip {
@@ -246,6 +350,12 @@
 		font-size: 22px;
 		margin-top: 6px;
 		padding-bottom: 10px;
+	}
+}
+
+.partialInactive {
+	.partial-data {
+		display: none;
 	}
 }
 
@@ -287,7 +397,7 @@
 	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
 	#where_from_graph,
 	#targeted_takedown_graph,

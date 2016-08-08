@@ -8,18 +8,18 @@
 
 <div class="col-md-3">
 	<section class="scorecard">
-		<h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
+		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</h2>
 		<dl>
 			<dt><%= t('privacy.total_number_of_requests') %></dt>
-			<dd>25</dd>
+			<dd>13</dd>
 		</dl>
 	</section>
 
 	<section class="scorecard scorecard_bottom">
-		<h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
+		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</h2>
 		<dl>
 			<dt><%= t('privacy.percentage_of_times_information_produced') %></dt>
-			<dd>4<small>%</small></dd>
+			<dd>0<small>%</small></dd>
 		</dl>
 	</section>
 
@@ -35,75 +35,122 @@
 	<blockquote>
 		<p><%= t('privacy.quote') %></p>
 		<footer>
-			<a href="//en.wikipedia.org/wiki/File:Mary-alice-monroe-author.jpg"><img src="/images/quote_monroe.png"></a>
+			<a href="//en.wikipedia.org/wiki/File:Heather_Brooke_May_12.jpg"><img src="./images/heather.jpg"></a>
 			<p><%= t('privacy.cite') %></p>
 		</footer>
 	</blockquote>
+</div>
 
-	<div class="story summary_table">
-		<h3 id="summary">
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2015</small><br />
-			<%= t('privacy.summary') %>
-		</h3>
-		<hr />
-		<table>
-			<tr class="highlight">
-				<td><%= t('privacy.total_number_of_requests') %></td>
-				<td>25</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %></td>
-				<td>14</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a></td>
-				<td>7</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a></td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#search_warrant"><%= t('privacy.search_warrants') %></a></td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td class="indent"><a href="/faq.html#court_order"><%= t('privacy.court_orders') %></a></td>
-				<td>2</td>
-			</tr>
-			<tr class="last">
-				<td class="indent"><a href="/faq.html#national_security_request"><%= t('privacy.national_security_requests') %></a></td>
-				<td>0</td>
-			</tr>
-			<tr class="highlight">
-				<td><%= t('privacy.information_produced') %></td>
-				<td>1</td>
-			</tr>
-			<tr class="highlight">
-				<td><%= t('privacy.user_potentially_affected') %></td>
-				<td>54</td>
-			</tr>
-			<tr class="highlight">
-				<td><%= t('privacy.user_actually_affected') %></td>
-				<td>1</td>
-			</tr>
-		</table>
+<div class="col-md-12 summary__wrapper">
+		
+		<div class="story summary_table">
+			<h3 id="summary">
+				<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</small><br />
+				<%= t('privacy.summary') %>
+			</h3>
+			<hr />
+			<table>
+				<tr class="highlight">
+					<td><%= t('privacy.total_number_of_requests') %></td>
+					<td>13</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %></td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a></td>
+					<td>6</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#search_warrant"><%= t('privacy.search_warrants') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="indent"><a href="./faq.html#court_order"><%= t('privacy.court_orders') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr class="last">
+					<td class="indent"><a href="./faq.html#national_security_request"><%= t('privacy.national_security_requests') %></a></td>
+					<td>0</td>
+				</tr>
+				<tr class="highlight">
+					<td><%= t('privacy.information_produced') %></td>
+					<td>0</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="story story_bottom">
+			<h3>
+				<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</small><br />
+				<%= t('privacy.user_accounts_affected') %>
+			</h3>
+			<hr />
+			<table>				
+				<tr class="indent">
+					<td><%= t('privacy.user_potentially_affected') %></td>
+					<td>14</td>
+				</tr>
+				<tr class="indent">
+					<td><%= t('privacy.user_actually_affected') %></td>
+					<td>0</td>
+				</tr>
+				<tr class="indent">
+					<td><%= t('privacy.user_accounts_notified') %></td>
+					<td>0</td>
+				</tr>
+			</table>
+		</div>
+
+</div>
+
+<div class="col-md-12 info_type">
+	
+	<div class="col-md-6">
+		<h2 class="info_type__head"><%= t('privacy.info_type_title') %></h2>
+		<div><%= t('privacy.info_type_body') %></div>
 	</div>
+
+	<div class="col-md-3">	
+		<section class="scorecard">
+			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</h2>
+			<dl>
+				<dt><%= t('privacy.content_requests') %></dt>
+				<dd>0<small>%</small></dd>
+			</dl>
+		</section>
+	</div>
+
+	<div class="col-md-3">
+		<section class="scorecard">
+			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</h2>
+			<dl>
+				<dt><%= t('privacy.non-content_requests') %></dt>
+				<dd>100<small>%</small></dd>
+			</dl>
+		</section>
+	</div>
+
 </div>
 
 <div class="col-md-12">
 	<div class="analytics">
 		<h2 id="compared-companies"><%= t('privacy.compared_to_others') %>*</h2>
 		<ul class="tabs">
-			<li><a id="bubble_graph_jan14jun15" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
+			<li><a id="bubble_graph_juldec15" class="bubble_graph_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 		</ul>
 		<div id="compare_graph" class="bubble_graph"></div>
 		<div class="legends">
@@ -132,7 +179,8 @@
 			<li><a id="user_data_janjun14" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2014</a></li>
 			<li><a id="user_data_juldec14" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2014</a></li>
 			<li><a id="user_data_janjun15" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2015</a></li>
-			<li><a id="user_data_juldec15" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
+			<li><a id="user_data_juldec15" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
+			<li><a id="user_data_janjun16" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 		</ul>
 		<div class="graph">
 			<div class="row">
@@ -141,8 +189,11 @@
 					<div id="bar_graph_by_type" class="bar_graph_horizontal"></div>
 					<h3><%= t('privacy.information_produced_title') %></h3>
 					<div>
-						<p class="legend legend_yes"><%= t('yn.yess') %></p>
-						<p class="legend legend_no"><%= t('yn.noo') %></p>
+						<p id="all" class="legend legend_yes"><%= t('yn.all') %></p>
+						<p id="yes" class="legend legend_yes inactive"><%= t('yn.yess') %></p>
+						<p id="partial" class="legend legend_partial"><%= t('yn.pr') %></p>
+						<p id="none" class="legend legend_no"><%= t('yn.none') %></p>
+						<p id="no" class="legend legend_no inactive"><%= t('yn.noo') %></p>							
 					</div>
 				</div>
 				<div class="col-md-7">
@@ -158,7 +209,7 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
 		<h3>
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2015</small><br />
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</small><br />
 			<%= t('privacy.govt_requests') %>
 		</h3>
 		<hr />
@@ -166,41 +217,21 @@
 			<tr class="highlight">
 				<td><%= t('graph.informal_government_requests') %></td>
 				<td>Total</td>
-				<td>7</td>
+				<td>6</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.france') %></td>
-				<td><%= t('graph.cjp') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.italy') %></td>
+				<td class="indent"><%= t('graph.australia') %></td>
 				<td><%= t('graph.state_police') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"></td>
-				<td><%= t('graph.prosecutorial_agency') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.united_kingdom') %></td>
+				<td class="indent"><%= t('graph.france') %></td>
 				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.usa') %></td>
-				<td><%= t('graph.doj') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"></td>
+				<td class="indent"><%= t('graph.germany') %></td>
 				<td><%= t('graph.local_police') %></td>
-				<td>2</td>
-			</tr>
-			<tr class="highlight">
-				<td><%= t('graph.criminal_subpoenas') %></td>
-				<td>Total</td>
 				<td>1</td>
 			</tr>
 			<tr>
@@ -208,16 +239,16 @@
 				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
 			</tr>
-			<!-- <tr class="highlight">
-				<td><%= t('graph.court_order') %></td>
-				<td>Total</td>
+			<tr>
+				<td class="indent"><%= t('graph.italy') %></td>
+				<td><%= t('graph.jp') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.italy') %></td>
-				<td><%= t('graph.local_police') %></td>
+				<td class="indent"><%= t('graph.united_kingdom') %></td>
+				<td><%= t('graph.politicians_candidates') %></td>
 				<td>1</td>
-			</tr> -->
+			</tr>
 		</table>
 	</div>
 </div>
@@ -228,17 +259,17 @@
 
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jul') %> 2015 – <%= t('dates.dec') %> 2015</h2>
+    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2016</h2>
     <dl>
-      <dt><%= t('privacy.total_number_of_voluntary_disclosures') %></dt>
+      <dt><%= t('privacy.total_number_of_emergency_disclosures') %></dt>
       <dd>12</dd>
     </dl>
   </section>
 </div>
 
 <div class="col-md-8">
-  <h2><%= t('privacy.voluntary_disclosures_title') %></h2>
-  <%= t('privacy.voluntary_disclosures_intro') %>
+  <h2><%= t('privacy.emergency_disclosures_title') %></h2>
+  <%= t('privacy.emergency_disclosures_intro') %>
 </div>
 
 <div class="clear"></div>
@@ -272,17 +303,14 @@
 <br><br>
 
 <div class="analytics">
-	<h2><%= t('privacy.graph_voluntary_disclosure') %></h2>
+	<h2><%= t('privacy.graph_emergency_disclosure') %></h2>
 	<ul class="tabs">
-		<li><a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
+		<li><a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 	</ul>
-	<div class="col-md-7">
-		<div id="voluntary_disclosure_graph" class="bar_graph_horizontal">
-			<img src="images/pie_dec2015.png" alt="Voluntary Disclosure: Pie Graph">
+	<div class="pieChart">
+		<div class="totalValue">
 		</div>
 	</div>
-	<div class="clear"></div>
-	<br>
 </div>
 
 
@@ -290,6 +318,8 @@
 <input type="hidden" id="t_total_requests" value="<%= t('privacy.total_requests') %>">
 <input type="hidden" id="t_request_granted" value="<%= t('graph.request_granted') %>">
 <input type="hidden" id="t_information_produced" value="<%= t('privacy.information_produced') %>">
+<input type="hidden" id="t_information_produced_all" value="<%= t('privacy.information_produced_all') %>">
+<input type="hidden" id="t_information_produced_partial" value="<%= t('privacy.information_produced_partial') %>">
 <input type="hidden" id="t_unknown" value="<%= t('graph.unknown') %>">
 <input type="hidden" id="t_usa" value="<%= t('graph.usa') %>">
 <input type="hidden" id="t_israel" value="<%= t('graph.israel') %>">
@@ -297,6 +327,7 @@
 <input type="hidden" id="t_china" value="<%= t('graph.china') %>">
 <input type="hidden" id="t_united_kingdom" value="<%= t('graph.united_kingdom') %>">
 <input type="hidden" id="t_australia" value="<%= t('graph.australia') %>">
+<input type="hidden" id="t_austria" value="<%= t('graph.austria') %>">
 <input type="hidden" id="t_russia" value="<%= t('graph.russia') %>">
 <input type="hidden" id="t_france" value="<%= t('graph.france') %>">
 <input type="hidden" id="t_germany" value="<%= t('graph.germany') %>">
@@ -328,5 +359,5 @@
 <input type="hidden" id="t_other" value="<%= t('graph.other') %>">
 
 <div class="clear">&nbsp;</div>
-<script src="/javascripts/rag.js"></script>
-<script src="/javascripts/privacy.js"></script>
+<script src="javascripts/rag.js"></script>
+<script src="javascripts/privacy.js"></script>

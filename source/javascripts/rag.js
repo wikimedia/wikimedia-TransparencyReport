@@ -35,7 +35,7 @@
 		"Serbia": "rs",
 		"Slovenia": "si",
 		"Slovakia": "sk",
-		"Senegal": "sg",
+		"Senegal": "sn",
 		"USA": "us",
 		"France": "fr",
 		"United Kingdom": "gb",
@@ -65,7 +65,44 @@
 		"Liechtenstein": "li",
 		"Philippines": "ph",
 		"South Africa": "za",
-		"Tanzania": "tz"
+		"Tanzania": "tz",
+		"Portugal": "pt",
+		"Hungary": "hu",
+		"Venezuela": "ve",
+		"Croatia": "hr",
+		"Ecuador": "ec",
+		"Egypt": "eg",
+		"Estonia": "ee",
+		"Finland": "fi",
+		"Georgia": 'ge',
+		"Malta": "mt",
+		"Morocco": "ma",
+		"Dominican Republic": "do"
+	}
+
+	var durationCode = {
+		'janjun16': 'Jan - Jun 2016',
+		'juldec15': 'Jul - Dec 2015',
+		'janjun15': 'Jan - Jun 2015',
+		'juldec14': 'Jul - Dec 2014',
+		'janjun14': 'Jan - Jun 2014',
+		'juldec13': 'Jul - Dec 2013',
+		'jul12jun13': 'Jul 2012 - Jun 2013'
+	}
+
+	function returnDate(el, dur) {
+
+		if (dur !== 'all') {
+			return durationCode[dur]
+		}
+		else {
+			if (el === 'where_from' || el === 'dmca_requests') {
+				return 'JUL 2012 - JUN 2016'
+			} else {
+				return 'JUL 2013 - JUN 2016'
+			}
+		}
+
 	}
 
 	window.requestsAndGranted = function( data, el, duration ) {
@@ -165,7 +202,7 @@
 				.domain( [0, d3.max( data, function (d) {
 					return Number( d.requests );
 				} ) ] )
-				.range( [ 0, width ] );
+				.range( [ 20, width ] );
 
 			var leftLine = graph.append( 'line' )
 				.attr( 'class', 'left-line' )
@@ -238,13 +275,31 @@
 				.enter()
 				.append( 'image' )
 				.attr( 'class', 'flags' )
-				.classed( 'flag', true);
+				.classed( 'flag', true)
+				.each(function(d, i) {
+					// add both rect and flag at same position to make it
+					// look like a border
+					if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
+						graph
+						.append('rect')
+						.attr({
+							'class': 'flagBorder',
+							'width': '24',
+							'height': '18',
+							'y': function() {
+								return ( ( i + 1 ) * 40 ) - 8
+							},
+							'x': '-33'
+						})
+					}
+				})
+
 			flags
-				.attr( 'width', 28 )
-				.attr( 'height', 16 )
+				.attr( 'width', 24 )
+				.attr( 'height', 18 )
 				.attr( 'xlink:href', function ( d ) {
 					if ( typeof codes[ d.key.split( '*' )[0] ] !== 'undefined' ) {
-						return '/images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
+						return './images/flags_svg/' + codes[ d.key.split( '*' )[0] ] + '.svg';
 					}
 				} )
 				.on( 'mouseover', function ( d ) {
@@ -336,22 +391,73 @@
 				} )
 				.transition()
 				.attr( 'x', function ( d ) {
-					return xScale( d.x );
+					return xScale( d.x ) - 20
 				} )
 				.attr( 'width', function ( d ) {
+					if ( d.value === 0 ) return 0
 					return xScale( d.value );
 				} );
 			bar.exit().remove();
+		}
+
+		function scorecardValue( data, duration ) {
+
+			var currentData = getData( data, duration )
+
+			var totalReceived = currentData.reduce(function(s, el) {
+					return s + Number(el.requests)
+			}, 0)
+
+			var totalGranted = currentData.reduce(function(s, el) {
+				return s + Number(el.complied)
+			}, 0)
+
+			var $nearbyScorecardWrapper = $el.parent().siblings('.col-md-4')
+
+			$nearbyScorecardWrapper.find('.scorecard--1 dd').text(totalReceived)
+			$nearbyScorecardWrapper.find('.scorecard--2 dd').text(totalGranted)
+
+			$nearbyScorecardWrapper.find('.scorecard--1 h2').text(returnDate(el, duration))
+			$nearbyScorecardWrapper.find('.scorecard--2 h2').text(returnDate(el, duration))
 
 		}
 
+		function updateFlagBorder() {
+			
+			$('.flagBorder').remove()
+
+			var flags = document.querySelectorAll( '#' + el + '_graph .flags')
+
+			flags.forEach(function(x, i) {
+
+				if (x.getAttribute('href')) {
+					d3.select( '#' + el + '_graph svg g')
+						.append('rect')
+						.attr({
+							'class': 'flagBorder',
+							'width': '24',
+							'height': '18',
+							'y': function() {
+								return x.getAttribute('y')
+							},
+							'x': function() {
+								return x.getAttribute('x')
+							}
+						})
+				}
+			})
+		}
+
 		makeGraph( data, current );
+		scorecardValue( data, current );
 
 		$( '.' + el + '_tabs' ).click( function () {
 			$( '.' + el + '_tabs' ).removeClass( 'active' );
 			$( this ).addClass( 'active' );
 			var duration =  $( this ).attr( 'id' ).split( '_' )[ 2 ];
 			makeGraph( data, duration );
+			scorecardValue( data, duration )
+			setTimeout(updateFlagBorder, 251);
 		} );
 
 	}
