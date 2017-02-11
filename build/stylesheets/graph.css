@@ -1,10 +1,10 @@
-.analytics { border: 1px solid #375baf; border-top: 6px solid #347bff; box-shadow: none; background: #ffffff; margin: 40px 0; }
-@media all and (min-width: 992px) { .analytics { border: none; border-top: 6px solid #347bff; box-shadow: 0 17px 35px -17px #375baf; } }
+.analytics { border: 1px solid #375baf; border-top: 6px solid #3366cc; box-shadow: none; background: #ffffff; margin: 40px 0; }
+@media all and (min-width: 992px) { .analytics { border: none; border-top: 6px solid #3366cc; box-shadow: 0 17px 35px -17px #375baf; } }
 .analytics h2 { margin: 20px; }
 .analytics ul.tabs { list-style: none; padding: 0; border-bottom: 1px solid #d1d1d1; }
 .analytics ul.tabs li { display: inline; }
 .analytics ul.tabs li a { display: inline-block; padding: 3px 10px; text-transform: uppercase; font-size: 12px; font-weight: 400; color: #666; border-bottom: 4px solid transparent; }
-.analytics ul.tabs li a.active, .analytics ul.tabs li a:hover { text-decoration: none; border-color: #347bff; }
+.analytics ul.tabs li a.active, .analytics ul.tabs li a:hover { text-decoration: none; border-color: #3366cc; }
 .analytics ul.tabs li:first-child { margin-left: 10px; }
 .analytics .bar_graph_horizontal.rect.gray_bars, .analytics .bar_graph_horizontal.rect.blue_bars { cursor: pointer; }
 .analytics h3 { font-family: serif; font-size: 20px; margin: 20px; margin-bottom: 0; }
@@ -37,20 +37,20 @@
 #compare_graph { width: 100%; height: 400px; }
 
 .bar_graph_horizontal line.left-line, .bar_graph_vertical line.left-line { stroke: #ccc; stroke-width: 1px; }
-.bar_graph_horizontal rect.blue_bars, .bar_graph_vertical rect.blue_bars { fill: #347bff; }
+.bar_graph_horizontal rect.blue_bars, .bar_graph_vertical rect.blue_bars { fill: #3366cc; }
 .bar_graph_horizontal rect.disclosed, .bar_graph_vertical rect.disclosed { fill: #33425b; }
 .bar_graph_horizontal rect.disclosed--all, .bar_graph_vertical rect.disclosed--all { fill: #343838; }
 .bar_graph_horizontal rect.disclosed--partial, .bar_graph_vertical rect.disclosed--partial { fill: #ffbe3c; }
-.bar_graph_horizontal rect.disclosed--none, .bar_graph_vertical rect.disclosed--none { fill: #347bff; }
+.bar_graph_horizontal rect.disclosed--none, .bar_graph_vertical rect.disclosed--none { fill: #3366cc; }
 .bar_graph_horizontal rect.gray_bars, .bar_graph_vertical rect.gray_bars { fill: #D2D8E1; }
-.bar_graph_horizontal text.targeted:hover, .bar_graph_vertical text.targeted:hover { cursor: pointer; fill: #347bff; }
-.bar_graph_horizontal text.a_label, .bar_graph_vertical text.a_label { fill: #347bff; cursor: pointer; }
+.bar_graph_horizontal text.targeted:hover, .bar_graph_vertical text.targeted:hover { cursor: pointer; fill: #3366cc; }
+.bar_graph_horizontal text.a_label, .bar_graph_vertical text.a_label { fill: #3366cc; cursor: pointer; }
 .bar_graph_horizontal text.a_label:hover, .bar_graph_vertical text.a_label:hover { text-decoration: none; }
 
 .bubble_graph line.bottomline { stroke: #d1d1d1; stroke-width: 1; }
 .bubble_graph text.company { transition: all 1s ease; font-size: 16px; font-weight: 400; text-anchor: middle; color: #343838; }
 .bubble_graph text.company.in_circle { transition: all 1s ease; text-anchor: middle; fill: #fff; }
-.bubble_graph circle.all_requests { fill: #347bff; }
+.bubble_graph circle.all_requests { fill: #3366cc; }
 .bubble_graph circle.complied_requests { fill: #343838; }
 .bubble_graph text.request { font-size: 12px; transition: all 1s ease; }
 .bubble_graph text.request.in_circle { transition: all 1s ease; fill: #fff; text-anchor: middle; }
@@ -72,7 +72,7 @@
 
 .legend { border-left: 12px solid #000; line-height: 12px; margin-top: 10px; padding-left: 10px; margin-left: 20px; }
 .legend.legend_yes { border-color: #33425b; }
-.legend.legend_no { border-color: #347bff; }
+.legend.legend_no { border-color: #3366cc; }
 .legend.legend_partial { border-color: #ffbe3c; display: block; }
 
 #partial.inactive, #yes.inactive, #no.inactive, #all.inactive, #none.inactive { display: none; }

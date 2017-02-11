@@ -841,7 +841,7 @@
 	    svg.append('g')
 	    	.attr('class', 'labels')
 
-	    var colors = ['#347bff', '#3464bc', '#344e7a', '#343838'];
+	    var colors = ['#36c', '#3464bc', '#344e7a', '#343838'];
 
 	    var pie = d3.layout.pie()
 	    	.value(function(d) {
@@ -864,7 +864,7 @@
 	    		'class': 'pieChart__slice'
 	    	})
 
-	    // this will come handy in positioning our 
+	    // this will come handy in positioning our
 	    // lables and lines outside the chart
 	    function midAngle(d) {
 	    	return d.startAngle + (d.endAngle - d.startAngle) / 2;
@@ -920,7 +920,7 @@
 		    		pos[0] = polylineFactor * (midAngle(d) < 3.14 ? 1 : -1);
 		    		return [arc.centroid(d), outerArc.centroid(d), pos];
 	    		},
-	    		'class': 'pieChart__line' 
+	    		'class': 'pieChart__line'
 	    })
 
 	}
@@ -985,7 +985,7 @@
 				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'All', d[ 'Informal Request Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'No', d[ 'Informal Request' ] - d['Informal Request Complied (Partial)'] - d[ 'Informal Request Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Informal Non-Government Requests', 'Partial', d[ 'Informal Request Complied (Partial)' ] );
-				
+
 				addFact( d[ 'Country' ], 'Informal Government Requests', 'All', d[ 'Government Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Informal Government Requests', 'No', d[ 'Government' ] - d['Government Complied (Partial)'] - d[ 'Government Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Informal Government Requests', 'Partial', d[ 'Government Complied (Partial)' ] );
@@ -1038,7 +1038,7 @@
 				graphTooltip = $('.graph_tooltip')
 
 			function updateFlagBorder() {
-			
+
 				$('.flagBorder').remove()
 
 				var flags = document.querySelectorAll('#bar_graph_by_country .flag')
@@ -1111,7 +1111,7 @@
 			} );
 		} );
 
-		d3.csv('./data/number_of_disclosures.csv', function( data ) {			
+		d3.csv('./data/number_of_disclosures.csv', function( data ) {
 
 			var transformedData = data.map(function(o) {
 				return [o.key, o.value]
