@@ -841,7 +841,7 @@
 	    svg.append('g')
 	    	.attr('class', 'labels')
 
-	    var colors = ['#36c', '#3464bc', '#344e7a', '#343838'];
+	    var colors = ['#36c', '#335aa7', '#334f82', '#33435d', '#343838'];
 
 	    var pie = d3.layout.pie()
 	    	.value(function(d) {
@@ -1007,7 +1007,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "janjun16";
+			ds.filters.duration = "juldec16";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
@@ -1029,7 +1029,7 @@
 			} );
 
 			var allDataTab = $('#user_data_all'),
-				janJun16DataTab = $('#user_data_janjun16'),
+				juldec16DataTab = $('#user_data_juldec16'),
 				legendPartial = $('#partial'),
 				legendYes = $('#yes'),
 				legendNo = $('#no'),
@@ -1041,7 +1041,7 @@
 
 				$('.flagBorder').remove()
 
-				var flags = document.querySelectorAll('#bar_graph_by_country .flag')
+				var flags = [].slice.call(document.querySelectorAll('#bar_graph_by_country .flag'));
 
 				flags.forEach(function(el, i) {
 
@@ -1077,7 +1077,7 @@
 				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
 
 
-				if (allDataTab.hasClass('active') || janJun16DataTab.hasClass('active') ) {
+				if (allDataTab.hasClass('active') || juldec16DataTab.hasClass('active') ) {
 					legendPartial.removeClass('inactive')
 					legendAll.removeClass('inactive')
 					legendNone.removeClass('inactive')
@@ -1095,7 +1095,7 @@
 					graphTooltip.addClass('partialInactive')
 				}
 
-				setTimeout(updateFlagBorder, 251);
+				setTimeout(updateFlagBorder, 350);
 
 				dispatch.timerange();
 			} );

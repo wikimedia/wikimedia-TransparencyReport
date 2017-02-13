@@ -7,6 +7,9 @@ source 'http://rubygems.org'
 
 gem "middleman", "~>3.3.3"
 
+# minify HTML
+gem "middleman-minify-html"
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 

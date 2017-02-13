@@ -7,6 +7,7 @@
 
 	var codes = {
 		"Argentina": "ar",
+		"Afghanistan": "af",
 		"Bangladesh": "bd",
 		"Austria": "at",
 		"Australia": "au",
@@ -77,10 +78,13 @@
 		"Georgia": 'ge',
 		"Malta": "mt",
 		"Morocco": "ma",
-		"Dominican Republic": "do"
+		"Dominican Republic": "do",
+		"Guatemala": "gt",
+		"Uruguay": "uy"
 	}
 
 	var durationCode = {
+		'juldec16': 'Jul - Dec 2016',
 		'janjun16': 'Jan - Jun 2016',
 		'juldec15': 'Jul - Dec 2015',
 		'janjun15': 'Jan - Jun 2015',
@@ -423,10 +427,10 @@
 		}
 
 		function updateFlagBorder() {
-			
+
 			$('.flagBorder').remove()
 
-			var flags = document.querySelectorAll( '#' + el + '_graph .flags')
+			var flags = [].slice.call(document.querySelectorAll( '#' + el + '_graph .flags'));
 
 			flags.forEach(function(x, i) {
 
@@ -457,7 +461,7 @@
 			var duration =  $( this ).attr( 'id' ).split( '_' )[ 2 ];
 			makeGraph( data, duration );
 			scorecardValue( data, duration )
-			setTimeout(updateFlagBorder, 251);
+			setTimeout(updateFlagBorder, 350);
 		} );
 
 	}

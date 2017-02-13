@@ -17,7 +17,7 @@
 
 		li {
 			display: inline;
-
+			margin-left: 10px;
 			a {
 				display: inline-block;
 				padding: 3px 10px;
@@ -31,10 +31,6 @@
 					text-decoration: none;
 					border-color: $blue;
 				}
-			}
-
-			&:first-child {
-				margin-left: 10px;
 			}
 		}
 	}
@@ -268,7 +264,7 @@
 		.pieChart__slice {
 			stroke-width: 1px;
 		}
-		.pieChart__line {	
+		.pieChart__line {
 			stroke-dasharray: 0px;
 		}
 		.pieChart__label {
