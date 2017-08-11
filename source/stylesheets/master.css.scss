@@ -186,6 +186,25 @@ footer {
 	}
 }
 
+@media (max-width: 991px) {
+	.footer__block {
+		clear: both;
+		overflow: hidden;
+	}
+	.footer__block.col-md-5 {
+		margin-bottom: 10px;
+	}
+	.footer__block .home_link span {
+		width: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer__block .home_link img {
+		margin-right: 10px;
+	}
+}
+
 .license {
 	text-align: center;
 	margin: 60px 0 0;
@@ -321,15 +340,16 @@ footer {
 	}
 }
 
+.blackout_wrapper:hover > .blackout {
+	background: transparent;
+}
+
 .blackout {
 	padding: 2px;
 	color: $black;
 	background: $black;
 	&:hover {
 		background: transparent;
-	}
-	@media all and (max-width: 991px) {
-		background: initial;
 	}
 }
 

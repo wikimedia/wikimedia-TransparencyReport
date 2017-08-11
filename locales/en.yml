@@ -27,12 +27,15 @@ en:
   home:
     title: "Wikimedia Foundation"
     title_two: "Transparency<br> Report"
-    lead: "<a target='_blank' href='//wikimediafoundation.org/wiki/Vision'>Our mission</a> is to provide free access to the sum of all human knowledge. We believe that protecting user privacy and defending against censorship are essential to the success of that mission. Every year, we receive requests from governments, individuals, and organizations to disclose information about our users or to delete or alter content on our projects. Some are legitimate. Some are not.<br /> <br />The purpose of this transparency report is to shed light on the requests we receive and how we respond to them."
+    lead: "
+      <strong><span class='blackout_wrapper'>Imagine a world <span class='blackout'>in which every single human being can</span> free<span class='blackout'>ly share in the sum</span> of <span class='blackout'>all</span> knowledge.</span></strong>
+      <br /><br /><a target='_blank' href='//wikimediafoundation.org/wiki/Vision'>Our mission</a> is to provide free access to the sum of all human knowledge. We believe that protecting user privacy and defending against censorship are essential to the success of that mission. Every year, we receive requests from governments, individuals, and organizations to disclose information about users or to delete or alter content on our projects. Some are legitimate. Some are not.
+      <br /><br />The purpose of this transparency report is to shed light on the requests we receive and how we respond to them."
     privacy: "Requests for <br/>User Data"
     content: "Requests for Content Alteration &amp; Takedown"
     faq: "Frequently Asked<br/>Questions"
-    quote: "All big changes of the world come from words."
-    cite: "<a href='//en.wikipedia.org/wiki/Marjane_Satrapi'>Marjane Satrapi</a><small>Graphic Novelist (<a href='//www.washingtonpost.com/blogs/comic-riffs/post/the-comic-riffs-interview-persepoliss-marjane-satrapi-on/2012/04/27/gIQAaeRhlT_blog.html'>2012</a>)</small>"
+    quote: "The truth isn't always beauty, but the hunger for it is."
+    cite: "<a href='//en.wikipedia.org/wiki/Nadine_Gordimer'>Nadine Gordimer</a><small>Writer (<a href='//en.wikiquote.org/wiki/Nadine_Gordimer'>1963</a>)</small>"
 
   stories:
     title: "Stories"
@@ -41,11 +44,11 @@ en:
     title: "Requests for<br/>User Data"
     total_number_of_requests: "Total User Data Requests"
     percentage_of_times_information_produced: "Percentage of Times Information Produced"
-    lead: "<a href='//meta.wikimedia.org/wiki/Wikimedia_Foundation_Guiding_Principles#Free_speech'>Freedom of speech is essential</a> to the Wikimedia movement—our projects cannot flourish in an ecosystem where individuals cannot speak freely. Our users trust us to protect their identities against unlawful disclosure, and we take this responsibility seriously."
+    lead: "<a href='//meta.wikimedia.org/wiki/Wikimedia_Foundation_Guiding_Principles#Free_speech'>Freedom of speech is essential</a> to the Wikimedia movement—the projects cannot flourish in an ecosystem where individuals cannot speak freely. Our users trust us to protect their identities against unlawful disclosure, and we take this responsibility seriously."
     intro: "<p>However, every year, governments, individuals, and corporations ask us to disclose user data. Often, we have no nonpublic information to disclose because we <a href='//wikimediafoundation.org/wiki/Privacy_policy#Types_of_Information_We_Receive_From_You.2C_How_We_Get_It.2C_.26_How_We_Use_It'>collect little nonpublic information</a> about users and retain that information for a <a href='//meta.wikimedia.org/wiki/Data_retention_guidelines'>short period of time</a>. But when we do have data, we carefully evaluate every request before considering disclosure. If the requests do not meet our <a href='//wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>standards</a>—if they are overly broad, unclear, or irrelevant—we will push back on behalf of our users.</p><p>If we must produce information due to a legally valid request, we will <a href='//wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines#Notifying_Our_Users_of_Your_Request'>notify the affected user</a> before we disclose, if we are <a href='./faq.html#nonpublic_personal_information'>legally permitted and have the means</a> to do so. In certain cases, we may <a href='./faq.html#my_personal_information'>help find assistance</a> for users to fight an invalid request.</p><p>Below, you will find more information about the requests for user data we receive.</p>"
 
-    quote: "The question of the right to privacy must be one of the defining issues of our time."
-    cite: "<a href='//en.wikipedia.org/wiki/Salil_Shetty'>Salil Shetty</a><small>Secretary General of <a href='//en.wikipedia.org/wiki/Amnesty_International'>Amnesty International</a> (<a href='//en.wikiquote.org/wiki/Salil_Shetty'>2014</a>)</small>"
+    quote: "Awareness that the Government may be watching chills associational and expressive freedoms. And the Government’s unrestrained power to assemble data that reveal private aspects of identity is susceptible to abuse."
+    cite: "<a href='//en.wikipedia.org/wiki/Sonia_Sotomayor'>Justice Sonia Sotomayor</a><small><a href='//en.wikipedia.org/wiki/Supreme_Court_of_the_United_States'>U.S. Supreme Court</a> (<a href='//en.wikiquote.org/wiki/Sonia_Sotomayor'>2012</a>)</small>"
     summary: "Summary"
 
     info_type_title: "Type of Information Requested"
@@ -77,7 +80,7 @@ en:
     information_was_produced: "Requests where information was produced"
     content_requests: "Content Requests"
     non-content_requests: "Non-Content Requests"
-    bubble_graph_fineprint: "Due to the inconsistent release dates across different organizations, comparison data for the period covered by this report (July 2016 - December 2016) was not available, so we are presenting the comparison data above for January 2016 - July 2016. Please also note that figures for Wikimedia include additional types of requests for user data that are not included in the other organizations' figures. See the <a href='./faq.html#different_compare'>FAQ</a> for more details."
+    bubble_graph_fineprint: "Due to the inconsistent release dates across different organizations, comparison data for the period covered by this report (January 2017 - June 2017) was not available, so we are presenting the comparison data above for July 2016 - December 2016. Please also note that figures for Wikimedia include additional types of requests for user data that are not included in the other organizations' figures. See the <a href='./faq.html#different_compare'>FAQ</a> for more details."
     show_all: "Show All"
     request_type: "Request Type"
     information_produced_title: "Information Produced?"
@@ -122,15 +125,15 @@ en:
     percentage_of_requests_granted: "Percentage of Requests Granted"
     total_number_of_dmca_requests: "Total DMCA Takedown Requests"
 
-    lead: "<h2>Imagine a world in which <span class='blackout'>every single human being can freely share in the sum of all knowledge.</span></h2>"
+    lead: "<h2>Imagine a world in which every single human being can freely share in the sum of all knowledge.</h2>"
     intro: "<p>The Wikimedia projects make up one of the world's largest repositories of human knowledge. With that much information, someone is bound to get upset by some of the content from time to time. While the vast majority of content disputes are <a href='./faq.html#resolve_content_disputes'>resolved by users</a> themselves, in some extreme cases the Wikimedia Foundation may receive a legal demand to override our users.</p><p>The Wikimedia projects are yours, not ours. People just like you from around the world write, upload, edit, and curate all of the content. Therefore, we believe users should decide what belongs on Wikimedia projects whenever legally possible.</p><p>Below, you will find more information about the number of requests we receive, where they come from, and how they could impact free knowledge. You can also learn more about how we fight for freedom of speech through our user assistance programs in the <a href='./faq.html#im_being_sued'>FAQ</a>.</p>"
 
-    quote: "To suppress free speech is a double wrong. It violates the rights of the hearer as well as those of the speaker."
-    cite: "<a href='//en.wikipedia.org/wiki/Frederick_Douglass'>Frederick Douglass</a><small>Author and <a href='//en.wikipedia.org/wiki/Abolitionism'>Abolitionist</a> (<a href='//en.wikiquote.org/wiki/Frederick_Douglass'>1860</a>)</small>"
+    quote: "Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers."
+    cite: "<a href='//en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights'>Universal Declaration of Human Rights</a><small><a href='//en.wikisource.org/wiki/Universal_Declaration_of_Human_Rights'>Article 19</a></small>"
 
     targeted_takedown_fineprint: "Because we did not collect data for projects potentially and actually affected until July 2013, this information is not available for July 2012 to June 2013."
 
-    story1_title: "French Intelligence Agency<br><small>March 2013</small>"
+    story1_title: "Unreliable Source<br><small>March 2013</small>"
     story1_body: "A <a href='//en.wikipedia.org/wiki/Direction_centrale_du_renseignement_int%C3%A9rieur'>French intelligence agency</a> summoned a Wikipedia user to its offices, and threatened him with severe criminal penalties if he did not use his administrative rights to delete information about a <a href='//fr.wikipedia.org/wiki/Station_hertzienne_militaire_de_Pierre-sur-Haute'>military base</a> from <a href='//fr.wikipedia.org/'>French Wikipedia</a> that the agency deemed classified. The supposedly classified information was actually publicly available because the military had provided interviews and a tour of the base to local reporters. We defended the user involved and fought to keep the content up on Wikipedia. <a href='//meta.wikimedia.org/wiki/Legal_and_Community_Advocacy/Statement_on_France'>Read more...</a>"
     story2_title: "Monkey Selfie<br><small>January 2014</small>"
     story2_body: "A photographer left his camera unattended in a national park in <a href='//en.wikipedia.org/wiki/North_Sulawesi'>North Sulawesi</a>, <a href='//en.wikipedia.org/wiki/Indonesia'>Indonesia</a>. A female <a href='//en.wikipedia.org/wiki/Celebes_crested_macaque'>crested black macaque monkey</a> got ahold of the camera and took a series of pictures, including some self-portraits. The pictures were featured in an online newspaper article and eventually posted to <a href='//commons.wikimedia.org/'>Commons</a>. We received a takedown request from the photographer, claiming that he owned the copyright to the photographs. We didn't agree, so we denied the request."
@@ -228,10 +231,28 @@ en:
     story_missing_link_title: "The Missing Link<br><small>October 2016</small>"
     story_missing_link_body: "We received an incomplete DMCA notice in October, claiming that a picture on <a href='//en.wikipedia.org/wiki/Main_Page'>English Wikipedia</a> was a still image from a copyrighted film. The photo itself purported to show a <a href='//en.wikipedia.org/wiki/Cryptozoology'>famous</a> <a href='//en.wikipedia.org/wiki/List_of_cryptids#List_of_cryptids'>cryptid</a> (appropriately, we received the message on Halloween). We asked the requester to resubmit the notice with all the information required under the DMCA. They did not do so, and the photo remains on the projects. As for the creature, we’re not sure if it’s been spotted again—but if it is, we’re sure you’ll be able to read about it on Wikipedia."
 
+    story_unreliable_title: "Unreliable Source<br><small>May 2017</small>"
+    story_unreliable_body: "People who contact the Wikimedia Foundation or experienced project volunteers to request changes to the Wikimedia projects are encouraged to provide evidence or cite <a href='//en.wikipedia.org/wiki/Wikipedia:Verifiability#Reliable_sources'>reliable sources</a> to support their views. In one recent case, a European performer asked that their birth date be changed in an article on <a href='//fr.wikipedia.org'>French Wikipedia</a>. However, there were two problems with the identification they provided as evidence: it was a primary and <a href='//en.wikipedia.org/wiki/Wikipedia:No_original_research#Primary.2C_secondary_and_tertiary_sources'>not a secondary source</a>, and it appeared to be fake. In a later email, the requester indicated that it was actually a movie or television prop. The original information and sources remain in the article."
+
+    story_jury_title: "Jury Trial<br><small>February and March 2017</small>"
+    story_jury_body: "We received two requests from lawyers representing clients awaiting trial, asking that we remove information from <a href='//en.wikipedia.org'>English Wikipedia</a> that could allegedly impact the outcome of the cases. We explained that the user community would be unlikely to remove well-sourced information, but that they could discuss their concerns with experienced volunteers. Jury integrity is a serious issue, and countries balance the rights of the accused and the free expression rights of the public differently. We believe that the public’s right to access accurate information need not be so restricted. If a court is concerned about information available to jurors, a better remedy is careful instruction or sequestration."
+
+    story_official_use_title: "For Official Use<br><small>May 2017</small>"
+    story_official_use_body: "A photographer contacted us about removing from <a href='//commons.wikimedia.org/wiki/Main_Page'>Wikimedia Commons</a> a photograph of <a href='//en.wikipedia.org/wiki/Donald_Trump'>Donald Trump</a>. They claimed the photograph was licensed only for the presidential transition team and U.S. government to use. However, the photo has been adopted by the White House for several official uses, and the whitehouse.gov copyright policy places the photo under a Creative Commons license. Due to the confusion about the copyright status of the photograph, experienced Commons volunteers decided to remove the image for now. We encourage governments everywhere to make official portraits and documents freely available to the public, and to be clear about their licensing policies."
+
+    story_dark_matter_title: "A Dark Matter<br><small>March 2017</small>"
+    story_dark_matter_body: "A photographer submitted a DMCA notice for a photo of an astronomical phenomenon that was used to illustrate an article on <a href='https://en.wikiversity.org/wiki/Wikiversity:Main_Page'>English Wikiversity</a>. They also demanded that we pay them a fine, which they argued was required by the laws of their country. We examined their claims, evaluating the photo’s appearance on Wikiversity and the project’s <a href='//en.wikiversity.org/wiki/Free_content'>content</a> and <a href='//en.wikiversity.org/wiki/Fair_use'>fair use</a> policies. After some research and consideration, we decided to grant the DMCA. However, we refused to acquiesce to their erroneous demands for money."
+
+    story_deletion_title: "Deletion Discussion<br><small>February 2017</small>"
+    story_deletion_body: "The Wikimedia community works hard to ensure that all material on the projects is properly licensed. In February, a photographer sent us a DMCA notice requesting the removal of a photo they claimed had been taken from their website. It turned out that the photo was already at the center of an ongoing deletion discussion. We notified them of the discussion, and let them know they could submit a complete DMCA if they wished. But just a few days later, the community decided to delete that photo and a few others that failed to comply with <a href='//commons.wikimedia.org/wiki/Commons:Licensing'>Wikimedia Commons’ licensing policy.</a>"
+
+    story_missing_title: "Missing Piece<br><small>March 2017</small>"
+    story_missing_body: "DMCA notices must include certain information. When we receive a notice that is lacking, we ask the requester to provide the missing details. In March, we got a partial DMCA notice from someone who claimed that a picture on <a href='//commons.wikimedia.org/wiki/Main_Page'>Wikimedia Commons</a> had previously appeared on their website. We asked them for the missing information. They replied, but still omitted something important: evidence to demonstrate that they held copyright in the photo. We explained that once they had provided this, we could evaluate their DMCA. They did not respond, and the photo remains on the projects."
+
     erasure_title: "Right to Erasure"
     erasure_intro: "
     <p>
-      The Right to Erasure, sometimes called the <a href='//en.wikipedia.org/wiki/Right_to_be_forgotten'>Right to be Forgotten</a>, was established in a 2014 <a href='//en.wikipedia.org/wiki/Court_of_Justice_of_the_European_Union'> Court of Justice of the European Union</a> decision, <a href='//en.wikipedia.org/wiki/Google_Spain_v_AEPD_and_Mario_Costeja_Gonz%C3%A1lez'>Google Spain v. AEPD and Mario Costeja González</a>. It grants individuals the ability to request that search engines de-index or delist content about them. <a href='//blog.wikimedia.org/2014/08/06/wikipedia-pages-censored-in-european-search-results/'>We believe</a> in a Right to Remember. Everyone should have free access to relevant and neutral information; search engine delistings harm our collective ability to remember history and understand the world. In October 2016, <a href='//blog.wikimedia.org/2016/10/19/petition-right-to-be-forgotten/'>we filed a petition</a> to intervene in Google’s appeal of a French administrative order that would expand such delistings from the European Union to all global domains. Despite the fact that the projects are not search engines, we occasionally receive direct requests to remove content from Wikimedia projects under the Right To Erasure.*
+      The Right to Erasure, sometimes called the <a href='//en.wikipedia.org/wiki/Right_to_be_forgotten'>Right to be Forgotten</a>, was established in a 2014 <a href='//en.wikipedia.org/wiki/Court_of_Justice_of_the_European_Union'> Court of Justice of the European Union</a> decision, <a href='//en.wikipedia.org/wiki/Google_Spain_v_AEPD_and_Mario_Costeja_Gonz%C3%A1lez'>Google Spain v. AEPD and Mario Costeja González</a>. It grants individuals the ability to request that search engines de-index or delist content about them. <a href='//blog.wikimedia.org/2014/08/06/wikipedia-pages-censored-in-european-search-results/'>We believe</a> in a Right to Remember. Everyone should have free access to relevant and neutral information; search engine delistings harm our collective ability to remember history and understand the world. In October 2016, <a href='//blog.wikimedia.org/2016/10/19/petition-right-to-be-forgotten/'>we filed a petition</a> to intervene in Google’s appeal of a French administrative order that would expand such delistings from the European Union to all global domains. In July 2017, the French Supreme Court <a href='//blog.wikimedia.org/2017/07/31/global-search-engine-delistings-petition'>asked</a> the <a href='//en.wikipedia.org/wiki/European_Court_of_Justice'>European Court of Justice</a> to address questions regarding the scope of search engine delistings. Despite the fact that the projects are not search engines, we occasionally receive direct requests to remove content from Wikimedia projects under the Right To Erasure.*
     </p>
     <p>
       <small>
@@ -239,8 +260,16 @@ en:
       </small>
     </p>"
 
-    erasure_quote: "A well-functioning copyright law carefully balances the interests of the public in access to expressive works and...the interests of copyright owners in being compensated for uses of their works."
-    erasure_cite: "<a href='//en.wikipedia.org/wiki/Pamela_Samuelson'>Pamela Samuelson</a><small>Director of <a href='//web.archive.org/web/20140812030505///www.law.berkeley.edu/bclt.htm'>Berkeley Center for Law & Technology</a> (<a href='//web.archive.org/web/20140808210748/http://btlj.org/data/articles/25_3/1175-1246%20CPP%20051811.pdf'>2010</a>)</small>"
+    erasure_quote: "If the Internet teaches us anything, it is that great value comes from leaving core resources in a commons, where they're free for people to build upon as they see fit."
+    erasure_cite: "
+      <a href='//en.wikipedia.org/wiki/Lawrence_Lessig'>
+        Lawrence Lessig
+      </a>
+      <small>Director of
+        Academic and Activist
+        (<a href='//en.wikiquote.org/wiki/Lawrence_Lessig'>2001</a>)
+      </small>
+    "
 
     total_number_of_erasure_requests: "Total Right to Erasure Requests"
     number_of_erasure_requests_granted: "Number of Requests Granted"
@@ -341,7 +370,7 @@ en:
     q_right_erasure: "What do you mean by &ldquo;Right To Erasure&rdquo;?"
     a_right_erasure: "
     <p>
-      The Right to Erasure, also called the <a href='//en.wikipedia.org/wiki/Right_to_be_forgotten'>Right To Be Forgotten</a>, is a legal principle established in 2014 when a decision by the <a href='//en.wikipedia.org/wiki/Court_of_Justice_of_the_European_Union'>Court of Justice of the European Union, Google Spain v. AEPD and Mario Costeja González</a>, granted <a href='//en.wikipedia.org/wiki/European_Union'>European Union</a> individuals the ability to request that search engines “de-index” content about them. We are concerned by these delistings. We believe in a Right to Remember factual information. Everyone should have free access to neutral and accurate facts. While Wikimedia projects are not search engines, we occasionally receive requests to remove content based on the Right to Erasure. We began <a href='//wikimediafoundation.org/wiki/Notices_received_from_search_engines'>documenting</a> such requests in July 2014. For more information about our concerns, see <a href='//blog.wikimedia.org/2014/08/06/wikipedia-pages-censored-in-european-search-results/'>our August 2014 blog post</a> and <a href='//blog.wikimedia.org/2016/10/19/petition-right-to-be-forgotten/'>our October 2016 blog post</a> about intervening in a related case.
+      The Right to Erasure, also called the <a href='//en.wikipedia.org/wiki/Right_to_be_forgotten'>Right To Be Forgotten</a>, is a legal principle established in 2014 when a decision by the <a href='//en.wikipedia.org/wiki/Court_of_Justice_of_the_European_Union'>Court of Justice of the European Union, Google Spain v. AEPD and Mario Costeja González</a>, granted <a href='//en.wikipedia.org/wiki/European_Union'>European Union</a> individuals the ability to request that search engines “de-index” content about them. We are concerned by these delistings. We believe in a Right to Remember factual information. Everyone should have free access to neutral and accurate facts. While Wikimedia projects are not search engines, we occasionally receive requests to remove content based on the Right to Erasure. We began <a href='//wikimediafoundation.org/wiki/Notices_received_from_search_engines'>documenting</a> such requests in July 2014. For more information about our concerns, see our <a href='//blog.wikimedia.org/2014/08/06/wikipedia-pages-censored-in-european-search-results/'>August 2014</a>, <a href='//blog.wikimedia.org/2016/10/19/petition-right-to-be-forgotten/'>October 2016</a>, and <a href='//blog.wikimedia.org/2017/07/31/global-search-engine-delistings-petition/'>July 2017</a> blog posts about intervening in a related case.
     </p>"
 
     q_different_compare: "How are requests for user data calculated differently by WMF as compared to other organizations?"
@@ -354,7 +383,7 @@ en:
     a_improve_laws: "
         <p>Our core <a href='//meta.wikimedia.org/wiki/User:Sue_Gardner/Wikimedia_Foundation_Guiding_Principles'>values</a> of freedom of speech and access to information can be threatened by laws that compromise user privacy. For this reason, the Wikimedia Foundation has joined the fight to improve privacy laws around the world.</p>
         <p>In 2013, we joined the <a href='//digitaldueprocess.org/'>Digital Due Process Coalition</a> (DDPC), an organization focused on reforming the United States <a href='//en.wikipedia.org/wiki/Electronic_Communications_Privacy_Act'>Electronic Communications Privacy Act</a> (ECPA). ECPA specifies standards for law enforcement access to electronic communications and associated data, thereby providing a degree of privacy to users of digital communication services. However, ECPA was enacted in 1986, meaning that it does not adequately protect users anymore, and only serves to provide inconsistent standards for law enforcement when dealing with &ldquo;new&rdquo; technologies. The DDPC’s mission is to simplify, clarify, and unify ECPA standards—providing clearer privacy protections for users, while taking into account changes in technology and usage patterns, and preserving the legal tools necessary for government agencies to enforce the laws and protect the public.</p>
-        <p>In 2014, <a href='//blog.wikimedia.org/2014/05/09/opposing-mass-surveillance-on-the-internet/'>we signed</a> onto the <a href='//necessaryandproportionate.org/principles/'>Necessary and Proportionate Principles</a>, which support the application of human rights to mass surveillance and set forth basic principles to which governments should adhere when employing modern surveillance technologies. In March 2015, we took an even stronger stand. The Wikimedia Foundation joined eight other co-plaintiffs in <a href='//blog.wikimedia.org/2015/03/10/wikimedia-v-nsa/'>filing a lawsuit</a> against the <a href='//en.wikipedia.org/wiki/National_Security_Agency'>U.S. National Security Agency</a> over its <a href='//en.wikipedia.org/wiki/Upstream_collection'>&ldquo;Upstream&rdquo; mass surveillance practices</a>, which capture communications passing through the <a href='//en.wikipedia.org/wiki/Internet_backbone'>Internet &ldquo;backbone.&rdquo;</a> We strongly oppose mass surveillance by any government or entity, and hope that this lawsuit becomes an important step in enacting change.</p>
+        <p>In 2014, <a href='//blog.wikimedia.org/2014/05/09/opposing-mass-surveillance-on-the-internet/'>we signed</a> onto the <a href='//necessaryandproportionate.org/principles/'>Necessary and Proportionate Principles</a>, which support the application of human rights to mass surveillance and set forth basic principles to which governments should adhere when employing modern surveillance technologies. In March 2015, we took an even stronger stand. The Wikimedia Foundation joined eight other co-plaintiffs in <a href='//blog.wikimedia.org/2015/03/10/wikimedia-v-nsa/'>filing a lawsuit</a> against the <a href='//en.wikipedia.org/wiki/National_Security_Agency'>U.S. National Security Agency</a> over its <a href='//en.wikipedia.org/wiki/Upstream_collection'>&ldquo;Upstream&rdquo; mass surveillance practices</a>, which capture communications passing through the <a href='//en.wikipedia.org/wiki/Internet_backbone'>Internet &ldquo;backbone.&rdquo;</a> While the claims of all plaintiffs were originally <a href='//blog.wikimedia.org/2015/10/23/wikimedia-v-nsa-lawsuit-dismissal/'>dismissed</a> by the district court, in May 2017, the Court of Appeals for the Fourth Circuit <a href='//blog.wikimedia.org/2017/05/23/wikimedia-nsa-appeal-standing/'>ruled</a> that the Wikimedia Foundation has standing to proceed. We strongly oppose mass surveillance by any government or entity, and hope that this lawsuit becomes an important step in enacting change. For more information, see our <a href='//policy.wikimedia.org/stopsurveillance/'>resources page</a> on the case.</p>
     "
 
     q_resolve_content_disputes: "How do users resolve content disputes and decide what should appear on the Wikimedia projects?"
@@ -385,10 +414,10 @@ en:
     a_six_month: "<p>During the July 2012 - June 2013 period, we recorded totals only for the entire period, rather than breaking the totals into six-month terms. In order to provide a better comparison with other reporting organizations, we changed the date ranges for our charts to line up with the timelines used by those organizations starting in July 2013.</p>"
 
     q_count_requests: "How do you count requests?"
-    a_count_requests: "<p>Each request received counts as one request in the transparency report, irrespective of the number of webpages, content, or users that request deals with. For example, a request for user information that asks for the information of three users counts as one request for user data, and a DMCA takedown request that requests the removal of five images is counted as one DMCA request. Duplicate requests regarding the same matter from the same requesting party are also counted as one request. For example, if a requesting party sends us multiple demand letters to take a particular Wikipedia article down, it counts as one request.</p>"
+    a_count_requests: "<p>Each request received counts as one request in the Transparency Report, irrespective of the number of webpages, content, or users that request deals with. For example, a request for user information that asks for the information of three users counts as one request for user data, and a DMCA takedown request that requests the removal of five images is counted as one DMCA request. Duplicate requests regarding the same matter from the same requesting party are also counted as one request. For example, if a requesting party sends us multiple demand letters to take a particular Wikipedia article down, it counts as one request.</p>"
 
     q_targeted_takedown: "What do you mean when you say a project was &ldquo;targeted&rdquo; by a takedown, alteration, or DMCA request?"
-    a_targeted_takedown: "<p>It means that a particular project would have been altered if we had granted a particular request or that a particular project was actually altered due to a particular request. For example, if the transparency report indicates that French Wiktionary was targeted by one content alteration request, it means that we received a content alteration request that demanded that we change content on French Wiktionary.</p>"
+    a_targeted_takedown: "<p>It means that a particular project would have been altered if we had granted a particular request or that a particular project was actually altered due to a particular request. For example, if the Transparency Report indicates that French Wiktionary was targeted by one content alteration request, it means that we received a content alteration request that demanded that we change content on French Wiktionary.</p>"
 
     q_projects_affected: "Do you have data for projects potentially and actually affected from July 2012 to June 2013?"
     a_projects_affected: "<p>No, we started tracking requests in more detail beginning in July 2013, so this level of detail is not available for July 2012 to June 2013.</p>"
@@ -400,82 +429,91 @@ en:
     a_preservation_request: "<p>A preservation request is an order from the U.S. government under the <a href='//en.wikipedia.org/wiki/Electronic_Communications_Privacy_Act'>Electronic Communications Privacy Act</a> (<a href='//www.law.cornell.edu/uscode/text/18/2703'>18 U.S.C. &sect; 2703(f)</a>). It requires us to retain information that would otherwise be deleted, anonymized, or aggregated within 90 days, according to our <a href='//meta.wikimedia.org/wiki/Data_retention_guidelines'>Data Retention Guidelines</a>. If we receive one of these requests, we are legally required to retain the specific information indicated. However, <strong>we will not turn this information over to the requesting party unless they subsequently follow our <a href='//wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>Requests for User Information Procedures & Guidelines</a>, and obtain a legal order, such as a subpoena or warrant, for the information in question</strong>. A preservation request requires us to preserve something. We will never produce information in response to a preservation request, and simply because we have preserved information does not mean that the party will follow the proper steps and obtain an order requiring us to produce it later.</p>"
 
   graph:
-    usa: "United States"
-    united_kingdom: "United Kingdom"
-    france: "France"
-    italy: "Italy"
-    germany: "Germany"
-    india: "India"
-    singapore: "Singapore"
-    new_zealand: "New Zealand"
-    malaysia: "Malaysia"
-    canada: "Canada"
-    hong_kong: "Hong Kong"
-    mexico: "Mexico"
-    netherlands: "Netherlands"
-    slovakia: "Slovakia"
-    brazil: "Brazil"
-    spain: "Spain"
-    switzerland: "Switzerland"
+    af: "Afghanistan"
+    argentina: "Argentina"
     australia: "Australia"
     austria: "Austria"
-    russia: "Russia"
-    belgium: "Belgium"
     austria: "Austria"
-    chile: "Chile"
-    iran: "Iran"
-    israel: "Israel"
-    luxembourg: "Luxembourg"
-    poland: "Poland"
-    serbia: "Serbia"
-    ireland: "Ireland"
-    pakistan: "Pakistan"
-    senegal: "Senegal"
-    latvia: "Latvia"
-    argentina: "Argentina"
-    bulgaria: "Bulgaria"
-    denmark: "Denmark"
-    south_korea: "Republic of Korea"
-    norway: "Norway"
-    slovenia: "Slovenia"
-    peru: "Peru"
+    azerbaijan: "Azerbaijan"
     bangladesh: "Bangladesh"
-    china: "China"
-    czech_republic: "Czech Republic"
-    ukraine: "Ukraine"
-    greece: "Greece"
-    japan: "Japan"
-    sri_lanka: "Sri Lanka"
-    sweden: "Sweden"
-    turkey: "Turkey"
-    cyprus: "Cyprus"
-    korea: "Korea"
-    romania: "Romania"
-    suriname: "Suriname"
-    taiwan: "Taiwan"
-    philippines: "Philippines"
-    indonesia: "Indonesia"
+    belgium: "Belgium"
+    brazil: "Brazil"
     brussels: "Brussels"
-    liechtenstein: "Liechtenstein"
-    saudi_arabia: "Saudi Arabia"
-    south_africa: "South Africa"
-    tanzania: "Tanzania"
-    georgia: "Georgia"
-    prt: "Portugal"
-    hung: "Hungary"
-    ven: "Venezuela"
+    bulgaria: "Bulgaria"
+    canada: "Canada"
+    chile: "Chile"
+    china: "China"
+    colombia: "Colombia"
+    costa_rica: "Costa Rica"
     cro: "Croatia"
+    cyprus: "Cyprus"
+    czech_republic: "Czech Republic"
+    denmark: "Denmark"
+    dom: "Dominican Republic"
     ecu: "Ecuador"
     egy: "Egypt"
     est: "Estonia"
     fin: "Finland"
+    france: "France"
     geo: "Georgia"
-    malta: "Malta"
-    morc: "Morocco"
-    dom: "Dominican Republic"
-    af: "Afghanistan"
+    georgia: "Georgia"
+    germany: "Germany"
+    greece: "Greece"
     gt: "Guatemala"
+    honduras: "Honduras"
+    hong_kong: "Hong Kong"
+    hung: "Hungary"
+    india: "India"
+    indonesia: "Indonesia"
+    iran: "Iran"
+    ireland: "Ireland"
+    israel: "Israel"
+    italy: "Italy"
+    japan: "Japan"
+    korea: "Korea"
+    latvia: "Latvia"
+    lebanon: "Lebanon"
+    liechtenstein: "Liechtenstein"
+    lithuania: "Lithuania"
+    luxembourg: "Luxembourg"
+    macedonia: "Macedonia"
+    malaysia: "Malaysia"
+    malta: "Malta"
+    mexico: "Mexico"
+    morc: "Morocco"
+    netherlands: "Netherlands"
+    new_zealand: "New Zealand"
+    nigeria: "Nigeria"
+    norway: "Norway"
+    pakistan: "Pakistan"
+    peru: "Peru"
+    philippines: "Philippines"
+    poland: "Poland"
+    prt: "Portugal"
+    romania: "Romania"
+    russia: "Russia"
+    saudi_arabia: "Saudi Arabia"
+    senegal: "Senegal"
+    serbia: "Serbia"
+    singapore: "Singapore"
+    slovakia: "Slovakia"
+    slovenia: "Slovenia"
+    south_africa: "South Africa"
+    south_korea: "Republic of Korea"
+    spain: "Spain"
+    sri_lanka: "Sri Lanka"
+    suriname: "Suriname"
+    sweden: "Sweden"
+    switzerland: "Switzerland"
+    taiwan: "Taiwan"
+    tanzania: "Tanzania"
+    thailand: "Thailand"
+    turkey: "Turkey"
+    ukraine: "Ukraine"
+    united_kingdom: "United Kingdom"
+    usa: "United States"
     uy: "Uruguay"
+    ven: "Venezuela"
 
     english_wikipedia: "English Wikipedia"
     wikimedia_commons: "Wikimedia Commons"
@@ -543,6 +581,13 @@ en:
     german_wikivoyage: "German Wikivoyage"
     meta: "Meta-Wiki"
     gerrit: "Gerrit"
+    azerbaijani_wikipedia: "Azerbaijani Wikipedia"
+    lithuanian_wikipedia: "Lithuanian Wikipedia"
+    malayalam_wikipedia: "Malayalam Wikipedia"
+    persian_wikipedia: "Persian Wikipedia"
+    serbo_croatian_wikipedia: "Serbo Croatian Wikipedia"
+    thai_wikipedia: "Thai Wikipedia"
+    portuguese_wikisource: "Portuguese Wikisource"
 
     one_case_was_american_brazilian: "One case was American-Brazillian"
     one_case_was_british_swiss: "One case was British-Swiss"
@@ -561,6 +606,7 @@ en:
     court_orders: "Court Orders"
     court_order: "Court Order"
     state_police: "State police"
+    state_agency: "State agency"
     local_police: "Local police"
     federal_agency: "Federal agency"
     federal_law_enforcement: "Federal law enforcement"
@@ -582,6 +628,7 @@ en:
     prosecutorial_agency: "Prosecutorial Agency"
     former: "Former Government Official"
     cons_emb: "Consulate or embassy"
+    national_museum: "National museum"
 
 
 

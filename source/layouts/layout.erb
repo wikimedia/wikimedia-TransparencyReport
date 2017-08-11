@@ -40,8 +40,8 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="<%= locale_url('/') %>">
-							<img src="/images/logo.png" />
+						<a class="navbar-brand" href="<%= locale_url('./') %>">
+							<img src="./images/logo.png" />
 							<% if request.path != 'index.html'  %>
 								<span class="name"><%= t('menu.title') %></span>
 							<% end %>
@@ -49,10 +49,10 @@
 					</div>
 					<div id="navbar-collapse" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= navigation_link( t('menu.privacy'), locale_url('/privacy.html') ) %></li>
-							<li><%= navigation_link( t('menu.content'), locale_url('/content.html') ) %></li>
-							<li><%= navigation_link( t('menu.stories'), locale_url('/stories.html') ) %></li>
-							<li><%= navigation_link( t('menu.faq'), locale_url('/faq.html') ) %></li>
+							<li><%= navigation_link( t('menu.privacy'), locale_url('./privacy.html') ) %></li>
+							<li><%= navigation_link( t('menu.content'), locale_url('./content.html') ) %></li>
+							<li><%= navigation_link( t('menu.stories'), locale_url('./stories.html') ) %></li>
+							<li><%= navigation_link( t('menu.faq'), locale_url('./faq.html') ) %></li>
 						</ul>
 					</div>
 				</nav>
@@ -61,31 +61,31 @@
 			<%= yield %>
 
 			<footer>
-				<div class="col-md-5">
-					<a href="<%= locale_url('/') %>" class="home_link">
-						<img src="/images/logo.png">
+				<div class="footer__block col-md-5">
+					<a href="<%= locale_url('./') %>" class="home_link">
+						<img src="./images/logo.png">
 						<span><%= t('menu.title') %></span>
 					</a>
 				</div>
 
-				<div class="col-md-2">
+				<div class="footer__block col-md-2">
 					<ul>
-						<li><%= link_to t('menu.privacy'), locale_url('/privacy.html') %></li>
-						<li><%= link_to t('menu.content'), locale_url('/content.html') %></li>
-						<li><%= link_to t('menu.faq'), locale_url('/faq.html') %></li>
+						<li><%= link_to t('menu.privacy'), locale_url('./privacy.html') %></li>
+						<li><%= link_to t('menu.content'), locale_url('./content.html') %></li>
+						<li><%= link_to t('menu.faq'), locale_url('./faq.html') %></li>
 					</ul>
 				</div>
 
-				<div class="col-md-2">
+				<div class="footer__block col-md-2">
 					<ul>
 						<li><a href="//meta.wikimedia.org/wiki/Wikimedia_Foundation_Transparency_Report"><%= t('menu.wiki_version') %></a></li>
-						<li><a href="./data/data_dec_2016.ods"><%= t('menu.download_data') %></a></li>
+						<li><a href="./data/data_june_2017.ods"><%= t('menu.download_data') %></a></li>
 						<li><a href="//wikimediafoundation.org/wiki/Privacy_policy"><%= t('menu.privacy_policy') %></a></li>
 						<li><a href="//meta.wikimedia.org/wiki/Data_retention_guidelines"><%= t('menu.data_retention_guidelines') %></a></li>
 					</ul>
 				</div>
 
-				<div class="col-md-2">
+				<div class="footer__block col-md-2">
 					<ul>
 						<li><a href="//wikimediafoundation.org"><%= t('menu.about_us') %></a></li>
 						<li><a href="//blog.wikimedia.org/"><%= t('menu.blog') %></a></li>

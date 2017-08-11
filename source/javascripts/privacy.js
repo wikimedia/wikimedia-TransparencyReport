@@ -2,77 +2,78 @@
 
 	var codes = {
 		"Argentina": "ar",
-		"Bangladesh": "bd",
-		"Austria": "at",
 		"Australia": "au",
+		"Austria": "at",
+		"Bangladesh": "bd",
 		"Belgium": "be",
-		"Bulgaria": "bg",
-		"Chile": "cl",
-		"Denmark": "dk",
-		"Hong Kong": "hk",
-		"Ireland": "ie",
-		"Israel": "il",
-		"Iran": "ir",
-		"Italy": "it",
-		"South Korea": "kr",
-		"Korea": "kr",
-		"Luxembourg": "lu",
-		"Latvia": "lv",
-		"Mexico": "mx",
-		"Malaysia": "my",
-		"Netherlands": "nl",
-		"Norway": "no",
-		"Peru": "pe",
-		"Poland": "pl",
-		"Puerto Rico": "pr",
-		"Russia": "ru",
-		"Saudi Arabia": "sa",
-		"Serbia": "rs",
-		"Slovenia": "si",
-		"Slovakia": "sk",
-		"Senegal": "sn",
-		"USA": "us",
-		"France": "fr",
-		"United Kingdom": "gb",
-		"Spain": "es",
-		"India": "in",
-		"Sri Lanka": "lk",
-		"Germany": "de",
-		"Canada": "ca",
-		"Nepal": "np",
-		"Pakistan": "pk",
 		"Brazil": "br",
+		"Bulgaria": "bg",
+		"Canada": "ca",
+		"Chile": "cl",
 		"China": "cn",
-		"Switzerland": "ch",
-		"Singapore": "sg",
-		"New Zealand": "nz",
-		"Japan": "jp",
-		"Czech Republic": "cz",
-		"Sweden": "se",
-		"Turkey": "tr",
-		"Greece": "gr",
-		"Cyprus": "cy",
-		"Ukraine": "ua",
-		"Taiwan": "tw",
-		"Suriname": "sr",
-		"Romania": "ro",
-		"Indonesia": "id",
-		"Liechtenstein": "li",
-		"Philippines": "ph",
-		"South Africa": "za",
-		"Tanzania": "tz",
-		"Portugal": "pt",
-		"Hungary": "hu",
-		"Venezuela": "ve",
 		"Croatia": "hr",
+		"Cyprus": "cy",
+		"Czech Republic": "cz",
+		"Denmark": "dk",
+		"Dominican Republic": "do",
 		"Ecuador": "ec",
 		"Egypt": "eg",
 		"Estonia": "ee",
 		"Finland": "fi",
+		"France": "fr",
 		"Georgia": 'ge',
+		"Germany": "de",
+		"Greece": "gr",
+		"Hong Kong": "hk",
+		"Hungary": "hu",
+		"India": "in",
+		"Indonesia": "id",
+		"Iran": "ir",
+		"Ireland": "ie",
+		"Israel": "il",
+		"Italy": "it",
+		"Japan": "jp",
+		"Korea": "kr",
+		"Latvia": "lv",
+		"Liechtenstein": "li",
+		"Luxembourg": "lu",
+		"Macedonia": "mk",
+		"Malaysia": "my",
 		"Malta": "mt",
+		"Mexico": "mx",
 		"Morocco": "ma",
-		"Dominican Republic": "do"
+		"Nepal": "np",
+		"Netherlands": "nl",
+		"New Zealand": "nz",
+		"Norway": "no",
+		"Pakistan": "pk",
+		"Peru": "pe",
+		"Philippines": "ph",
+		"Poland": "pl",
+		"Portugal": "pt",
+		"Puerto Rico": "pr",
+		"Romania": "ro",
+		"Russia": "ru",
+		"Saudi Arabia": "sa",
+		"Senegal": "sn",
+		"Serbia": "rs",
+		"Singapore": "sg",
+		"Slovakia": "sk",
+		"Slovenia": "si",
+		"South Africa": "za",
+		"South Korea": "kr",
+		"Spain": "es",
+		"Sri Lanka": "lk",
+		"Suriname": "sr",
+		"Sweden": "se",
+		"Switzerland": "ch",
+		"Taiwan": "tw",
+		"Tanzania": "tz",
+		"Turkey": "tr",
+		"Ukraine": "ua",
+		"United Kingdom": "gb",
+		"USA": "us",
+		"Venezuela": "ve",
 	}
 
 	/*---Requests---------*/
@@ -223,7 +224,7 @@
 					} );
 					return total;
 				} ) ] )
-				.range( [ 20, width ] );
+				.range( [ 0, width ] );
 			}
 
 			var y_range = [];
@@ -356,7 +357,7 @@
 				} )
 				.transition()
 				.attr( 'x', function ( d ) {
-					return xScale( d.x ) - 20;
+					return xScale( d.x );
 				} )
 				.attr( 'width', function ( d ) {
 					if ( d.value === 0) return 0;
@@ -771,30 +772,30 @@
 		// this is to appropriately scale chart slices
 	    if (width < 371) {
 
-	        labelFactor = radius * 0.42;
-	        polylineFactor = radius * 0.4;
+	        labelFactor = radius * 0.32;
+	        polylineFactor = radius * 0.3;
 
 	        arc = d3.svg.arc()
-	            .outerRadius(radius * 0.35)
+	            .outerRadius(radius * 0.25)
+	            .innerRadius(0);
+
+	        outerArc = d3.svg.arc()
+	            .innerRadius(radius * 0.3)
+	            .outerRadius(radius * 0.3);
+
+	    }
+	    else if (width < 431) {
+
+	        labelFactor = radius * 0.45;
+	        polylineFactor = radius * 0.43;
+
+	        arc = d3.svg.arc()
+	            .outerRadius(radius * 0.3)
 	            .innerRadius(0);
 
 	        outerArc = d3.svg.arc()
 	            .innerRadius(radius * 0.4)
 	            .outerRadius(radius * 0.4);
-
-	    }
-	    else if (width < 431) {
-
-	        labelFactor = radius * 0.5;
-	        polylineFactor = radius * 0.48;
-
-	        arc = d3.svg.arc()
-	            .outerRadius(radius * 0.35)
-	            .innerRadius(0);
-
-	        outerArc = d3.svg.arc()
-	            .innerRadius(radius * 0.45)
-	            .outerRadius(radius * 0.45);
 
 	    }
 	    else if (width < 631) {
@@ -820,8 +821,8 @@
 	            .innerRadius(radius * 0.4);
 
 	        outerArc = d3.svg.arc()
-	            .innerRadius(radius * 0.95)
-	            .outerRadius(radius * 0.95);
+	            .innerRadius(radius * 0.8)
+	            .outerRadius(radius * 0.8);
 
 	    }
 
@@ -841,7 +842,7 @@
 	    svg.append('g')
 	    	.attr('class', 'labels')
 
-	    var colors = ['#36c', '#335aa7', '#334f82', '#33435d', '#343838'];
+	    var colors = ['#36c', '#878787', '#ffbe3c', '#343838'];
 
 	    var pie = d3.layout.pie()
 	    	.value(function(d) {
@@ -1007,7 +1008,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "juldec16";
+			ds.filters.duration = "janjun17";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
@@ -1029,7 +1030,7 @@
 			} );
 
 			var allDataTab = $('#user_data_all'),
-				juldec16DataTab = $('#user_data_juldec16'),
+				janjun17DataTab = $('#user_data_janjun17'),
 				legendPartial = $('#partial'),
 				legendYes = $('#yes'),
 				legendNo = $('#no'),
@@ -1077,7 +1078,7 @@
 				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
 
 
-				if (allDataTab.hasClass('active') || juldec16DataTab.hasClass('active') ) {
+				if (allDataTab.hasClass('active') || janjun17DataTab.hasClass('active') ) {
 					legendPartial.removeClass('inactive')
 					legendAll.removeClass('inactive')
 					legendNone.removeClass('inactive')
