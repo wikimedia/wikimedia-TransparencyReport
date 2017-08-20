@@ -5,7 +5,6 @@
 		</span>
 	</h1>
 </div>
-
 <div class="col-md-3">
 	<section class="scorecard">
 		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
@@ -14,7 +13,6 @@
 			<dd>18</dd>
 		</dl>
 	</section>
-
 	<section class="scorecard scorecard_bottom">
 		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
 		<dl>
@@ -22,124 +20,113 @@
 			<dd>16.7<small>%</small></dd>
 		</dl>
 	</section>
-
 </div>
-
 <div class="col-md-8">
 	<p class="lead">
 		<%= t('privacy.lead') %>
 	</p>
-
 	<%= t('privacy.intro') %>
-
 	<blockquote>
 		<p><%= t('privacy.quote') %></p>
 		<footer>
-			<a href="//commons.wikimedia.org/wiki/File:Sonia_Sotomayor_7_in_robe,_2009.jpg"><img src="./images/sonia.jpg"></a>
+			<a href="https://commons.wikimedia.org/wiki/File:Sonia_Sotomayor_7_in_robe,_2009.jpg"><img src="./images/sonia.jpg"></a>
 			<p><%= t('privacy.cite') %></p>
 		</footer>
 	</blockquote>
 </div>
-
 <div class="col-md-12 summary__wrapper">
-
-		<div class="story summary_table">
-			<h3 id="summary">
-				<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br />
-				<%= t('privacy.summary') %>
-			</h3>
-			<hr />
-			<table>
-				<tr class="highlight">
-					<td><%= t('privacy.total_number_of_requests') %></td>
-					<td>18</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %>
-					</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a>
-					</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a>
-					</td>
-					<td>3</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a>
-					</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a>
-					</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#search_warrant"><%= t('privacy.search_warrants') %></a>
-					</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td class="indent">
-						<a href="./faq.html#court_order"><%= t('privacy.court_orders') %></a>
-					</td>
-					<td>0</td>
-				</tr>
-				<tr class="last">
-					<td class="indent">
-						<a href="./faq.html#national_security_request"><%= t('privacy.national_security_requests') %></a>
-					</td>
-					<td>0</td>
-				</tr>
-				<tr class="highlight">
-					<td><%= t('privacy.information_produced') %></td>
-					<td>3</td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="story story_bottom">
-			<h3>
-				<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br />
-				<%= t('privacy.user_accounts_affected') %>
-			</h3>
-			<hr />
-			<table>
-				<tr class="indent">
-					<td><%= t('privacy.user_potentially_affected') %></td>
-					<td>23</td>
-				</tr>
-				<tr class="indent">
-					<td><%= t('privacy.user_actually_affected') %></td>
-					<td>3</td>
-				</tr>
-				<tr class="indent">
-					<td><%= t('privacy.user_accounts_notified') %></td>
-					<td>0</td>
-				</tr>
-			</table>
-		</div>
-
+	<div class="story summary_table">
+		<h3 id="summary">
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br>
+			<%= t('privacy.summary') %>
+		</h3>
+		<hr>
+		<table>
+			<tr class="highlight">
+				<td><%= t('privacy.total_number_of_requests') %></td>
+				<td>18</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %>
+				</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a>
+				</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a>
+				</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#criminal_subpoena"><%= t('privacy.criminal_subpoenas') %></a>
+				</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#administrative_subpoena"><%= t('privacy.administrative_subpoenas') %></a>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#search_warrant"><%= t('privacy.search_warrants') %></a>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td class="indent">
+					<a href="./faq.html#court_order"><%= t('privacy.court_orders') %></a>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr class="last">
+				<td class="indent">
+					<a href="./faq.html#national_security_request"><%= t('privacy.national_security_requests') %></a>
+				</td>
+				<td>0</td>
+			</tr>
+			<tr class="highlight">
+				<td><%= t('privacy.information_produced') %></td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
+	<div class="story story_bottom">
+		<h3>
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br>
+			<%= t('privacy.user_accounts_affected') %>
+		</h3>
+		<hr>
+		<table>
+			<tr class="indent">
+				<td><%= t('privacy.user_potentially_affected') %></td>
+				<td>23</td>
+			</tr>
+			<tr class="indent">
+				<td><%= t('privacy.user_actually_affected') %></td>
+				<td>3</td>
+			</tr>
+			<tr class="indent">
+				<td><%= t('privacy.user_accounts_notified') %></td>
+				<td>0</td>
+			</tr>
+		</table>
+	</div>
 </div>
-
 <div class="col-md-12 info_type">
-
 	<div class="col-md-6">
 		<h2 class="info_type__head"><%= t('privacy.info_type_title') %></h2>
 		<div><%= t('privacy.info_type_body') %></div>
 	</div>
-
 	<div class="col-md-3">
 		<section class="scorecard">
 			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
@@ -149,7 +136,6 @@
 			</dl>
 		</section>
 	</div>
-
 	<div class="col-md-3">
 		<section class="scorecard">
 			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
@@ -159,9 +145,7 @@
 			</dl>
 		</section>
 	</div>
-
 </div>
-
 <div class="col-md-12">
 	<div class="analytics">
 		<h2 id="compared-companies"><%= t('privacy.compared_to_others') %>*</h2>
@@ -181,10 +165,8 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 <div class="clear"></div>
-
 <div class="col-md-12">
 	<div class="analytics">
 		<h2 id="user-data"><%= t('privacy.request_response') %></h2>
@@ -221,16 +203,14 @@
 			</div>
 		</div>
 	</div>
-
 </div>
-
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
 		<h3>
-			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br />
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br>
 			<%= t('privacy.govt_requests') %>
 		</h3>
-		<hr />
+		<hr>
 		<table>
 			<tr class="highlight">
 				<td><%= t('graph.informal_government_requests') %></td>
@@ -270,10 +250,8 @@
 		</table>
 	</div>
 </div>
-
 <div class="clear"></div>
-<br /> <br /> <br /> <br />
-
+<br><br><br><br>
 <div class="col-md-3">
   <section class="scorecard">
     <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
@@ -283,16 +261,12 @@
     </dl>
   </section>
 </div>
-
 <div class="col-md-8">
   <h2><%= t('privacy.preservation_requests_title') %></h2>
   <%= t('privacy.preservation_requests_intro') %>
 </div>
-
-
 <div class="clear"></div>
-<br /> <br /> <br /> <br />
-
+<br><br><br><br>
 <div class="col-md-3">
   <section class="scorecard">
     <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
@@ -302,22 +276,19 @@
     </dl>
   </section>
 </div>
-
 <div class="col-md-8">
   <h2><%= t('privacy.emergency_disclosures_title') %></h2>
   <%= t('privacy.emergency_disclosures_intro') %>
 </div>
-
 <div class="clear"></div>
 <br><br>
-
 <div class="col-md-8 col-md-offset-2">
 	<div class="story story_bottom">
 		<h3>
-			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br />
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br>
 			<%= t('privacy.total_number_of_emergency_disclosures') %>
 		</h3>
-		<hr />
+		<hr>
 		<table>
 			<tr class="indent">
 				<td><%= t('privacy.total_emergency_requests') %></td>
@@ -330,38 +301,31 @@
 		</table>
 	</div>
 </div>
-
 <div class="clear"></div>
-<br /> <br /> <br /> <br />
-
-
+<br><br><br><br>
 <div class="col-md-4">
   <div class="story">
-    <a href="//commons.wikimedia.org/wiki/File:LED_Verkehrssicherungsbalken.jpg"><img src="./images/story_emergency.png"></a>
+    <a href="https://commons.wikimedia.org/wiki/File:LED_Verkehrssicherungsbalken.jpg"><img src="./images/story_emergency.png"></a>
     <h3><%= t('privacy.story_emergency_title') %></h3>
     <p><%= t('privacy.story_emergency_body') %></p>
   </div>
 </div>
-
 <div class="col-md-4">
   <div class="story">
-    <a href="//commons.wikimedia.org/wiki/White_House#mediaviewer/File:SouthPorticoChristmas.jpg"><img src="./images/story_whitehouse.png"></a>
+    <a href="https://commons.wikimedia.org/wiki/White_House#mediaviewer/File:SouthPorticoChristmas.jpg"><img src="./images/story_whitehouse.png"></a>
     <h3><%= t('privacy.story_whitehouse_title') %></h3>
     <p><%= t('privacy.story_whitehouse_body') %></p>
   </div>
 </div>
-
 <div class="col-md-4">
   <div class="story">
-    <a href="//commons.wikimedia.org/wiki/File:Suicide_Prevention_Day.jpg"><img src="./images/story_suicide.png"></a>
+    <a href="https://commons.wikimedia.org/wiki/File:Suicide_Prevention_Day.jpg"><img src="./images/story_suicide.png"></a>
     <h3><%= t('privacy.story_suicide_title') %></h3>
     <p><%= t('privacy.story_suicide_body') %></p>
   </div>
 </div>
-
 <div class="clear"></div>
 <br><br>
-
 <div class="analytics">
 	<h2><%= t('privacy.graph_emergency_disclosure') %></h2>
 	<ul class="tabs">
@@ -376,8 +340,6 @@
 		</div>
 	</div>
 </div>
-
-
 <!-- Translations for JS -->
 <input type="hidden" id="t_total_requests" value="<%= t('privacy.total_requests') %>">
 <input type="hidden" id="t_request_granted" value="<%= t('graph.request_granted') %>">
