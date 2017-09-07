@@ -36,6 +36,7 @@ en:
     faq: "Frequently Asked<br>Questions"
     quote: "The truth isn't always beauty, but the hunger for it is."
     cite: "<a href='https://en.wikipedia.org/wiki/Nadine_Gordimer'>Nadine Gordimer</a><small>Writer (<a href='https://en.wikiquote.org/wiki/Nadine_Gordimer'>1963</a>)</small>"
+    cite_image: "Nadine Gordimer"
 
   stories:
     title: "Stories"
@@ -48,6 +49,7 @@ en:
     intro: "<p>However, every year, governments, individuals, and corporations ask us to disclose user data. Often, we have no nonpublic information to disclose because we <a href='https://wikimediafoundation.org/wiki/Privacy_policy#Types_of_Information_We_Receive_From_You.2C_How_We_Get_It.2C_.26_How_We_Use_It'>collect little nonpublic information</a> about users and retain that information for a <a href='https://meta.wikimedia.org/wiki/Data_retention_guidelines'>short period of time</a>. But when we do have data, we carefully evaluate every request before considering disclosure. If the requests do not meet our <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>standards</a>—if they are overly broad, unclear, or irrelevant—we will push back on behalf of our users.</p><p>If we must produce information due to a legally valid request, we will <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines#Notifying_Our_Users_of_Your_Request'>notify the affected user</a> before we disclose, if we are <a href='./faq.html#nonpublic_personal_information'>legally permitted and have the means</a> to do so. In certain cases, we may <a href='./faq.html#my_personal_information'>help find assistance</a> for users to fight an invalid request.</p><p>Below, you will find more information about the requests for user data we receive.</p>"
 
     quote: "Awareness that the Government may be watching chills associational and expressive freedoms. And the Government’s unrestrained power to assemble data that reveal private aspects of identity is susceptible to abuse."
+    quote_image: "Sonia Sotomayor"
     cite: "<a href='https://en.wikipedia.org/wiki/Sonia_Sotomayor'>Justice Sonia Sotomayor</a><small><a href='https://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States'>U.S. Supreme Court</a> (<a href='https://en.wikiquote.org/wiki/Sonia_Sotomayor'>2012</a>)</small>"
     summary: "Summary"
 
@@ -129,6 +131,7 @@ en:
     intro: "<p>The Wikimedia projects make up one of the world's largest repositories of human knowledge. With that much information, someone is bound to get upset by some of the content from time to time. While the vast majority of content disputes are <a href='./faq.html#resolve_content_disputes'>resolved by users</a> themselves, in some extreme cases the Wikimedia Foundation may receive a legal demand to override our users.</p><p>The Wikimedia projects are yours, not ours. People just like you from around the world write, upload, edit, and curate all of the content. Therefore, we believe users should decide what belongs on Wikimedia projects whenever legally possible.</p><p>Below, you will find more information about the number of requests we receive, where they come from, and how they could impact free knowledge. You can also learn more about how we fight for freedom of speech through our user assistance programs in the <a href='./faq.html#im_being_sued'>FAQ</a>.</p>"
 
     quote: "Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers."
+    quote_image: "Flag of the United Nations"
     cite: "<a href='https://en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights'>Universal Declaration of Human Rights</a><small><a href='https://en.wikisource.org/wiki/Universal_Declaration_of_Human_Rights'>Article 19</a></small>"
 
     targeted_takedown_fineprint: "Because we did not collect data for projects potentially and actually affected until July 2013, this information is not available for July 2012 to June 2013."
@@ -261,6 +264,7 @@ en:
     </p>"
 
     erasure_quote: "If the Internet teaches us anything, it is that great value comes from leaving core resources in a commons, where they're free for people to build upon as they see fit."
+    erasure_quote_image: "Lawrence Lessig"
     erasure_cite: "
       <a href='https://en.wikipedia.org/wiki/Lawrence_Lessig'>
         Lawrence Lessig
