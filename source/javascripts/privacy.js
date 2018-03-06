@@ -1,16 +1,23 @@
 ;( function ( d3, $ ) {
 
+// download country flags from here
+// http://hjnilsson.github.io/country-flags/
 	var codes = {
+		"Afghanistan": "af",
 		"Argentina": "ar",
 		"Australia": "au",
 		"Austria": "at",
+		"Azerbaijan": "az",
 		"Bangladesh": "bd",
 		"Belgium": "be",
+		"Bosnia and Herzegovina": "ba",
 		"Brazil": "br",
 		"Bulgaria": "bg",
 		"Canada": "ca",
 		"Chile": "cl",
 		"China": "cn",
+		"Colombia": "co",
+		"Costa Rica": "cr",
 		"Croatia": "hr",
 		"Cyprus": "cy",
 		"Czech Republic": "cz",
@@ -24,6 +31,8 @@
 		"Georgia": 'ge',
 		"Germany": "de",
 		"Greece": "gr",
+		"Guatemala": "gt",
+		"Honduras": "hn",
 		"Hong Kong": "hk",
 		"Hungary": "hu",
 		"India": "in",
@@ -34,8 +43,12 @@
 		"Italy": "it",
 		"Japan": "jp",
 		"Korea": "kr",
+		"Kosovo": "xk",
 		"Latvia": "lv",
+		"Lebanon": "lb",
+		"Libya": "ly",
 		"Liechtenstein": "li",
+		"Lithuania": "lt",
 		"Luxembourg": "lu",
 		"Macedonia": "mk",
 		"Malaysia": "my",
@@ -45,8 +58,10 @@
 		"Nepal": "np",
 		"Netherlands": "nl",
 		"New Zealand": "nz",
+		"Nigeria": "ng",
 		"Norway": "no",
 		"Pakistan": "pk",
+		"Papua New Guinea": "pg",
 		"Peru": "pe",
 		"Philippines": "ph",
 		"Poland": "pl",
@@ -69,11 +84,48 @@
 		"Switzerland": "ch",
 		"Taiwan": "tw",
 		"Tanzania": "tz",
+		"Thailand": "th",
 		"Turkey": "tr",
+		"Uganda": "ug",
 		"Ukraine": "ua",
 		"United Kingdom": "gb",
+		"Uruguay": "uy",
 		"USA": "us",
+		"Uzbekistan": "uz",
 		"Venezuela": "ve",
+	}
+
+	function getArraySum(arr) {
+		return arr.reduce(function(acc, item) {
+			acc += item;
+			return acc;
+		}, 0);
+	};
+
+	// bars should be first sorted by value
+	// then lexically
+	// also, put "unknown" bar at last
+	function customSort(arr) {
+		var clonedArr = arr.slice();
+		clonedArr.sort(function(a, b) {
+			var totalA = getArraySum(a.value);
+			var totalB = getArraySum(b.value);
+			if (totalA === totalB) {
+				return a.key.localeCompare(b.key);
+			}
+			return totalB - totalA;
+		});
+		var indexOfUnknownKey;
+		var arrLen = clonedArr.length;
+		for (i = 0; i < arrLen; i++) {
+			if (clonedArr[i].key === 'Unknown') {
+				indexOfUnknownKey = i;
+				break;
+			}
+		}
+		var unknownObject = clonedArr.splice(indexOfUnknownKey, 1)[0];
+		clonedArr.push(unknownObject);
+		return clonedArr;
 	}
 
 	/*---Requests---------*/
@@ -166,7 +218,7 @@
 
 	/*---Horizontal Graph---------*/
 	horizontalGraph = function ( element, groupBy, ds, dispatch, tooltip ) {
-		var data = ds.groupBy( groupBy, true );
+		var data = customSort(ds.groupBy( groupBy, true ));
 		var $el = $( '#' + element );
 		var hasFlags = Object.keys(codes).indexOf( data[0].key ) > -1;
 		var margin = {
@@ -242,10 +294,10 @@
 				.attr( 'y1', 20 )
 				.attr( 'y2', height - 10 );
 
-			var stackedData = [], xData = [];
+			var stackedData = [], xData = {};
 
 			data.forEach( function ( d ) {
-				xData[d.key] = d.value[0] + d.value[1];
+				xData[d.key] = d.value[0] + d.value[1] + d.value[2];
 				stackedData.push( {
 					key: d.key,
 					disclosed: 'all',
@@ -546,12 +598,12 @@
 
 		dispatch.on( 'timerange.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			makeBars( graph, new_data, yScale, ds, dispatch, 'gray_bars', true );
-			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars', true );
+			var sortedData = customSort(new_data);
+			makeBars( graph, sortedData, yScale, ds, dispatch, 'gray_bars', true );
+			makeBars( graph, sortedData, yScale, ds, dispatch, 'blue_bars', true );
 		} );
 
 	}
-
 
 	/*---Bubble Graph---------*/
 	bubbleGraph = function ( elementId, data, dispatch, tooltip ) {
@@ -977,8 +1029,6 @@
 					}
 				}
 
-				// console.log(d)
-
 				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'All', d[ 'Criminal Subpoena Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'No', d[ 'Criminal Subpoena' ] - d['Criminal Subpoena Complied (Partial)'] - d[ 'Criminal Subpoena Complied (All)' ] );
 				addFact( d[ 'Country' ], 'Criminal Subpoenas', 'Partial', d[ 'Criminal Subpoena Complied (Partial)' ] );
@@ -1008,7 +1058,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "janjun17";
+			ds.filters.duration = "juldec17";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
@@ -1030,7 +1080,7 @@
 			} );
 
 			var allDataTab = $('#user_data_all'),
-				janjun17DataTab = $('#user_data_janjun17'),
+				juldec17DataTab = $('#user_data_juldec17'),
 				legendPartial = $('#partial'),
 				legendYes = $('#yes'),
 				legendNo = $('#no'),
@@ -1076,25 +1126,6 @@
 				delete ds.filters.type;
 				delete ds.filters.country;
 				$( '#by_country_show_all, #request_type_show_all' ).addClass( 'disabled' );
-
-
-				if (allDataTab.hasClass('active') || janjun17DataTab.hasClass('active') ) {
-					legendPartial.removeClass('inactive')
-					legendAll.removeClass('inactive')
-					legendNone.removeClass('inactive')
-					legendYes.addClass('inactive')
-					legendNo.addClass('inactive')
-
-					graphTooltip.removeClass('partialInactive')
-				} else {
-					legendPartial.addClass('inactive')
-					legendAll.addClass('inactive')
-					legendNone.addClass('inactive')
-					legendYes.removeClass('inactive')
-					legendNo.removeClass('inactive')
-
-					graphTooltip.addClass('partialInactive')
-				}
 
 				setTimeout(updateFlagBorder, 350);
 

@@ -5,82 +5,108 @@
     </span>
   </h1>
 </div>
+
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.total_number_of_requests') %></dt>
-      <dd>341</dd>
+      <dd>343</dd>
     </dl>
   </section>
+
   <section class="scorecard scorecard_bottom">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.percentage_of_requests_granted') %></dt>
       <dd><span class="three-decimal">0</span><small>%</small></dd>
     </dl>
   </section>
 </div>
+
 <div class="col-md-8">
   <p class="lead">
     <%= t('content.lead') %>
   </p>
+
   <%= t('content.intro') %>
+
   <blockquote>
     <p><%= t('content.quote') %></p>
     <footer>
-      <a href="https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Nations.svg">
-      	<img src="./images/un_flag.png" alt="<%= t('content.quote_image') %>">
+      <a href="//commons.wikimedia.org/wiki/File:Flag_of_the_United_Nations.svg">
+      	<img src="./images/un_flag.png">
       </a>
       <p><%= t('content.cite') %></p>
     </footer>
   </blockquote>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:ready%20to%20travel%20again%3F%20%286225048795%29.jpg">
-    	<img src="./images/story_unreliable.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:Un_d%C3%AEner_de_philosophes.Jean_Huber.jpg">
+    	<img class="story_count_me__img" src="./images/story_count_me.jpg">
     </a>
-    <h3><%= t('content.story_unreliable_title') %></h3>
-    <p><%= t('content.story_unreliable_body') %></p>
+    <h3><%= t('content.story_count_me_title') %></h3>
+    <p><%= t('content.story_count_me_body') %></p>
   </div>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:The_scales_of_justice_(4984060658).jpg">
-    	<img src="./images/story_jury.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:Expo-Flags.jpg">
+    	<img src="./images/story_political_discussions.jpg" >
     </a>
-    <h3><%= t('content.story_jury_title') %></h3>
-    <p><%= t('content.story_jury_body') %></p>
+    <h3><%= t('content.story_political_discussions_title') %></h3>
+    <p><%= t('content.story_political_discussions_body') %></p>
   </div>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:Socks_2.0.jpeg">
-    	<img src="./images/story_official_use.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:Toyogeki-Movie_Toyooka002.jpg">
+    	<img class="story_room__img" src="./images/story_room.jpg">
     </a>
-    <h3><%= t('content.story_official_use_title') %></h3>
-    <p><%= t('content.story_official_use_body') %></p>
+    <h3><%= t('content.story_room_title') %></h3>
+    <p><%= t('content.story_room_body') %></p>
   </div>
 </div>
+
+
 <div class="clear"></div>
 <br><br>
+
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
 		<h3 id="government-request">
-			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</small><br>
+			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</small><br />
 			<%= t('privacy.govt_requests') %>
 		</h3>
-		<hr>
+		<hr />
 		<table>
 			<tr>
-				<td><%= t('graph.new_zealand') %></td>
-				<td><%= t('graph.national_museum') %></td>
+				<td><%= t('graph.france') %></td>
+				<td><%= t('graph.politicians_candidates') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td><%= t('graph.spain') %></td>
+				<td><%= t('graph.germany') %></td>
 				<td><%= t('graph.politicians_candidates') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><%= t('graph.india') %></td>
+				<td><%= t('graph.local_police') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><%= t('graph.italy') %></td>
+				<td><%= t('graph.politicians_candidates') %></td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><%= t('graph.philippines') %></td>
+				<td><%= t('graph.executive_office') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
@@ -90,13 +116,15 @@
 			</tr>
 			<tr>
 				<td><%= t('graph.united_kingdom') %></td>
-				<td><%= t('graph.politicians_candidates') %></td>
+				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
 			</tr>
 		</table>
 	</div>
 </div>
+
 <div class="clear"></div>
+
 <div class="col-md-12">
 	<div class="analytics">
 		<h2 id="requests-from"><%= t('content.graph_where_from') %></h2>
@@ -110,14 +138,17 @@
 			<li><a class="where_from_tabs" id="where_from_juldec15" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 			<li><a class="where_from_tabs" id="where_from_janjun16" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 			<li><a class="where_from_tabs" id="where_from_juldec16" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2016</a></li>
-			<li><a class="where_from_tabs active" id="where_from_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="where_from_tabs" id="where_from_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="where_from_tabs active" id="where_from_juldec17" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
 		</ul>
+
 		<div class="col-md-4" id="where_from_legend">
 			<h3><%= t('content.request_granted') %></h3>
 			<div>
 				<p class="legend legend_yes"><%= t('yn.yess') %></p>
 				<p class="legend legend_no"><%= t('yn.noo') %></p>
 			</div>
+
 			<section class="scorecard analytics__scorecard scorecard--1">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -125,6 +156,7 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<section class="scorecard analytics__scorecard scorecard--2">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -132,13 +164,19 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<div class="clear"></div>
+
 		</div>
+
 		<div class="col-md-7">
 			<div id="where_from_graph" class="bar_graph_horizontal"></div>
 		</div>
 		<div class="clear"></div>
+
 	</div>
+
+
 	<div class="analytics">
 		<h2 id="project-target"><%= t('content.graph_targeted_takedown') %></h2>
 		<ul class="tabs">
@@ -150,14 +188,17 @@
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_juldec15" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_janjun16" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 			<li><a class="targeted_takedown_tabs" id="targeted_takedown_juldec16" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2016</a></li>
-			<li><a class="active targeted_takedown_tabs" id="targeted_takedown_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="targeted_takedown_tabs" id="targeted_takedown_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="active targeted_takedown_tabs" id="targeted_takedown_juldec17" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
 		</ul>
+
 		<div class="col-md-4" id="targeted_takedown_legend">
 			<h3><%= t('content.request_granted') %></h3>
 			<div>
 				<p class="legend legend_yes"><%= t('yn.yess') %></p>
 				<p class="legend legend_no"><%= t('yn.noo') %></p>
 			</div>
+
 			<section class="scorecard analytics__scorecard scorecard--1">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -165,6 +206,7 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<section class="scorecard analytics__scorecard scorecard--2">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -172,11 +214,15 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<div class="clear"></div>
+
 			<div class="fineprint">
 				<h2>*</h2><p><%= t('content.targeted_takedown_fineprint') %></p>
 			</div>
+
 		</div>
+
 		<div class="col-md-7">
 			<div id="targeted_takedown_graph" class="bar_graph_horizontal"></div>
 		</div>
@@ -184,88 +230,100 @@
 	</div>
 </div>
 <div class="clear"></div>
-<br><br><br><br>
+<br /> <br /> <br /> <br />
+
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.total_number_of_erasure_requests') %></dt>
-      <dd>0</dd>
+      <dd>1</dd>
     </dl>
   </section>
   <section class="scorecard scorecard_bottom">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.number_of_erasure_requests_granted') %></dt>
       <dd>0</dd>
     </dl>
   </section>
 </div>
+
 <div class="col-md-8">
   <h2><%= t('content.erasure_title') %></h2>
   <%= t('content.erasure_intro') %>
 </div>
+
 <div class="clear"></div>
-<br><br><br><br>
+<br /> <br /> <br /> <br />
+
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.total_number_of_dmca_requests') %></dt>
-      <dd>11</dd>
+      <dd>12</dd>
     </dl>
   </section>
+
   <section class="scorecard scorecard_bottom">
-    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2017</h2>
+    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
     <dl>
       <dt><%= t('content.percentage_of_requests_granted') %></dt>
-      <dd>27.3<small>%</small></dd>
+      <dd>17<small>%</small></dd>
     </dl>
   </section>
 </div>
+
 <div class="col-md-8">
   <h2><%= t('content.dmca_title') %></h2>
   <%= t('content.dmca_intro') %>
   <blockquote>
     <p><%= t('content.erasure_quote') %></p>
     <footer>
-      <a href="https://commons.wikimedia.org/wiki/File:Das_Recht_auf_Wissen_%E2%80%93_f%C3%BCr_eine_progressive_Netzpolitik_(6996713652).jpg">
-      	<img src="./images/lawrence.png" alt="<%= t('content.erasure_quote_image') %>">
+      <a href="//commons.wikimedia.org/wiki/File:Das_Recht_auf_Wissen_%E2%80%93_f%C3%BCr_eine_progressive_Netzpolitik_(6996713652).jpg">
+      	<img src="./images/lawrence.png">
       </a>
       <p><%= t('content.erasure_cite') %></p>
     </footer>
   </blockquote>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:Heavens_Above_Her.jpg">
-    	<img src="./images/story_dark_matter.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:World_Map_1689.JPG">
+    	<img src="./images/story_quantity_quality.jpg">
     </a>
-    <h3><%= t('content.story_dark_matter_title') %></h3>
-    <p><%= t('content.story_dark_matter_body') %></p>
+    <h3><%= t('content.story_quantity_quality_title') %></h3>
+    <p><%= t('content.story_quantity_quality_body') %></p>
   </div>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:2016-11_Chute_Montmorency_04.jpg">
-    	<img src="./images/story_deletion.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:Television_(8674797024).jpg">
+    	<img src="./images/story_spoiler.jpg">
     </a>
-    <h3><%= t('content.story_deletion_title') %></h3>
-    <p><%= t('content.story_deletion_body') %></p>
+    <h3><%= t('content.story_spoiler_title') %></h3>
+    <p><%= t('content.story_spoiler_body') %></p>
   </div>
 </div>
+
 <div class="col-md-4">
   <div class="story">
-    <a class="anchorImg" href="https://commons.wikimedia.org/wiki/File:BLASTS!_(8387139427).jpg">
-    	<img src="./images/story_missing.jpg" alt="">
+    <a class='anchorImg' href="//commons.wikimedia.org/wiki/File:Large_copyright_graffiti_sign_on_cream_colored_wall_(4273272605).jpg">
+    	<img class="story_fair_share__img" src="./images/story_fair_share.jpg">
     </a>
-    <h3><%= t('content.story_missing_title') %></h3>
-    <p><%= t('content.story_missing_body') %></p>
+    <h3><%= t('content.story_fair_share_title') %></h3>
+    <p><%= t('content.story_fair_share_body') %></p>
   </div>
 </div>
+
 <div class="clear"></div>
 <br><br>
+
 <div class="col-md-12">
+
 	<div class="analytics">
 		<h2 id="dcma-takedown"><%= t('content.graph_dmca_requests') %></h2>
 		<ul class="tabs">
@@ -278,14 +336,17 @@
 			<li><a class="dmca_requests_tabs" id="dmca_requests_juldec15" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 			<li><a class="dmca_requests_tabs" id="dmca_requests_janjun16" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 			<li><a class="dmca_requests_tabs" id="dmca_requests_juldec16" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2016</a></li>
-			<li><a class="active dmca_requests_tabs" id="dmca_requests_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="dmca_requests_tabs" id="dmca_requests_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="active dmca_requests_tabs" id="dmca_requests_juldec17" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
 		</ul>
+
 		<div class="col-md-4" id="dmca_requests_legend">
 			<h3><%= t('content.request_granted') %></h3>
 			<div>
 				<p class="legend legend_yes"><%= t('yn.yess') %></p>
 				<p class="legend legend_no"><%= t('yn.noo') %></p>
 			</div>
+
 			<section class="scorecard analytics__scorecard scorecard--1">
 				<h2>Jul - Dec 2016</h2>
 			    <dl>
@@ -293,6 +354,7 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<section class="scorecard analytics__scorecard scorecard--2">
 				<h2>Jul - Dec 2016</h2>
 			    <dl>
@@ -300,13 +362,17 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<div class="clear"></div>
 		</div>
+
 		<div class="col-md-7">
 			<div id="dmca_requests_graph" class="bar_graph_horizontal"></div>
 		</div>
 		<div class="clear"></div>
+
 	</div>
+
 	<div class="analytics">
 		<h2 id="wikimedia"><%= t('content.graph_targeted_dmca') %></h2>
 		<ul class="tabs">
@@ -318,14 +384,17 @@
 			<li><a class="targeted_dmca_tabs" id="targeted_dmca_juldec15" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2015</a></li>
 			<li><a class="targeted_dmca_tabs" id="targeted_dmca_janjun16" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 			<li><a class="targeted_dmca_tabs" id="targeted_dmca_juldec16" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2016</a></li>
-			<li><a class="active targeted_dmca_tabs" id="targeted_dmca_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="targeted_dmca_tabs" id="targeted_dmca_janjun17" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
+			<li><a class="active targeted_dmca_tabs" id="targeted_dmca_juldec17" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
 		</ul>
+
 		<div class="col-md-4" id="targeted_dmca_granted">
 			<h3><%= t('content.request_granted') %></h3>
 			<div>
 				<p class="legend legend_yes"><%= t('yn.yess') %></p>
 				<p class="legend legend_no"><%= t('yn.noo') %></p>
 			</div>
+
 			<section class="scorecard analytics__scorecard scorecard--1">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -333,6 +402,7 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<section class="scorecard analytics__scorecard scorecard--2">
 				<h2>Jan - Jun 2016</h2>
 			    <dl>
@@ -340,19 +410,26 @@
 			      <dd>0</dd>
 			    </dl>
 			</section>
+
 			<div class="clear"></div>
+
 			<div class="fineprint">
 				<h2>*</h2><p><%= t('content.targeted_takedown_fineprint') %></p>
 			</div>
+
 			<div class="clear"></div>
 		</div>
+
 		<div class="col-md-7">
 			<div id="targeted_dmca_graph" class="bar_graph_horizontal"></div>
 		</div>
 		<div class="clear"></div>
 	</div>
 </div>
+
+
 <div class="clear"></div>
+
 <!-- Translations for JS -->
 <input type="hidden" id="t_total_requests" value="<%= t('privacy.total_requests') %>">
 <input type="hidden" id="t_request_granted" value="<%= t('graph.request_granted') %>">
@@ -442,6 +519,12 @@
 <input type="hidden" id="t_uruguay" value="<%= t('graph.uy') %> ">
 <input type="hidden" id="t_usa" value="<%= t('graph.usa') %>">
 <input type="hidden" id="t_venezuela" value="<%= t('graph.ven') %> ">
+<input type="hidden" id="t_papua_new_guinea" value="<%= t('graph.papua_new_guinea') %> ">
+<input type="hidden" id="t_uganda" value="<%= t('graph.uganda') %> ">
+<input type="hidden" id="t_uzbekistan" value="<%= t('graph.uzbekistan') %> ">
+<input type="hidden" id="t_kosovo" value="<%= t('graph.kosovo') %> ">
+<input type="hidden" id="t_libya" value="<%= t('graph.libya') %> ">
+<input type="hidden" id="t_bosnia_and_herzegovina" value="<%= t('graph.bosnia_and_herzegovina') %> ">
 
 <input type="hidden" id="t_arabic_wikipedia" value="<%= t('graph.arabic_wikipedia') %>">
 <input type="hidden" id="t_azerbaijani_wikipedia" value="<%= t('graph.azerbaijani_wikipedia') %>">
@@ -517,6 +600,11 @@
 <input type="hidden" id="t_ukrainian_wikipedia" value="<%= t('graph.ukrainian_wikipedia') %>">
 <input type="hidden" id="t_wikidata" value="<%= t('graph.wikidata') %>">
 <input type="hidden" id="t_wikimedia_commons" value="<%= t('graph.wikimedia_commons') %>">
+<input type="hidden" id="t_bosnian_wikipedia" value="<%= t('graph.bosnian_wikipedia') %>">
+<input type="hidden" id="t_danish_wikipedia" value="<%= t('graph.danish_wikipedia') %>">
+<input type="hidden" id="t_english_wikiquote" value="<%= t('graph.english_wikiquote') %>">
+<input type="hidden" id="t_uzbek_wikipedia" value="<%= t('graph.uzbek_wikipedia') %>">
+<input type="hidden" id="t_wikispecies" value="<%= t('graph.wikispecies') %>">
 
 <input type="hidden" id="t_one_case_was_american_brazilian" value="<%= t('graph.one_case_was_american_brazilian') %>">
 <input type="hidden" id="t_one_case_was_british_swiss" value="<%= t('graph.one_case_was_british_swiss') %>">

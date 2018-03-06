@@ -325,6 +325,7 @@
 	font-family: serif;
 	font-size: 15px;
 	line-height: 18px;
+	border: 1px solid $gray;
 
 	&:after {
 		content: "";
@@ -333,7 +334,7 @@
 		height: 0;
 		border-width: 5px;
 		border-style: solid;
-		border-color: transparent #F3F5F6 transparent transparent;
+		border-color: transparent $gray transparent transparent;
 		top: 3px;
 		left: -10px;
 	}
@@ -369,6 +370,7 @@
 	font-family: serif;
 	font-size: 15px;
 	line-height: 18px;
+	border: 1px solid $gray;
 
 	&:after {
 		content: "";
@@ -377,7 +379,7 @@
 		height: 0;
 		border-width: 5px;
 		border-style: solid;
-		border-color: #F3F5F6 transparent transparent transparent;
+		border-color: $gray transparent transparent transparent;
 		bottom: -10px;
 		left: 62px;
 	}

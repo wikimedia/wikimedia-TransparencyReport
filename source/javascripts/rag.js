@@ -5,14 +5,17 @@
 		.attr( 'class', 'graph_tooltip' )
 		.style( 'display', 'none' );
 
+// download country flags from here
+// http://hjnilsson.github.io/country-flags/
 	var codes = {
-		"Argentina": "ar",
 		"Afghanistan": "af",
+		"Argentina": "ar",
 		"Australia": "au",
 		"Austria": "at",
 		"Azerbaijan": "az",
 		"Bangladesh": "bd",
 		"Belgium": "be",
+		"Bosnia and Herzegovina": "ba",
 		"Brazil": "br",
 		"Bulgaria": "bg",
 		"Canada": "ca",
@@ -45,8 +48,10 @@
 		"Italy": "it",
 		"Japan": "jp",
 		"Korea": "kr",
+		"Kosovo": "xk",
 		"Latvia": "lv",
 		"Lebanon": "lb",
+		"Libya": "ly",
 		"Liechtenstein": "li",
 		"Lithuania": "lt",
 		"Luxembourg": "lu",
@@ -61,6 +66,7 @@
 		"Nigeria": "ng",
 		"Norway": "no",
 		"Pakistan": "pk",
+		"Papua New Guinea": "pg",
 		"Peru": "pe",
 		"Philippines": "ph",
 		"Poland": "pl",
@@ -85,14 +91,17 @@
 		"Tanzania": "tz",
 		"Thailand": "th",
 		"Turkey": "tr",
+		"Uganda": "ug",
 		"Ukraine": "ua",
 		"United Kingdom": "gb",
 		"Uruguay": "uy",
 		"USA": "us",
+		"Uzbekistan": "uz",
 		"Venezuela": "ve",
 	}
 
 	var durationCode = {
+		'juldec17': 'Jul - Dec 2017',
 		'janjun17': 'Jan - Jun 2017',
 		'juldec16': 'Jul - Dec 2016',
 		'janjun16': 'Jan - Jun 2016',
@@ -110,9 +119,9 @@
 		}
 		else {
 			if (el === 'where_from' || el === 'dmca_requests') {
-				return 'JUL 2012 - JUN 2017'
+				return 'JUL 2012 - DEC 2017'
 			} else {
-				return 'JUL 2013 - JUN 2017'
+				return 'JUL 2013 - DEC 2017'
 			}
 		}
 
