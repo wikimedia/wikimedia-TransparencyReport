@@ -118,6 +118,16 @@ footer {
 	}
 }
 
+// Visually hide title on navbar on homepage, screenreaders still receive it
+.index .navbar-default .navbar-brand .name {
+	position: absolute;
+	overflow: hidden;
+	clip: rect( 0 0 0 0 );
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
 .container .jumbotron {
 	padding-left: 24px;
 	padding-top: 38px;

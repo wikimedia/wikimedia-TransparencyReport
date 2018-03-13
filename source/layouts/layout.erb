@@ -41,10 +41,8 @@
 						</button>
 
 						<a class="navbar-brand" href="<%= locale_url('./') %>">
-							<img src="/images/logo.png">
-							<% if request.path != 'index.html'  %>
-								<span class="name"><%= t('menu.title') %></span>
-							<% end %>
+							<img src="/images/logo.png" alt="">
+							<span class="name"><%= t('menu.title') %></span>
 						</a>
 					</div>
 					<div id="navbar-collapse" class="collapse navbar-collapse">
