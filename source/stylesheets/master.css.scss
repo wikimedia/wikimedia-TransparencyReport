@@ -239,6 +239,23 @@ footer {
 	margin-top: 20px;
 }
 
+.index h2,
+.story h3 {
+	margin: 0;
+	font-family: serif;
+	font-size: 22px;
+	line-height: 28px;
+	color: $black;
+	margin: 20px 16px 20px;
+
+	small {
+		font: 12px sans-serif;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: $gray;
+	}
+}
+
 .story {
 	@include borderandshadow;
 	display: block;
@@ -293,21 +310,6 @@ footer {
 	hr {
 		border-color: #d1d1d1;
 		margin: 10px 0;
-	}
-
-	h3 {
-		margin: 0;
-		font-family: serif;
-		font-size: 22px/28px;
-		color: $black;
-		margin: 20px 16px 20px;
-
-		small {
-			font: 12px sans-serif;
-			text-transform: uppercase;
-			font-weight: 400;
-			color: $gray;
-		}
 	}
 
 	&.bignav {
