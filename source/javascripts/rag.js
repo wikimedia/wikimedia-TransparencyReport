@@ -98,9 +98,15 @@
 		"USA": "us",
 		"Uzbekistan": "uz",
 		"Venezuela": "ve",
+		"United Arab Emirates": "ae",
+		"Guyana": "gy",
+		"Jordan": "jo",
+		"Kazakhstan": "kz",
+		"Kuwait": "kw",
 	}
 
 	var durationCode = {
+		'janjun18': 'Jan - Jun 2018',
 		'juldec17': 'Jul - Dec 2017',
 		'janjun17': 'Jan - Jun 2017',
 		'juldec16': 'Jul - Dec 2016',
@@ -119,9 +125,9 @@
 		}
 		else {
 			if (el === 'where_from' || el === 'dmca_requests') {
-				return 'JUL 2012 - DEC 2017'
+				return 'JUL 2012 - JUN 2018'
 			} else {
-				return 'JUL 2013 - DEC 2017'
+				return 'JUL 2013 - JUN 2018'
 			}
 		}
 

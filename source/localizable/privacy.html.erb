@@ -7,17 +7,17 @@
 </div>
 <div class="col-md-3">
 	<section class="scorecard">
-		<h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
 		<dl>
 			<dt><%= t('privacy.total_number_of_requests') %></dt>
-			<dd>15</dd>
+			<dd>23</dd>
 		</dl>
 	</section>
 	<section class="scorecard scorecard_bottom">
-		<h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+		<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
 		<dl>
 			<dt><%= t('privacy.percentage_of_times_information_produced') %></dt>
-			<dd>7<small>%</small></dd>
+			<dd>9<small>%</small></dd>
 		</dl>
 	</section>
 </div>
@@ -29,7 +29,9 @@
 	<blockquote>
 		<p><%= t('privacy.quote') %></p>
 		<footer>
-			<a href="https://commons.wikimedia.org/wiki/File:Sonia_Sotomayor_7_in_robe,_2009.jpg"><img src="/images/sonia.jpg" alt="<%= t('privacy.quote_image') %>"></a>
+			<a href="https://commons.wikimedia.org/wiki/Category:Salil_Shetty#/media/File:Salil-Shetty.jpg">
+				<img src="/images/salil_shetty.jpg" alt="<%= t('privacy.quote_image') %>">
+			</a>
 			<p><%= t('privacy.cite') %></p>
 		</footer>
 	</blockquote>
@@ -37,32 +39,32 @@
 <div class="col-md-12 summary__wrapper">
 	<div class="story summary_table">
 		<h3 id="summary">
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</small><br>
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</small><br>
 			<%= t('privacy.summary') %>
 		</h3>
 		<hr>
 		<table>
 			<tr class="highlight">
 				<td><%= t('privacy.total_number_of_requests') %></td>
-				<td>15</td>
+				<td>23</td>
 			</tr>
 			<tr>
 				<td class="indent">
 					<a href="./faq.html#informal_non_government_requests"><%= t('privacy.informal_non_govt') %>
 				</td>
-				<td>7</td>
+				<td>16</td>
 			</tr>
 			<tr>
 				<td class="indent">
 					<a href="./faq.html#informal_government_requests"><%= t('privacy.informal_govt') %></a>
 				</td>
-				<td>7</td>
+				<td>5</td>
 			</tr>
 			<tr>
 				<td class="indent">
 					<a href="./faq.html#civil_subpoena"><%= t('privacy.civil_subpoenas') %></a>
 				</td>
-				<td>1</td>
+				<td>2</td>
 			</tr>
 			<tr>
 				<td class="indent">
@@ -96,24 +98,24 @@
 			</tr>
 			<tr class="highlight">
 				<td><%= t('privacy.information_produced') %></td>
-				<td>1</td>
+				<td>2</td>
 			</tr>
 		</table>
 	</div>
 	<div class="story story_bottom">
 		<h3>
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</small><br>
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</small><br>
 			<%= t('privacy.user_accounts_affected') %>
 		</h3>
 		<hr>
 		<table>
 			<tr class="indent">
 				<td><%= t('privacy.user_potentially_affected') %></td>
-				<td>20</td>
+				<td>30</td>
 			</tr>
 			<tr class="indent">
 				<td><%= t('privacy.user_actually_affected') %></td>
-				<td>2</td>
+				<td>3</td>
 			</tr>
 			<tr class="indent">
 				<td><%= t('privacy.user_accounts_notified') %></td>
@@ -129,7 +131,7 @@
 	</div>
 	<div class="col-md-3">
 		<section class="scorecard">
-			<h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
 			<dl>
 				<dt><%= t('privacy.content_requests') %></dt>
 				<dd>0<small>%</small></dd>
@@ -138,7 +140,7 @@
 	</div>
 	<div class="col-md-3">
 		<section class="scorecard">
-			<h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+			<h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
 			<dl>
 				<dt><%= t('privacy.non-content_requests') %></dt>
 				<dd>100<small>%</small></dd>
@@ -151,8 +153,8 @@
 		<h2 id="compared-companies"><%= t('privacy.compared_to_others') %>*</h2>
 		<ul class="tabs">
 			<li>
-				<a id="bubble_graph_janjun16" class="bubble_graph_tabs active" href="javascript: void(0);">
-					<%= t('dates.jan') %> - <%= t('dates.jun') %> 2017
+				<a id="bubble_graph_juldec17" class="bubble_graph_tabs active" href="javascript: void(0);">
+					<%= t('dates.jul') %> - <%= t('dates.dec') %> 2017
 				</a>
 			</li>
 		</ul>
@@ -185,7 +187,8 @@
 			<li><a id="user_data_janjun16" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2016</a></li>
 			<li><a id="user_data_juldec16" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2016</a></li>
 			<li><a id="user_data_janjun17" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2017</a></li>
-			<li><a id="user_data_juldec17" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
+			<li><a id="user_data_juldec17" class="user_data_tabs" href="javascript: void(0);"><%= t('dates.jul') %> - <%= t('dates.dec') %> 2017</a></li>
+			<li><a id="user_data_janjun18" class="user_data_tabs active" href="javascript: void(0);"><%= t('dates.jan') %> - <%= t('dates.jun') %> 2018</a></li>
 		</ul>
 		<div class="graph">
 			<div class="row">
@@ -214,7 +217,7 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="story">
 		<h3>
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</small><br>
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</small><br>
 			<%= t('privacy.govt_requests') %>
 		</h3>
 		<hr>
@@ -222,37 +225,27 @@
 			<tr class="highlight">
 				<td><%= t('graph.informal_government_requests') %></td>
 				<td>Total</td>
-				<td>7</td>
+				<td>5</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.australia') %></td>
-				<td><%= t('graph.federal_police') %></td>
+				<td class="indent"><%= t('graph.greece') %></td>
+				<td><%= t('graph.state_police') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent noborder"><%= t('graph.india') %></td>
-				<td><%= t('graph.local_police') %></td>
-				<td>1</td>
+				<td class="indent noborder"><%= t('graph.italy') %></td>
+				<td><%= t('graph.state_police') %></td>
+				<td>2</td>
 			</tr>
 			<tr>
 				<td class="indent"></td>
-				<td><%= t('graph.state_police') %></td>
+				<td><%= t('graph.public_prosecutor') %></td>
 				<td>1</td>
 			</tr>
 			<tr>
-				<td class="indent"><%= t('graph.italy') %></td>
-				<td><%= t('graph.state_police') %></td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.korea') %></td>
+				<td class="indent"><%= t('graph.india') %></td>
 				<td><%= t('graph.local_police') %></td>
 				<td>1</td>
-			</tr>
-			<tr>
-				<td class="indent"><%= t('graph.united_kingdom') %></td>
-				<td><%= t('graph.local_police') %></td>
-				<td>2</td>
 			</tr>
 		</table>
 	</div>
@@ -261,10 +254,10 @@
 <br> <br> <br> <br>
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
     <dl>
       <dt><%= t('privacy.total_preservation_requests') %></dt>
-      <dd>1</dd>
+      <dd>0</dd>
     </dl>
   </section>
 </div>
@@ -276,10 +269,10 @@
 <br> <br> <br> <br>
 <div class="col-md-3">
   <section class="scorecard">
-    <h2><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</h2>
+    <h2><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</h2>
     <dl>
       <dt><%= t('privacy.total_number_of_emergency_disclosures') %></dt>
-      <dd>14</dd>
+      <dd>12</dd>
     </dl>
   </section>
 </div>
@@ -292,7 +285,7 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="story story_bottom">
 		<h3>
-			<small><%= t('dates.jul') %> – <%= t('dates.dec') %> 2017</small><br>
+			<small><%= t('dates.jan') %> – <%= t('dates.jun') %> 2018</small><br>
 			<%= t('privacy.total_number_of_emergency_disclosures') %>
 		</h3>
 		<hr>
@@ -303,7 +296,7 @@
 			</tr>
 			<tr class="indent">
 				<td><%= t('privacy.total_voluntary_disclosures') %></td>
-				<td>13</td>
+				<td>11</td>
 			</tr>
 		</table>
 	</div>
@@ -312,21 +305,21 @@
 <br> <br> <br> <br>
 <div class="col-md-4">
   <div class="story">
-    <a aria-hidden="true" href="https://commons.wikimedia.org/wiki/File:LED_Verkehrssicherungsbalken.jpg"><img src="/images/story_emergency.png" alt=""></a>
+    <a href="https://commons.wikimedia.org/wiki/File:LED_Verkehrssicherungsbalken.jpg"><img src="/images/story_emergency.png" alt=""></a>
     <h3><%= t('privacy.story_emergency_title') %></h3>
     <p><%= t('privacy.story_emergency_body') %></p>
   </div>
 </div>
 <div class="col-md-4">
   <div class="story">
-    <a aria-hidden="true" href="https://commons.wikimedia.org/wiki/White_House#mediaviewer/File:SouthPorticoChristmas.jpg"><img src="/images/story_whitehouse.png" alt=""></a>
-    <h3><%= t('privacy.story_whitehouse_title') %></h3>
-    <p><%= t('privacy.story_whitehouse_body') %></p>
+    <a href="https://commons.wikimedia.org/wiki/File:Seattle_South_CC_TEC_lockers_01.jpg"><img src="/images/story_protecting_schools.jpg" alt=""></a>
+    <h3><%= t('privacy.story_protecting_schools_title') %></h3>
+    <p><%= t('privacy.story_protecting_schools_body') %></p>
   </div>
 </div>
 <div class="col-md-4">
   <div class="story">
-    <a aria-hidden="true" href="https://commons.wikimedia.org/wiki/File:Suicide_Prevention_Day.jpg"><img src="/images/story_suicide.png" alt=""></a>
+    <a href="https://commons.wikimedia.org/wiki/File:Suicide_Prevention_Day.jpg"><img src="/images/story_suicide.png" alt=""></a>
     <h3><%= t('privacy.story_suicide_title') %></h3>
     <p><%= t('privacy.story_suicide_body') %></p>
   </div>
@@ -338,7 +331,7 @@
 	<ul class="tabs">
 		<li>
 			<a class="active voluntary_disclosure" id="voluntary_disclosure_juldec14" href="javascript: void(0);">
-				<%= t('dates.jul') %> - <%= t('dates.dec') %> 2017
+				<%= t('dates.jan') %> - <%= t('dates.jun') %> 2018
 			</a>
 		</li>
 	</ul>
@@ -383,6 +376,7 @@
 <input type="hidden" id="t_croatia" value="<%= t('graph.cro') %>">
 <input type="hidden" id="t_south_africa" value="<%= t('graph.south_africa') %>">
 <input type="hidden" id="t_ireland" value="<%= t('graph.ireland') %>">
+<input type="hidden" id="t_greece" value="<%= t('graph.greece') %>">
 
 <input type="hidden" id="t_criminal_subpoenas" value="<%= t('graph.criminal_subpoenas') %>">
 <input type="hidden" id="t_informal_non_government_requests" value="<%= t('graph.informal_non_government_requests') %>">

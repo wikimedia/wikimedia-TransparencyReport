@@ -110,19 +110,24 @@
 		clonedArr.sort(function(a, b) {
 			var totalA = getArraySum(a.value);
 			var totalB = getArraySum(b.value);
-			if (totalA === totalB) {
-				return a.key.localeCompare(b.key);
+			if (totalA < totalB) {
+				return 1;
+			} else if (totalA > totalB) {
+				return -1;
 			}
-			return totalB - totalA;
+
+			return a.key.localeCompare(b.key);
 		});
 		var indexOfUnknownKey;
 		var arrLen = clonedArr.length;
-		for (i = 0; i < arrLen; i++) {
+
+		for (var i = 0; i < arrLen; i++) {
 			if (clonedArr[i].key === 'Unknown') {
 				indexOfUnknownKey = i;
 				break;
 			}
 		}
+
 		var unknownObject = clonedArr.splice(indexOfUnknownKey, 1)[0];
 		clonedArr.push(unknownObject);
 		return clonedArr;
@@ -181,13 +186,14 @@
 			    count = true;
 			} else {
 				var allFilters = true;
-				for ( var j in this.filters ) {
-					var filter = this.filters[ j ];
-					if ( filter !== row[ j ]) {
+				for ( var filterKey in this.filters ) {
+					var rowValueForKey = row[filterKey];
+					var filterValueForKey = this.filters[filterKey];
+
+					if ( rowValueForKey !== filterValueForKey) {
 						allFilters = false;
 					}
 				}
-
 				if ( allFilters ) {
 					count = true;
 				}
@@ -196,7 +202,10 @@
 			if ( count ) {
 				increment( row, column );
 			} else {
-				if ( ( typeof this.filters.duration === 'undefined' ) ||  row.duration === this.filters.duration ) {
+				if (
+					(typeof this.filters.duration === 'undefined')
+					|| row.duration === this.filters.duration
+				) {
 					init( row, column );
 				}
 			}
@@ -262,7 +271,8 @@
 			} ) ] )
 			.range( [ 0, width ] );
 
-		function makeBars( graph, data, yScale, ds, dispatch, className, timerange ) {
+		function makeBars( graph, originalData, yScale, ds, dispatch, className, timerange ) {
+			var data = customSort(originalData);
 			var height = ( data.length * 40 ) + 40;
 
 			$el.height( height );
@@ -593,14 +603,14 @@
 
 		dispatch.on( 'filter.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars' );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars', true );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'gray_bars' );
 		} );
 
 		dispatch.on( 'timerange.' + element, function () {
 			var new_data = ds.groupBy( groupBy, true );
-			var sortedData = customSort(new_data);
-			makeBars( graph, sortedData, yScale, ds, dispatch, 'gray_bars', true );
-			makeBars( graph, sortedData, yScale, ds, dispatch, 'blue_bars', true );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'gray_bars', true );
+			makeBars( graph, new_data, yScale, ds, dispatch, 'blue_bars', true );
 		} );
 
 	}
@@ -1058,7 +1068,7 @@
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "juldec17";
+			ds.filters.duration = "janjun18";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )
@@ -1080,7 +1090,7 @@
 			} );
 
 			var allDataTab = $('#user_data_all'),
-				juldec17DataTab = $('#user_data_juldec17'),
+				janjun18DataTab = $('#user_data_janjun18'),
 				legendPartial = $('#partial'),
 				legendYes = $('#yes'),
 				legendNo = $('#no'),
