@@ -2,11 +2,6 @@
 # Compass
 ###
 
-# Change Compass configuration
-compass_config do |config|
-  config.line_comments = false
-  config.output_style = :compact
-end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -48,7 +43,6 @@ end
 #   end
 # end
 
-activate :directory_indexes
 activate :i18n, :langs => [:en, :fr]
 
 set :css_dir, 'stylesheets'
@@ -64,9 +58,11 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # optimize all images
+  activate :imageoptim
+
   # minify HTML
   activate :minify_html
-
   # Enable cache buster
   # activate :asset_hash
 
@@ -94,9 +90,9 @@ helpers do
   def navigation_link(label, url)
     current = false
     if url == '/'
-      current = url == '/' && request.path == 'index.html'
+      current = url == '/' && current_page.path == 'index.html'
     else
-      current = "/#{request.path}".include?(url)
+      current = "/#{current_page.path}".include?(url)
     end
     "<a href='#{url}' #{'class="current"' if current}>#{label}</a>"
   end
