@@ -59,7 +59,7 @@ configure :build do
   activate :minify_javascript
 
   # optimize all images
-  activate :imageoptim
+  # activate :imageoptim
 
   # minify HTML
   activate :minify_html
