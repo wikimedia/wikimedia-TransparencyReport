@@ -15,7 +15,7 @@ en:
     content: "Content"
     stories: "Stories"
     faq: "FAQ"
-    download_data: "Download Data"
+    download_data: "Download Historical Data"
     privacy_policy: "Privacy Policy"
     data_retention_guidelines: "Data Retention Guidelines"
     tou: "Terms of Use"
@@ -35,9 +35,9 @@ en:
     privacy: "Requests for <br>User Data"
     content: "Requests for Content Alteration &amp; Takedown"
     faq: "Frequently Asked<br>Questions"
-    quote: "All information belongs to everybody all the time. It should be available. It should be accessible to the child, to the woman, to the man, to the old person, to the semiliterate, to the presidents of universities, to everyone. It should be open."
-    cite: "<a href='https://en.wikipedia.org/wiki/Maya_Angelou'>Maya Angelou</a><small>Poet and activist (<a href='https://en.wikiquote.org/wiki/Maya_Angelou'>2010</a>)</small>"
-    cite_image: "Maya Angelou"
+    quote: "[W]e realize the importance of light when we see darkness. We realize the importance of our voice when we are silenced."
+    cite: "<a href='https://en.wikipedia.org/wiki/Malala_Yousafzai'>Malala Yousafzai</a><small>Human Rights Activist and Nobel Laureate (<a href='https://en.wikiquote.org/w/index.php?title=Malala_Yousafzai&oldid=2154789'>2013</a>)</small>"
+    cite_image: "Malala Yousafzai"
 
   stories:
     title: "Stories"
@@ -49,9 +49,9 @@ en:
     lead: "<a href='https://meta.wikimedia.org/wiki/Wikimedia_Foundation_Guiding_Principles#Free_speech'>Freedom of speech is essential</a> to the Wikimedia movement—the projects cannot flourish in an ecosystem where individuals cannot speak freely. Our users trust us to protect their identities against unlawful disclosure, and we take this responsibility seriously."
     intro: "<p>However, every year, governments, individuals, and corporations ask us to disclose user data. Often, we have no nonpublic information to disclose because we <a href='https://wikimediafoundation.org/wiki/Privacy_policy#Types_of_Information_We_Receive_From_You.2C_How_We_Get_It.2C_.26_How_We_Use_It'>collect little nonpublic information</a> about users and retain that information for a <a href='https://meta.wikimedia.org/wiki/Data_retention_guidelines'>short period of time</a>. But when we do have data, we carefully evaluate every request before considering disclosure. If the requests do not meet our <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>standards</a>—if they are overly broad, unclear, or irrelevant—we will push back on behalf of our users.</p><p>If we must produce information due to a legally valid request, we will <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines#Notifying_Our_Users_of_Your_Request'>notify the affected user</a> before we disclose, if we are <a href='./faq.html#nonpublic_personal_information'>legally permitted and have the means</a> to do so. In certain cases, we may <a href='./faq.html#my_personal_information'>help find assistance</a> for users to fight an invalid request.</p><p>Below, you will find more information about the requests for user data we receive.</p>"
 
-    quote: "The question of the right to privacy must be one of the defining issues of our time."
-    quote_image: "Salil Shetty"
-    cite: "<a href='https://en.wikipedia.org/wiki/Salil_Shetty'>Salil Shetty</a><small>Secretary General of Amnesty International (<a href='https://en.wikiquote.org/wiki/Salil_Shetty'>2014</a>)</small>"
+    quote: "Awareness that the Government may be watching chills associational and expressive freedoms. And the Government’s unrestrained power to assemble data that reveal private aspects of identity is susceptible to abuse."
+    quote_image: "Justice Sonia Sotomayor"
+    cite: "<a href='https://en.wikipedia.org/wiki/Sonia_Sotomayor'>Justice Sonia Sotomayor</a><small>U.S. Supreme Court (<a href='https://www.law.cornell.edu/supremecourt/text/10-1259#writing-10-1259_CONCUR_4'>2012</a>)</small>"
     summary: "Summary"
 
     info_type_title: "Type of Information Requested"
@@ -83,7 +83,7 @@ en:
     information_was_produced: "Requests where information was produced"
     content_requests: "Content Requests"
     non-content_requests: "Non-Content Requests"
-    bubble_graph_fineprint: "Due to the inconsistent release dates across different organizations, comparison data for the period covered by this report (January 2018 - June 2018) was not available, so we are presenting the comparison data above for July 2017 - December  2017. Please also note that figures for Wikimedia include additional types of requests for user data that are not included in the other organizations' figures. See the <a href='./faq.html#different_compare'>FAQ</a> for more details."
+    bubble_graph_fineprint: "Due to the inconsistent release dates across different organizations, comparison data for the period covered by this report (July 2018 - December 2018) was not available, so we are presenting the comparison data above for January 2018 - June 2018. Please also note that figures for Wikimedia include additional types of requests for user data that are not included in the other organizations' figures. See the <a href='./faq.html#different_compare'>FAQ</a> for more details."
     show_all: "Show All"
     request_type: "Request Type"
     information_produced_title: "Information Produced?"
@@ -134,9 +134,9 @@ en:
     lead: "<h2>Imagine a world in which every single human being can freely share in the sum of all knowledge.</h2>"
     intro: "<p>The Wikimedia projects make up one of the world's largest repositories of human knowledge. With that much information, someone is bound to get upset by some of the content from time to time. While the vast majority of content disputes are <a href='./faq.html#resolve_content_disputes'>resolved by users</a> themselves, in some extreme cases the Wikimedia Foundation may receive a legal demand to override our users.</p><p>The Wikimedia projects are yours, not ours. People just like you from around the world write, upload, edit, and curate all of the content. Therefore, we believe users should decide what belongs on Wikimedia projects whenever legally possible.</p><p>Below, you will find more information about the number of requests we receive, where they come from, and how they could impact free knowledge. You can also learn more about how we fight for freedom of speech through our user assistance programs in the <a href='./faq.html#im_being_sued'>FAQ</a>.</p>"
 
-    quote: "But better to get hurt by the truth than comforted with a lie."
+    quote: "When another writer in another house is not free, no writer is free."
     quote_image: "Flag of the United Nations"
-    cite: "<a href='https://en.wikipedia.org/wiki/Khaled_Hosseini'>Khaled Hosseini</a><small>Author (<a href='https://en.wikiquote.org/wiki/Khaled_Hosseini'>2003</a>)</small>"
+    cite: "<a href='https://en.wikipedia.org/wiki/Orhan_Pamuk'>Orhan Pamuk</a><small>Author (<a href='https://en.wikiquote.org/wiki/Orhan_Pamuk'>2006</a>)</small>"
 
     targeted_takedown_fineprint: "Because we did not collect data for projects potentially and actually affected until July 2013, this information is not available for July 2012 to June 2013."
 
@@ -292,13 +292,34 @@ en:
     story_decorative_title: "Decorative DMCA<br><small>January 2018</small>"
     story_decorative_body: "In January, we received a DMCA from a European collecting society on behalf of one of its artist members. The notice addressed a group of photos on Wikimedia Commons showing the interior of an intricately decorated German church. We investigated and followed up with the organization for more detail. They explained that their artist client had created two pieces of art in the church and therefore held the copyright to these works. We removed photos of these particular creations. However, other images of the church’s ornate interior remain on Commons."
 
+    story_police_title: "Police and Politics<br><small>September 2018</small>"
+    story_police_body: "It’s not unusual for notable individuals to write the Wikimedia Foundation and ask us to remove information from the projects. It is unusual for the police to do it on their behalf. In September 2018, Italian police requested that we delete content from an <a href='https://it.wikipedia.org/wiki/Pagina_principale'>Italian Wikipedia</a> article about a politician. We directed them to the article talk page, where they could raise their concerns to project editors. Around the same time, Italian Wikipedia contributors were discussing various improvements to the article, many of which they carried out. Perhaps the resulting changes addressed the issue, because neither the police nor the politician has contacted us again."
+
+    story_two_tales_title: "A City of Two Tales<br><small>July 2018</small>"
+    story_two_tales_body: "When we get requests from governments, there usually isn’t a question if the sender is really in power. But uncertainty arose in July 2018, when trusted <a href='https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal'>French Wikipedia</a> volunteers received an email supposedly from the ministry of culture of a <a href='https://en.wikipedia.org/wiki/Micronation'>micronation</a>. Looking closely, the volunteers realized that this was an unusual case. Not only is the existence of this country disputed, but so is the role of the group who sent the email, an opposition organization claiming to be its official government. The emailer was angry that the volunteers uncovered this information. Of course, they are still free to edit like anyone else—but they should review the <a href='https://en.wikipedia.org/wiki/Wikipedia:Conflict_of_interest'>Conflict of Interest</a> policy, and make their affiliation clear."
+
+    story_diorama_dilemma_title: "Diorama Dilemma<br><small>Multiple Months</small>"
+    story_diorama_dilemma_body: "Throughout the summer and fall of 2018, the Wikimedia Foundation and trusted project volunteers corresponded with a Canadian museum, which requested that we remove from <a href='https://commons.wikimedia.org/wiki/Main_Page'>Wikimedia Commons</a> a photo of a model of a woolly mammoth. We determined that relevant copyright laws allowed the image to appear on the projects, and suggested the museum continue their dialogue with the volunteers. The photo remains on the projects. We believe that information in museums, archives, and other knowledge repositories should be available online. Through <a href='https://wikimediafoundation.org/2019/01/24/we-applaud-the-cleveland-museum-of-arts-new-open-access-policy-and-heres-what-remains-to-be-done/'>GLAM</a> (galleries, libraries, archives, and museums)-wiki projects, the Foundation and communities partner with such institutions to bring their collections to Wikimedia users."
+
+    story_viral_dmca_title: "Viral DMCA<br><small>August 2018</small>"
+    story_viral_dmca_body: "Most of the material on the Wikimedia projects is in the public domain or freely licensed. Volunteer contributors patrol the site to ensure that content has been appropriately uploaded. In August, a company that makes anti-virus software contacted us to ask that we remove their logo from <a href='https://commons.wikimedia.org/wiki/Main_Page'>Wikimedia Commons</a>. We received their message and went to examine the page, but found that Commons contributors had already removed the image. It is because of their hard work and diligence that the Foundation receives so few <a href='https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act'>Digital Millennium Copyright Act</a> requests to remove allegedly copyrighted content."
+
+    story_name_of_my_name_title: "In the Name of My Name<br><small>August 2018</small>"
+    story_name_of_my_name_body: "In August 2018, someone demanded that we remove an article about them from English Wikipedia. They claimed that they had copyrighted their name, and therefore, the article had to be deleted. A few months later, we received a <a href='https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act'>Digital Millennium Copyright Act</a> takedown request from another person, who also claimed that their name was copyrighted, and therefore they could not be mentioned in a <a href='https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal'>French Wikipedia</a> article. In general, a person’s name isn’t copyrightable in most countries. Even if a work of art is legitimately copyrighted, that does not prevent Wikipedia contributors from referencing it in the encyclopedia. Both articles are still on the projects."
+
+    story_name_return_to_sender_title: "Return to Sender? <br><small>August 2018</small>"
+    story_name_return_to_sender_body: "Most requests that we receive are about content on one of the Wikimedia projects: <a href='https://en.wikipedia.org/wiki/Main_Page'>English Wikipedia</a>, <a href='https://fr.wikisource.org/wiki/Wikisource:Accueil'>French Wikisource</a>, <a href='https://zh.wikibooks.org/wiki/Wikibooks:%E9%A6%96%E9%A1%B5'>Chinese Wikibooks</a>, and more. These sites may have different kinds of content, but they come under the Wikimedia umbrella. Occasionally, however, someone mistakenly sends a request about a site that is not associated with the Wikimedia Foundation. In August, project volunteers received a lengthy <a href='https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act'>DMCA</a> notice about content on a long list of sites on a Ukrainian domain. The notice even expressed uncertainty whether it was addressed to the right party. While we’re happy to support projects that give readers information about a wide range of topics and links to all sorts of reliable sources, we do not control the entire internet."
+
     erasure_title: "Right to Erasure"
     erasure_intro: "
     <p>
-      The Right to Erasure or <a href='https://en.wikipedia.org/wiki/Right_to_be_forgotten'>Right to be Forgotten</a>, is a right under the laws of various countries that allows individuals to request that certain information relating to them be delisted or removed. We receive two types of Right to Erasure requests relating to the Wikimedia projects: requests relating to project content, and requests relating to user accounts.
+      The Right to Erasure, or <a href='https://en.wikipedia.org/wiki/Right_to_be_forgotten'>Right to be Forgotten</a>, is a right under the laws of various countries that allows individuals to request that certain information relating to them be delisted or removed. We receive two types of Right to Erasure requests relating to the Wikimedia projects: requests relating to project content, and requests relating to user accounts. In the past, we have reported these requests as one combined total; in this report, we are separating them to provide greater clarity about the Right to Erasure requests we receive.
     </p>
     <p>
-      When we receive a Right to Erasure request regarding project content, we first direct the requester to experienced project volunteers, who routinely handle most requests to change content on the projects. Wikimedia projects have <a href='https://en.wikipedia.org/wiki/Wikipedia:Biographies_of_living_persons'>guidelines</a> for content about living persons, and the volunteer community can review the guidelines and work with the requester to address their concerns. When we receive a request relating to a user account, we provide the user information on the community-driven <a href='https://meta.wikimedia.org/wiki/Courtesy_vanishing'>vanishing</a> process.
+      When we receive a Right to Erasure request regarding project content, we first direct the requester to experienced project volunteers, who routinely handle most requests to change content on the projects. Wikimedia projects have <a href='https://en.wikipedia.org/wiki/Wikipedia:Biographies_of_living_persons'>guidelines</a> for content about living persons, and the volunteer community can review the guidelines and work with the requester to address their concerns. During this reporting period, we received 11 requests to alter or takedown project content based upon the Right to Erasure.
+    </p>
+    <p>
+      When we receive a request relating to a user account, we provide the user information on the community-driven <a href='https://meta.wikimedia.org/wiki/Courtesy_vanishing'>vanishing</a> process. During this reporting period, we received 195 requests related to user accounts.
     </p>
     <p>
       <a href='https://blog.wikimedia.org/2014/08/06/wikipedia-pages-censored-in-european-search-results/'>We believe</a> in a Right to Remember. Everyone should have free access to relevant and neutral information of public concern; delisting and removing such content from the internet harms our collective ability to remember history and understand the world. In October 2016, <a href='https://blog.wikimedia.org/2016/10/19/petition-right-to-be-forgotten/'>we filed a petition</a> to intervene in Google’s appeal of a French administrative order that would expand such delistings from the European Union to all global domains. In July 2017, the French Supreme Court <a href='https://blog.wikimedia.org/2017/07/31/global-search-engine-delistings-petition'>asked</a> the <a href='https://en.wikipedia.org/wiki/European_Court_of_Justice'>European Court of Justice</a> to address questions regarding the scope of right to erasure delistings, and we have <a href='https://blog.wikimedia.org/2017/11/30/national-orders-global-delisting/'>submitted a filing to the ECJ</a> presenting our concerns.
@@ -329,8 +350,9 @@ en:
         <p>The Wikimedia community is made up of creators, collectors, and consumers of free knowledge. While most material appearing on Wikimedia projects is in the <a href='https://en.wikipedia.org/wiki/Public_domain'>public domain</a> or <a href='https://en.wikipedia.org/wiki/Free_license'>freely licensed</a>, on occasion, copyrighted material makes its way onto the projects.</p>
         <p>The <a href='https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act'>Digital Millennium Copyright Act</a> (DMCA) safe harbor provision requires us to remove infringing material if we receive a proper takedown request. We thoroughly evaluate each DMCA takedown request to ensure that it is <a href='./faq.html#dmca_valid_proper'>valid</a>. We only remove allegedly infringing content when we believe that a request is valid, and we are <a href='./faq.html#transparent_dmca'>transparent</a> about that removal. If we do not believe a request to be valid, we will push back as appropriate. To learn more about DMCA procedures, see our <a href =href='https://wikimediafoundation.org/wiki/DMCA_Policy'>DMCA policy</a>.</p>
         <p>Below, we provide information about the DMCA takedown notices we have received in the past and how we responded to them.</p>"
-    quote2: "A well-functioning copyright law carefully balances the interests of the public in access to expressive works and... the interests of copyright owners in being compensated for uses of their works."
-    cite2: "<a href='https://en.wikipedia.org/wiki/Pamela_Samuelson'>Pamela Samuelson</a><small>Director of <a href='https://www.law.berkeley.edu/bclt.htm'>Berkeley Center for Law &amp; Technology</a> (<a href='https://btlj.org/data/articles/25_3/1175-1246%20CPP%20051811.pdf'>2010</a>)</small>"
+    dmca_quote: "If the Internet teaches us anything, it is that great value comes from leaving core resources in a commons, where they're free for people to build upon as they see fit."
+    dmca_quote_image: "Lawrence Lessig"
+    dmca_cite: "<a href='https://en.wikipedia.org/wiki/Lawrence_Lessig'>Lawrence Lessig</a><small>Academic and Activist (<a href='https://en.wikiquote.org/wiki/Lawrence_Lessig'>2001</a>)</small>"
     s_t_babe_ruth: "Babe Ruth's Called Shot<br><small>March 2014</small>"
     s_s_babe_ruth: "<p>A film shot by Matt Kandle at the <a href='https://en.wikipedia.org/wiki/1932_World_Series'>1932 World Series</a> provides evidence of <a href='https://en.wikipedia.org/wiki/Babe_Ruth'>Babe Ruth's</a> famous &ldquo;<a href='https://en.wikipedia.org/wiki/Babe_Ruth%27s_called_shot'>called shot</a>,&rdquo; in which he gestured to center field before hitting a home run to the same location. The copyright owner sent us a DMCA takedown request regarding a <a href='https://en.wikipedia.org/wiki/Babe_Ruth%27s_called_shot#mediaviewer/File:Ruth1932-1.jpg'>still image</a> from the film used on <a href='https://en.wikipedia.org'>English Wikipedia</a>. We declined to remove the image on the basis of <a href='https://en.wikipedia.org/wiki/Fair_use'>fair use</a>, citing its extraordinary value in illustrating the famous moment and the educational purpose it serves.</p>"
     s_t_obama: "Obama &amp; Mandela Meet<br><small>December 2013</small>"
@@ -353,8 +375,11 @@ en:
     a_standards: "<p>No. Regardless of who is requesting user data—be it an individual, a government, or a law enforcement officer—the Wikimedia Foundation only discloses nonpublic user information in accordance with our <a href='https://wikimediafoundation.org/wiki/Terms_of_Use'>Terms of Use</a>, <a href='https://wikimediafoundation.org/wiki/Privacy_policy'>Privacy Policy</a>, and applicable U.S. law, including the <a href='https://en.wikipedia.org/wiki/Electronic_Communications_Privacy_Act'>Electronic Communications Privacy Act (ECPA)</a> (<a href='https://www.law.cornell.edu/uscode/text/18/part-I/chapter-119'>18 U.S.C. &sect;&sect;2510-2522</a>, <a href='https://www.law.cornell.edu/uscode/text/18/part-I/chapter-121'>18 U.S.C. &sect;&sect; 2701-2711</a>, and <a href='https://www.law.cornell.edu/uscode/text/18/part-II/chapter-206'>18 U.S.C. &sect;&sect; 3121-3127</a>). We typically do not produce information as a result of a request unless we have received proper legal process. Submitted requests must be reasonable, specific and relevant. Requests must include contact information for the requester, and a specific deadline. Finally, requests must be legally valid and enforceable under United States law, in the form of a court order, subpoena, warrant, or request served under the <a href='https://en.wikipedia.org/wiki/Mutual_legal_assistance_treaty'>mutual legal assistance treaty</a> or <a href='https://en.wikipedia.org/wiki/Letters_rogatory'>letters rogatory</a> process.</p>
     <p>Additionally, we may disclose information in response to emergency requests in accordance with ECPA (<a href='https://www.law.cornell.edu/uscode/text/18/2702'>18 U.S.C. 2702(b)(8)</a>) when there is a credible and imminent threat of death or serious bodily harm. These requests must meet specific criteria, including detailing the nature of the emergency, why it is believed to be imminent, and the specific information requested and how it is necessary to prevent the threat from being carried out.</p><p>For more information on the procedures for requesting user information and making an emergency request, see our <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>Requests for User Information Procedures & Guidelines.</a></p>"
 
-    q_request_abroad: "What happens when you receive a request from abroad?"
-    a_request_abroad: "<p>Per our <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>Requests for User Information Procedures & Guidelines</a>, we require requests originating from outside of the United States to follow the <a href='https://en.wikipedia.org/wiki/Mutual_legal_assistance_treaty'>mutual legal assistance treaty</a> (MLAT) process or <a href='https://en.wikipedia.org/wiki/Letters_rogatory'>letters rogatory</a> process, so that a U.S. court will issue the required U.S. legal process to the Wikimedia Foundation. The MLAT process involves a network of treaties between countries, which require them to aid each other in obtaining information used for enforcing laws. Letters rogatory are a type of request issued by a court in one country to a court in another country, usually seeking assistance to serve process or gather evidence.</p>"
+    q_request_abroad: "What happens when you receive a request for nonpublic personal information from abroad?"
+    a_request_abroad: "
+    <p>Per our <a href='https://wikimediafoundation.org/wiki/Requests_for_user_information_procedures_%26_guidelines'>Requests for User Information Procedures & Guidelines</a>, we require requests originating from outside of the United States to follow the <a href='https://en.wikipedia.org/wiki/Mutual_legal_assistance_treaty'>mutual legal assistance treaty</a> (MLAT) process or <a href='https://en.wikipedia.org/wiki/Letters_rogatory'>letters rogatory</a> process, so that a U.S. court will issue the required U.S. legal process to the Wikimedia Foundation. The MLAT process involves a network of treaties between countries, which require them to aid each other in obtaining information used for enforcing laws. Letters rogatory are a type of request issued by a court in one country to a court in another country, usually seeking assistance to serve process or gather evidence.</p>
+    <p>For content requests received from abroad, we evaluate the request to determine if it presents an applicable legal requirement in our jurisdiction and, if so, we respond to it appropriately. If it does not, we help requesters understand Wikipedia and provide them with information to work productively with the volunteer community.</p>
+    "
 
     q_my_personal_information: "Help! My personal information is being sought because of something I did on the Wikimedia projects. What should I do?"
     a_my_personal_information: "<p>If you are the subject of a subpoena, it is highly recommended that you consult your own lawyer immediately. There are a number of organizations that will fight on a user's behalf, like the <a href='https://www.aclu.org/'>American Civil Liberties Union</a> (ACLU) or the <a href='https://www.eff.org/'>Electronic Frontier Foundation</a> (EFF). If you need help finding an attorney, WMF may be able to put you in touch with some of these organizations or help you secure an attorney at reduced or pro-bono rates. In rare cases, assistance may also be available under our <a href='https://meta.wikimedia.org/wiki/Legal_and_Community_Advocacy/Legal_Fees_Assistance_Program'>Legal Fees Assistance Program</a> or <a href='https://meta.wikimedia.org/wiki/Legal/Legal_Policies#Defense_of_Contributors'>Defense of Contributors Program</a>. Additionally, in certain situations, WMF may challenge a subpoena on a user’s behalf if it is unnecessarily broad or burdensome, or if we believe the subpoena threatens the free speech of users on the projects. For more information about subpoenas, see our <a href='https://wikimediafoundation.org/wiki/Privacy_policy/Subpoena_FAQ'>Subpoena FAQ</a>.</p>"
@@ -391,7 +416,7 @@ en:
 
     q_court_order: "What do you mean by &ldquo;court order&rdquo;?"
     a_court_order: "
-    <p>When we say &ldquo;court order&rdquo;, we mean an order issued by a court directed at the Wikimedia Foundation. If an order has been issued by a court of competent jurisdiction, we will evaluate the request. For example, court orders for user data may be issued under various U.S. federal and state laws, such as section 2703(d) of the <a href='https://en.wikipedia.org/wiki/Electronic_Communications_Privacy_Act'>Electronic Communications Privacy Act</a> (&ldquo;ECPA&rdquo;).</p>
+    <p>When we say &ldquo;court order&rdquo;, we mean an order issued by a court directed at the Wikimedia Foundation. If an order has been issued by a court of competent jurisdiction, we will evaluate the request. For example, court orders for user data may be issued under various U.S. federal and state laws, such as section 2703(d) of the <a href='https://en.wikipedia.org/wiki/Electronic_Communications_Privacy_Act'>Electronic Communications Privacy Act</a> (&ldquo;ECPA&rdquo;). As another example, some court orders may require the Wikimedia Foundation to alter or remove content from Wikipedia. Such orders could come from a court in the United States or from a court in another country on a case by case basis depending on whether the facts gives rise to enforceable foreign jurisdiction.</p>
     <p>For the avoidance of doubt, we believe a warrant is required by the <a href='https://www.law.cornell.edu/constitution/fourth_amendment'>4th Amendment</a> to the <a href='https://en.wikipedia.org/wiki/United_States_Constitution'>United States Constitution</a>, which prohibits unreasonable search and seizure and overrides conflicting provisions in ECPA. We believe that ECPA needs to be updated so that equivalent protections are granted to electronic communications and documents that have already been granted to the physical documents one keeps at home or in their office. To that end, we are a member of the <a href='https://digitaldueprocess.org/'>Digital Due Process Coalition</a> to help in that effort.</p>
     "
 
@@ -399,7 +424,7 @@ en:
     a_national_security_request: "<p>&ldquo;National security requests&rdquo; include <a href='https://en.wikipedia.org/wiki/National_security_letter'>national security letters</a> and orders issued under the <a href='https://en.wikipedia.org/wiki/Foreign_Intelligence_Surveillance_Act'>Foreign Intelligence Surveillance Act</a> (<a href='https://www.law.cornell.edu/uscode/text/50/1801'>50 U.S.C. &sect;1801</a> <em>et seq</em>.).</p>"
 
     q_wiretap: "What is a  &ldquo;wiretap&rdquo; or a  &ldquo;pen register&rdquo;, and why doesn’t the Wikimedia Foundation list them in its Transparency Report?"
-    a_wiretap: "<p>A <a href='https://en.wikipedia.org/wiki/Telephone_tapping'>wiretap</a> order (see The Wiretap Act, <a href='https://www.law.cornell.edu/uscode/text/18/2511'>18 U.S.C. &sect; 2511</a> <em>et seq</em>.) is an order that requires the real-time interception of the content of telephone or internet communications. A <a href='https://en.wikipedia.org/wiki/Pen_register'>pen register</a> order (see The Pen Register Statute, <a href='https://www.law.cornell.edu/uscode/text/18/3121'>18 U.S.C. &sect; 3121</a> <em>et seq</em>.) requires the real-time interception of non-content information associated with telephone or internet communications (such as routing information). We have never received a wiretap or pen register order. Should we receive such an order, we will disclose it in this report if allowed to do so by law.</p>"
+    a_wiretap: "<p>A <a href='https://en.wikipedia.org/wiki/Telephone_tapping'>wiretap</a> order (see The Wiretap Act, <a href='https://www.law.cornell.edu/uscode/text/18/2511'>18 U.S.C. &sect; 2511</a> <em>et seq</em>.) is an order that requires the real-time interception of the content of telephone or internet communications. A <a href='https://en.wikipedia.org/wiki/Pen_register'>pen register</a> order (see The Pen Register Statute, <a href='https://www.law.cornell.edu/uscode/text/18/3121'>18 U.S.C. &sect; 3121</a> <em>et seq</em>.) requires the real-time interception of non-content information associated with telephone or internet communications (such as routing information). We have never received a wiretap or pen register order relating to activity on the Wikimedia projects. Should we receive such an order, we will disclose it in this report if allowed to do so by law.</p>"
 
     q_potentially_affected: "What do you mean by &ldquo;user accounts potentially affected&rdquo;?"
     a_potentially_affected: "<p>This number represents the number of unique user accounts implicated by requests for user data and whose data would have been disclosed if we had granted every request we received. This number may not reflect the number of unique individuals implicated by requests for user data, since an individual may have multiple accounts across all Wikimedia projects, and we record each user account separately. As a result, this number might overestimate the number of individuals implicated by user data requests.</p>"
@@ -666,6 +691,10 @@ en:
     wikimedia: "Wikimedia"
     english_wikivoyage: "English Wikivoyage"
     esperanto_wikipedia: "Esperanto Wikipedia"
+    marathi_wikipedia: "Marathi Wikipedia"
+    pashto_wikipedia: "Pashto Wikipedia"
+    romania_wikipedia: "Romania Wikipedia"
+    spanish_wikivoyage: "Spanish Wikivoyage"
     farsi_wikibooks: "Farsi Wikibooks"
     farsi_wikipedia: "Farsi Wikipedia"
     latin_wikisource: "Latin Wikisource"
@@ -679,7 +708,8 @@ en:
     one_case_was_spanish_italian: "One case was Spanish-Italian"
     one_case_was_serbo_croat: "One case was Serbo-Croat"
 
-
+    administrative_agency: "Administrative agency"
+    administrative_subpoenas: "Administrative Subpoenas"
     civil_subpoenas: "Civil Subpoenas"
     cjp: "City Judicial Police"
     cons_emb: "Consulate or embassy"
@@ -709,7 +739,9 @@ en:
     prosecutorial_agency: "Prosecutorial Agency"
     public_prosecutor: "Public Prosecutor’s Office"
     public_university: "Public university"
+    postal_police: "Postal Police"
     regional_court: "Regional court"
+    district_court: "District court"
     state_agency: "State agency"
     state_police: "State police"
     uknmd: "U.K. Non-Ministerial Department"
@@ -717,13 +749,10 @@ en:
     unknown: "Unknown"
     upa: "Unspecified Police Agency"
     warrant: "Warrants"
-
-
-
     request_granted: "Requests granted"
-
     physical_threats: "Physical threats"
     suicide_threats: "Suicide threats"
+    search_warrants: "Search warrants"
     other: "Other"
 
   dates:

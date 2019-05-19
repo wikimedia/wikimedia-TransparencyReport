@@ -128,8 +128,10 @@
 			}
 		}
 
-		var unknownObject = clonedArr.splice(indexOfUnknownKey, 1)[0];
-		clonedArr.push(unknownObject);
+		if ( indexOfUnknownKey !== undefined ) {
+			var unknownObject = clonedArr.splice(indexOfUnknownKey, 1)[0];
+			clonedArr.push(unknownObject);
+		}
 		return clonedArr;
 	}
 
@@ -1022,9 +1024,9 @@
 					d[ 'Government' ] +
 					d[ 'Civil Subpoena' ] +
 					d[ 'Warrant' ] +
-					d[ 'Court orders' ] ) )
+					d[ 'Court orders' ] +
+					d[ 'Administrative Subpoena' ] ) )
 				{
-
 				    throw new Error ( 'The requests don\'t add up for ' + d[ 'Country' ]);
 				}
 
@@ -1062,13 +1064,17 @@
 				addFact( d[ 'Country' ], 'Court orders', 'All', d[ 'Court orders complied (All)' ] );
 				addFact( d[ 'Country' ], 'Court orders', 'No', d[ 'Court orders' ] - d['Court orders complied (Partial)'] - d[ 'Court orders complied (All)' ] );
 				addFact( d[ 'Country' ], 'Court orders', 'Partial', d[ 'Court orders complied (Partial)' ] );
+
+				addFact( d[ 'Country' ], 'Administrative Subpoena', 'All', d[ 'Administrative Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Administrative Subpoena', 'No', d[ 'Administrative Subpoena' ] - d['Administrative Subpoena Complied (Partial)'] - d[ 'Administrative Subpoena Complied (All)' ] );
+				addFact( d[ 'Country' ], 'Administrative Subpoena', 'Partial', d[ 'Administrative Subpoena Complied (Partial)' ] );
 			} );
 
 			data = facts;
 
 			var ds = new Requests();
 			ds.init( data );
-			ds.filters.duration = "janjun18";
+			ds.filters.duration = "juldec18";
 			var dispatch = d3.dispatch( 'filter', 'timerange' );
 			var tooltip = d3
 				.select( 'body' )

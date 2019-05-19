@@ -106,6 +106,7 @@
 	}
 
 	var durationCode = {
+		'juldec18': 'Jul - Dec 2018',
 		'janjun18': 'Jan - Jun 2018',
 		'juldec17': 'Jul - Dec 2017',
 		'janjun17': 'Jan - Jun 2017',
